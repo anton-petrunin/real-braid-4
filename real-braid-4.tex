@@ -1,0 +1,228 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{paper-en}
+\usepackage{acts}
+\usepackage{hyperref}
+
+%\usepackage[notref,notcite,color]{showkeys}
+
+\def\thetitle{4-string real braid space is CAT(0)}
+\def\theauthors{Dmitri Panov and Anton Petrunin}
+
+\hypersetup{colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black,
+pdftitle={\thetitle},
+pdfauthor={\theauthors}
+}
+
+%\usepackage[a-2b,mathxmp]{pdfx}[2018/12/22]
+%\overfullrule=100mm
+%\usepackage[none]{hyphenat}
+
+%\makeatletter\let\orig@section\section\renewcommand{\section}[1]{\orig@section{#1.}}\usepackage{environ}\RenewEnviron{figure}[1][]{}\RenewEnviron{figure*}[1][]{}\RenewEnviron{wrapfigure}[1][]{}\pagestyle{empty}\let\ps@plain\ps@empty\makeatother\def\emph{\textit}\usepackage[none]{hyphenat}
+
+\begin{document}
+
+\title{\thetitle}
+\author{\theauthors}
+\date{}
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+
+Let us equip the complex space $\CC^n$ with the standard Euclidean metric.
+Let $W$ be $\CC^n$ with the hyperplanes $z_i=z_j$ removed for all $i\ne j$; here $z_1,\dots,z_n$ are the standard coordinates.
+Denote by $\tilde W$ the universal cover of $W$, equipped with the induced metric.
+The completion of $\tilde W$ will be called the \emph{complex braid space} with $n$ strings and denoted by $\CB^n$.
+
+\begin{thm}{Conjecture}\label{braid-conj}
+$\CB^n$ is $\CAT(0)$ for any integer $n\ge 1$.
+\end{thm}
+
+A more general conjecture was formulated by Daniel Allcock~\cite[Conjecture 1.4]{allcock}, and it is related to an earlier conjecture of Ruth Charney and Michael Davis (see \cite[Conjecture 3]{charney-davis-95}) which in turn is motivated by a conjecture of Arnold, Pham and Thom on complex hyperplane arrangements.
+We are responsible for a more general version of Allcock's conjecture \cite[Conjecture 1.1]{panov-petrunin}, which we have been trying to prove for several years.
+
+The case $n=2$ of the conjecture is easy.
+The case $n=3$ is already nontrivial.
+Two proofs of this statement are given by the authors in \cite{panov-petrunin};
+one of them follows from the result of Ruth Charney and Michael Davis \cite{charney-davis-93}.
+In this note we describe a small step toward its solution in the case $n=4$, hoping that somebody more clever will look at this.
+
+Consider the real subspace $\RR^n\subset\CC^n$.
+Denote by $\RB^n$ its inverse image under the natural projection $\CB^n\to \CC^n$;
+we will call it the \emph{real braid space} with $n$ strings.
+
+\begin{thm}{Theorem}
+$\RB^4$ is $\CAT(0)$.
+\end{thm}
+
+By Lemma~\ref{lem:convex-preimage} below, $\RB^n$ is a convex subset of $\CB^n$.
+In particular, if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$.
+Therefore, the theorems gives a partial case of the conjecture for $n=4$.
+
+
+\section{Real braid space}
+
+\begin{thm}{Lemma}\label{lem:convex-preimage}
+Let $K\subset \CC$ be a closed convex set.
+Then the inverse image of $K^n\subset \CC^n$ under the natural projection $\CB^n\to \CC^n$ is convex.
+
+In particular, $\RB^n$ is a convex subset of $\CB^n$.
+\end{thm}
+
+The space $\RB^4$ is a 4-dimensional polyhedral space.
+Since all hyperplanes $z_i=z_j$ share the diagonal line $z_1=\ldots=z_n$,
+it splits as a Euclidean product space $\RR\times C^3$, where $C^3$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$.
+
+Note that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$.
+
+The space $\Sigma$ is glued from a countable collection of copies of the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
+
+Let us describe this space.
+First denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
+We will keep the notation $a$, $b$ and $c$ for the standard generators of the braid group $B_4$,
+so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$ and $b\cdot c\cdot b=c\cdot b\cdot c$.
+Take a copy of $\triangle$ for each element of $B_4$ and glue two triangles along one side $a$, $b$, or $c$ if their elements differ by left multiplication by a power of $a$, $b$, or $c$, respectively.
+
+This description easily implies that $\Sigma$ is locally $\CAT(1)$.
+Therefore, by the generalized Cartan--Hadamard theorem, it is sufficient to prove the following.
+
+\begin{thm}{Key claim}
+Any closed curve in $\Sigma$ of length $<2\cdot\pi$ is null-homotopic in the class of curves of length $<2\cdot\pi$.
+\end{thm}
+
+
+\section{Encoding}
+
+Let $\gamma$ be a closed curve in $\Sigma$; suppose $\length\gamma<2\cdot\pi$.
+The curve $\gamma$ can be approximated by a curve that does not pass thru vertices.
+Furthermore, we can assume that it enters and exits each copy of $\triangle$ thru different sides;
+if not, we can make a shortcut along the side.
+Let us write a sequence $a$, $b$, or $c$ with some powers at each transition point of $\gamma$ from triangle to triangle; for example, we write $a^5$ if $\gamma$ crosses  $a$ and the label of next triangle is multiplied by $a^5$ on the left.
+Following $\gamma$ we get a word from $a$, $b$, and $c$ with some powers which gives, which product is $1$ in $B_4$ (since $\gamma$ is closed).
+
+
+\section{Short trajectories}
+
+Let $\triangle$ be the spherical triangle with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
+Let us denote by $A$, $B$, and $C$ the vertices of $\triangle$ with right angle at $C$,
+and let $M$ be the midpoint of the side $AB$.
+A closed polygonal line can be encoded by its vertices in the cyclic order; for example $CM$ denotes the polygonal line that comes from $C$ to $M$, and comes back.
+
+A closed polygonal line $\gamma$ in $\triangle$ with all vertices on the boundary of $\triangle$ will be called a \emph{trajectory} if it satisfies the following conditions.
+We will be interested in trajectories that locally minimize their length.
+In this case, they meet the following properties:
+\begin{itemize}
+\item If a vertex lies in an interior of a side, then it behaves as a billiard trajectory; that is, the angle of incidence is equal to the angle of reflection.
+\item If a vertex of $\gamma$ is the $\tfrac\pi2$-angled vertex of $\triangle$, then $\gamma$ switches the direction to the opposite one.
+\item If a vertex of $\gamma$ is one of the remaining two $\tfrac\pi3$-angled vertices of $\triangle$, then there is no restriction on the directions of incoming and outgoing edges.
+\item Any arc of $\gamma$ that does not pass thru $A$ or $B$ has length $<\pi$.
+\end{itemize}
+
+\begin{thm}{Lemma}
+Let $\triangle$, $A,B,C$ and $M$ be as above.
+Then, up to symmetry of $\triangle$ there are only the following trajectories of length less than $2\cdot\pi$:
+\[CM,\quad AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad \text{and}\quad ACACAC.\]
+
+\end{thm}
+
+\parit{Proof.}
+Recall that any open interval of $\gamma$ of length $\pi$ must contain $A$ or $B$.
+In particular, if $\gamma$ does not pass thru $A$ or $B$, then $\length\gamma<\pi$.
+
+...
+\qeds
+
+\section{Agol's lemma}
+
+Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $ab=ba$, $aca=cac$, and $bcb=cbc$.
+
+\begin{thm}{Lemma}
+\[\langle a,c\rangle\langle b,c\rangle\cap\langle b,c\rangle\langle a,c\rangle
+=\langle a,c\rangle\cup\langle b,c\rangle\cup \langle c\rangle\langle a, b\rangle\langle c\rangle.\]
+
+\[\langle a,c\rangle\langle b\rangle\langle a,c\rangle\cap\langle b\rangle\langle a,c\rangle\langle b\rangle\subset\langle a,c\rangle\langle b\rangle\cup\langle b\rangle\langle a,c\rangle\cup  \langle a,b\rangle\langle c\rangle\langle a,b\rangle.\]
+\end{thm}
+
+The first part of the lemma was proved by Ian Agol \cite{agol}. %(https://mathoverflow.net/q/307215).
+
+
+\section{Prompt for AI}
+
+Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $ab=ba$, $aca=cac$, and $bcb=cbc$.
+Let $d=a^{-1}b$.
+
+\begin{thm}{Lemma}
+Suppose
+\[p_1d^{n_1}p_2 d^{n_2} p_3 d^{n_3}=1,\]
+where $p_i\in \langle a,c\rangle$ and $n_i\ne 0$.
+Then $p_i\in\langle a\rangle\langle c\rangle\langle a\rangle$ for some $i$.
+\end{thm}
+
+This equation can be rewritten as
+\[p_1p_2p_3x^{n_1}y^{n_2}z^{n_3}=1,\]
+where $x=p_3^{-1}p_2^{-1}dp_2p_3$, $y=p_3^{-1}dp_3$, and $z=d$ are elements of the free group $F_2=\ker\phi$, and $\phi$ is the homomorphism $B_4\to B_3$ that identifies $a$ and $b$.
+
+Note that $p_1p_2p_3=1$ and $x^{n_1}y^{n_2}z^{n_3}=1$.
+By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
+
+Further since $x$, $y$ and $z$ are primitive (it seems that) we can assume that $|n_1|=|n_2|=1$.
+Indeed, assume $|n_2|\ge 2$ and $|n_3|\ge 2$.
+Note that $x\in H=\langle y,z\rangle$.
+Since $x$ is primitive in $F_2$, by the Kurosh subgroup theorem $x$ is primitive in $H$.
+Indeed, by the Kurosh subgroup theorem $H=\langle x \rangle*H'$ for some $H'<H$ and since $H$ is a free group with two generators, $H'$ is an infinite cyclic group.
+(I do not understand this part, but let's believe it for a while.)
+
+We can rewrite the equation as
+\[p_1d^{n_1}p_2 = d^{-n_3}p_3^{-1}d^{-n_2}.\]
+Arguing as Ian Agol %(https://mathoverflow.net/q/307215)
+we can follow the position of curve cutting the fourth strand on the right and left sides.
+Since $|n_1|=|n_2|=1$, we get
+\[p_1\langle a\rangle= a^{-n_3}p_3^{-1}\langle a\rangle.\]
+I hope it can help to prove the lemma.
+
+
+{\sloppy
+\def\emph{\textit}
+\printbibliography[heading=bibintoc]
+\fussy
+}
+
+\end{document}
+
+\section{Ramifications}
+
+Consider a finite orientation-preserving action $\Gamma\acts\RR^m$.
+Denote by $\mathcal{L}_\Gamma$ the arrangement of all hyperlines which are fixed by at least one non-identical element in $\Gamma$. Define the ramification of $\Gamma\acts\RR^m$
+(briefly $\Ram_\Gamma$)
+as the universal cover of $\RR^m$ branching infinitely  along each hyperline in $\mathcal{L}_\Gamma$.
+
+More precisely, if $\tilde W_\Gamma$ denotes the universal cover of
+$$W_\Gamma=\RR^m\backslash
+\left(\bigcup_{\ell\in\mathcal{L}_\Gamma}\ell\right)$$
+equipped with the length metric induced from $\RR^m$
+then $\Ram_\Gamma$ is the metric completion of $\tilde W_\Gamma$.
+
+We want to show the following that $\Ram_\Gamma$ is a $\CAT[0]$ for any properly discontinuous isometric orientation-preserving action $\Gamma\acts\RR^m$.
+
+We thaut about this question for many years and I do not see why it should be true, except we cannot find a counterexample.
+Let me state what we know.
+
+Assume $\Gamma\acts\RR^m$ is a counterexample; we can assume that $m$ is minimal.
+In this case the action cannot split.
+
+Note that $\Ram_\Gamma$ is a cone.
+Consider the unit sphere $S$ in $\Ram_\Gamma$;
+observe that $S$ is not $\CAT[1]$.
+
+Since $m$ is minimal, one can see that $S$ is locally $\CAT[1]$.
+It follows that there is a closed geodesic $\gamma$ in $S$ of length $<2\cdot\pi$.
+Note that projection of $\gamma$ in the unit sphere in $\RR^m$ must lie in an open hemisphere...
