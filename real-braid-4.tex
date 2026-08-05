@@ -99,17 +99,6 @@ Therefore, by the generalized Cartan--Hadamard theorem, it is sufficient to prov
 Any closed curve in $\Sigma$ of length $<2\cdot\pi$ is null-homotopic in the class of curves of length $<2\cdot\pi$.
 \end{thm}
 
-
-\section{Encoding}
-
-Let $\gamma$ be a closed curve in $\Sigma$; suppose $\length\gamma<2\cdot\pi$.
-The curve $\gamma$ can be approximated by a curve that does not pass thru vertices.
-Furthermore, we can assume that it enters and exits each copy of $\triangle$ thru different sides;
-if not, we can make a shortcut along the side.
-Let us write a sequence $a$, $b$, or $c$ with some powers at each transition point of $\gamma$ from triangle to triangle; for example, we write $a^5$ if $\gamma$ crosses  $a$ and the label of next triangle is multiplied by $a^5$ on the left.
-Following $\gamma$ we get a word from $a$, $b$, and $c$ with some powers which gives, which product is $1$ in $B_4$ (since $\gamma$ is closed).
-
-
 \section{Short trajectories}
 
 Let $\triangle$ be the spherical triangle with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
@@ -127,7 +116,7 @@ In this case, they meet the following properties:
 \item Any arc of $\gamma$ that does not pass thru $A$ or $B$ has length $<\pi$.
 \end{itemize}
 
-\begin{thm}{Lemma}
+\begin{thm}{Lemma}\label{lem:short-trajectories}
 Let $\triangle$, $A,B,C$ and $M$ be as above.
 Then, up to symmetry of $\triangle$ there are only the following trajectories of length less than $2\cdot\pi$:
 \[CM,\quad AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad \text{and}\quad ACACAC.\]
@@ -140,6 +129,128 @@ In particular, if $\gamma$ does not pass thru $A$ or $B$, then $\length\gamma<\p
 
 ...
 \qeds
+
+\section{Encoding}
+
+Let $\gamma$ be a closed curve in $\Sigma$; suppose $\length\gamma<2\cdot\pi$.
+The curve $\gamma$ can be approximated by a curve that does not pass thru vertices.
+Furthermore, we can assume that it enters and exits each copy of $\triangle$ thru different sides;
+if not, we can make a shortcut along the side.
+Let us write a sequence $a$, $b$, or $c$ with some powers at each transition point of $\gamma$ from triangle to triangle; for example, we write $a^5$ if $\gamma$ crosses  $a$ and the label of next triangle is multiplied by $a^5$ on the left.
+Following $\gamma$ we get a word from $a$, $b$, and $c$ with some powers which gives, which product is $1$ in $B_4$ (since $\gamma$ is closed).
+
+Let us list possible encodings for curves that project to a trajectories of length less than $2\cdot\pi$ in the spherical triangle $\triangle$ with an aditional constrain that the trajectory lifts to a closed geodesic.
+
+\parit{Case $CM$:} we have elements
+\begin{itemize}
+\item $x\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $x\notin\langle a\rangle\cup \langle b\rangle$;
+\item $y\in \langle c\rangle$ at $M$, but since the lift is geodesic, $y\ne 1$.
+\end{itemize}
+Since the lift must be closed in the braid space, therefore $x\cdot y=1\in B_4$.
+Therefore the problem reduces the following:
+\[(\langle a,b\rangle\setminus (\langle a\rangle\cup \langle b\rangle))\cdot(\langle c\rangle\setminus\{1\})\not\ni 1,\]
+which follows since $a^m\cdot b^n\cdot c^k=1$ if and only if $m=n=k=0$.
+
+\parit{Case $AB$:} we have elements
+\begin{itemize}
+\item $x\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
+\item $y\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x\cdot y=1\in B_4$.
+Therefore, the problem reduces the following:
+\[(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)\cdot (\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)\not\ni 1.\]
+This will follow from the next case.
+
+\parit{Case $ABAB$:} we have elements
+\begin{itemize}
+\item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
+\item $y_1,y_2\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y_1,y_2\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x_1\cdot y_1\cdot x_2\cdot y_2=1\in B_4$.
+Therefore, the problem reduces the following:
+\[(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)\cdot (\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)\cdot(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)\cdot (\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)\not\ni 1,\]
+or, equivalently,
+\[(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)
+\cdot
+(\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)
+\cap
+(\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)
+\cdot
+(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)
+=\varnothing.
+\]
+This case follows from Agol's lemma.
+
+\parit{Case $ABAC$:} we have elements
+\begin{itemize}
+\item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1\notin \langle b\rangle\cdot\langle c\rangle$ and
+$x_2\z\notin \langle c\rangle\cdot\langle b\rangle$;
+\item $y\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$;
+\item $z\in  \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x_1\cdot y\cdot x_2\cdot z=1\in B_4$.
+So, the problem reduces the following:
+\[(\langle b,c\rangle\setminus \langle b\rangle\cdot\langle c\rangle)
+\cdot
+(\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)
+\cdot
+(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle\setminus \langle b\rangle)\not\ni 1,\]
+
+\parit{Case $AC$:} we have elements
+\begin{itemize}
+ \item $x\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
+ \item $z\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x\cdot z=1\in B_4$.
+So, the problem reduces the following:
+\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)\not\ni 1.\]
+This case, as well as the next will follow from the next one.
+
+\parit{Case $ACAC$:} we have elements
+\begin{itemize}
+ \item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
+ \item $z_1,z_2\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2\notin \langle b\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2 =1\in B_4$.
+So, the problem reduces the following:
+\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\cdot
+(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\not\ni 1;\]
+equivalently,
+\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)\cap(\langle a,b\rangle \setminus \langle b\rangle)\cdot (\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)=\varnothing.\]
+
+\parit{Case $ACACAC$:} we have elements
+\begin{itemize}
+ \item $x_1,x_2,x_3\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2,x_3\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
+ \item $z_1,z_2,z_3\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2,z_3\notin \langle b\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2\cdot x_3\cdot z_3 =1\in B_4$.
+So, the problem reduces the following:
+\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\cdot
+(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\cdot
+(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\not\ni 1.\]
+This is the only case which is still open, but it should follow from the second part of Agol's lemma.
+
 
 \section{Agol's lemma}
 
