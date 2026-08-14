@@ -268,21 +268,21 @@ The first part of the lemma was proved by Ian Agol \cite{agol}. %(https://mathov
 
 \section{Prompt for AI}
 
-Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $ab=ba$, $aca=cac$, and $bcb=cbc$.
-Let $d=a^{-1}b$.
+Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$, and $b\cdot c\cdot b=c\cdot b\cdot c$.
+Let $d=a^{-1}\cdot b$.
 
 \begin{thm}{Lemma}
 Suppose
-\[p_1d^{n_1}p_2 d^{n_2} p_3 d^{n_3}=1,\]
+\[p_1\cdot d^{n_1}\cdot p_2 \cdot d^{n_2}\cdot  p_3\cdot  d^{n_3}=1,\]
 where $p_i\in \langle a,c\rangle$ and $n_i\ne 0$.
-Then $p_i\in\langle a\rangle\langle c\rangle\langle a\rangle$ for some $i$.
+Then $p_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ for some $i$.
 \end{thm}
 
 This equation can be rewritten as
-\[p_1p_2p_3x^{n_1}y^{n_2}z^{n_3}=1,\]
-where $x=p_3^{-1}p_2^{-1}dp_2p_3$, $y=p_3^{-1}dp_3$, and $z=d$ are elements of the free group $F_2=\ker\phi$, and $\phi$ is the homomorphism $B_4\to B_3$ that identifies $a$ and $b$.
+\[p_1\cdot p_2\cdot p_3\cdot x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1,\]
+where $x=p_3^{-1}\cdot p_2^{-1}\cdot d\cdot p_2\cdot p_3$, $y=p_3^{-1}\cdot d\cdot p_3$, and $z=d$ are elements of the free group $F_2=\ker\phi$, and $\phi$ is the homomorphism $B_4\to B_3$ that identifies $a$ and $b$.
 
-Note that $p_1p_2p_3=1$ and $x^{n_1}y^{n_2}z^{n_3}=1$.
+Note that $p_1\cdot p_2\cdot p_3=1$ and $x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1$.
 By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
 
 Further since $x$, $y$ and $z$ are primitive (it seems that) we can assume that $|n_1|=|n_2|=1$.
@@ -303,69 +303,63 @@ Maybe it helps.
 
 \section{Answer from AI}
 
-By Lyndon--Sch\"utzenberger and Kurosh, after a cyclic permutation we may assume
-\[
-|n_1|=|n_2|=1.
-\]
-Indeed, if all $|n_i|>1$, then $x,y,z$ generate a cyclic group, and we are done since
-$N_{\langle a,c\rangle}(\langle d\rangle)=\langle a\rangle$. If, say,
-$|n_1|=1$ and $|n_2|,|n_3|>1$, put $H=\langle y,z\rangle$. Unless $H$ is cyclic,
-Kurosh applied to $F_2=\langle x\rangle*K$ shows that $x$ is primitive in $H$.
-Since $(y,z)$ is then a basis of $H$, this contradicts the fact that
-$z^{-n_3}y^{-n_2}=x^{n_1}$ is primitive.
+By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
+Further since $x$, $y$ and $z$ are primitive (it seems that) we can assume that $|n_1|=|n_2|=1$.
+Indeed, assume $|n_2|\ge 2$ and $|n_3|\ge 2$.
+Note that $x\in H=\langle y,z\rangle$.
+Since $x$ is primitive in $F_2$, by the Kurosh subgroup theorem $x$ is primitive in $H$.
+Indeed, by the theorem $H=\langle x \rangle*H'$ for some $H'<H$ and since $H$ is a free group with two generators, $H'$ is an infinite cyclic group.
 
-Put $\epsilon_i=n_i\in\{\pm1\}$, $i=1,2$, and $N=n_3$. The curve argument gives
+Put $\epsilon_i=n_i\in\{\pm1\}$, $i=1,2$, and $N=n_3$.
+The curve argument gives
 \[
-p_1\langle a\rangle=a^{-N}p_3^{-1}\langle a\rangle,
+p_1\cdot \langle a\rangle=a^{-N}\cdot p_3^{-1}\cdot \langle a\rangle,
 \]
-so
+so, for some $u\in\mathbb Z$, we have
 \[
-p_1=a^{-N}p_3^{-1}a^u
+p_1=a^{-N}\cdot p_3^{-1}\cdot a^u
+\quad\text{and}\quad
+x=a^{-N}\cdot y\cdot a^N.
 \]
-for some $u\in\mathbb Z$, and hence
-\[
-x=a^{-N}ya^N.
-\]
-Let $e=d^c$. On $H_1(F_2)=\mathbb Z[d]\oplus\mathbb Z[e]$, conjugation by $a$
-acts by
-\[
-(r,s)\longmapsto(r-s,s).
-\]
+Let $e=d^c$.
+On $H_1(F_2)=\mathbb Z[d]\oplus\mathbb Z[e]$, conjugation by $a$
+acts by $(r,s)\mapsto(r-s,s)$.
 Thus, writing $[y]=(r,s)$, the relation
-$x^{\epsilon_1}y^{\epsilon_2}d^N=1$ gives
+$x^{\epsilon_1}\cdot y^{\epsilon_2}\cdot d^N=1$ gives
 \[
-\epsilon_1(r-Ns,s)+\epsilon_2(r,s)+N(1,0)=0.
+\epsilon_1\cdot (r-Ns,s)+\epsilon_2\cdot (r,s)+N\cdot (1,0)=0.
 \]
 
-If $\epsilon_1=\epsilon_2$, then $s=0$. Hence
-$p_3\in\langle a\rangle Z(B_3)$. Writing
-$p_3=a^r\zeta^k$, the above expression for $p_1$ gives
-$p_1=a^q\zeta^{-k}$, and therefore
+If $\epsilon_1=\epsilon_2$, then $s=0$.
+Hence $p_3\in\langle a\rangle\cdot Z(B_3)$.
+Writing $p_3=a^r\cdot\zeta^k$, the above expression for $p_1$ gives
+$p_1=a^q\cdot \zeta^{-k}$, and therefore
 \[
-p_2=p_1^{-1}p_3^{-1}\in\langle a\rangle.
+p_2=p_1^{-1}\cdot p_3^{-1}\in\langle a\rangle.
 \]
 
-If $\epsilon_1=-\epsilon_2$, then $s=\epsilon_1$. Under the standard
-$B_3\to SL_2(\mathbb Z)$ action on $H_1(F_2)$ this implies
+If $\epsilon_1=-\epsilon_2$, then $s=\epsilon_1$.
+Under the standard
+$B_3\to \SL_2(\mathbb Z)$ action on $H_1(F_2)$ this implies
 \[
-p_3=q\zeta^{2k},\qquad
-q=a^r c^{\epsilon_1}a^t.
+p_3=q\cdot \zeta^{2\cdot k},\qquad
+q=a^r\cdot  c^{\epsilon_1}\cdot a^t.
 \]
 Consequently
 \[
 p_2
-=a^{-u}p_3a^Np_3^{-1}
-=a^{-u}qa^Nq^{-1}
-=a^{r-u-\epsilon_1}c^Na^{\epsilon_1-r},
+=a^{-u}\cdot p_3\cdot a^N\cdot p_3^{-1}
+=a^{-u}\cdot q\cdot a^N\cdot q^{-1}
+=a^{r-u-\epsilon_1}\cdot c^N\cdot a^{\epsilon_1-r},
 \]
 where we used
 \[
-c^\epsilon a^N c^{-\epsilon}
-=a^{-\epsilon}c^Na^\epsilon,
+c^\epsilon\cdot  a^N\cdot  c^{-\epsilon}
+=a^{-\epsilon}\cdot c^N\cdot a^\epsilon,
 \qquad \epsilon=\pm1.
 \]
 Thus in either case some $p_i$ belongs to
-$\langle a\rangle\langle c\rangle\langle a\rangle$.
+$\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$.
 
 
 {\sloppy
