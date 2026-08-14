@@ -289,16 +289,83 @@ Further since $x$, $y$ and $z$ are primitive (it seems that) we can assume that 
 Indeed, assume $|n_2|\ge 2$ and $|n_3|\ge 2$.
 Note that $x\in H=\langle y,z\rangle$.
 Since $x$ is primitive in $F_2$, by the Kurosh subgroup theorem $x$ is primitive in $H$.
-Indeed, by the Kurosh subgroup theorem $H=\langle x \rangle*H'$ for some $H'<H$ and since $H$ is a free group with two generators, $H'$ is an infinite cyclic group.
+Indeed, by the theorem $H=\langle x \rangle*H'$ for some $H'<H$ and since $H$ is a free group with two generators, $H'$ is an infinite cyclic group.
 (I do not understand this part, but let's believe it for a while.)
 
 We can rewrite the equation as
-\[p_1d^{n_1}p_2 = d^{-n_3}p_3^{-1}d^{-n_2}.\]
+\[p_1\cdot d^{n_1}\cdot p_2 = d^{-n_3}\cdot p_3^{-1}\cdot d^{-n_2}.\]
 Arguing as Ian Agol %(https://mathoverflow.net/q/307215)
 we can follow the position of curve cutting the fourth strand on the right and left sides.
 Since $|n_1|=|n_2|=1$, we get
-\[p_1\langle a\rangle= a^{-n_3}p_3^{-1}\langle a\rangle.\]
-I hope it can help to prove the lemma.
+\[p_1\cdot\langle a\rangle= a^{-n_3}\cdot p_3^{-1}\cdot\langle a\rangle.\]
+Maybe it helps.
+
+
+\section{Answer from AI}
+
+By Lyndon--Sch\"utzenberger and Kurosh, after a cyclic permutation we may assume
+\[
+|n_1|=|n_2|=1.
+\]
+Indeed, if all $|n_i|>1$, then $x,y,z$ generate a cyclic group, and we are done since
+$N_{\langle a,c\rangle}(\langle d\rangle)=\langle a\rangle$. If, say,
+$|n_1|=1$ and $|n_2|,|n_3|>1$, put $H=\langle y,z\rangle$. Unless $H$ is cyclic,
+Kurosh applied to $F_2=\langle x\rangle*K$ shows that $x$ is primitive in $H$.
+Since $(y,z)$ is then a basis of $H$, this contradicts the fact that
+$z^{-n_3}y^{-n_2}=x^{n_1}$ is primitive.
+
+Put $\epsilon_i=n_i\in\{\pm1\}$, $i=1,2$, and $N=n_3$. The curve argument gives
+\[
+p_1\langle a\rangle=a^{-N}p_3^{-1}\langle a\rangle,
+\]
+so
+\[
+p_1=a^{-N}p_3^{-1}a^u
+\]
+for some $u\in\mathbb Z$, and hence
+\[
+x=a^{-N}ya^N.
+\]
+Let $e=d^c$. On $H_1(F_2)=\mathbb Z[d]\oplus\mathbb Z[e]$, conjugation by $a$
+acts by
+\[
+(r,s)\longmapsto(r-s,s).
+\]
+Thus, writing $[y]=(r,s)$, the relation
+$x^{\epsilon_1}y^{\epsilon_2}d^N=1$ gives
+\[
+\epsilon_1(r-Ns,s)+\epsilon_2(r,s)+N(1,0)=0.
+\]
+
+If $\epsilon_1=\epsilon_2$, then $s=0$. Hence
+$p_3\in\langle a\rangle Z(B_3)$. Writing
+$p_3=a^r\zeta^k$, the above expression for $p_1$ gives
+$p_1=a^q\zeta^{-k}$, and therefore
+\[
+p_2=p_1^{-1}p_3^{-1}\in\langle a\rangle.
+\]
+
+If $\epsilon_1=-\epsilon_2$, then $s=\epsilon_1$. Under the standard
+$B_3\to SL_2(\mathbb Z)$ action on $H_1(F_2)$ this implies
+\[
+p_3=q\zeta^{2k},\qquad
+q=a^r c^{\epsilon_1}a^t.
+\]
+Consequently
+\[
+p_2
+=a^{-u}p_3a^Np_3^{-1}
+=a^{-u}qa^Nq^{-1}
+=a^{r-u-\epsilon_1}c^Na^{\epsilon_1-r},
+\]
+where we used
+\[
+c^\epsilon a^N c^{-\epsilon}
+=a^{-\epsilon}c^Na^\epsilon,
+\qquad \epsilon=\pm1.
+\]
+Thus in either case some $p_i$ belongs to
+$\langle a\rangle\langle c\rangle\langle a\rangle$.
 
 
 {\sloppy
