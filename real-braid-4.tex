@@ -259,14 +259,12 @@ Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_
 \begin{thm}{Lemma}
 \[\langle a,c\rangle\langle b,c\rangle\cap\langle b,c\rangle\langle a,c\rangle
 =\langle a,c\rangle\cup\langle b,c\rangle\cup \langle c\rangle\langle a, b\rangle\langle c\rangle.\]
-
-\[\langle a,c\rangle\langle b\rangle\langle a,c\rangle\cap\langle b\rangle\langle a,c\rangle\langle b\rangle\subset\langle a,c\rangle\langle b\rangle\cup\langle b\rangle\langle a,c\rangle\cup  \langle a,b\rangle\langle c\rangle\langle a,b\rangle.\]
 \end{thm}
 
 The first part of the lemma was proved by Ian Agol \cite{agol}. %(https://mathoverflow.net/q/307215).
 
 
-\section{Prompt for AI}
+\section{Second lemma}
 
 Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$, and $b\cdot c\cdot b=c\cdot b\cdot c$.
 Let $d=a^{-1}\cdot b$.
@@ -278,49 +276,41 @@ where $p_i\in \langle a,c\rangle$ and $n_i\ne 0$.
 Then $p_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ for some $i$.
 \end{thm}
 
+\parit{Proof.}
 This equation can be rewritten as
 \[p_1\cdot p_2\cdot p_3\cdot x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1,\]
-where $x=p_3^{-1}\cdot p_2^{-1}\cdot d\cdot p_2\cdot p_3$, $y=p_3^{-1}\cdot d\cdot p_3$, and $z=d$ are elements of the free group $F_2=\ker\phi$, and $\phi$ is the homomorphism $B_4\to B_3$ that identifies $a$ and $b$.
+where $x=p_3^{-1}\cdot p_2^{-1}\cdot d\cdot p_2\cdot p_3$, $y=p_3^{-1}\cdot d\cdot p_3$, and $z=d$ are elements of the free group $F_2=\ker\phi=\llangle d\rrangle$, and $\phi$ is the homomorphism $B_4\to B_3$ that identifies $a$ and $b$.
 
 Note that $p_1\cdot p_2\cdot p_3=1$ and $x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1$.
-By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
+Furthermore, $x$, $y$ and $z$ are primitive elements of $F_2$.
 
-Further since $x$, $y$ and $z$ are primitive (it seems that) we can assume that $|n_1|=|n_2|=1$.
-Indeed, assume $|n_2|\ge 2$ and $|n_3|\ge 2$.
-Note that $x\in H=\langle y,z\rangle$.
-Since $x$ is primitive in $F_2$, by the Kurosh subgroup theorem $x$ is primitive in $H$.
-Indeed, by the theorem $H=\langle x \rangle*H'$ for some $H'<H$ and since $H$ is a free group with two generators, $H'$ is an infinite cyclic group.
-(I do not understand this part, but let's believe it for a while.)
-
-We can rewrite the equation as
-\[p_1\cdot d^{n_1}\cdot p_2 = d^{-n_3}\cdot p_3^{-1}\cdot d^{-n_2}.\]
-Arguing as Ian Agol %(https://mathoverflow.net/q/307215)
-we can follow the position of curve cutting the fourth strand on the right and left sides.
-Since $|n_1|=|n_2|=1$, we get
-\[p_1\cdot\langle a\rangle= a^{-n_3}\cdot p_3^{-1}\cdot\langle a\rangle.\]
-Maybe it helps.
-
-
-\section{Answer from AI}
+We can assume that the subgroups $\langle y, z\rangle$ is not cyclic.
+Otherwise $p_3\in\langle a\rangle$, and the statent follows.
 
 By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
-Further since $x$, $y$ and $z$ are primitive (it seems that) we can assume that $|n_1|=|n_2|=1$.
-Indeed, assume $|n_2|\ge 2$ and $|n_3|\ge 2$.
-Note that $x\in H=\langle y,z\rangle$.
-Since $x$ is primitive in $F_2$, by the Kurosh subgroup theorem $x$ is primitive in $H$.
-Indeed, by the theorem $H=\langle x \rangle*H'$ for some $H'<H$ and since $H$ is a free group with two generators, $H'$ is an infinite cyclic group.
 
-Put $\epsilon_i=n_i\in\{\pm1\}$, $i=1,2$, and $N=n_3$.
-The curve argument gives
-\[
-p_1\cdot \langle a\rangle=a^{-N}\cdot p_3^{-1}\cdot \langle a\rangle,
-\]
-so, for some $u\in\mathbb Z$, we have
+Furthermore, we can assume that $|n_1|=|n_2|=1$.
+Indeed, assume $|n_2|\ge 2$ and $|n_3|\ge 2$.
+Note that $x\in \langle y,z\rangle$.
+Since $x$ is primitive in $F_2$, by the Kurosh subgroup theorem $x$ is primitive in $\langle y,z\rangle$.
+Therefore $\ZZ_{n_2}*\ZZ_{n_2}\cong \langle y,z\rangle/\llangle y^{n_2},z^{n_3}\rrangle$ is a quotient of $\langle y,z\rangle/\llangle y^{n_2}\cdot z^{n_3}\rrangle\cong \langle y,z\rangle/\llangle x \rrangle\cong \ZZ$,
+which is impossible since $\ZZ_{n_2}*\ZZ_{n_2}$ is not commutative.
+
+To emphasise that $|n_1|=|n_2|=1$, put $\eps_1=n_1$, $\eps_2=n_1$, and $N=n_3$.
+Let us rewrite the original equation as
+\[p_1\cdot d^{\eps_1}\cdot p_2 = d^{-N}\cdot p_3^{-1}\cdot d^{-\eps_2}.\]
+Arguing as in Agol's lemma, we get
+\[p_1\cdot\langle a\rangle= a^{-N}\cdot p_3^{-1}\cdot\langle a\rangle.\]
+Indeed ...
+
+
+Therefore,
 \[
 p_1=a^{-N}\cdot p_3^{-1}\cdot a^u
 \quad\text{and}\quad
 x=a^{-N}\cdot y\cdot a^N.
 \]
+for some $u\in\mathbb Z$.
 Let $e=d^c$.
 On $H_1(F_2)=\mathbb Z[d]\oplus\mathbb Z[e]$, conjugation by $a$
 acts by $(r,s)\mapsto(r-s,s)$.
@@ -332,15 +322,17 @@ $x^{\epsilon_1}\cdot y^{\epsilon_2}\cdot d^N=1$ gives
 
 If $\epsilon_1=\epsilon_2$, then $s=0$.
 Hence $p_3\in\langle a\rangle\cdot Z(B_3)$.
-Writing $p_3=a^r\cdot\zeta^k$, the above expression for $p_1$ gives
-$p_1=a^q\cdot \zeta^{-k}$, and therefore
+Suppose $\zeta=(a\cdot c)^3$; it generates $Z(B_3)$.
+Note that $p_3=a^r\cdot\zeta^k$ and $p_1=a^q\cdot \zeta^{-k}$.
+Therefore
 \[
-p_2=p_1^{-1}\cdot p_3^{-1}\in\langle a\rangle.
+p_2=p_1^{-1}\cdot p_3^{-1}\in\langle a\rangle,
 \]
+which finishes the proof.
 
 If $\epsilon_1=-\epsilon_2$, then $s=\epsilon_1$.
-Under the standard
-$B_3\to \SL_2(\mathbb Z)$ action on $H_1(F_2)$ this implies
+Under the standard homomorphism
+$B_3\to \SL_2(\mathbb Z)$ this implies
 \[
 p_3=q\cdot \zeta^{2\cdot k},\qquad
 q=a^r\cdot  c^{\epsilon_1}\cdot a^t.
@@ -358,9 +350,8 @@ c^\epsilon\cdot  a^N\cdot  c^{-\epsilon}
 =a^{-\epsilon}\cdot c^N\cdot a^\epsilon,
 \qquad \epsilon=\pm1.
 \]
-Thus in either case some $p_i$ belongs to
-$\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$.
-
+Thus, $p_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and the proof is finished.
+\qeds
 
 {\sloppy
 \def\emph{\textit}
