@@ -252,40 +252,112 @@ So, the problem reduces the following:
 This is the only case which is still open, but it should follow from the second part of Agol's lemma.
 
 
-\section{Agol's lemma}
+\section{Agol's lemmas}
 
-Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $ab=ba$, $aca=cac$, and $bcb=cbc$.
-
-\begin{thm}{Lemma}
-\[\langle a,c\rangle\langle b,c\rangle\cap\langle b,c\rangle\langle a,c\rangle
-=\langle a,c\rangle\cup\langle b,c\rangle\cup \langle c\rangle\langle a, b\rangle\langle c\rangle.\]
+\begin{thm}{First lemma}
+Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$, and $b\cdot c\cdot b=c\cdot b\cdot c$.
+Suppose
+\[h_1\cdot k_1\cdot h_2 \cdot k_2=1,\]
+where $h_i\in \langle a,c\rangle$ and $k_i\in \langle b,c\rangle$.
+Then $h_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ or $k_i\in\langle b\rangle\cdot \langle c\rangle\cdot \langle b\rangle$ for some $i$.
 \end{thm}
 
-The first part of the lemma was proved by Ian Agol \cite{agol}. %(https://mathoverflow.net/q/307215).
+The following proof is taken almost verbatum from  the answer by Ian Agol to our question \cite{agol}.
+
+\parit{Proof.}
+Let us identify $B_4$ with the mapping class group of the 4-punctured disk  $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ fixing the boundary.
+
+Choose an arc $w$ in $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ with endpoints on $\partial \DD^2$.
+Let us choose a complete hyperbolic metric on $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ so that the boundary is totally geodesic.
+Then in the isotopy class of $w$ there is a unique geodesic arc.
+Moreover the intersection number between pairs of arcs will be minimized by these representatives.
+Abusing notation, let us write $s(w)$ for the arc made geodesic after applying $s\in B_4$ to $w$.
+
+\begin{figure}[ht!]
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-10}
+\vskip-0mm
+\end{figure}
+
+Consider the arcs $x, y, z$ as in the picture; so
+\begin{align*}
+\stab(y)&=\langle a,c\rangle,
+&
+\stab(x)&=\langle b,c\rangle,
+&
+\stab(x\cup y)&=\langle c\rangle.
+\end{align*}
+
+Suppose $h_1\cdot k_1\cdot h_2 \cdot k_2=1$.
+Put $s=h_1\cdot k_1=k_2^{-1}\cdot h_2^{-1}$; note that
+\[s\in (\langle a,c\rangle\cdot\langle b,c\rangle)\cap(\langle b,c\rangle\cdot\langle a,c\rangle).\]
+Then  $s(x)\cap y =\emptyset$ and $s(y)\cap x = \emptyset$.
+Moreover $s(x)\cap s(y)=\emptyset$ since $x\cap y=\emptyset$.
+Indeed, $k_i(x)=x$ and $h_i(y)=y$, and so
+\[s(x)\cap y =h_1\cdot k_1(x)\cap y =h_1(x)\cap h_1(y)=\emptyset;\]
+similarly, one gets $s(y)\cap x = \emptyset$.
+
+\begin{figure}[ht!]
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-21}
+\vskip-0mm
+\end{figure}
+
+Consider the subdisc $M\subset \DD^2$ that is the middle piese of $\DD^2$ after cutting along $x\cup y$.
+Note that $M\ni p_2, p_3$, so $M\setminus \{p_2,p_3\}$ is a twice-punctured disk, and it contains only one isotopy class of essential arcs with endpoints on the boundary.
+Then each component of $s(x)\cap M$ and $s(y)\cap M$ must be isotopic to this arc.
+All components of $s(x)\cap M$ must have endpoints on $x\subset \partial M$,
+and all components of $s(y) \cap M$ must have endpoints on $y\subset M$.
+By compsing $s$ with an element of $\langle c\rangle$, we can unwind this configuration;
+that is, replacing $s$ with $s'=c^{-i}\cdot s$ if necessary, we acheave that $s'(x)\cap z=\emptyset$ and
+$s'(y)\cap z=\emptyset$.
 
 
-\section{Second lemma}
+\begin{figure}[ht!]
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-30}
+\vskip-0mm
+\end{figure}
 
+Now let us focus on the subdiscs $L$ and $R$ in $\DD^2$ and obtained by cutting along $z$ and taking the left and rught piece, respectively.
+There is only one isotopy class of arc $x$ and $s(x)$ in $L\setminus \{p_1,p_2\}$.
+Thus, replacing $s'$ with $s''=a^{-j}\cdot s'$, we acheave that $s''(x)=x$.
+Similarly, replacing $s''$ with $s'''=b^{-k}\cdot s''$, we acheave that $s'''(y)=x$.
+
+Since $\stab(x \cup y) =\langle c\rangle$, we have $s'''\in \langle c\rangle$.
+Therefore
+$s = c^i a^j b^k c^l$.
+
+Now we have
+\[s = c^ia^jb^kc^l = h_1k_1.\]
+Therefore
+\[h_1^{-1} c^i a^j = k_1 c^{-l} b^{-k} \in \langle a,c\rangle\cap \langle b,c\rangle = \stab(x\cup y)=\langle c\rangle.\]
+Thus $h_1 = c^i a^j c^{-m}$ and $k_1 =c^m b^k c^l$, as desired.
+\qeds
+
+
+\begin{thm}{Second lemma}
 Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$, and $b\cdot c\cdot b=c\cdot b\cdot c$.
 Let $d=a^{-1}\cdot b$.
-
-\begin{thm}{Lemma}
 Suppose
-\[p_1\cdot d^{n_1}\cdot p_2 \cdot d^{n_2}\cdot  p_3\cdot  d^{n_3}=1,\]
-where $p_i\in \langle a,c\rangle$ and $n_i\ne 0$.
-Then $p_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ for some $i$.
+\[h_1\cdot d^{n_1}\cdot h_2 \cdot d^{n_2}\cdot  h_3\cdot  d^{n_3}=1,\]
+where $h_i\in \langle a,c\rangle$ and $n_i\ne 0$.
+Then $h_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ for some $i$.
 \end{thm}
 
 \parit{Proof.}
 This equation can be rewritten as
-\[p_1\cdot p_2\cdot p_3\cdot x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1,\]
-where $x=p_3^{-1}\cdot p_2^{-1}\cdot d\cdot p_2\cdot p_3$, $y=p_3^{-1}\cdot d\cdot p_3$, and $z=d$ are elements of the free group $F_2=\ker\phi=\llangle d\rrangle$, and $\phi$ is the homomorphism $B_4\to B_3$ that identifies $a$ and $b$.
+\[h_1\cdot h_2\cdot h_3\cdot x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1,\]
+where $x=h_3^{-1}\cdot h_2^{-1}\cdot d\cdot h_2\cdot h_3$, $y=h_3^{-1}\cdot d\cdot h_3$, and $z=d$ are elements of the free group $F_2=\ker\phi=\llangle d\rrangle$, and $\phi$ is the homomorphism $B_4\to B_3$ that identifies $a$ and $b$.
 
-Note that $p_1\cdot p_2\cdot p_3=1$ and $x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1$.
+Note that $h_1\cdot h_2\cdot h_3=1$ and $x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1$.
 Furthermore, $x$, $y$ and $z$ are primitive elements of $F_2$.
 
 We can assume that the subgroups $\langle y, z\rangle$ is not cyclic.
-Otherwise $p_3\in\langle a\rangle$, and the statent follows.
+Otherwise $h_3\in\langle a\rangle$, and the statent follows.
 
 By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
 
@@ -298,15 +370,15 @@ which is impossible since $\ZZ_{n_2}*\ZZ_{n_2}$ is not commutative.
 
 To emphasise that $|n_1|=|n_2|=1$, put $\eps_1=n_1$, $\eps_2=n_1$, and $N=n_3$.
 Let us rewrite the original equation as
-\[p_1\cdot d^{\eps_1}\cdot p_2 = d^{-N}\cdot p_3^{-1}\cdot d^{-\eps_2}.\]
+\[h_1\cdot d^{\eps_1}\cdot h_2 = d^{-N}\cdot h_3^{-1}\cdot d^{-\eps_2}.\]
 Arguing as in Agol's lemma, we get
-\[p_1\cdot\langle a\rangle= a^{-N}\cdot p_3^{-1}\cdot\langle a\rangle.\]
+\[h_1\cdot\langle a\rangle= a^{-N}\cdot h_3^{-1}\cdot\langle a\rangle.\]
 Indeed ...
 
 
 Therefore,
 \[
-p_1=a^{-N}\cdot p_3^{-1}\cdot a^u
+h_1=a^{-N}\cdot h_3^{-1}\cdot a^u
 \quad\text{and}\quad
 x=a^{-N}\cdot y\cdot a^N.
 \]
@@ -321,12 +393,12 @@ $x^{\epsilon_1}\cdot y^{\epsilon_2}\cdot d^N=1$ gives
 \]
 
 If $\epsilon_1=\epsilon_2$, then $s=0$.
-Hence $p_3\in\langle a\rangle\cdot Z(B_3)$.
+Hence $h_3\in\langle a\rangle\cdot Z(B_3)$.
 Suppose $\zeta=(a\cdot c)^3$; it generates $Z(B_3)$.
-Note that $p_3=a^r\cdot\zeta^k$ and $p_1=a^q\cdot \zeta^{-k}$.
+Note that $h_3=a^r\cdot\zeta^k$ and $h_1=a^q\cdot \zeta^{-k}$.
 Therefore
 \[
-p_2=p_1^{-1}\cdot p_3^{-1}\in\langle a\rangle,
+h_2=h_1^{-1}\cdot h_3^{-1}\in\langle a\rangle,
 \]
 which finishes the proof.
 
@@ -334,14 +406,14 @@ If $\epsilon_1=-\epsilon_2$, then $s=\epsilon_1$.
 Under the standard homomorphism
 $B_3\to \SL_2(\mathbb Z)$ this implies
 \[
-p_3=q\cdot \zeta^{2\cdot k},\qquad
-q=a^r\cdot  c^{\epsilon_1}\cdot a^t.
+h_3=h\cdot \zeta^{2\cdot k}
 \]
+for some $h=a^r\cdot  c^{\epsilon_1}\cdot a^t$.
 Consequently
 \[
-p_2
-=a^{-u}\cdot p_3\cdot a^N\cdot p_3^{-1}
-=a^{-u}\cdot q\cdot a^N\cdot q^{-1}
+h_2
+=a^{-u}\cdot h_3\cdot a^N\cdot h_3^{-1}
+=a^{-u}\cdot h\cdot a^N\cdot h^{-1}
 =a^{r-u-\epsilon_1}\cdot c^N\cdot a^{\epsilon_1-r},
 \]
 where we used
@@ -350,7 +422,7 @@ c^\epsilon\cdot  a^N\cdot  c^{-\epsilon}
 =a^{-\epsilon}\cdot c^N\cdot a^\epsilon,
 \qquad \epsilon=\pm1.
 \]
-Thus, $p_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and the proof is finished.
+Thus, $h_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and the proof is finished.
 \qeds
 
 {\sloppy
@@ -387,5 +459,5 @@ Consider the unit sphere $S$ in $\Ram_\Gamma$;
 observe that $S$ is not $\CAT[1]$.
 
 Since $m$ is minimal, one can see that $S$ is locally $\CAT[1]$.
-It follows that there is a closed geodesic $\gamma$ in $S$ of length $<2\cdot\pi$.
-Note that projection of $\gamma$ in the unit sphere in $\RR^m$ must lie in an open hemisphere...
+It follows that there is a closed geodesic $s$ in $S$ of length $<2\cdot\pi$.
+Note that projection of $s$ in the unit sphere in $\RR^m$ must lie in an open hemisphere...
