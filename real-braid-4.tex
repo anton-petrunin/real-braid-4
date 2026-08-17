@@ -39,28 +39,34 @@ pdfauthor={\theauthors}
 \section{Introduction}
 
 Let us equip the complex space $\CC^n$ with the standard Euclidean metric.
-Let $W$ be $\CC^n$ with the hyperplanes $z_i=z_j$ removed for all $i\ne j$; here $z_1,\dots,z_n$ are the standard coordinates.
+Let $W$ be $\CC^n$ with removed hyperplanes $z_i=z_j$ for all $i\ne j$; here $z_1,\dots,z_n$ are the standard coordinates.
 Denote by $\tilde W$ the universal cover of $W$, equipped with the induced metric.
-The completion of $\tilde W$ will be called the \emph{complex braid space} with $n$ strings and denoted by $\CB^n$.
+The completion of $\tilde W$ will be called the \emph{complex braid space}%
+\footnote{The terminology comes from the usual interpretation of $W$ as the configuration space of $n$-tuples of distinct points in the complex plane.
+A path in $W$ describes a motion of these points without collisions; so their trajectories form a braid with $n$ strings.
+The braid group $B_n$ acts isometrically on $\CB^n$, and the quotient space $\CB^n/B_n$ is $\CC^n/S_n$;
+here $S_n$ is the symmetry group that acts on $\CC^n$ by permuting coordinates.}
+with $n$ strings and denoted by $\CB^n$.
+
+The following conjecture is a special case of a conjecture formulated by Daniel Allcock~\cite[Conjecture 1.4]{allcock}, which is related to an earlier conjecture of Ruth Charney and Michael Davis (see \cite[Conjecture 3]{charney-davis-95}), which in turn is motivated by a conjecture of Arnold, Pham and Thom on complex hyperplane arrangements.
+We are responsible for a more general version of Allcock's conjecture \cite[Conjecture 1.1]{panov-petrunin}, which we have been trying to prove for several years.
 
 \begin{thm}{Conjecture}\label{braid-conj}
 $\CB^n$ is $\CAT(0)$ for any integer $n\ge 1$.
 \end{thm}
 
-A more general conjecture was formulated by Daniel Allcock~\cite[Conjecture 1.4]{allcock}, and it is related to an earlier conjecture of Ruth Charney and Michael Davis (see \cite[Conjecture 3]{charney-davis-95}) which in turn is motivated by a conjecture of Arnold, Pham and Thom on complex hyperplane arrangements.
-We are responsible for a more general version of Allcock's conjecture \cite[Conjecture 1.1]{panov-petrunin}, which we have been trying to prove for several years.
-
 The case $n=2$ of \ref{braid-conj} is easy.
 The case $n=3$ is already nontrivial.
-Two proofs of this statement are given by the authors in \cite{panov-petrunin};
+Two proofs of this statement are given by the authors \cite{panov-petrunin};
 one of them follows from the result of Ruth Charney and Michael Davis \cite{charney-davis-93}.
 In this note we describe a small step toward the case $n=4$.
 
 Consider the real subspace $\RR^n\subset\CC^n$.
-Denote by $\RB^n$ its inverse image under the natural projection $\CB^n\to \CC^n$;
+Denote by $\RB^n$ inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$;
 we will call it the \emph{real braid space} with $n$ strings.
+One may think of the real braid space as a space of braid diagrams.
 
-\begin{thm}{Theorem}
+\begin{thm}{Theorem}\label{thm:main}
 $\RB^4$ is $\CAT(0)$.
 \end{thm}
 
@@ -73,16 +79,25 @@ Therefore, the theorems gives a partial case of the conjecture for $n=4$.
 
 \begin{thm}{Lemma}\label{lem:convex-preimage}
 Let $K\subset \CC$ be a closed convex set.
-Then the inverse image of $K^n\subset \CC^n$ under the natural projection $\CB^n\to \CC^n$ is convex.
+Then the inverse image $\KB^n$ of $K^n\subset \CC^n$ under the natural projection $\CB^n\to \CC^n$ is convex.
 
 In particular, $\RB^n$ is a convex subset of $\CB^n$.
 \end{thm}
 
+\parit{Proof.}
+The nearest-point projection $r\:\CC\to K$ is short.
+Applying $r$ to each strand of a braid gives a short retraction
+$\CB^n\to \KB^n$.
+
+Moreover, if a string with endpoints in $\KB^n$ leaves this set, then the retraction decreases its length.
+In particular, a minimizing geodesic with endpoints in $\KB^n$ cannot leave $\KB^n$,
+and the convexity follows.
+Taking $K=\RR$ gives the last assertion.
+\qeds
+
 The space $\RB^4$ is a 4-dimensional polyhedral space.
 Since all hyperplanes $z_i=z_j$ share the diagonal line $z_1=\ldots=z_n$,
 it splits as a Euclidean product space $\RR\times C^3$, where $C^3$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$.
-
-Note that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$.
 
 The space $\Sigma$ is glued from a countable collection of copies of the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
 Let us describe the gluing.
@@ -91,37 +106,50 @@ We will keep the notation $a$, $b$ and $c$ for the standard generators of the br
 so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$ and $b\cdot c\cdot b=c\cdot b\cdot c$.
 Take a copy of $\triangle$ for each element of $B_4$ and glue two triangles along one side $a$, $b$, or $c$ if their elements differ by left multiplication by a power of $a$, $b$, or $c$, respectively.
 
-This description easily implies that $\Sigma$ is locally $\CAT(1)$.
+Now let us reduce \ref{thm:main} to the next claim, which will be roved in the following sections.
+
+\begin{thm}{Key claim}\label{clm:sigma}
+The space $\Sigma$ does not have a closed geodesic of length $<2\cdot\pi$.
+\end{thm}
+
+\parit{Reduction of \ref{thm:main} to \ref{clm:sigma}.}
+Note that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$.
+
+The description above implies that $\Sigma$ is locally $\CAT(1)$.
 Therefore, by the generalized Cartan--Hadamard theorem, it is sufficient to prove  that
 any closed curve in $\Sigma$ of length $<2\cdot\pi$ is null-homotopic in the class of curves of length $<2\cdot\pi$.
 
-
 Arguing by contradiction, we can find a shortest curve closed curve in $\Sigma$ of length $<2\cdot\pi$ that is not null-homotopic in the class of curves of length $<2\cdot\pi$.
-This step is possible since $\Sigma$ admits a cocampact action by $B_4$ and so we can apply the mimiting procedure. %???
-Therfore our question reduces to the following claim which we are going to prove in the following sections.
+This step is possible since $\Sigma$ admits a cocompact action by $B_4$ and so we can apply the limiting procedure. %???
+\qeds
 
-\begin{thm}{Key claim}
-The space $\Sigma$ does not have a closed geodesic of length $<2\cdot\pi$.
-\end{thm}
 
 
 \section{Short trajectories}
 
-Let $\triangle$ be the spherical triangle with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
+\begin{wrapfigure}{o}{36mm}
+\centering
+\vskip-3mm
+\includegraphics{mppics/pic-5}
+\vskip-0mm
+\end{wrapfigure}
+
+Recall that $\triangle$ denotes the spherical triangle with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
 Let us denote by $A$, $B$, and $C$ the vertices of $\triangle$ with right angle at $C$,
 and let $M$ be the midpoint of the side $AB$.
-A closed polygonal line can be encoded by its vertices in the cyclic order; for example $CM$ denotes the polygonal line that comes from $C$ to $M$, and comes back.
+A closed polygonal line can be encoded by its vertices in the cyclic order; for example, $CM$ denotes the polygonal line that comes from $C$ to $M$, and comes back.
 
-A closed polygonal line $\gamma$ in $\triangle$ with all vertices on the boundary of $\triangle$ will be called a \emph{trajectory} if it satisfies the following conditions.
-We will be interested in trajectories that locally minimize their length; these are possible candidates for projections of closed geodesics in $\RB^4$ to $\triangle$.
-
-Such a trajectory $\gamma$ meets the following properties:
+Suppose $\Sigma$ has a closed stable geodesic of length less than $2\cdot\pi$;
+denote by $\gamma$ its projection to $\triangle$.
+Note that $\gamma$ satisfies the following properties:
 \begin{itemize}
-\item If a vertex lies in an interior of a side, then $\gamma$ behaves as a billiard trajectory; that is, the angle of incidence is equal to the angle of reflection.
-\item If a vertex of $\gamma$ is the $\tfrac\pi2$-angled vertex of $\triangle$, then $\gamma$ switches the direction to the opposite one.
-\item If a vertex of $\gamma$ is one of the remaining two $\tfrac\pi3$-angled vertices of $\triangle$, then there is no restriction on the directions of incoming and outgoing edges.
+\item $\gamma$ is a closed polygonal line with all vertices on the boundary of $\triangle$;
+\item if a vertex of $\gamma$ lies in an interior of a side of $\triangle$, then $\gamma$ behaves as a billiard trajectory; that is, the angle of incidence is equal to the angle of reflection.
+\item if $\gamma$ has a vertex $C$, then it switches the direction at $C$ to the opposite one.
+\item If $\gamma$ has a vertex $A$ or $B$, then there is no restriction on the directions of incoming and outgoing edges.
 \item Any arc of $\gamma$ that does not pass thru $A$ or $B$ has length $<\pi$.
 \end{itemize}
+The polygonal lines in $\triangle$ that meet these properties will be called \emph{trajectories}.
 
 \begin{thm}{Lemma}\label{lem:short-trajectories}
 Let $\triangle$, $A,B,C$ and $M$ be as above.
@@ -131,10 +159,47 @@ Then, up to symmetry of $\triangle$ there are only the following trajectories of
 \end{thm}
 
 \parit{Proof.}
-Recall that any open interval of $\gamma$ of length $\pi$ must contain $A$ or $B$.
-In particular, if $\gamma$ does not pass thru $A$ or $B$, then $\length\gamma<\pi$.
+Reflecting $\triangle$ in its sides gives the tetrahedral tiling of $\mathbb{S}^2$.
+The images of $A$ are the vertices of a regular tetrahedron, the images of $B$ are their antipodes, and the images of $C$ are the midpoints of its edges.
 
-...
+Put $\alpha=|A-C|_{\mathbb{S}^2}$ and $\beta=|A-B|_{\mathbb{S}^2}$.
+The spherical cosine rule gives
+\[
+\cos\alpha=\frac1{\sqrt3},
+\qquad
+\cos\beta=\frac13,
+\qquad
+2\cdot\alpha+\beta=\pi.
+\]
+In particular,
+\[
+\tfrac\pi4<\alpha<\tfrac\pi3,
+\qquad
+\tfrac\pi3<\beta<\tfrac\pi2.
+\]
+
+Choose a trajectory $\gamma$.
+Cut $\gamma$ at all passages thru $A$ and $B$.
+Each resulting arc has length $<\pi$, and after unfolding it is a minimizing geodesic in $\mathbb{S}^2$.
+Thus, up to symmetry, it is either $AB$, of length $\beta$, or $ACA$, of length $2\alpha$.
+Moreover, the number of $AB$-arcs is even.
+Hence, writing it as $2\cdot k$ arcs of the first kind and $q$ arcs of the second kind, we have
+\[
+2\cdot k\cdot \beta+2\cdot q\cdot \alpha<2\cdot \pi.
+\]
+The inequalities above leave only
+\[
+(k,q)=(1,0),(2,0),(1,1),(0,1),(0,2),(0,3),
+\]
+which give respectively
+\[
+AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad ACACAC.
+\]
+
+It remains to consider the case when $\gamma$ misses $A$ and $B$.
+Then $\length\gamma<\pi$.
+Stability forces $\gamma$ to pass through $C$; otherwise its spherical development can be moved slightly to shorten it.
+Unfolding at $C$, the nearest distinct images of $C$ are at distance $\pi/2$, and, up to symmetry, the corresponding trajectory is $CM$.
 \qeds
 
 \section{Encoding}

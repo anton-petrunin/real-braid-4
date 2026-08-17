@@ -2,12 +2,12 @@
 %%BoundingBox: 16 -63 267 63 
 %%HiResBoundingBox: 16.75804 -62.6121 266.70647 62.6121 
 %%Creator: MetaPost 2.02
-%%CreationDate: 2026.08.16:2158
+%%CreationDate: 2026.08.17:1556
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
-%%+ font KNJFED-CMMI10 QODMIA-CMR7
+%%+ font KNJFED-CMMI10 DRMNLU-CMR7
 %%DocumentSuppliedResources: procset mpost-minimal
-%%+ font KNJFED-CMMI10 QODMIA-CMR7
+%%+ font KNJFED-CMMI10 DRMNLU-CMR7
 %%EndComments
 %%BeginProlog
 %%BeginResource: procset mpost-minimal
@@ -36,7 +36,7 @@ FontDirectory/KNJFED-CMMI10 known{/KNJFED-CMMI10 findfont dup/UniqueID known{dup
 11 dict begin
 /FontType 1 def
 /FontMatrix [0.001 0 0 0.001 0 0 ]readonly def
-/FontName /KNJFED-CMMI10 def
+/FontName /QBRPSE-CMMI10 def
 /FontBBox {-32 -250 1048 750 }readonly def
 /UniqueID 5087385 def
 /PaintType 0 def
@@ -285,7 +285,7 @@ A5C256F1607AA5CCAD7C6B99C6
 cleartomark
 {restore}if
 %%EndResource
-%%BeginResource: font QODMIA-CMR7
+%%BeginResource: font DRMNLU-CMR7
 %!PS-AdobeFont-1.0: CMR7 003.002
 %%Title: CMR7
 %Version: 003.002
@@ -297,7 +297,7 @@ cleartomark
 % This license is in the accompanying file OFL.txt, and is also
 % available with a FAQ at: http://scripts.sil.org/OFL.
 %%EndComments
-FontDirectory/QODMIA-CMR7 known{/QODMIA-CMR7 findfont dup/UniqueID known{dup
+FontDirectory/DRMNLU-CMR7 known{/DRMNLU-CMR7 findfont dup/UniqueID known{dup
 /UniqueID get 5000790 eq exch/FontType get 1 eq and}{pop false}ifelse
 {save true}{false}ifelse}{false}ifelse
 11 dict begin
@@ -542,7 +542,7 @@ cleartomark
 %%EndResource
 %%EndProlog
 %%BeginSetup
- /cmmi10 /KNJFED-CMMI10 def
+ /cmmi10 /QBRPSE-CMMI10 def
  /cmr7 /DPTMTJ-CMR7 def
 %%EndSetup
 %%Page: 1 1

@@ -17,8 +17,35 @@ linecap:=butt;
 %filenametemplate "%j-%1c.svg";
 outputformat := "eps";
 
+beginfig(5)
+save u,p;
+u:=1cm;
+path p[];
 
+z.C=origin;
+z.A=(-1,-1)*u;
+z.B=z.A zscaled (0,1);
 
+p1=z.A{z.A rotated 120}..{z.B rotated 60}z.B--z.C--cycle;
+
+z.M=point .5 of p1;
+
+draw p1;
+
+draw z.C--z.M dashed evenly;
+
+Dot z.A,z.B,z.C,z.M;
+
+label.lft(btex $A$ etex, z.A);
+label.rt(btex $B$ etex, z.B);
+label.top(btex $C$ etex, z.C);
+label.bot(btex $M$ etex, z.M);
+
+label.top(btex $c$ etex, point .35 of p1);
+label.urt(btex $a$ etex, point 1.5 of p1);
+label.ulft(btex $b$ etex, point 2.5 of p1);
+
+endfig;
 
 beginfig(10) 
 save u,p;
