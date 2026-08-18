@@ -38,8 +38,7 @@ pdfauthor={\theauthors}
 
 \section{Introduction}
 
-Let us equip the complex space $\CC^n$ with the standard Euclidean metric.
-Let $W$ be $\CC^n$ with removed hyperplanes $z_i=z_j$ for all $i\ne j$; here $z_1,\dots,z_n$ are the standard coordinates.
+Let $\CC^n$ be the complex spacewith the standard Euclidean metric and the standard coordinates $z_1,\dots,z_n$, and let $W$ be $\CC^n$ with removed hyperplanes $z_i=z_j$ for all $i\ne j$.
 Denote by $\tilde W$ the universal cover of $W$, equipped with the induced metric.
 The completion of $\tilde W$ will be called the \emph{complex braid space}%
 \footnote{The terminology comes from the usual interpretation of $W$ as the configuration space of $n$-tuples of distinct points in the complex plane.
@@ -55,11 +54,11 @@ We are responsible for a more general version of Allcock's conjecture \cite[Conj
 $\CB^n$ is $\CAT(0)$ for any integer $n\ge 1$.
 \end{thm}
 
-The case $n=2$ of \ref{braid-conj} is easy.
-The case $n=3$ is already nontrivial.
-Two proofs of this statement are given by the authors \cite{panov-petrunin};
+The case $n=2$ is easy.
+The case $n=3$ is already nontrivial;
+two proofs are given by the authors \cite{panov-petrunin};
 one of them follows from the result of Ruth Charney and Michael Davis \cite{charney-davis-93}.
-In this note we describe a small step toward the case $n=4$.
+In this note we describe a step toward the case $n=4$.
 
 Consider the real subspace $\RR^n\subset\CC^n$.
 Denote by $\RB^n$ inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$;
@@ -72,15 +71,15 @@ $\RB^4$ is $\CAT(0)$.
 
 By Lemma~\ref{lem:convex-preimage} below, $\RB^n$ is a convex subset of $\CB^n$.
 In particular, if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$.
-Therefore, the theorems gives a partial case of the conjecture for $n=4$.
+Therefore, the theorems gives a special case of the conjecture for $n=4$.
 
 
-\section{Sphere in the real braid space}
+\section{Real braid space}
+
+Given $K\subset \CC$, denote by $\KB^n$ of the inverse image $K^n\subset \CC^n$ under the natural projection $\CB^n\to \CC^n$.
 
 \begin{thm}{Lemma}\label{lem:convex-preimage}
-Let $K\subset \CC$ be a closed convex set.
-Then the inverse image $\KB^n$ of $K^n\subset \CC^n$ under the natural projection $\CB^n\to \CC^n$ is convex.
-
+If $K\subset \CC$ is a closed convex set, then $\KB^n$ is a closed convex set of $\CB^n$.
 In particular, $\RB^n$ is a convex subset of $\CB^n$.
 \end{thm}
 
@@ -96,21 +95,32 @@ Taking $K=\RR$ gives the last assertion.
 \qeds
 
 The space $\RB^4$ is a 4-dimensional polyhedral space.
-Since all hyperplanes $z_i=z_j$ share the diagonal line $z_1=\ldots=z_n$,
-it splits as a Euclidean product space $\RR\times C^3$, where $C^3$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$.
+Since all hyperplanes $z_i=z_j$ share the diagonal line $z_1=z_2=z_3=z_4$,
+it splits as a Euclidean product space $\RR\times C^3$, where $C^3$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$; we may think that $\Sigma$ is the unit sphere in cone $C^3$ centered at its tip.
+
+\begin{wrapfigure}{o}{36mm}
+\centering
+\vskip-3mm
+\includegraphics{mppics/pic-4}
+\vskip-0mm
+\end{wrapfigure}
 
 The space $\Sigma$ is glued from a countable collection of copies of the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
-In particular, $\Sigma$ has \emph{finitely many shapes}; that is, there are only finitely many isometry classes of simplices.
 Let us describe the gluing.
 First denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
 We will keep the notation $a$, $b$ and $c$ for the standard generators of the braid group $B_4$,
 so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$ and $b\cdot c\cdot b=c\cdot b\cdot c$.
 Take a copy of $\triangle$ for each element of $B_4$ and glue two triangles along one side $a$, $b$, or $c$ if their elements differ by left multiplication by a power of $a$, $b$, or $c$, respectively.
 
+Note that $\Sigma$ has \emph{finitely many shapes}; that is, $\Sigma$ admits a triangulation with finitely many isometry classes of simplices.
+
 Now let us reduce \ref{thm:main} to the next claim, which will be roved in the following sections.
 
+A closed curve in a metric space is called \emph{geodesic circle} if it is globally isometric to a circle;
+in other words, one of two arcs connecting any two points on the currve is a minimizing geodesic.
+
 \begin{thm}{Key claim}\label{clm:sigma}
-The space $\Sigma$ does not have a closed geodesic of length $<2\cdot\pi$.
+The space $\Sigma$ does not have geodesic circle of length $<2\cdot\pi$.
 \end{thm}
 
 \parit{Reduction of \ref{thm:main} to \ref{clm:sigma}.}
@@ -132,15 +142,16 @@ Since $\Sigma$ has finitely many shapes, it remains to apply \cite[II.5.4(7)]{br
 Recall that $\triangle$ denotes the spherical triangle with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
 Let us denote by $A$, $B$, and $C$ the vertices of $\triangle$ with right angle at $C$,
 and let $M$ be the midpoint of the side $AB$.
-A closed polygonal line can be encoded by its vertices in the cyclic order; for example, $CM$ denotes the polygonal line that comes from $C$ to $M$, and comes back.
 
-Suppose $\Sigma$ has a closed stable geodesic $\tilde \gamma$ of length less than $2\cdot\pi$;
+A closed polygonal line in $\triangle$ can be encoded by its vertices in the cyclic order; for example, $CM$ denotes the polygonal line that comes from $C$ to $M$, and comes back.
+
+Suppose $\Sigma$ has a geodesic circle $\tilde \gamma$ of length less than $2\cdot\pi$;
 denote by $\gamma$ its projection to $\triangle$.
 Note that $\gamma$ satisfies the following properties:
 \begin{itemize}
-\item $\gamma$ is a closed polygonal line with all vertices on the boundary of $\triangle$;
-\item if a vertex of $\gamma$ lies in an interior of a side of $\triangle$, then $\gamma$ behaves as a billiard trajectory; that is, the angle of incidence is equal to the angle of reflection.
-\item if $\gamma$ has a vertex $C$, then it switches the direction at $C$ to the opposite one.
+\item The curve $\gamma$ is a closed polygonal line of length less than $2\cdot\pi$ with all vertices on the boundary of $\triangle$.
+\item If a vertex of $\gamma$ lies in an interior of a side of $\triangle$, then $\gamma$ behaves as a billiard trajectory; that is, the angle of incidence is equal to the angle of reflection.
+\item If $\gamma$ has $C$ as a vertex, then it switches the direction at $C$ to the opposite one.
 \item If $\gamma$ has a vertex $A$ or $B$, then there is no restriction on the directions of incoming and outgoing edges.
 \item Any arc of $\gamma$ that does not pass thru $A$ or $B$ has length $<\pi$.
 \end{itemize}
@@ -148,154 +159,53 @@ The polygonal lines in $\triangle$ that meet these properties will be called \em
 
 \begin{thm}{Lemma}\label{lem:short-trajectories}
 Let $\triangle$, $A,B,C$ and $M$ be as above.
-Then, up to symmetry of $\triangle$ there are only the following trajectories of length less than $2\cdot\pi$:
+Then, up to symmetry of $\triangle$ there are only the following trajectories:
 \[CM,\quad AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad \text{and}\quad ACACAC.\]
 
 \end{thm}
 
 \parit{Proof.}
-Reflecting $\triangle$ in its sides gives the tetrahedral tiling of $\mathbb{S}^2$.
-The images of $A$ are the vertices of a regular tetrahedron, the images of $B$ are their antipodes, and the images of $C$ are the midpoints of its edges.
+Reflecting $\triangle$ in its sides gives a tiling of $\mathbb{S}^2$.
+The images of $A$ are the vertices of a regular tetrahedron,
+the images of $B$ are the vertices of the antipodal tetrahedron,
+and the images of $C$ are the intersctions of their edges.
 
-Put $\alpha=|A-C|_{\mathbb{S}^2}$ and $\beta=|A-B|_{\mathbb{S}^2}$.
-The spherical cosine rule gives
+Note that
 \[
-\cos\alpha=\frac1{\sqrt3},
+\cos|A-C|_{\mathbb{S}^2}=\frac1{\sqrt3},
 \qquad
-\cos\beta=\frac13,
+\cos|A-B|_{\mathbb{S}^2}=\frac13,
 \qquad
-2\cdot\alpha+\beta=\pi.
+2\cdot|A-C|_{\mathbb{S}^2}+|A-B|_{\mathbb{S}^2}=\pi.
 \]
 In particular,
 \[
-\tfrac\pi4<\alpha<\tfrac\pi3,
+\tfrac\pi4<|A-C|_{\mathbb{S}^2}<\tfrac\pi3,
 \qquad
-\tfrac\pi3<\beta<\tfrac\pi2.
+\tfrac\pi3<|A-B|_{\mathbb{S}^2}<\tfrac\pi2.
 \]
 
 Choose a trajectory $\gamma$.
-Cut $\gamma$ at all passages thru $A$ and $B$.
+Cut $\gamma$ into arcs at the passages thru $A$ and $B$.
 Each resulting arc has length $<\pi$, and after unfolding it is a minimizing geodesic in $\mathbb{S}^2$.
-Thus, up to symmetry, it is either $AB$, of length $\beta$, or $ACA$, of length $2\alpha$.
+Thus, up to symmetry, each arc is either $AB$, or $ACA$.
 Moreover, the number of $AB$-arcs is even.
-Hence, writing it as $2\cdot k$ arcs of the first kind and $q$ arcs of the second kind, we have
-\[
-2\cdot k\cdot \beta+2\cdot q\cdot \alpha<2\cdot \pi.
-\]
-The inequalities above leave only the following possibilities for pair $(k,q)$:
-\[(1,0),\quad (2,0),\quad(1,1),\quad(0,1),\quad(0,2),\quad\text{and}\quad(0,3),\]
-which give respectively
+This leaves the following cases
 \[
 AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad \text{and}\quad ACACAC.
 \]
 
 It remains to consider the case when $\gamma$ misses $A$ and $B$.
-Then $\length\gamma<\pi$.
-Stability forces $\gamma$ to pass through $C$; otherwise its spherical development can be moved slightly to shorten it.
-Unfolding at $C$, the nearest distinct images of $C$ are at distance $\tfrac\pi2$, and, up to symmetry, the corresponding trajectory is $CM$.
+Then $\length\gamma<\pi$ and $\gamma$ lifts to a closed geodesic, say $\bar \gamma$ in $\mathbb{S}^2$;
+a cyclic subgroup of the reflection group of $\triangle$ must act on $\bar\gamma$ by rotations with angle $<\pi$.
+Checking all cyclic subroups leves only one trajectory $CM$.
 \qeds
 
-\section{Encoding}
+In section \ref{sec:encodings}, after proving a pair of lemmas about $B_4$,
+we will show that non of these trajectories lifts to a geodesic cirvle in $\Sigma$.
+This will finish the proof.
 
-Let $\tilde \gamma$ be a closed geodesic in $\Sigma$ such that $\length\gamma<2\cdot\pi$.
-Note that $\tilde \gamma$ enters and exits interior of each copy of $\triangle$ thru different sides;
-if not, we can make a shortcut along the side.
-Therefore we can approximate $\tilde \gamma$ by a curve $\tilde \gamma'$ that crossed sides of triangle at finite number of points; moreover, if two points consequent points lie on one side, then these are two vertices of this side.
 
-Recall that each triangle in $\Sigma$ is labeled by an element of $B_4$.
-Let us write a cyclic sequence of labels $b_1,\dots,b_k$ of triangle with their interior visited by $\tilde \gamma'$;
-now let us label $i$-th crossing point by $z_i=b_{i+1}\cdot b_i^{-1}$, so at the $i$-th crossing you multiply the old label by $z_i$.
-Evidently, $z_1\cdots z_k=1$.
-The sequence $z_1,\dots,z_k$ will be called \emph{encoding} of $\tilde\gamma$;
-it is defined almost uniquely: if $i$-th edge of $\tilde\gamma$ runs along a side, say $c$, then changing labels $z_{i-1}$ and $z_i$ to $c^k\cdot z_{i-1}$ and $z_i\cdot c^{-k}$ produces another set of labels.
-
-Let us list possible encodings for curves that project to a trajectories of length less than $2\cdot\pi$ in the spherical triangle $\triangle$ with an aditional constrain that the trajectory lifts to a closed geodesic.
-
-\parit{$CM$.} The trajectory $CM$ can have an encoding $(x,y)$, where
-\begin{itemize}
-\item $x\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, and since the lift is geodesic, $x\notin\langle a\rangle\cup \langle b\rangle$.
-\item $y\in \langle c\rangle$ at $M$, and since the lift is geodesic, $y\ne 1$.
-\end{itemize}
-In other words $x=a^m\cdot b^n$ and $y=c^k$ for some $m\ne 0$, $n\ne 0$, and $k\ne 0$.
-Since $a^m\cdot b^n\cdot c^k=1$ if and only if $m=n=k=0$, this trajectory does not have geodesic lifts.
-
-\parit{$AB$.} The trajectory $AB$ can have an encoding $(x,y)$, where
-\begin{itemize}
-\item $x\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
-\item $y\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
-\end{itemize}
-To show that this does not have geodesic lifts, we need to check that $x\cdot y\ne1\in B_4$.
-If $x\cdot y=1$, then $x\cdot y\cdot x\cdot y=1$, but the latter is not possible from the case $ABAB$.
-
-\parit{$ABAB$.} The trajectory $ABAB$ can have an encoding $(x_1,y_1,x_2,y_2)$, where
-\begin{itemize}
-\item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
-\item $y_1,y_2\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y_1,y_2\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
-\end{itemize}
-Again, we need to check that $x_1\cdot y_1\cdot x_2\cdot y_2\ne1\in B_4$, which is proved in
-Corollary \ref{cor:ABAB} of Agol's lemma.
-
-\parit{$ABAC$.} The trajectory $ABAC$ can have an encoding $(x_1,y,x_2,z)$, where
-\begin{itemize}
-\item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1\notin \langle b\rangle\cdot\langle c\rangle$ and
-$x_2\z\notin \langle c\rangle\cdot\langle b\rangle$;
-\item $y\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$;
-\item $z\in  \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
-\end{itemize}
-We need to check that $x_1\cdot y\cdot x_2\cdot z\ne 1\in B_4$, and this also follows from the first Agol's lemma.
-
-\parit{Case $AC$:} we have elements
-\begin{itemize}
- \item $x\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
- \item $z\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
-\end{itemize}
-Since the lift is closed in the braid space, we have $x\cdot z=1\in B_4$.
-So, the problem reduces the following:
-\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)\not\ni 1.\]
-This case, as well as the next will follow from the next one.
-
-\parit{Case $ACAC$:} we have elements
-\begin{itemize}
- \item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
- \item $z_1,z_2\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2\notin \langle b\rangle$.
-\end{itemize}
-Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2 =1\in B_4$.
-So, the problem reduces the following:
-\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\cdot
-(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\not\ni 1;\]
-equivalently,
-\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)\cap(\langle a,b\rangle \setminus \langle b\rangle)\cdot (\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)=\varnothing.\]
-
-\parit{Case $ACACAC$:} we have elements
-\begin{itemize}
- \item $x_1,x_2,x_3\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2,x_3\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
- \item $z_1,z_2,z_3\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2,z_3\notin \langle b\rangle$.
-\end{itemize}
-Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2\cdot x_3\cdot z_3 =1\in B_4$.
-So, the problem reduces the following:
-\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\cdot
-(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\cdot
-(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\not\ni 1.\]
-This case follows from the second Agol's lemma.
 
 \section{Agol's lemma}
 
@@ -380,37 +290,41 @@ Thus, replacing $s'$ with $s''=a^{-j}\cdot s'$, we acheave that $s''(x)=x$.
 Similarly, replacing $s''$ with $s'''=b^{-k}\cdot s''$, we acheave that $s'''(y)=x$.
 
 Since $\stab(x \cup y) =\langle c\rangle$, we have
-\begin{align*}
-s'''&\in \langle c\rangle,
-\\
-s''&\in \langle b\rangle\cdot\langle c\rangle,
-\\
-s'&\in \langle a\rangle\cdot\langle b\rangle\cdot\langle c\rangle,
-\\
-s&\in \langle c\rangle\cdot\langle a\rangle\cdot\langle b\rangle\cdot\langle c\rangle=\langle c\rangle\cdot\langle a, b\rangle\cdot\langle c\rangle,
-\end{align*}
-\qeds
+\[s'''\in \langle c\rangle\quad\Rightarrow\quad s''\in \langle b\rangle\cdot\langle c\rangle\quad\Rightarrow\quad s'\in \langle a\rangle\cdot\langle b\rangle\cdot\langle c\rangle\quad\Rightarrow\quad s\in \langle c\rangle\cdot\langle a\rangle\cdot\langle b\rangle\cdot\langle c\rangle\]
+--- hence the result.\qeds
 
 
 \begin{thm}{Corollary}\label{cor:ABAB}
-Suppose
-\[h_1\cdot k_1\cdot h_2 \cdot k_2=1,\]
+Suppose $h_1\cdot k_1\cdot h_2 \cdot k_2=1$,
 where $h_i\in \langle a,c\rangle$ and $k_i\in \langle b,c\rangle$.
-Then $h_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ or $k_i\in\langle b\rangle\cdot \langle c\rangle\cdot \langle b\rangle$ for some $i$.
+Then one of the following statements hold:
+\begin{enumerate}[(i)]
+\item $h_1,h_2\in\langle c\rangle\cdot \langle a\rangle\cdot \langle c\rangle$ and $k_1,k_2\in\langle c\rangle\cdot \langle b\rangle\cdot \langle c\rangle$,
+\item $h_1,h_2\in \langle c\rangle$, or
+\item $k_1,k_2\in \langle c\rangle$.
+\end{enumerate}
+
 \end{thm}
 
 \parit{Proof.}
 Let $s=h_1\cdot k_1= k_2^{-1} \cdot h_2^{-1}$.
-By \ref{lem:agol1}, we need to consider three cases
+By \ref{lem:agol1}, we have three cases:
+$s\in\langle c\rangle\cdot \langle a,b\rangle\cdot\langle c\rangle$,
+$s\in\langle a,c\rangle$,
+and
+$s\in \langle b,c\rangle$.
 
 Suppose  $s \in \langle c\rangle\cdot \langle a,b\rangle\cdot\langle c\rangle$;
 in other words, $s = c^i\cdot a^j\cdot b^k\cdot c^l$ for some $i$, $j$, $k$, and $l$.
 Then,
-\[h_1^{-1} c^i a^j = k_1 c^{-l} b^{-k} \in \langle a,c\rangle\cap \langle b,c\rangle = \stab(x\cup y)=\langle c\rangle.\]
-Thus $h_1 = c^i a^j c^{-m}$ and $k_1 =c^m b^k c^l$, which already implies more than we need.
+\[h_1^{-1} c^i a^j = k_1 c^{-l} b^{-k} \in \langle a,c\rangle\cap \langle b,c\rangle =\langle c\rangle,\]
+which implies $h_1\in\langle c\rangle\cdot \langle a\rangle\cdot \langle c\rangle$ and $k_1\in\langle c\rangle\cdot \langle b\rangle\cdot \langle c\rangle$.
+Similarly, we get
+$h_2\z\in\langle c\rangle\cdot \langle a\rangle\cdot \langle c\rangle$ and $k_2\in\langle c\rangle\cdot \langle b\rangle\cdot \langle c\rangle$
 
-If $s \in \langle b,c\rangle$, then $h_1\in\langle a,c\rangle\cap \langle b,c\rangle=\langle c\rangle$; similarly $h_2\in\langle c\rangle$ --- again, this implies more than we need.
-The last case $s \in \langle a,c\rangle$ can be done the same way.
+If $s \in \langle b,c\rangle$, then $h_1\in\langle a,c\rangle\cap \langle b,c\rangle=\langle c\rangle$; similarly $h_2\in\langle c\rangle$.
+
+In the last case $s \in \langle a,c\rangle$, we get $k_1,k_2\in\langle c\rangle$.
 \qeds
 
 \section{Second lemma}
@@ -500,6 +414,111 @@ c^\epsilon\cdot  a^N\cdot  c^{-\epsilon}
 \]
 Thus, $h_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and the proof is finished.
 \qeds
+
+\section{Encodings}\label{sec:encodings}
+
+Let $\tilde \gamma$ be a geodesic circle in $\Sigma$ such that $\length\gamma<2\cdot\pi$.
+Note that $\tilde \gamma$ enters and exits interior of each copy of $\triangle$ thru different sides;
+if not, we can make a shortcut along the side.
+Therefore we can approximate $\tilde \gamma$ by a curve $\tilde \gamma'$ that crossed sides of triangle at finite number of points; moreover, if two consequent points lie on one side, then these are two vertices of this side.
+
+Recall that each triangle in $\Sigma$ is labeled by an element of $B_4$.
+Let us write a cyclic sequence of labels $b_1,\dots,b_k$ of interiors of triangles visited by $\tilde \gamma'$;
+now let us label $i$-th crossing point by $z_i=b_{i+1}\cdot b_i^{-1}$, so at the $i$-th crossing you multiply the old label by $z_i$.
+Evidently, $z_1\cdots z_k=1$.
+The cyclic sequence $(z_1,\dots,z_k)$ will be called \emph{encoding} of $\tilde\gamma$;
+it is defined almost uniquely: if $i$-th edge of $\tilde\gamma$ runs along a side, say $c$, then changing labels $z_{i-1}$ and $z_i$ to $c^k\cdot z_{i-1}$ and $z_i\cdot c^{-k}$ produces another set of labels --- applying these changes, one can get all possible encodings of $\tilde\gamma$.
+
+Let us list possible encodings for curves that project to a trajectories of length less than $2\cdot\pi$ in the spherical triangle $\triangle$ with an aditional constrain that the trajectory lifts to a closed geodesic.
+
+\parit{$CM$.} The trajectory $CM$ can have an encoding $(z,w)$: $z$ at $C$ and $w$ at $M$, where
+\begin{itemize}
+\item $z\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, and since the lift is geodesic, $z\notin\langle a\rangle\cup \langle b\rangle$.
+\item $w\in \langle c\rangle$ at $M$, and since the lift is geodesic, $w\ne 1$.
+\end{itemize}
+In other words $z=a^m\cdot b^n$ and $w=c^k$ for some $m\ne 0$, $n\ne 0$, and $k\ne 0$.
+Since $a^m\cdot b^n\cdot c^k=1$ if and only if $m=n=k=0$, we have $z\cdot w\ne 1$.
+Thus $CM$ does cannot be lifted to a geodesic circle.
+
+\parit{$AB$.} The trajectory $AB$ can have an encoding $(x,y)$: $x$ at $A$ and $y$ at $B$, where
+\begin{itemize}
+\item $x\in \langle b,c\rangle$, and since the lift is geodesic, $x\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
+\item $y\in \langle a,c\rangle$, and since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
+\end{itemize}
+To show that this does not have geodesic lifts, we need to check that $x\cdot y\ne1\in B_4$.
+If $x\cdot y=1$, then $x\cdot y\cdot x\cdot y=1$, but the latter is not possible from the case $ABAB$.
+
+\parit{$ABAB$.} The trajectory $ABAB$ can have an encoding $(x_1,y_1,x_2,y_2)$: $x_1,x_2$ at $A$ and $y_1,y_2$ at $B$, where
+\begin{itemize}
+\item $x_1,x_2\in \langle b,c\rangle$, but since the lift is geodesic, $x_1,x_2\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
+\item $y_1,y_2\in \langle a,c\rangle$, but since the lift is geodesic, $y_1,y_2\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
+\end{itemize}
+We need to check that $x_1\cdot y_1\cdot x_2\cdot y_2\ne1\in B_4$, which follows from
+Corollary~\ref{cor:ABAB}.
+
+\parit{$ABAC$.} The trajectory $ABAC$ can have an encoding $(x_1,y,x_2,z)$, where
+\begin{itemize}
+\item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1\notin \langle b\rangle\cdot\langle c\rangle$ and
+$x_2\z\notin \langle c\rangle\cdot\langle b\rangle$;
+\item $y\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$;
+\item $z\in  \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
+\end{itemize}
+Since $a$ and $b$ commute, we can move $b$'s from $z$ to $x_1$.
+Therefore, we can assume that $z\in \langle a\rangle\setminus\{1\}$.
+In this case the Corollary~\ref{cor:ABAB} is applicable, ant it implies $x_1\cdot y\cdot x_2\cdot z\ne 1\in B_4$.
+
+\parit{Case $AC$:} we have elements
+\begin{itemize}
+ \item $x\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
+ \item $z\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x\cdot z=1\in B_4$.
+So, the problem reduces the following:
+\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)\not\ni 1.\]
+This case, as well as the next will follow from the next one.
+
+\parit{Case $ACAC$:} we have elements
+\begin{itemize}
+ \item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
+ \item $z_1,z_2\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2\notin \langle b\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2 =1\in B_4$.
+So, the problem reduces the following:
+\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\cdot
+(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\not\ni 1;\]
+equivalently,
+\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)\cap(\langle a,b\rangle \setminus \langle b\rangle)\cdot (\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)=\varnothing.\]
+
+\parit{Case $ACACAC$:} we have elements
+\begin{itemize}
+ \item $x_1,x_2,x_3\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2,x_3\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
+ \item $z_1,z_2,z_3\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2,z_3\notin \langle b\rangle$.
+\end{itemize}
+Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2\cdot x_3\cdot z_3 =1\in B_4$.
+So, the problem reduces the following:
+\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\cdot
+(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\cdot
+(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
+\cdot
+(\langle a,b\rangle \setminus \langle b\rangle)
+\not\ni 1.\]
+This case follows from the second Agol's lemma.
 
 {\sloppy
 \def\emph{\textit}
