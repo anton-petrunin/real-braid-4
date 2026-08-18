@@ -139,7 +139,7 @@ Let us denote by $A$, $B$, and $C$ the vertices of $\triangle$ with right angle 
 and let $M$ be the midpoint of the side $AB$.
 A closed polygonal line can be encoded by its vertices in the cyclic order; for example, $CM$ denotes the polygonal line that comes from $C$ to $M$, and comes back.
 
-Suppose $\Sigma$ has a closed stable geodesic of length less than $2\cdot\pi$;
+Suppose $\Sigma$ has a closed stable geodesic $\tilde \gamma$ of length less than $2\cdot\pi$;
 denote by $\gamma$ its projection to $\triangle$.
 Note that $\gamma$ satisfies the following properties:
 \begin{itemize}
@@ -187,88 +187,67 @@ Hence, writing it as $2\cdot k$ arcs of the first kind and $q$ arcs of the secon
 \[
 2\cdot k\cdot \beta+2\cdot q\cdot \alpha<2\cdot \pi.
 \]
-The inequalities above leave only
-\[
-(k,q)=(1,0),(2,0),(1,1),(0,1),(0,2),(0,3),
-\]
+The inequalities above leave only the following possibilities for pair $(k,q)$:
+\[(1,0),\quad (2,0),\quad(1,1),\quad(0,1),\quad(0,2),\quad\text{and}\quad(0,3),\]
 which give respectively
 \[
-AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad ACACAC.
+AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad \text{and}\quad ACACAC.
 \]
 
 It remains to consider the case when $\gamma$ misses $A$ and $B$.
 Then $\length\gamma<\pi$.
 Stability forces $\gamma$ to pass through $C$; otherwise its spherical development can be moved slightly to shorten it.
-Unfolding at $C$, the nearest distinct images of $C$ are at distance $\pi/2$, and, up to symmetry, the corresponding trajectory is $CM$.
+Unfolding at $C$, the nearest distinct images of $C$ are at distance $\tfrac\pi2$, and, up to symmetry, the corresponding trajectory is $CM$.
 \qeds
 
 \section{Encoding}
 
-Let $\gamma$ be a closed curve in $\Sigma$; suppose $\length\gamma<2\cdot\pi$.
-The curve $\gamma$ can be approximated by a curve that does not pass thru vertices.
-Furthermore, we can assume that it enters and exits each copy of $\triangle$ thru different sides;
+Let $\tilde \gamma$ be a closed geodesic in $\Sigma$ such that $\length\gamma<2\cdot\pi$.
+Note that $\tilde \gamma$ enters and exits interior of each copy of $\triangle$ thru different sides;
 if not, we can make a shortcut along the side.
-Let us write a sequence $a$, $b$, or $c$ with some powers at each transition point of $\gamma$ from triangle to triangle; for example, we write $a^5$ if $\gamma$ crosses  $a$ and the label of next triangle is multiplied by $a^5$ on the left.
-Following $\gamma$ we get a word from $a$, $b$, and $c$ with some powers which gives, which product is $1$ in $B_4$ (since $\gamma$ is closed in $\RB^4$).
+Therefore we can approximate $\tilde \gamma$ by a curve $\tilde \gamma'$ that crossed sides of triangle at finite number of points; moreover, if two points consequent points lie on one side, then these are two vertices of this side.
+
+Recall that each triangle in $\Sigma$ is labeled by an element of $B_4$.
+Let us write a cyclic sequence of labels $b_1,\dots,b_k$ of triangle with their interior visited by $\tilde \gamma'$;
+now let us label $i$-th crossing point by $z_i=b_{i+1}\cdot b_i^{-1}$, so at the $i$-th crossing you multiply the old label by $z_i$.
+Evidently, $z_1\cdots z_k=1$.
+The sequence $z_1,\dots,z_k$ will be called \emph{encoding} of $\tilde\gamma$;
+it is defined almost uniquely: if $i$-th edge of $\tilde\gamma$ runs along a side, say $c$, then changing labels $z_{i-1}$ and $z_i$ to $c^k\cdot z_{i-1}$ and $z_i\cdot c^{-k}$ produces another set of labels.
 
 Let us list possible encodings for curves that project to a trajectories of length less than $2\cdot\pi$ in the spherical triangle $\triangle$ with an aditional constrain that the trajectory lifts to a closed geodesic.
 
-\parit{Case $CM$:} we have elements
+\parit{$CM$.} The trajectory $CM$ can have an encoding $(x,y)$, where
 \begin{itemize}
-\item $x\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $x\notin\langle a\rangle\cup \langle b\rangle$;
-\item $y\in \langle c\rangle$ at $M$, but since the lift is geodesic, $y\ne 1$.
+\item $x\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, and since the lift is geodesic, $x\notin\langle a\rangle\cup \langle b\rangle$.
+\item $y\in \langle c\rangle$ at $M$, and since the lift is geodesic, $y\ne 1$.
 \end{itemize}
-Since the lift must be closed in the braid space, therefore $x\cdot y=1\in B_4$.
-Therefore the problem reduces the following:
-\[(\langle a,b\rangle\setminus (\langle a\rangle\cup \langle b\rangle))\cdot(\langle c\rangle\setminus\{1\})\not\ni 1,\]
-which follows since $a^m\cdot b^n\cdot c^k=1$ if and only if $m=n=k=0$.
+In other words $x=a^m\cdot b^n$ and $y=c^k$ for some $m\ne 0$, $n\ne 0$, and $k\ne 0$.
+Since $a^m\cdot b^n\cdot c^k=1$ if and only if $m=n=k=0$, this trajectory does not have geodesic lifts.
 
-\parit{Case $AB$:} we have elements
+\parit{$AB$.} The trajectory $AB$ can have an encoding $(x,y)$, where
 \begin{itemize}
 \item $x\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
 \item $y\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
 \end{itemize}
-Since the lift is closed in the braid space, we have $x\cdot y=1\in B_4$.
-Therefore, the problem reduces the following:
-\[(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)\cdot (\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)\not\ni 1.\]
-This will follow from the next case.
+To show that this does not have geodesic lifts, we need to check that $x\cdot y\ne1\in B_4$.
+If $x\cdot y=1$, then $x\cdot y\cdot x\cdot y=1$, but the latter is not possible from the case $ABAB$.
 
-\parit{Case $ABAB$:} we have elements
+\parit{$ABAB$.} The trajectory $ABAB$ can have an encoding $(x_1,y_1,x_2,y_2)$, where
 \begin{itemize}
 \item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
 \item $y_1,y_2\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y_1,y_2\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
 \end{itemize}
-Since the lift is closed in the braid space, we have $x_1\cdot y_1\cdot x_2\cdot y_2=1\in B_4$.
-Therefore, the problem reduces the following:
-\[(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)\cdot (\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)\cdot(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)\cdot (\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)\not\ni 1,\]
-or, equivalently,
-\[(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)
-\cdot
-(\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)
-\cap
-(\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)
-\cdot
-(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle)
-=\varnothing.
-\]
-This case follows from the first Agol's lemma.
+Again, we need to check that $x_1\cdot y_1\cdot x_2\cdot y_2\ne1\in B_4$, which is proved in
+Corollary \ref{cor:ABAB} of Agol's lemma.
 
-\parit{Case $ABAC$:} we have elements
+\parit{$ABAC$.} The trajectory $ABAC$ can have an encoding $(x_1,y,x_2,z)$, where
 \begin{itemize}
 \item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1\notin \langle b\rangle\cdot\langle c\rangle$ and
 $x_2\z\notin \langle c\rangle\cdot\langle b\rangle$;
 \item $y\in \langle a,c\rangle$ at $B$, but since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$;
 \item $z\in  \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
 \end{itemize}
-Since the lift is closed in the braid space, we have $x_1\cdot y\cdot x_2\cdot z=1\in B_4$.
-So, the problem reduces the following:
-\[(\langle b,c\rangle\setminus \langle b\rangle\cdot\langle c\rangle)
-\cdot
-(\langle a,c\rangle\setminus \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle)
-\cdot
-(\langle b,c\rangle\setminus \langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle\setminus \langle b\rangle)\not\ni 1,\]
+We need to check that $x_1\cdot y\cdot x_2\cdot z\ne 1\in B_4$, and this also follows from the first Agol's lemma.
 
 \parit{Case $AC$:} we have elements
 \begin{itemize}
@@ -323,25 +302,23 @@ So, the problem reduces the following:
 \not\ni 1.\]
 This case follows from the second Agol's lemma.
 
+\section{Agol's lemma}
 
-\section{Agol's lemmas}
 
-\begin{thm}{First lemma}
+\begin{thm}{Lemma}\label{lem:agol1}
 Consider the braid group $B_4$ with standard generators $a$, $b$, and $c$ as above; so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$, and $b\cdot c\cdot b=c\cdot b\cdot c$.
-Suppose
-\[h_1\cdot k_1\cdot h_2 \cdot k_2=1,\]
-where $h_i\in \langle a,c\rangle$ and $k_i\in \langle b,c\rangle$.
-Then $h_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ or $k_i\in\langle b\rangle\cdot \langle c\rangle\cdot \langle b\rangle$ for some $i$.
+Then
+\[(\langle a,c\rangle\cdot\langle b,c\rangle)\cap (\langle b,c\rangle\cdot\langle a,c\rangle)
+=
+(\langle c\rangle\cdot \langle a,b\rangle\cdot\langle c\rangle)\cup\langle a,c\rangle\cup \langle b,c\rangle.\]
 \end{thm}
-
-The following proof is taken almost verbatum from  the answer by Ian Agol to our question \cite{agol}.
 
 \parit{Proof.}
 Let us identify $B_4$ with the mapping class group of the 4-punctured disk  $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ fixing the boundary.
 
-Choose an arc $w$ in $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ with endpoints on $\partial \DD^2$.
 Let us choose a complete hyperbolic metric on $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ so that the boundary is totally geodesic.
-Then in the isotopy class of $w$ there is a unique geodesic arc.
+Choose an arc $w$ in $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ with endpoints on $\partial \DD^2$.
+In the isotopy class of $w$ there is a unique geodesic representative.
 Moreover the intersection number between pairs of arcs will be minimized by these representatives.
 Abusing notation, let us write $s(w)$ for the arc made geodesic after applying $s\in B_4$ to $w$.
 
@@ -361,9 +338,9 @@ Consider the arcs $x, y, z$ as in the picture; so
 \stab(x\cup y)&=\langle c\rangle.
 \end{align*}
 
-Suppose $h_1\cdot k_1\cdot h_2 \cdot k_2=1$.
-Put $s=h_1\cdot k_1=k_2^{-1}\cdot h_2^{-1}$; note that
-\[s\in (\langle a,c\rangle\cdot\langle b,c\rangle)\cap(\langle b,c\rangle\cdot\langle a,c\rangle).\]
+Suppose
+\[s\in (\langle a,c\rangle\cdot\langle b,c\rangle)\cap(\langle b,c\rangle\cdot\langle a,c\rangle);\]
+in other words, $s=h_1\cdot k_1=k_2\cdot h_2$ for some $h_1,h_2\in \langle a,c\rangle$ and $k_1,k_2\in \langle b,c\rangle$.
 Then  $s(x)\cap y =\emptyset$ and $s(y)\cap x = \emptyset$.
 Moreover $s(x)\cap s(y)=\emptyset$ since $x\cap y=\emptyset$.
 Indeed, $k_i(x)=x$ and $h_i(y)=y$, and so
@@ -377,12 +354,20 @@ similarly, one gets $s(y)\cap x = \emptyset$.
 \vskip-0mm
 \end{figure}
 
-Consider the subdisc $M\subset \DD^2$ that is the middle piese of $\DD^2$ after cutting along $x\cup y$.
-Note that $M\ni p_2, p_3$, so $M\setminus \{p_2,p_3\}$ is a twice-punctured disk, and it contains only one isotopy class of essential arcs with endpoints on the boundary.
-Then each component of $s(x)\cap M$ and $s(y)\cap M$ must be isotopic to this arc.
+Consider the subdisc $M\subset \DD^2$ that is the middle piese of $\DD^2$ after cutting along $x$ and $y$.
+Note that $M\ni p_2, p_3$, so $M\setminus \{p_2,p_3\}$ is a twice-punctured disk.
+Note that $M\setminus \{p_2,p_3\}$ may contain only one isotopy class of nonintersecting arcs with endpoints on the boundary.
+Therefore, each component of $s(x)\z\cap M$ and $s(y)\cap M$ must be isotopic to one arc.
 All components of $s(x)\cap M$ must have endpoints on $x\subset \partial M$,
-and all components of $s(y) \cap M$ must have endpoints on $y\subset M$.
-By compsing $s$ with an element of $\langle c\rangle$, we can unwind this configuration;
+and all components of $s(y) \cap M$ must have endpoints on $y\subset \partial M$.%
+\footnote{One of endpoints $s(x)\cap M$ must be an endpoint of $x$ and one of endpoints $s(y)\cap M$ must be an endpoint of $y$, but it is not important.}
+
+
+We may assume that $s(x)\ne x$ and $s(y)\ne y$; in other words, there are components of $s(x)\cap M$ and $s(y) \cap M$.
+Otherwise
+\[s\in \langle b,c\rangle =\stab(x)\quad\text{and}\quad s\in \langle a,c\rangle =\stab(y),\] respectively.
+
+Then by composing $s$ with an element of $\langle c\rangle$, we can unwind this configuration;
 that is, replacing $s$ with $s'=c^{-i}\cdot s$ if necessary, we acheave that $s'(x)\cap z=\emptyset$ and
 $s'(y)\cap z=\emptyset$.
 
@@ -394,7 +379,7 @@ $s'(y)\cap z=\emptyset$.
 \vskip-0mm
 \end{figure}
 
-Now let us focus on the subdiscs $L$ and $R$ in $\DD^2$ and obtained by cutting along $z$ and taking the left and rught piece, respectively.
+Now let us focus on the subdiscs $L$ and $R$ in $\DD^2$ and obtained by cutting along $z$ and taking the left and right piece, respectively.
 There is only one isotopy class of arc $x$ and $s(x)$ in $L\setminus \{p_1,p_2\}$.
 Thus, replacing $s'$ with $s''=a^{-j}\cdot s'$, we acheave that $s''(x)=x$.
 Similarly, replacing $s''$ with $s'''=b^{-k}\cdot s''$, we acheave that $s'''(y)=x$.
@@ -402,14 +387,33 @@ Similarly, replacing $s''$ with $s'''=b^{-k}\cdot s''$, we acheave that $s'''(y)
 Since $\stab(x \cup y) =\langle c\rangle$, we have $s'''\in \langle c\rangle$.
 Therefore
 $s = c^i a^j b^k c^l$.
-
-Now we have
-\[s = c^ia^jb^kc^l = h_1k_1.\]
-Therefore
-\[h_1^{-1} c^i a^j = k_1 c^{-l} b^{-k} \in \langle a,c\rangle\cap \langle b,c\rangle = \stab(x\cup y)=\langle c\rangle.\]
-Thus $h_1 = c^i a^j c^{-m}$ and $k_1 =c^m b^k c^l$, as desired.
+In other words,
+\[s\in \langle c\rangle\cdot \langle a,b\rangle\cdot\langle c\rangle.\]
 \qeds
 
+
+\begin{thm}{Corollary}\label{cor:ABAB}
+Suppose
+\[h_1\cdot k_1\cdot h_2 \cdot k_2=1,\]
+where $h_i\in \langle a,c\rangle$ and $k_i\in \langle b,c\rangle$.
+Then $h_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ or $k_i\in\langle b\rangle\cdot \langle c\rangle\cdot \langle b\rangle$ for some $i$.
+\end{thm}
+
+\parit{Proof.}
+Let $s=h_1\cdot k_1= k_2^{-1} \cdot h_2^{-1}$.
+By \ref{lem:agol1}, we need to consider three cases
+
+Suppose  $s \in \langle c\rangle\cdot \langle a,b\rangle\cdot\langle c\rangle$;
+in other words, $s = c^i\cdot a^j\cdot b^k\cdot c^l$ for some $i$, $j$, $k$, and $l$.
+Then,
+\[h_1^{-1} c^i a^j = k_1 c^{-l} b^{-k} \in \langle a,c\rangle\cap \langle b,c\rangle = \stab(x\cup y)=\langle c\rangle.\]
+Thus $h_1 = c^i a^j c^{-m}$ and $k_1 =c^m b^k c^l$, which already implies more than we need.
+
+If $s \in \langle b,c\rangle$, then $h_1\in\langle a,c\rangle\cap \langle b,c\rangle=\langle c\rangle$; similarly $h_2\in\langle c\rangle$ --- again, this implies more than we need.
+The last case $s \in \langle a,c\rangle$ can be done the same way.
+\qeds
+
+\section{Second lemma}
 
 \begin{thm}{Second lemma}
 Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$, and $b\cdot c\cdot b=c\cdot b\cdot c$.
