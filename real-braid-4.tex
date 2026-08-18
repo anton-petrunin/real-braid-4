@@ -75,7 +75,7 @@ In particular, if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$.
 Therefore, the theorems gives a partial case of the conjecture for $n=4$.
 
 
-\section{Real braid space}
+\section{Sphere in the real braid space}
 
 \begin{thm}{Lemma}\label{lem:convex-preimage}
 Let $K\subset \CC$ be a closed convex set.
@@ -100,6 +100,7 @@ Since all hyperplanes $z_i=z_j$ share the diagonal line $z_1=\ldots=z_n$,
 it splits as a Euclidean product space $\RR\times C^3$, where $C^3$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$.
 
 The space $\Sigma$ is glued from a countable collection of copies of the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
+In particular, $\Sigma$ has \emph{finitely many shapes}; that is, there are only finitely many isometry classes of simplices.
 Let us describe the gluing.
 First denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
 We will keep the notation $a$, $b$ and $c$ for the standard generators of the braid group $B_4$,
@@ -113,14 +114,8 @@ The space $\Sigma$ does not have a closed geodesic of length $<2\cdot\pi$.
 \end{thm}
 
 \parit{Reduction of \ref{thm:main} to \ref{clm:sigma}.}
-Note that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$.
-
-The description above implies that $\Sigma$ is locally $\CAT(1)$.
-Therefore, by the generalized Cartan--Hadamard theorem, it is sufficient to prove  that
-any closed curve in $\Sigma$ of length $<2\cdot\pi$ is null-homotopic in the class of curves of length $<2\cdot\pi$.
-
-Arguing by contradiction, we can find a shortest curve closed curve in $\Sigma$ of length $<2\cdot\pi$ that is not null-homotopic in the class of curves of length $<2\cdot\pi$.
-This step is possible since $\Sigma$ admits a cocompact action by $B_4$ and so we can apply the limiting procedure. %???
+Since $\RB^4$ is isometric to Euclidean cone over $\Sigma$, we have that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$; see \cite[11.6]{alexander-kapovitch-petrunin}.
+Since $\Sigma$ has finitely many shapes, it remains to apply \cite[II.5.4(7)]{bridson-haefliger}.
 \qeds
 
 
@@ -384,11 +379,16 @@ There is only one isotopy class of arc $x$ and $s(x)$ in $L\setminus \{p_1,p_2\}
 Thus, replacing $s'$ with $s''=a^{-j}\cdot s'$, we acheave that $s''(x)=x$.
 Similarly, replacing $s''$ with $s'''=b^{-k}\cdot s''$, we acheave that $s'''(y)=x$.
 
-Since $\stab(x \cup y) =\langle c\rangle$, we have $s'''\in \langle c\rangle$.
-Therefore
-$s = c^i a^j b^k c^l$.
-In other words,
-\[s\in \langle c\rangle\cdot \langle a,b\rangle\cdot\langle c\rangle.\]
+Since $\stab(x \cup y) =\langle c\rangle$, we have
+\begin{align*}
+s'''&\in \langle c\rangle,
+\\
+s''&\in \langle b\rangle\cdot\langle c\rangle,
+\\
+s'&\in \langle a\rangle\cdot\langle b\rangle\cdot\langle c\rangle,
+\\
+s&\in \langle c\rangle\cdot\langle a\rangle\cdot\langle b\rangle\cdot\langle c\rangle=\langle c\rangle\cdot\langle a, b\rangle\cdot\langle c\rangle,
+\end{align*}
 \qeds
 
 
