@@ -339,45 +339,55 @@ Then $h_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ for so
 \end{thm}
 
 \parit{Proof.}
-This equation can be rewritten as
-\[h_1\cdot h_2\cdot h_3\cdot x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1,\]
-where $x=h_3^{-1}\cdot h_2^{-1}\cdot d\cdot h_2\cdot h_3$, $y=h_3^{-1}\cdot d\cdot h_3$, and $z=d$ are elements of the free group $F_2=\ker\phi=\llangle d\rrangle$, and $\phi$ is the homomorphism $B_4\to B_3$ that identifies $a$ and $b$.
+Consider the homomorphism $\phi\:B_4\to B_3$ that identifies $a$ and $b$.
+Note that $\ker\phi=\llangle d\rrangle$ is isomorphic to $F_2$ --- the free group with 2 generators.
 
-Note that $h_1\cdot h_2\cdot h_3=1$ and $x^{n_1}\cdot y^{n_2}\cdot z^{n_3}=1$.
-Furthermore, $x$, $y$ and $z$ are primitive elements of $F_2$.
+Our equation can be rewritten as
+\[h_1\cdot h_2\cdot h_3\cdot u^{n_1}\cdot v^{n_2}\cdot w^{n_3}=1,\]
+where $u=h_3^{-1}\cdot h_2^{-1}\cdot d\cdot h_2\cdot h_3$, $v=h_3^{-1}\cdot d\cdot h_3$, and $w=d$ are elements of the free group $F_2=\ker\phi \vartriangleleft B_4$.
+It follows that $h_1\cdot h_2\cdot h_3=1$ and $u^{n_1}\cdot v^{n_2}\cdot w^{n_3}=1$.
+Furthermore, $u$, $v$ and $w$ are primitive elements of $F_2$.
 
-We can assume that the subgroups $\langle y, z\rangle$ is not cyclic.
+We can assume that the subgroups $\langle v, w\rangle$ is not cyclic.
 Otherwise $h_3\in\langle a\rangle$, and the statent follows.
 
 By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
-
 Furthermore, we can assume that $|n_1|=|n_2|=1$.
+
 Indeed, assume $|n_2|\ge 2$ and $|n_3|\ge 2$.
-Note that $x\in \langle y,z\rangle$.
-Since $x$ is primitive in $F_2$, by the Kurosh subgroup theorem $x$ is primitive in $\langle y,z\rangle$.
-Therefore $\ZZ_{n_2}*\ZZ_{n_2}\cong \langle y,z\rangle/\llangle y^{n_2},z^{n_3}\rrangle$ is a quotient of $\langle y,z\rangle/\llangle y^{n_2}\cdot z^{n_3}\rrangle\cong \langle y,z\rangle/\llangle x \rrangle\cong \ZZ$,
+Note that $u\in \langle v,w\rangle$.
+Since $u$ is primitive in $F_2$, by the Kurosh subgroup theorem $u$ is primitive in $\langle v,w\rangle$.
+Therefore $\ZZ_{n_2}*\ZZ_{n_2}\cong \langle v,w\rangle/\llangle v^{n_2},w^{n_3}\rrangle$ is a quotient of $\langle v,w\rangle/\llangle v^{n_2}\cdot w^{n_3}\rrangle\z\cong \langle v,w\rangle/\llangle u \rrangle\cong \ZZ$,
 which is impossible since $\ZZ_{n_2}*\ZZ_{n_2}$ is not commutative.
 
-To emphasise that $|n_1|=|n_2|=1$, put $\eps_1=n_1$, $\eps_2=n_1$, and $N=n_3$.
-Let us rewrite the original equation as
+To emphasise that $|n_1|=|n_2|=1$, we put $\eps_1=n_1$, $\eps_2=n_1$, and $N=n_3$;
+thus the original equation can be rewritten as
 \[h_1\cdot d^{\eps_1}\cdot h_2 = d^{-N}\cdot h_3^{-1}\cdot d^{-\eps_2}.\]
-Arguing as in Agol's lemma, we get
-\[h_1\cdot\langle a\rangle= a^{-N}\cdot h_3^{-1}\cdot\langle a\rangle.\]
-Indeed ...
 
+As in the proof of Agol's lemma, let us think that $B_4$ as a mapping class group of 4 punctured disc and consider the arcs $x, y, z$ as in the picture.
+\begin{figure}[ht!]
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-10}
+\vskip-0mm
+\end{figure}
+Note that $h_2(y)=y$ and $d^{\eps_1}(y)$ is parallel to $z$ in the left subdisc bounded by $y$.
+It follows that $h_1(z)\cap L=d^{-N}\cdot h_3^{-1}(z)\cap L$.
+Since $\stab(z)=\langle a,b\rangle$, we have
+\[h_1\cdot\langle a\rangle= a^{-N}\cdot h_3^{-1}\cdot\langle a\rangle.\]
 
 Therefore,
 \[
-h_1=a^{-N}\cdot h_3^{-1}\cdot a^u
+h_1=a^{-N}\cdot h_3^{-1}\cdot a^M
 \quad\text{and}\quad
-x=a^{-N}\cdot y\cdot a^N.
+u=a^{-N}\cdot v\cdot a^N.
 \]
-for some $u\in\mathbb Z$.
+for some $M\in\mathbb Z$.
 Let $e=d^c$.
 On $H_1(F_2)=\mathbb Z[d]\oplus\mathbb Z[e]$, conjugation by $a$
 acts by $(r,s)\mapsto(r-s,s)$.
-Thus, writing $[y]=(r,s)$, the relation
-$x^{\epsilon_1}\cdot y^{\epsilon_2}\cdot d^N=1$ gives
+Thus, writing $[v]=(r,s)$, the relation
+$u^{\epsilon_1}\cdot v^{\epsilon_2}\cdot d^N=1$ gives
 \[
 \epsilon_1\cdot (r-Ns,s)+\epsilon_2\cdot (r,s)+N\cdot (1,0)=0.
 \]
