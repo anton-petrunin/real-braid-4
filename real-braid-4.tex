@@ -97,10 +97,7 @@ By the spherical Crofton formula,
 \[
 \length \gamma=\pi\cdot\oint\limits_{a\in\mathbb{S}^{2m-1}} N_\gamma(a).
 \]
-Note that$
-N_{\rho_t\circ U\circ \gamma}(a)
-=
-N_\gamma(U^*\circ A_t^*a)$, and for fixed $a$, the vector
+Note that $N_{\rho_t\circ U\circ \gamma}(a)=N_\gamma(U^*\circ A_t^*a)$, and for fixed $a$, the vector
 $U^*\circ A_t^*a/|A_t^*a|$
 is uniformly distributed on $\mathbb{S}^{2m-1}$.
 Therefore, Fubini and the Crofton formula give
@@ -112,11 +109,38 @@ Therefore, Fubini and the Crofton formula give
 \oint\limits_{U\in \UU(n)}
 N_\gamma(U^*\circ A_t^*a)=
 \\
-&=\pi\cdot\oint\limits_{b\in\mathbb{S}^{2\cdot m-1}}N_c(b)=
+&=\pi\cdot\oint\limits_{b\in\mathbb{S}^{2\cdot m-1}}N_\gamma(b)=
 \\
 &=\length \gamma.
 \end{align*}
 \qeds
+
+\section{Complex braid space}
+
+The space $\CB^4$ is a 8-dimensional polyhedral space.
+Since all hyperplanes $z_i\z=z_j$ share the diagonal line $z_1=z_2=z_3=z_4$,
+it splits as a Euclidean product space $\CC\times C^6$, where $C^6$ is a 6-dimensional cone over a 5-dimensional spherical polyhedral space $\Sigma_\CC$; we may think that $\Sigma_\CC$ is the unit sphere in cone $C^6$ centered at its tip.
+
+The braid group $B_4$ acts on $\Sigma_\CC$ by isometries and the quotient space $\Sigma_\CC/B_4$ is isometric to $\mathbb{S}^5/S_4$,
+here $S_4$ is simmetric group that acts by permuting coordinates in $\CC^4$, and $S_4\acts \mathbb{S}^5$ is the induced action.
+A triangluation of $\mathbb{S}^5/S_4$ lifts to a triangulation of $\Sigma_\CC$;
+in particular, $\Sigma_\CC$ has \emph{finitely many shapes}; that is, $\Sigma$ admits a triangulation with finitely many isometry classes of simplices.
+
+If $\CB^4$ is not $\CAT(0)$, then $C^6$ is not $\CAT(0)$.
+By \cite[11.6]{alexander-kapovitch-petrunin}, $\Sigma_\CC$ is not $\CAT(1)$.
+
+Note that $\Sigma_\CC$ is locally $\CAT(1)$.
+Since $\Sigma_\CC$ has finitely many shapes, by \cite[II.5.4(7)]{bridson-haefliger}, we have that $\Sigma_\CC$ has a \emph{geodesic circle} $\tilde\gamma$ or length $<2\cdot\pi$; that is, $\tilde\gamma$ is globally isometric to a circle;
+in other words, one of two arcs of $\tilde\gamma$ connecting any two points on it is a minimizing geodesic.
+We can assume that $\tilde\gamma$ has shortest possible length.
+
+Let $\rho_t$ be as in \ref{lem:crofton}; suppose $t\approx 1$.
+Note that $\length \rho_t\circ\tilde\gamma\ge \length \tilde\gamma$; the same holds after complex rotation of $\CC^4$.
+By the Crofton lemma, we have equality for all $t\approx 1$, and therefore we have equality for all $t$.
+Moreover $\rho_t\circ\tilde\gamma$ is a geodesic circle for all values of $t$.
+
+If $t=0$, we get a geodesic circle of length $<2\cdot\pi$ in $\RB^4\subset \CB^4$.
+Hence it is sufficient to prove that $\RB^4$ is $\CAT(0)$.
 
 
 \section{Real braid space}
@@ -169,7 +193,7 @@ The space $\Sigma$ does not have geodesic circle of length $<2\cdot\pi$.
 \end{thm}
 
 \parit{Reduction of \ref{thm:main} to \ref{clm:sigma}.}
-Since $\RB^4$ is isometric to Euclidean cone over $\Sigma$, we have that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$; see \cite[11.6]{alexander-kapovitch-petrunin}.
+Since $\RB^4$ is isometric to a product of Euclidean cone over $\Sigma$ and $\RR$, we have that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$; see \cite[11.6]{alexander-kapovitch-petrunin}.
 Since $\Sigma$ has finitely many shapes, it remains to apply \cite[II.5.4(7)]{bridson-haefliger}.
 \qeds
 
