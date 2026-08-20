@@ -73,6 +73,51 @@ By Lemma~\ref{lem:convex-preimage} below, $\RB^n$ is a convex subset of $\CB^n$.
 In particular, if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$.
 Therefore, the theorem gives a special case of the conjecture for $n=4$.
 
+\section{Crofton formula}
+
+\begin{thm}{Lemma}\label{lem:crofton}
+Let $\gamma$ be a rectifiable curve in $\mathbb{S}^{2\cdot n-1}\subset\CC^{n}$.
+For $t>0$, set
+\[
+\rho_t(x+i\cdot y)=
+\frac{x+i\cdot t\cdot y}{|x+i\cdot t\cdot y|}.
+\]
+Then
+\[
+\oint\limits_{U\in \UU(n)}\length(\rho_t\circ U\circ \gamma)=\length \gamma,
+\]
+where $\UU(n)$ denotes the unitary group of $\CC^{n}$ and $\oint$ --- the avarage value.
+\end{thm}
+
+\parit{Proof.}
+Put $A_t(x+i\cdot y)=x+i\cdot t\cdot y$, so $\rho_t(a)=A_t(a)/|A_t(a)$ for any $a\in \mathbb{S}^{2\cdot n-1}$.
+
+Given $a\in\mathbb{S}^{2\cdot n-1}$, denote by $N_\gamma(a)$ the number of intersections of $\gamma$ with $a^\perp$, counted with multiplicity.
+By the spherical Crofton formula,
+\[
+\length \gamma=\pi\cdot\oint\limits_{a\in\mathbb{S}^{2m-1}} N_\gamma(a).
+\]
+Note that$
+N_{\rho_t\circ U\circ \gamma}(a)
+=
+N_\gamma(U^*\circ A_t^*a)$, and for fixed $a$, the vector
+$U^*\circ A_t^*a/|A_t^*a|$
+is uniformly distributed on $\mathbb{S}^{2m-1}$.
+Therefore, Fubini and the Crofton formula give
+\begin{align*}
+\oint\limits_{U\in \UU(n)}\length(\rho_t\circ U\circ \gamma)
+&=
+\pi\cdot\oint\limits_{a\in\mathbb{S}^{2\cdot m-1}}
+\
+\oint\limits_{U\in \UU(n)}
+N_\gamma(U^*\circ A_t^*a)=
+\\
+&=\pi\cdot\oint\limits_{b\in\mathbb{S}^{2\cdot m-1}}N_c(b)=
+\\
+&=\length \gamma.
+\end{align*}
+\qeds
+
 
 \section{Real braid space}
 
@@ -394,40 +439,38 @@ Let $e=d^c$.
 On $H_1(F_2)=\mathbb Z[d]\oplus\mathbb Z[e]$, conjugation by $a$
 acts by $(r,s)\mapsto(r-s,s)$.
 Thus, writing $[v]=(r,s)$, the relation
-$u^{\epsilon_1}\cdot v^{\epsilon_2}\cdot d^N=1$ gives
+$u^{\eps_1}\cdot v^{\eps_2}\cdot d^N=1$ gives
 \[
-\epsilon_1\cdot (r-Ns,s)+\epsilon_2\cdot (r,s)+N\cdot (1,0)=0.
+\eps_1\cdot (r-Ns,s)+\eps_2\cdot (r,s)+N\cdot (1,0)=0.
 \]
 
-If $\epsilon_1=\epsilon_2$, then $s=0$.
+If $\eps_1=\eps_2$, then $s=0$.
 Hence $h_3\in\langle a\rangle\cdot Z(B_3)$.
 Suppose $\zeta=(a\cdot c)^3$; it generates $Z(B_3)$.
 Note that $h_3=a^r\cdot\zeta^k$ and $h_1=a^q\cdot \zeta^{-k}$.
 Therefore
-\[
-h_2=h_1^{-1}\cdot h_3^{-1}\in\langle a\rangle,
-\]
+\[h_2=h_1^{-1}\cdot h_3^{-1}\in\langle a\rangle,\]
 which finishes the proof.
 
-If $\epsilon_1=-\epsilon_2$, then $s=\epsilon_1$.
+If $\eps_1=-\eps_2$, then $s=\eps_1$.
 Under the standard homomorphism
 $B_3\to \SL_2(\mathbb Z)$ this implies
 \[
 h_3=h\cdot \zeta^{2\cdot k}
 \]
-for some $h=a^r\cdot  c^{\epsilon_1}\cdot a^t$.
+for some $h=a^r\cdot  c^{\eps_1}\cdot a^t$.
 Consequently
 \[
 h_2
 =a^{-u}\cdot h_3\cdot a^N\cdot h_3^{-1}
 =a^{-u}\cdot h\cdot a^N\cdot h^{-1}
-=a^{r-u-\epsilon_1}\cdot c^N\cdot a^{\epsilon_1-r},
+=a^{r-u-\eps_1}\cdot c^N\cdot a^{\eps_1-r},
 \]
 where we used
 \[
-c^\epsilon\cdot  a^N\cdot  c^{-\epsilon}
-=a^{-\epsilon}\cdot c^N\cdot a^\epsilon,
-\qquad \epsilon=\pm1.
+c^\eps\cdot  a^N\cdot  c^{-\eps}
+=a^{-\eps}\cdot c^N\cdot a^\eps,
+\qquad \eps=\pm1.
 \]
 Thus, $h_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and the proof is finished.
 \qeds
