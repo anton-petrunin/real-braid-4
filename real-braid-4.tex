@@ -5,7 +5,7 @@
 
 %\usepackage[notref,notcite,color]{showkeys}
 
-\def\thetitle{The four-string braid space is CAT(0)}
+\def\thetitle{The real four-string braid space is CAT(0)}
 \def\theauthors{Dmitri Panov and Anton Petrunin}
 
 \hypersetup{colorlinks=true,
@@ -31,8 +31,9 @@ pdfauthor={\theauthors}
 \maketitle
 
 \begin{abstract}
-The $n$-string braid space is defined as a universalcovering of the complex $n$-space by  branching at the hyperplanes $z_i=z_j$.
-We show that $4$-string braid space is CAT(0).
+The $n$-string braid space is defined as a universal covering of the complex $n$-space branching at the hyperplanes $z_i=z_j$.
+It is conjectured that $n$-string braid space is CAT(0) for any $n$.
+We prove a special case of this conjecture for $n=4$; namely we show that the real braid space (which is essentially the space of braid diagrams) is CAT(0).
 \end{abstract}
 
 \section{Introduction}
@@ -43,11 +44,11 @@ Remove from $\CC^n$ the complex hyperplanes $z_i=z_j$ for all $i\ne j$;
 denote the remaining set by $W$.
 Let $\tilde W$ be the universal cover of $W$, equipped with the induced metric.
 The completion of $\tilde W$ will be called the \emph{braid space}%
-\footnote{The terminology comes from the usual interpretation of $W$ as the configuration space of $n$-tuples of distinct points in the complex plane.
-A path in $W$ describes a motion of these points without collisions; so their trajectories form a braid with $n$ strings.
-The braid group $B_n$ acts isometrically on $\CB^n$, and the quotient space $\CB^n/B_n$ is $\CC^n/S_n$;
-here $S_n$ is the symmetry group that acts on $\CC^n$ by permuting coordinates.}
 with $n$ strings and denoted by $\CB^n$.
+
+Note that $W$ can be interpreted as configuration space of $n$-tuples of distinct points in the plane.
+Therefore a path in $W$ describes a motion of these points without collisions; so their trajectories form a braid with $n$ strings.
+This explains our terminology.
 
 The following conjecture is a special case of a conjecture formulated by Daniel Allcock~\cite[Conjecture 1.4]{allcock}, which is related to an earlier conjecture of Ruth Charney and Michael Davis (see \cite[Conjecture 3]{charney-davis-95}), which in turn is motivated by a conjecture of Arnold, Pham and Thom on complex hyperplane arrangements.
 We are responsible for a more general version of Allcock's conjecture \cite[Conjecture 1.1]{panov-petrunin}, which we have been trying to prove for several years.
