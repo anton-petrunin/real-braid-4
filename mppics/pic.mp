@@ -277,13 +277,133 @@ label.rt(btex $p_3$ etex, z.p3);
 label.lft(btex $p_4$ etex, z.p4);
 
 label.ulft(btex $x$ etex, .5[z.p1,z.p2]+(0,.12)*u);
-label.llft(btex $z$ etex, .5[z.p2,z.p3]+(0,.9)*u);
 label.rt(btex $y$ etex, .5[z.p3,z.p4]+(0,-.27)*u);
 label(btex $s'(x)$ etex rotated 34, (-4,5)+point .2 of p11);
 label(btex $s'(y)$ etex rotated -10, (4,5)+point 1.7 of p31);
 label.top(btex $L$ etex, point .35 of p0);
 label.top(btex $R$ etex, point .65 of p0);
 
+clip currentpicture to .5[z.p2,z.p3]+(0,-5)*u--.5[z.p2,z.p3]+(0,5)*u--.5[z.p2,z.p3]+(-5,5)*u--.5[z.p2,z.p3]+(-5,-5)*u--cycle;
+
+draw p2;
+label.lrt(btex $z$ etex, .5[z.p2,z.p3]+(0,.9)*u);
+
 endfig;
 
+beginfig(31)
+save u,p;
+u:=2cm;
+path p[];
+
+z.p0=(.3,0)*u;
+z.p1=(1,0)*u;
+z.p2=(2,0)*u;
+z.p3=(3,0)*u;
+z.p4=(4,0)*u;
+z.p5=(4.7,0)*u;
+
+p0=z.p0{up}..tension 2..z.p5{down}..tension 2..cycle;
+
+p1=.5[z.p1,z.p2]-(0,5)*u--.5[z.p1,z.p2]+(0,5)*u cutbefore subpath (1,2) of p0 cutafter subpath (0,1) of p0;
+p2=.5[z.p2,z.p3]-(0,5)*u--.5[z.p2,z.p3]+(0,5)*u cutbefore subpath (1,2) of p0 cutafter subpath (0,1) of p0;
+p3=.5[z.p3,z.p4]-(0,5)*u--.5[z.p3,z.p4]+(0,5)*u cutbefore subpath (1,2) of p0 cutafter subpath (0,1) of p0;
+
+draw p1 penhair;
+draw p2 penhair;
+draw p3 penhair;
+
+p11= point 0 of p1{(2,1)}.. .4[z.p2,z.p3]{(up)} .. {(-1,0)}point .8 of p1
+..(-1.4)[z.p2,z.p3]{(down)}
+..point .3 of p1{(1,0)}.. .2[z.p2,z.p3]{(up)} .. point .5 of p1
+..(-1.3)[z.p2,z.p3]{(up)}
+.. {(1,0)}point .7 of p1.. .3[z.p2,z.p3]{(down)}.. point .2 of p1{(-1,0)}
+..(-1.5)[z.p2,z.p3]{(up)}
+.. {(2,1)}point 1 of p1;
+
+p31= point 1 of p3{(-2,-1)}.. .6[z.p2,z.p3]{(down)} .. {(1,0)}point .2 of p3
+..(2.4)[z.p2,z.p3]{(up)}
+.. point .5 of p3.. .7[z.p2,z.p3]{(up)}..{(1,0)}point .8 of p3
+..(2.5)[z.p2,z.p3]{(down)}
+.. {(-2,-1)}point 0 of p3;
+
+draw  p0;
+
+draw p11 penhair;
+
+draw p31 penhair;
+
+
+Dot z.p1,z.p2,z.p3,z.p4;
+
+label.rt(btex $p_1$ etex, z.p1);
+label.lft(btex $p_2$ etex, z.p2);
+label.rt(btex $p_3$ etex, z.p3);
+label.lft(btex $p_4$ etex, z.p4);
+
+label.ulft(btex $x$ etex, .5[z.p1,z.p2]+(0,.12)*u);
+label.rt(btex $y$ etex, .5[z.p3,z.p4]+(0,-.27)*u);
+label(btex $s'(x)$ etex rotated 34, (-4,5)+point .2 of p11);
+label(btex $s'(y)$ etex rotated -10, (4,5)+point 1.7 of p31);
+label.top(btex $L$ etex, point .35 of p0);
+label.top(btex $R$ etex, point .65 of p0);
+
+clip currentpicture to .5[z.p2,z.p3]+(0,-5)*u--.5[z.p2,z.p3]+(0,5)*u--.5[z.p2,z.p3]+(5,5)*u--.5[z.p2,z.p3]+(5,-5)*u--cycle;
+
+draw p2;
+label.llft(btex $z$ etex, .5[z.p2,z.p3]+(0,.9)*u);
+
+endfig;
+
+beginfig(40)
+save u,p;
+u:=2cm;
+path p[];
+
+z.p0=(.3,0)*u;
+z.p1=(1,0)*u;
+z.p2=(2,0)*u;
+z.p3=(3,0)*u;
+z.p4=(4,0)*u;
+z.p5=(4.7,0)*u;
+
+p0=z.p0{up}..tension 2..z.p5{down}..tension 2..cycle;
+
+p1=.5[z.p1,z.p2]-(0,5)*u--.5[z.p1,z.p2]+(0,5)*u cutbefore subpath (1,2) of p0 cutafter subpath (0,1) of p0;
+p2=.5[z.p2,z.p3]-(0,5)*u--.5[z.p2,z.p3]+(0,5)*u cutbefore subpath (1,2) of p0 cutafter subpath (0,1) of p0;
+p3=.5[z.p3,z.p4]-(0,5)*u--.5[z.p3,z.p4]+(0,5)*u cutbefore subpath (1,2) of p0 cutafter subpath (0,1) of p0;
+
+draw p1 penhair;
+draw p2 penhair;
+draw p3 penhair;
+
+
+p31= point 1 of p3{(2,-1)}
+..(2.5)[z.p2,z.p3]{(down)}
+.. point .5 of p3
+.. .6[z.p2,z.p3]{(down)}
+.. {(2,-1)}point 0 of p3;
+
+draw  p0;
+
+draw p31 penhair;
+
+
+Dot z.p1,z.p2,z.p3,z.p4;
+
+label.rt(btex $p_1$ etex, z.p1);
+label.lft(btex $p_2$ etex, z.p2);
+label.rt(btex $p_3$ etex, z.p3);
+label.lft(btex $p_4$ etex, z.p4);
+label.lrt(btex $z$ etex, .5[z.p2,z.p3]+(0,.9)*u);
+label.ulft(btex $x$ etex, .5[z.p1,z.p2]+(0,.12)*u);
+label.top(btex $d^{\eps_1}(y)$ etex, point 2.4 of p31);
+
+
+clip currentpicture to .5[z.p3,z.p4]+(0,-5)*u--.5[z.p3,z.p4]+(0,5)*u--.5[z.p3,z.p4]+(-5,5)*u--.5[z.p3,z.p4]+(-5,-5)*u--cycle;
+
+draw p2;
+label.rt(btex $y$ etex, .5[z.p3,z.p4]+(0,-.27)*u);
+
+
+endfig;
 end

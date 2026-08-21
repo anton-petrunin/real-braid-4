@@ -43,15 +43,13 @@ with coordinates $z_1,\dots,z_n$ and the standard Euclidean metric.
 Remove from $\CC^n$ the complex hyperplanes $z_i=z_j$ for all $i\ne j$;
 denote the remaining set by $W$.
 Let $\tilde W$ be the universal cover of $W$, equipped with the induced metric.
-The completion of $\tilde W$ will be called the \emph{braid space}%
+The completion of $\tilde W$ will be called the \emph{braid space}
 with $n$ strings and denoted by $\CB^n$.
+(Note that $W$ can be interpreted as configuration space of $n$-tuples of distinct points in the plane.
+Therefore a path in $W$ describes a braid with $n$ strings, which explains our terminology.)
 
-Note that $W$ can be interpreted as configuration space of $n$-tuples of distinct points in the plane.
-Therefore a path in $W$ describes a motion of these points without collisions; so their trajectories form a braid with $n$ strings.
-This explains our terminology.
-
-The following conjecture is a special case of a conjecture formulated by Daniel Allcock~\cite[Conjecture 1.4]{allcock}, which is related to an earlier conjecture of Ruth Charney and Michael Davis (see \cite[Conjecture 3]{charney-davis-95}), which in turn is motivated by a conjecture of Arnold, Pham and Thom on complex hyperplane arrangements.
-We are responsible for a more general version of Allcock's conjecture \cite[Conjecture 1.1]{panov-petrunin}, which we have been trying to prove for several years.
+The following conjecture is a special case of a conjecture formulated by Daniel Allcock~\cite[Conjecture 1.4]{allcock}, which is related to an earlier conjecture of Ruth Charney and Michael Davis (see \cite[Conjecture 3]{charney-davis-95}), which in turn is motivated by the $K(\pi,1)$-conjecture on complex hyperplane arrangements attributed to Vladimir Arnold, Frédéric Pham, and René Thom \cite{vanderlek,paris}.
+The authors are responsible for a more general version of Allcock's conjecture \cite[Conjecture 1.1]{panov-petrunin}, which we have been trying to prove for several years.
 
 \begin{thm}{Conjecture}\label{braid-conj}
 $\CB^n$ is $\CAT(0)$ for any integer $n\ge 1$.
@@ -62,8 +60,7 @@ The case $n=3$ is already nontrivial;
 two proofs are given by the authors \cite{panov-petrunin};
 one of them follows from the result of Ruth Charney and Michael Davis \cite{charney-davis-93}.
 
-In this note we make a step toward the case $n=4$.
-
+This note makes a step toward the case $n=4$.
 Consider the real subspace $\RR^n\subset\CC^n$.
 Denote by $\RB^n$ the inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$;
 we will call it the \emph{real braid space} with $n$ strings.
@@ -73,7 +70,7 @@ One may think of $\RB^n$ as the space of braid diagrams.
 $\RB^4$ is $\CAT(0)$.
 \end{thm}
 
-Lemma \ref{lem:convex-preimage} shows that $\RB^n$ is a convex subset of $\CB^n$;
+By Lemma \ref{lem:convex-preimage} below, $\RB^n$ is a convex subset of $\CB^n$;
 in particular, if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$.
 Thus our theorem is a special case of the conjecture for $n=4$.
 
@@ -90,15 +87,15 @@ Let us write $\vec z=\vec x+i\cdot\vec y$ for $\vec z\in \CC^n$ and $\vec x,\vec
 Given real $t$ consider the \emph{imaginary rescaling}
 \[r_t\:\vec x+i\cdot\vec y\mapsto \vec x+i\cdot t\cdot \vec y.\]
 Note that $r_t$ preserves the complex hyperplanes $z_i=z_j$.
-Hence for any $t\ne 0$, the map $r_t$ induces a homeomorphism of $\CB^n$.
+Hence for any $t\ne 0$, the map $r_t$ induces a homeomorphism, say $\tilde r_t$ of $\CB^n$.
 
-If $|t|< 1$, then the map is short;
-moreover if it preserves length of a curve $\tilde\sigma$ then the image of $\tilde\sigma$ in $\CC^n$ is parallel to the real subspace.
+If $|t|< 1$, then $\tilde r_t$ is short;
+moreover, if $\tilde r_t$ does not shorten a curve $\tilde\sigma$ then the image of $\tilde\sigma$ in $\CC^n$ must be parallel to the real subspace.
 It follows that any geodesic in $\CB^n$ with the endpoints in $\RB^n$ must stay in $\RB^n$ --- hence the result.
 \qeds
 
 Since all hyperplanes $z_i=z_j$ share the diagonal line $z_1=z_2=z_3=z_4$,
-the real braid space $\RB^4$ splits as a Euclidean product space $\RR\times C^3$, where $C^3$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$.
+the real braid space $\RB^4$ splits as a Euclidean product space $\RR\times K$, where $K$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$.
 
 \begin{wrapfigure}{o}{36mm}
 \centering
@@ -108,6 +105,7 @@ the real braid space $\RB^4$ splits as a Euclidean product space $\RR\times C^3$
 \end{wrapfigure}
 
 The space $\Sigma$ is glued from a countable collection of copies of the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
+Note that $\triangle$ is isometric to the quotient space $\mathbb{S}^2/S_4$.
 Let us describe the gluing.
 First denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
 We will keep the notation $a$, $b$ and $c$ for the standard generators of the braid group $B_4$,
@@ -124,32 +122,32 @@ The space $\Sigma$ does not have geodesic circle of length $<2\cdot\pi$.
 \end{thm}
 
 \parit{Reduction of \ref{thm:main} to \ref{clm:sigma}.}
-Since $\RB^4$ is isometric to Euclidean cone over $\Sigma$, we have that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$; see \cite[11.6]{alexander-kapovitch-petrunin}.
+Since $\RB^4=\RR\times K$, we have that $\RB^4$ is $\CAT(0)$ if and only if so is $K$.
+Further, $K$ is isometric to Euclidean cone over $\Sigma$.
+Therefore $K$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$; see \cite[11.6]{alexander-kapovitch-petrunin}.
 
 The description above implies that $\Sigma$ is locally $\CAT(1)$.
 Since $\Sigma$ has finitely many shapes, it remains to apply \cite[II.5.4(7)]{bridson-haefliger}.
 \qeds
 
-It remains to prove \ref{clm:sigma}.
+In the remaining sections we prove \ref{clm:sigma}.
 
 \section{Short trajectories}
 
-Recall that the quotient space $\Sigma/B_4$ is isometric to $\mathbb{S}^2/S_4$, which is the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
-The space $\Sigma$ can be obtained by gluing copies of $\triangle$, one for each element of $B_4$.
-To describe this gluing, denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
-We will keep the notation $a$, $b$ and $c$ for the standard generators of the braid group $B_4$,
-so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$ and $b\cdot c\cdot b=c\cdot b\cdot c$.
-Take a copy of $\triangle$ for each element of $B_4$ and glue two triangles along one side $a$, $b$, or $c$ if their elements differ by left multiplication by a power of $a$, $b$, or $c$, respectively.
+{
 
 \begin{wrapfigure}{o}{36mm}
 \centering
-\vskip-3mm
+\vskip-9mm
 \includegraphics{mppics/pic-5}
 \vskip-0mm
 \end{wrapfigure}
 
+Recall that the quotient space $\Sigma/B_4$ is isometric to $\triangle=\mathbb{S}^2/S_4$.
 Let us denote by $A$, $B$, and $C$ the vertices of $\triangle$ with right angle at $C$,
 and let $M$ be the midpoint of the side $AB$.
+
+}
 
 A closed polygonal line in $\triangle$ can be encoded by its vertices in the cyclic order; for example, $CM$ denotes the polygonal line that goes from $C$ to $M$ and back.
 
@@ -174,19 +172,21 @@ Then, up to symmetry of $\triangle$ there are only the following trajectories:
 
 \parit{Proof.}
 Reflecting $\triangle$ in its sides gives a tiling of $\mathbb{S}^2$.
-The images of $A$ are the vertices of a regular tetrahedron,
-the images of $B$ are the vertices of the antipodal tetrahedron,
-and the images of $C$ are the intersections of their edges.
+The images of $A$ are the vertices of a regular tetrahedron inscribed in $\mathbb{S}^2$,
+the images of $B$ are the vertices of the antipodal tetrahedron.
+All these images form vretices of inscribed cube,
+and the images of $C$ correspond to centers of its faces.
 
 Note that
-\[
-|A-C|_{\mathbb{S}^2}=\arccos\tfrac1{\sqrt3},
-\qquad
-|A-B|_{\mathbb{S}^2}=\arccos\tfrac13,
-\qquad
-2\cdot|A-C|_{\mathbb{S}^2}+|A-B|_{\mathbb{S}^2}=\pi.
-\]
-In particular,
+\begin{align*}
+|A-C|_{\mathbb{S}^2}&=\arccos\tfrac1{\sqrt3}, &
+|C-M|_{\mathbb{S}^2}&=\tfrac\pi4
+\\
+|A-B|_{\mathbb{S}^2}&=\arccos\tfrac13, &
+2\cdot|A-C|_{\mathbb{S}^2}+|A-B|_{\mathbb{S}^2}&=\pi;
+\end{align*}
+here $|\ -\ |_{\mathbb{S}^2}$ denotes the length metric on the sphere.
+It follows that,
 \[
 \tfrac\pi4<|A-C|_{\mathbb{S}^2}<\tfrac\pi3,
 \qquad
@@ -197,7 +197,7 @@ Choose a trajectory $\gamma$.
 Cut $\gamma$ into arcs at the passages thru $A$ and $B$.
 Each resulting arc has length $<\pi$, and after unfolding it is a minimizing geodesic in $\mathbb{S}^2$.
 Thus, up to symmetry, each arc is either $AB$, or $ACA$.
-Moreover, the number of $AB$-arcs is even.
+Moreover, the number of $AB$-arcs must be even.
 This leaves the following cases
 \[
 AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad \text{and}\quad ACACAC.
@@ -205,15 +205,13 @@ AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad \text{and}\quad ACACAC.
 
 It remains to consider the case when $\gamma$ misses $A$ and $B$.
 Then $\length\gamma<\pi$ and $\gamma$ lifts to a closed geodesic, say $\bar \gamma$ in $\mathbb{S}^2$;
-a cyclic subgroup of the reflection group of $\triangle$ must act on $\bar\gamma$ by rotations with angle $<\pi$.
-Checking all cyclic subroups leaves only one trajectory $CM$.
+a cyclic subgroup of $S_4$ (the reflection group of $\triangle$) must act on $\bar\gamma$ by rotations with angle $<\pi$.
+Checking all cyclic subroups of $S_4$ leaves only one trajectory $CM$, which has length $\tfrac\pi2$.
 \qeds
 
-In section \ref{sec:encodings}, after proving a pair of lemmas about $B_4$,
-we will show that none of these trajectories lifts to a geodesic circle in $\Sigma$.
-This will finish the proof.
-
-
+In section \ref{sec:encodings}, after proving several lemmas about $B_4$,
+we will show that none of these trajectories lifts to a geodesic circle in $\Sigma$,
+which will finish the proof of the key claim (\ref{clm:sigma}) and, therefore, our theorem.
 
 \section{Agol's lemma}
 
@@ -226,14 +224,16 @@ Then
 (\langle c\rangle\cdot \langle a,b\rangle\cdot\langle c\rangle)\cup\langle a,c\rangle\cup \langle b,c\rangle.\]
 \end{thm}
 
+The following proof is taken almost verbatim from  the answer by Ian Agol to our question \cite{agol}.
+
 \parit{Proof.}
 Let us identify $B_4$ with the mapping class group of the 4-punctured disk  $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ fixing the boundary.
 
 Let us choose a complete hyperbolic metric on $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ so that the boundary is totally geodesic.
-Choose an arc $w$ in $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ with endpoints on $\partial \DD^2$.
-In the isotopy class of $w$ there is a unique geodesic representative.
+Choose an arc $w$ in $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ with fixed endpoints on $\partial \DD^2$.
+The isotopy class of $w$ has a unique geodesic representative.
 Moreover the intersection number between pairs of arcs will be minimized by these representatives.
-Abusing notation, let $s(w)$ denote the geodesic representative of the image of $w$ under $s$.
+Abusing notation, let us write $s(w)$ for the geodesic representative of the image of $w$ under $s$.
 
 \begin{figure}[ht!]
 \centering
@@ -244,9 +244,11 @@ Abusing notation, let $s(w)$ denote the geodesic representative of the image of 
 
 Consider the arcs $x, y, z$ as in the picture; so
 \begin{align*}
+\stab(x)&=\langle b,c\rangle,
+&
 \stab(y)&=\langle a,c\rangle,
 &
-\stab(x)&=\langle b,c\rangle,
+\stab(z)&=\langle a,b\rangle,
 &
 \stab(x\cup y)&=\langle c\rangle.
 \end{align*}
@@ -254,8 +256,8 @@ Consider the arcs $x, y, z$ as in the picture; so
 Suppose
 \[s\in (\langle a,c\rangle\cdot\langle b,c\rangle)\cap(\langle b,c\rangle\cdot\langle a,c\rangle);\]
 in other words, $s=h_1\cdot k_1=k_2\cdot h_2$ for some $h_1,h_2\in \langle a,c\rangle$ and $k_1,k_2\in \langle b,c\rangle$.
-Then  $s(x)\cap y =\emptyset$ and $s(y)\cap x = \emptyset$.
-Moreover $s(x)\cap s(y)=\emptyset$ since $x\cap y=\emptyset$.
+Since $x\cap y=\emptyset$, we have $s(x)\cap s(y)=\emptyset$.
+Furthermore, $s(x)\cap y =\emptyset$ and $s(y)\cap x = \emptyset$.
 Indeed, $k_i(x)=x$ and $h_i(y)=y$, and so
 \[s(x)\cap y =h_1\cdot k_1(x)\cap y =h_1(x)\cap h_1(y)=\emptyset;\]
 similarly, one gets $s(y)\cap x = \emptyset$.
@@ -268,20 +270,20 @@ similarly, one gets $s(y)\cap x = \emptyset$.
 \end{figure}
 
 Consider the subdisc $M\subset \DD^2$ that is the middle piece of $\DD^2$ after cutting along $x$ and $y$.
-Note that $M\ni p_2, p_3$, so $M\setminus \{p_2,p_3\}$ is a twice-punctured disk.
-Note that $M\setminus \{p_2,p_3\}$ may contain only one isotopy class of nonintersecting arcs with endpoints on the boundary.
-Therefore, each component of $s(x)\z\cap M$ and $s(y)\cap M$ must be isotopic to one arc.
-All components of $s(x)\cap M$ must have endpoints on $x\subset \partial M$,
-and all components of $s(y) \cap M$ must have endpoints on $y\subset \partial M$.%
-\footnote{One of endpoints $s(x)\cap M$ must be an endpoint of $x$ and one of endpoints $s(y)\cap M$ must be an endpoint of $y$, but it is not important.}
+Note that $M\ni p_2, p_3$, so the twice-punctured disk $M\setminus \{p_2,p_3\}$ may contain only one isotopy class of nonintersecting arcs with endpoints on the boundary.
+Therefore, all component of $s(x)\z\cap M$ and $s(y)\cap M$ must be parallel.
+
+The components of $s(x)\cap M$ must have endpoints on $x\subset \partial M$,
+and all components of $s(y) \cap M$ must have endpoints on $y\subset \partial M$.
+(One of endpoints $s(x)\cap M$ must be an endpoint of $x$ and one of endpoints $s(y)\cap M$ must be an endpoint of $y$, but it is not important.)
 
 
 We may assume that $s(x)\ne x$ and $s(y)\ne y$; in other words, there are components of $s(x)\cap M$ and $s(y) \cap M$.
 Otherwise, if $s(x)= x$ or $s(y)= y$, then
-\[s\in \langle b,c\rangle =\stab(x)\quad\text{or}\quad s\in \langle a,c\rangle =\stab(y),\] respectively.
+\[s\in \langle b,c\rangle =\stab(x)\quad\text{or}\quad s\in \langle a,c\rangle =\stab(y),\] respectively, which would be the end of proof.
 
-Then by composing $s$ with an element of $\langle c\rangle$, we can unwind this configuration;
-that is, replacing $s$ with $s'=c^{-i}\cdot s$ if necessary, we achieve that $s'(x)\cap z=\emptyset$ and
+By composing $s$ with an element of $\langle c\rangle$, we can unwind this configuration;
+that is, replacing $s$ with $s'=c^{-i}\cdot s$, we get that $s'(x)\cap z=\emptyset$ and
 $s'(y)\cap z=\emptyset$.
 
 
@@ -289,6 +291,8 @@ $s'(y)\cap z=\emptyset$.
 \centering
 \vskip-0mm
 \includegraphics{mppics/pic-30}
+\hskip 20mm
+\includegraphics{mppics/pic-31}
 \vskip-0mm
 \end{figure}
 
@@ -335,29 +339,52 @@ If $s \in \langle b,c\rangle$, then $h_1\in\langle a,c\rangle\cap \langle b,c\ra
 In the last case $s \in \langle a,c\rangle$, we get $k_1,k_2\in\langle c\rangle$.
 \qeds
 
-\section{Second lemma}
+\section{Companion lemma}
 
-\begin{thm}{Second lemma}
-Consider the braid group $B_4$ with standard generators $a=\sigma_1$, $b=\sigma_3$, and $c=\sigma_2$; so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$, and $b\cdot c\cdot b=c\cdot b\cdot c$.
+\begin{thm}{Companion lemma}\label{lem:companion}
+Consider the braid group $B_4$ with standard generators $a$, $b$, and $c$; so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$, and $b\cdot c\cdot b=c\cdot b\cdot c$.
 Let $d=a^{-1}\cdot b$.
-Suppose
+
+\begin{enumerate}[(i)]
+\item\label{companion2} Suppose
+\[h_1\cdot d^{n_1}\cdot h_2 \cdot d^{n_2}=1,\]
+where $h_i\in \langle a,c\rangle$.
+Then $n_1=n_2=0$ or $h_1,h_2\in\langle a\rangle$ for some $i$.
+
+\item\label{companion3} Suppose
 \[h_1\cdot d^{n_1}\cdot h_2 \cdot d^{n_2}\cdot  h_3\cdot  d^{n_3}=1,\]
-where $h_i\in \langle a,c\rangle$ and $n_i\ne 0$.
-Then $h_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ for some $i$.
+where $h_i\in \langle a,c\rangle$.
+Then $n_i= 0$ or $h_i\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$ for some $i$.
+\end{enumerate}
+
 \end{thm}
 
 \parit{Proof.}
 Consider the homomorphism $\phi\:B_4\to B_3$ that identifies $a$ and $b$.
-Note that $\ker\phi=\llangle d\rrangle$ is isomorphic to $F_2$ --- the free group with 2 generators.
+Let us denote its kernel by $F_2$; note that it is free group with 2 generators normally generated by $d$.
 
-Our equation can be rewritten as
+\parit{\ref{companion2}.}
+The equation rewritten as
+\[h_1\cdot h_2\cdot u^{n_1}\cdot v^{n_2} =1,\]
+where $u=h_2^{-1}\cdot d\cdot h_2$ and $v= d$ are elements of $F_2$.
+It follows that $h_1\cdot h_2=1$ and $u^{n_1}\cdot v^{n_2}=1$.
+Furthermore, $u$ and $v$ are primitive elements of $F_2$.
+
+If $n_1=0$, then $u^{n_1}\cdot v^{n_2}=1$ implies $n_2=0$.
+
+Assume $n_1\ne 0$.
+Since $u^{n_1}\cdot v^{n_2}=1$, we have $h_1,h_2\in \langle a\rangle$.
+Hence the statement follows.
+
+
+\parit{\ref{companion3}.} Our equations can be rewritten as
 \[h_1\cdot h_2\cdot h_3\cdot u^{n_1}\cdot v^{n_2}\cdot w^{n_3}=1,\]
-where $u=h_3^{-1}\cdot h_2^{-1}\cdot d\cdot h_2\cdot h_3$, $v=h_3^{-1}\cdot d\cdot h_3$, and $w=d$ are elements of the free group $F_2=\ker\phi \vartriangleleft B_4$.
+where $u=h_3^{-1}\cdot h_2^{-1}\cdot d\cdot h_2\cdot h_3$, $v=h_3^{-1}\cdot d\cdot h_3$, and $w=d$ are elements of $F_2$.
 It follows that $h_1\cdot h_2\cdot h_3=1$ and $u^{n_1}\cdot v^{n_2}\cdot w^{n_3}=1$.
 Furthermore, $u$, $v$ and $w$ are primitive elements of $F_2$.
 
-We can assume that the subgroup $\langle v, w\rangle$ is not cyclic.
-Otherwise $h_3\in\langle a\rangle$, and the statement follows.
+We can assume that the subgroups $\langle u, v\rangle$, $\langle v, w\rangle$, and $\langle w, u\rangle$ is not cyclic.
+Otherwise $h_i\in\langle a\rangle$ for some $i$, and the statement follows.
 
 By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
 Furthermore, we can assume that $|n_1|=|n_2|=1$.
@@ -368,7 +395,7 @@ Since $u$ is primitive in $F_2$, by the Kurosh subgroup theorem $u$ is primitive
 Therefore $\ZZ_{n_2}*\ZZ_{n_3}\cong \langle v,w\rangle/\llangle v^{n_2},w^{n_3}\rrangle$ is a quotient of $\langle v,w\rangle/\llangle v^{n_2}\cdot w^{n_3}\rrangle\z\cong \langle v,w\rangle/\llangle u \rrangle\cong \ZZ$,
 which is impossible since $\ZZ_{n_2}*\ZZ_{n_3}$ is not commutative.
 
-To emphasise that $|n_1|=|n_2|=1$, we put $\eps_1=n_1$, $\eps_2=n_2$, and $N=n_3$;
+To emphasise that $|n_1|=|n_2|=1$, set $\eps_1=n_1$, $\eps_2=n_2$, and $N=n_3$;
 thus the original equation can be rewritten as
 \[h_1\cdot d^{\eps_1}\cdot h_2 = d^{-N}\cdot h_3^{-1}\cdot d^{-\eps_2}.\]
 
@@ -376,7 +403,7 @@ As in the proof of Agol's lemma, let us think of $B_4$ as a mapping class group 
 \begin{figure}[ht!]
 \centering
 \vskip-0mm
-\includegraphics{mppics/pic-10}
+\includegraphics{mppics/pic-40}
 \vskip-0mm
 \end{figure}
 Note that $h_2(y)=y$ and $d^{\eps_1}(y)$ is parallel to $z$ in the left subdisc bounded by $y$.
@@ -408,16 +435,16 @@ $u^{\eps_1}\cdot v^{\eps_2}\cdot d^N=1$ gives
 \]
 
 If $\eps_1=\eps_2$, then $s=0$.
-Hence $h_3\in\langle a\rangle\cdot Z(B_3)$.
-Let $\zeta=(a\cdot c)^3$; it generates $Z(B_3)$.
-Note that $h_3=a^r\cdot\zeta^k$ and $h_1=a^q\cdot \zeta^{-k}$.
-Therefore
+Hence $h_3\in\langle a\rangle\cdot Z(B_3)$,
+where $Z(B_3)$ denotes the center of $B_3$, which is generated by $\zeta=(a\cdot c)^3$.
+Note that $h_3=a^r\cdot\zeta^k$ and $h_1=a^q\cdot \zeta^{-k}$ for some $k$.
+Therefore,
 \[h_2=h_1^{-1}\cdot h_3^{-1}\in\langle a\rangle,\]
 which finishes the proof.
 
 If $\eps_1=-\eps_2$, then $s=\eps_1$.
 Under the standard homomorphism
-$B_3\to \SL_2(\mathbb Z)$ this implies
+$B_3\to \SL_2(\mathbb Z)$, this implies
 \[
 h_3=h\cdot \zeta^{2\cdot k}
 \]
@@ -429,12 +456,9 @@ h_2
 =a^{-u}\cdot h\cdot a^N\cdot h^{-1}
 =a^{r-u-\eps_1}\cdot c^N\cdot a^{\eps_1-r},
 \]
-where we used
-\[
-c^\eps\cdot  a^N\cdot  c^{-\eps}
-=a^{-\eps}\cdot c^N\cdot a^\eps,
-\qquad \eps=\pm1.
-\]
+where we used that
+$c^\eps\cdot  a^N\cdot  c^{-\eps}
+=a^{-\eps}\cdot c^N\cdot a^\eps$, for $\eps=\pm1$.
 Thus, $h_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and the proof is finished.
 \qeds
 
@@ -443,14 +467,16 @@ Thus, $h_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and 
 Let $\tilde \gamma$ be a geodesic circle in $\Sigma$ such that $\length\tilde\gamma<2\cdot\pi$.
 Note that $\tilde \gamma$ enters and exits interior of each copy of $\triangle$ thru different sides;
 if not, we can make a shortcut along the side.
-Therefore we can approximate $\tilde\gamma$ by a curve $\tilde\gamma'$ that crosses the sides of the triangles at finitely many points; moreover, if two consecutive crossing points lie on one side, they are the endpoints of that side.
+Thus if $\tilde \gamma$ has two points of intersections with a side of a triangle,
+then it runs along this side.
+Therefore we can approximate $\tilde\gamma$ by a curve $\tilde\gamma'$ that crosses the sides of the triangles at finitely many points, and if two consecutive crossing points lie on one side, then they are the endpoints of that side.
 
 Recall that each triangle in $\Sigma$ is labeled by an element of $B_4$.
-Let us write a cyclic sequence of labels $b_1,\dots,b_k$ of interiors of triangles visited by $\tilde \gamma'$;
-now let us label $i$-th crossing point by $z_i=b_{i+1}\cdot b_i^{-1}$, so at the $i$-th crossing you multiply the old label by $z_i$.
-Evidently, $z_1\cdots z_k=1$.
-The cyclic sequence $(z_1,\dots,z_k)$ will be called an \emph{encoding} of $\tilde\gamma$;
-it is defined almost uniquely: if $i$-th edge of $\tilde\gamma$ runs along a side, say $c$, then changing labels $z_{i-1}$ and $z_i$ to $c^k\cdot z_{i-1}$ and $z_i\cdot c^{-k}$ produces another set of labels --- applying these changes, one can get all possible encodings of $\tilde\gamma$.
+Let us write a cyclic sequence of labels $l_1,\dots,l_k$ of interiors of triangles visited by $\tilde \gamma'$;
+now let us label $i$-th crossing point by $m_i=l_{i+1}\cdot l_i^{-1}$, so at the $i$-th crossing you multiply the old label by $m_i$.
+Evidently, $m_1\cdots m_k=1$.
+The cyclic sequence $(m_1,\dots,m_k)$ will be called an \emph{encoding} of $\tilde\gamma$;
+it is defined uniquely up to the following transformations: if $i$-th edge of $\tilde\gamma$ runs along a side $c$, then changing labels $m_{i-1}$ and $m_i$ to $c^k\cdot m_{i-1}$ and $m_i\cdot c^{-k}$ produces another set of labels, similar operation can be done for sides $a$ and $b$.
 
 Let us list the possible encodings of trajectories of length less than $2\cdot\pi$, under the additional constraint that they lift to closed geodesics.
 
@@ -460,8 +486,9 @@ Let us list the possible encodings of trajectories of length less than $2\cdot\p
 \item $w\in \langle c\rangle$ at $M$, and since the lift is geodesic, $w\ne 1$.
 \end{itemize}
 In other words $z=a^m\cdot b^n$ and $w=c^k$ for some $m\ne 0$, $n\ne 0$, and $k\ne 0$.
-Since $a^m\cdot b^n\cdot c^k=1$ if and only if $m=n=k=0$, we have $z\cdot w\ne 1$.
-Thus $CM$ cannot be lifted to a geodesic circle.
+
+Note that $a^m\cdot b^n\cdot c^k=1$ if and only if $m=n=k=0$.
+Thus we have $z\cdot w\ne 1$ and thus $CM$ cannot be lifted to a geodesic circle.
 
 \parit{$AB$.} The trajectory $AB$ can have an encoding $(x,y)$: $x$ at $A$ and $y$ at $B$, where
 \begin{itemize}
@@ -471,15 +498,17 @@ Thus $CM$ cannot be lifted to a geodesic circle.
 To show that $AB$ has no geodesic lift, we need to check that $x\cdot y\ne1\in B_4$.
 If $x\cdot y=1$, then $x\cdot y\cdot x\cdot y=1$, this is ruled out by the $ABAB$ case.
 
-\parit{$ABAB$.} The trajectory $ABAB$ can have an encoding $(x_1,y_1,x_2,y_2)$: $x_1,x_2$ at $A$ and $y_1,y_2$ at $B$, where
+\parit{$ABAB$.}
+The trajectory $ABAB$ can have an encoding $(x_1,y_1,x_2,y_2)$: $x_1,x_2$ at $A$ and $y_1,y_2$ at $B$, where
 \begin{itemize}
-\item $x_1,x_2\in \langle b,c\rangle$, but since the lift is geodesic, $x_1,x_2\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
-\item $y_1,y_2\in \langle a,c\rangle$, but since the lift is geodesic, $y_1,y_2\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
+\item $x_1,x_2\in \langle b,c\rangle$, and since the lift is geodesic, $x_1,x_2\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
+\item $y_1,y_2\in \langle a,c\rangle$, and since the lift is geodesic, $y_1,y_2\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
 \end{itemize}
 We need to check that $x_1\cdot y_1\cdot x_2\cdot y_2\ne1\in B_4$, which follows from
 Corollary~\ref{cor:ABAB}.
 
-\parit{$ABAC$.} The trajectory $ABAC$ can have an encoding $(x_1,y,x_2,z)$, where
+\parit{$ABAC$.}
+The trajectory $ABAC$ can have an encoding $(x_1,y,x_2,z)$, where
 \begin{itemize}
 \item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1\notin \langle b\rangle\cdot\langle c\rangle$ and
 $x_2\z\notin \langle c\rangle\cdot\langle b\rangle$;
@@ -488,60 +517,32 @@ $x_2\z\notin \langle c\rangle\cdot\langle b\rangle$;
 \end{itemize}
 Since $a$ and $b$ commute, we can move $b$'s from $z$ to $x_1$.
 Therefore, we can assume that $z\in \langle a\rangle\setminus\{1\}$.
-In this case the Corollary~\ref{cor:ABAB} applies, and it implies $x_1\cdot y\cdot x_2\cdot z\ne 1\in B_4$.
+In this case \ref{cor:ABAB} implies $x_1\cdot y\cdot x_2\cdot z\ne 1\in B_4$.
 
-\parit{Case $AC$:} we have elements
+\parit{Case $AC$.} The trajectory $AC$ can have an encoding $(x,z)$: $x$ at $A$ and $z$ at $C$, where
 \begin{itemize}
- \item $x\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
- \item $z\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
+ \item $x\in \langle b,c\rangle$, and since the lift is geodesic, $x\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
+ \item $z\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$, and since the lift is geodesic, $z\notin \langle b\rangle$.
 \end{itemize}
 Since the lift is closed in the braid space, we have $x\cdot z=1\in B_4$.
-So, the problem reduces to the following:
-\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)\not\ni 1.\]
-This case and the next one follow from the $ACACAC$ case.
+Therefore $x\cdot z\cdot x\cdot z=1$, which is impossible by the $ACAC$ case.
 
-\parit{Case $ACAC$:} we have elements
+\parit{Case $ACAC$:} The trajectory $ACAC$ can have an encoding $(x_1,z_1,x_2,z_2)$: $x_1,x_2$ at $A$ and $z_1,z_2$ at $C$, where
 \begin{itemize}
  \item $x_1,x_2\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
  \item $z_1,z_2\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2\notin \langle b\rangle$.
 \end{itemize}
-Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2 =1\in B_4$.
-So, the problem reduces to the following:
-\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\cdot
-(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\not\ni 1;\]
-equivalently,
-\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)\cap(\langle a,b\rangle \setminus \langle b\rangle)\cdot (\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)=\varnothing.\]
+Since $a$ and $b$ commute, we can some $b$'s from $z_i$ to $x_i$ and assume that $z_i\in \langle d\rangle\setminus\{1\}$, where $d=a^{-1}b$.
+Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2 =1\in B_4$, which is impossible by part \ref{companion2} of the companion lemma.
 
-\parit{Case $ACACAC$:} we have elements
+\parit{Case $ACACAC$.}
+The trajectory $ACACAC$ can have an encoding $(x_1$, $z_1$, $x_2$, $z_2$, $x_3$, $z_3)$: $x_1,x_2,x_3$ at $A$ and $z_1,z_2,z_3$ at $C$, where
 \begin{itemize}
  \item $x_1,x_2,x_3\in \langle b,c\rangle$ at $A$, but since the lift is geodesic, $x_1,x_2,x_3\notin\langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle$;
  \item $z_1,z_2,z_3\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2,z_3\notin \langle b\rangle$.
 \end{itemize}
-Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2\cdot x_3\cdot z_3 =1\in B_4$.
-So, the problem reduces to the following:
-\[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\cdot
-(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\cdot
-(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
-\cdot
-(\langle a,b\rangle \setminus \langle b\rangle)
-\not\ni 1.\]
-This case follows from the second Agol's lemma.
+Since $a$ and $b$ commute, we can some $b$'s from $z_i$ to $x_i$ and assume that $z_i\in \langle d\rangle\setminus\{1\}$, where $d=a^{-1}b$.
+Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2\cdot x_3\cdot z_3 =1\in B_4$, and this is impossible by part \ref{companion3} of the companion lemma.
 
 {\sloppy
 \def\emph{\textit}

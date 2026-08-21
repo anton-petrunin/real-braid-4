@@ -1,13 +1,13 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: 16 -63 149 67 
-%%HiResBoundingBox: 16.75804 -62.61253 148.90355 66.55777 
+%%BoundingBox: 134 -63 267 67 
+%%HiResBoundingBox: 134.56096 -62.61253 266.70647 66.55777 
 %%Creator: MetaPost 2.02
 %%CreationDate: 2026.08.21:1714
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
-%%+ font KMDPAQ-CMMI10 ZYXYEB-CMR7 TOCEMT-CMSY7 QIDZBE-CMR10
+%%+ font AJPKTK-CMMI10 DPTMTJ-CMR7 TOCEMT-CMSY7 QIDZBE-CMR10
 %%DocumentSuppliedResources: procset mpost-minimal
-%%+ font KMDPAQ-CMMI10 ZYXYEB-CMR7 TOCEMT-CMSY7 QIDZBE-CMR10
+%%+ font AJPKTK-CMMI10 DPTMTJ-CMR7 TOCEMT-CMSY7 QIDZBE-CMR10
 %%EndComments
 %%BeginProlog
 %%BeginResource: procset mpost-minimal
@@ -18,7 +18,7 @@
 /ScaleFont{dup fmc 0 get Amul 0 exch put dup dup 3 get Amul 3 exch put fmd}bd
 /SlantFont{fmc 2 get dup 0 eq{pop 1}if Amul FontMatrix 0 get mul 2 exch put fmd}bd
 %%EndResource
-%%BeginResource: font KMDPAQ-CMMI10
+%%BeginResource: font AJPKTK-CMMI10
 %!PS-AdobeFont-1.0: CMMI10 003.002
 %%Title: CMMI10
 %Version: 003.002
@@ -30,7 +30,7 @@
 % This license is in the accompanying file OFL.txt, and is also
 % available with a FAQ at: http://scripts.sil.org/OFL.
 %%EndComments
-FontDirectory/KMDPAQ-CMMI10 known{/KMDPAQ-CMMI10 findfont dup/UniqueID known{dup
+FontDirectory/AJPKTK-CMMI10 known{/AJPKTK-CMMI10 findfont dup/UniqueID known{dup
 /UniqueID get 5087385 eq exch/FontType get 1 eq and}{pop false}ifelse
 {save true}{false}ifelse}{false}ifelse
 11 dict begin
@@ -310,7 +310,7 @@ D20FB637B3D095A561CA30FCBC6E459AA2A0110411519839ABE79A35E059036E
 cleartomark
 {restore}if
 %%EndResource
-%%BeginResource: font ZYXYEB-CMR7
+%%BeginResource: font DPTMTJ-CMR7
 %!PS-AdobeFont-1.0: CMR7 003.002
 %%Title: CMR7
 %Version: 003.002
@@ -322,7 +322,7 @@ cleartomark
 % This license is in the accompanying file OFL.txt, and is also
 % available with a FAQ at: http://scripts.sil.org/OFL.
 %%EndComments
-FontDirectory/ZYXYEB-CMR7 known{/ZYXYEB-CMR7 findfont dup/UniqueID known{dup
+FontDirectory/DPTMTJ-CMR7 known{/DPTMTJ-CMR7 findfont dup/UniqueID known{dup
 /UniqueID get 5000790 eq exch/FontType get 1 eq and}{pop false}ifelse
 {save true}{false}ifelse}{false}ifelse
 11 dict begin
@@ -1053,8 +1053,8 @@ cleartomark
 %%Page: 1 1
 gsave newpath 141.73225 -283.46451 moveto
 141.73225 283.46451 lineto
--141.73225 283.46451 lineto
--141.73225 -283.46451 lineto
+425.19676 283.46451 lineto
+425.19676 -283.46451 lineto
  closepath clip
  0 0 0 setrgbcolor 0.3 0 dtransform exch truncate exch idtransform pop setlinewidth
  [] 0 setdash 0 setlinecap 1 setlinejoin 10 setmiterlimit
@@ -1176,7 +1176,7 @@ grestore
  [] 0 setdash 0 setlinecap 1 setlinejoin 10 setmiterlimit
 newpath 141.73225 -62.36253 moveto
 141.73225 62.36232 lineto stroke
-143.83224 44.63377 moveto
+134.56096 44.63377 moveto
 (z) cmmi10 9.96265 fshow
 showpage
 %%EOF
