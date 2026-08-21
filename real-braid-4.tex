@@ -5,7 +5,7 @@
 
 %\usepackage[notref,notcite,color]{showkeys}
 
-\def\thetitle{4-string real braid space is CAT(0)}
+\def\thetitle{The four-string braid space is CAT(0)}
 \def\theauthors{Dmitri Panov and Anton Petrunin}
 
 \hypersetup{colorlinks=true,
@@ -19,9 +19,7 @@ pdftitle={\thetitle},
 pdfauthor={\theauthors}
 }
 
-%\usepackage[a-2b,mathxmp]{pdfx}[2018/12/22]
 %\overfullrule=100mm
-%\usepackage[none]{hyphenat}
 
 %\makeatletter\let\orig@section\section\renewcommand{\section}[1]{\orig@section{#1.}}\usepackage{environ}\RenewEnviron{figure}[1][]{}\RenewEnviron{figure*}[1][]{}\RenewEnviron{wrapfigure}[1][]{}\pagestyle{empty}\let\ps@plain\ps@empty\makeatother\def\emph{\textit}\usepackage[none]{hyphenat}
 
@@ -33,14 +31,18 @@ pdfauthor={\theauthors}
 \maketitle
 
 \begin{abstract}
-
+The $n$-string braid space is defined as a universalcovering of the complex $n$-space by  branching at the hyperplanes $z_i=z_j$.
+We show that $4$-string braid space is CAT(0).
 \end{abstract}
 
 \section{Introduction}
 
-Let $\CC^n$ be the complex spacewith the standard Euclidean metric and the standard coordinates $z_1,\dots,z_n$, and let $W$ be $\CC^n$ with removed hyperplanes $z_i=z_j$ for all $i\ne j$.
-Denote by $\tilde W$ the universal cover of $W$, equipped with the induced metric.
-The completion of $\tilde W$ will be called the \emph{complex braid space}%
+Let $\CC^n$ be the complex space
+with coordinates $z_1,\dots,z_n$ and the standard Euclidean metric.
+Remove from $\CC^n$ the complex hyperplanes $z_i=z_j$ for all $i\ne j$;
+denote the remaining set by $W$.
+Let $\tilde W$ be the universal cover of $W$, equipped with the induced metric.
+The completion of $\tilde W$ will be called the \emph{braid space}%
 \footnote{The terminology comes from the usual interpretation of $W$ as the configuration space of $n$-tuples of distinct points in the complex plane.
 A path in $W$ describes a motion of these points without collisions; so their trajectories form a braid with $n$ strings.
 The braid group $B_n$ acts isometrically on $\CB^n$, and the quotient space $\CB^n/B_n$ is $\CC^n/S_n$;
@@ -58,148 +60,114 @@ The case $n=2$ is easy.
 The case $n=3$ is already nontrivial;
 two proofs are given by the authors \cite{panov-petrunin};
 one of them follows from the result of Ruth Charney and Michael Davis \cite{charney-davis-93}.
-In this note we describe a step toward the case $n=4$.
+In this note we do the case $n=4$.
 
-Consider the real subspace $\RR^n\subset\CC^n$.
-Denote by $\RB^n$ inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$;
-we will call it the \emph{real braid space} with $n$ strings.
-One may think of the real braid space as a space of braid diagrams.
-
-\begin{thm}{Theorem}\label{thm:main}
-$\RB^4$ is $\CAT(0)$.
+\begin{thm}{Theorem}\label{thm:main-C}
+$\CB^4$ is $\CAT(0)$.
 \end{thm}
-
-By Lemma~\ref{lem:convex-preimage} below, $\RB^n$ is a convex subset of $\CB^n$.
-In particular, if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$.
-Therefore, the theorem gives a special case of the conjecture for $n=4$.
-
-\section{Crofton formula}
-
-\begin{thm}{Lemma}\label{lem:crofton}
-Let $\gamma$ be a rectifiable curve in $\mathbb{S}^{2\cdot n-1}\subset\CC^{n}$.
-For $t>0$, set
-\[
-\rho_t(x+i\cdot y)=
-\frac{x+i\cdot t\cdot y}{|x+i\cdot t\cdot y|}.
-\]
-Then
-\[
-\oint\limits_{U\in \UU(n)}\length(\rho_t\circ U\circ \gamma)=\length \gamma,
-\]
-where $\UU(n)$ denotes the unitary group of $\CC^{n}$ and $\oint$ --- the avarage value.
-\end{thm}
-
-\parit{Proof.}
-Put $A_t(x+i\cdot y)=x+i\cdot t\cdot y$, so $\rho_t(a)=A_t(a)/|A_t(a)$ for any $a\in \mathbb{S}^{2\cdot n-1}$.
-
-Given $a\in\mathbb{S}^{2\cdot n-1}$, denote by $N_\gamma(a)$ the number of intersections of $\gamma$ with $a^\perp$, counted with multiplicity.
-By the spherical Crofton formula,
-\[
-\length \gamma=\pi\cdot\oint\limits_{a\in\mathbb{S}^{2m-1}} N_\gamma(a).
-\]
-Note that $N_{\rho_t\circ U\circ \gamma}(a)=N_\gamma(U^*\circ A_t^*a)$, and for fixed $a$, the vector
-$U^*\circ A_t^*a/|A_t^*a|$
-is uniformly distributed on $\mathbb{S}^{2m-1}$.
-Therefore, Fubini and the Crofton formula give
-\begin{align*}
-\oint\limits_{U\in \UU(n)}\length(\rho_t\circ U\circ \gamma)
-&=
-\pi\cdot\oint\limits_{a\in\mathbb{S}^{2\cdot m-1}}
-\
-\oint\limits_{U\in \UU(n)}
-N_\gamma(U^*\circ A_t^*a)=
-\\
-&=\pi\cdot\oint\limits_{b\in\mathbb{S}^{2\cdot m-1}}N_\gamma(b)=
-\\
-&=\length \gamma.
-\end{align*}
-\qeds
-
-\section{Complex braid space}
-
-The space $\CB^4$ is a 8-dimensional polyhedral space.
-Since all hyperplanes $z_i\z=z_j$ share the diagonal line $z_1=z_2=z_3=z_4$,
-it splits as a Euclidean product space $\CC\times C^6$, where $C^6$ is a 6-dimensional cone over a 5-dimensional spherical polyhedral space $\Sigma_\CC$; we may think that $\Sigma_\CC$ is the unit sphere in cone $C^6$ centered at its tip.
-
-The braid group $B_4$ acts on $\Sigma_\CC$ by isometries and the quotient space $\Sigma_\CC/B_4$ is isometric to $\mathbb{S}^5/S_4$,
-here $S_4$ is simmetric group that acts by permuting coordinates in $\CC^4$, and $S_4\acts \mathbb{S}^5$ is the induced action.
-A triangluation of $\mathbb{S}^5/S_4$ lifts to a triangulation of $\Sigma_\CC$;
-in particular, $\Sigma_\CC$ has \emph{finitely many shapes}; that is, $\Sigma$ admits a triangulation with finitely many isometry classes of simplices.
-
-If $\CB^4$ is not $\CAT(0)$, then $C^6$ is not $\CAT(0)$.
-By \cite[11.6]{alexander-kapovitch-petrunin}, $\Sigma_\CC$ is not $\CAT(1)$.
-
-Note that $\Sigma_\CC$ is locally $\CAT(1)$.
-Since $\Sigma_\CC$ has finitely many shapes, by \cite[II.5.4(7)]{bridson-haefliger}, we have that $\Sigma_\CC$ has a \emph{geodesic circle} $\tilde\gamma$ or length $<2\cdot\pi$; that is, $\tilde\gamma$ is globally isometric to a circle;
-in other words, one of two arcs of $\tilde\gamma$ connecting any two points on it is a minimizing geodesic.
-We can assume that $\tilde\gamma$ has shortest possible length.
-
-Let $\rho_t$ be as in \ref{lem:crofton}; suppose $t\approx 1$.
-Note that $\length \rho_t\circ\tilde\gamma\ge \length \tilde\gamma$; the same holds after complex rotation of $\CC^4$.
-By the Crofton lemma, we have equality for all $t\approx 1$, and therefore we have equality for all $t$.
-Moreover $\rho_t\circ\tilde\gamma$ is a geodesic circle for all values of $t$.
-
-If $t=0$, we get a geodesic circle of length $<2\cdot\pi$ in $\RB^4\subset \CB^4$.
-Hence it is sufficient to prove that $\RB^4$ is $\CAT(0)$.
-
 
 \section{Real braid space}
 
-Given $K\subset \CC$, denote by $\KB^n$ the inverse image of $K^n\subset \CC^n$ under the natural projection $\CB^n\to \CC^n$.
+Consider the real subspace $\RR^n\subset\CC^n$.
+Denote by $\RB^n$ the inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$;
+we will call it the \emph{real braid space} with $n$ strings.
+One may think of $\RB^n$ as the space of braid diagrams.
 
 \begin{thm}{Lemma}\label{lem:convex-preimage}
-If $K\subset \CC$ is a closed convex set, then $\KB^n$ is a closed convex set of $\CB^n$.
-In particular, $\RB^n$ is a convex subset of $\CB^n$.
+$\RB^n$ is a convex subset of $\CB^n$.
 \end{thm}
 
 \parit{Proof.}
-The nearest-point projection $r\:\CC\to K$ is short.
-Applying $r$ to each strand of a braid gives a short retraction
-$\CB^n\to \KB^n$.
+Let us write $\vec z=\vec x+i\cdot\vec y$ for $\vec z\in \CC^n$ and $\vec x,\vec y\in\RR^n$.
+Given real $t$ consider the \emph{imaginary rescaling}
+\[r_t\:\vec x+i\cdot\vec y\mapsto \vec x+i\cdot t\cdot \vec y.\]
+Note that $r_t$ preserves the complex hyperplanes $z_i=z_j$.
+Hence for any $t\ne 0$, the map $r_t$ induces a homeomorphism of $\CB^n$.
 
-Moreover, if a string with endpoints in $\KB^n$ leaves this set, then the retraction decreases its length.
-In particular, a minimizing geodesic with endpoints in $\KB^n$ cannot leave $\KB^n$,
-and the convexity follows.
-Taking $K=\RR$ gives the last assertion.
+If $|t|< 1$, then the map is short;
+moreover if it preserves length of a curve $\tilde\sigma$ then the image of $\tilde\sigma$ in $\CC^n$ is parallel to the real subspace.
+It follows that any geodesic in $\CB^n$ with the endpoints in $\RB^n$ must stay in $\RB^n$ --- hence the result.
 \qeds
 
-The space $\RB^4$ is a 4-dimensional polyhedral space.
-Since all hyperplanes $z_i=z_j$ share the diagonal line $z_1=z_2=z_3=z_4$,
-it splits as a Euclidean product space $\RR\times C^3$, where $C^3$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$; we may think that $\Sigma$ is the unit sphere in cone $C^3$ centered at its tip.
+This lemma implies that if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$;
+in particular, the proposition below is a special case of the main theorem.
 
-\begin{wrapfigure}{o}{36mm}
-\centering
-\vskip-3mm
-\includegraphics{mppics/pic-4}
-\vskip-0mm
-\end{wrapfigure}
+\begin{thm}{Proposition}\label{thm:main}
+$\RB^4$ is $\CAT(0)$.
+\end{thm}
 
-The space $\Sigma$ is glued from a countable collection of copies of the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
-Let us describe the gluing.
-First denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
+Consider the unit sphere $\mathbb{S}^{2\cdot n-1}\subset\CC^{n}$.
+Given $t\ne 0$, consider the map $\rho_t\:\mathbb{S}^{2\cdot n-1}\selfmap$ defined by
+$\rho_t(z)=r_t(z)/|r_t(z)|$, where $r_t$ is the imaginary rescaling described above.
+
+\begin{thm}{Crofton-like formula}\label{lem:crofton}
+Let $\gamma$ be a rectifiable curve in the unit sphere $\mathbb{S}^{2\cdot n-1}\subset\CC^{n}$, and let $t\ne 0$.
+Then $\length\gamma$ equals the average of $\length (\rho_t\circ \phi\circ \gamma)$
+for $\phi$ running in the unitary group $\UU(n)$.
+\end{thm}
+
+\parit{Proof.}
+By the standard Crofton formula, $\tfrac1\pi\cdot\length \gamma$ equals to the average value of $N_\gamma(a)$,
+where $a\in\mathbb{S}^{2\cdot n-1}$ and $N_\gamma(a)$ denotes the number of intersections of $\gamma$ with $a^\perp$ (counted with multiplicity).
+
+Observe that
+\[N_{\rho_t\circ \phi \circ \gamma}(a)=N_\gamma(\phi^*\circ r_t^*(a)/|r_t^*(a)|);\]
+moreover for fixed $a$ and $\phi$ running in $\UU(n)$, the vector
+$\phi^*\circ r_t^*(a)/|r_t^*(a)|$
+is uniformly distributed on $\mathbb{S}^{2\cdot n-1}$.
+Applying the Crofton formula to $\rho_t\circ \phi \circ \gamma$, we get the result.
+\qeds
+
+\parit{Reduction.}
+Since all hyperplanes $z_i\z=z_j$ share the diagonal complex line $z_1=z_2=z_3=z_4$,
+$\CB^4$ splits isometrically as a Euclidean product $\CC\times K_\CC$, where $K_\CC$ is a 6-dimensional cone over a 5-dimensional spherical polyhedral space, say $\Sigma_\CC$.
+
+Similarly, the space $\RB^4$ is a Euclidean product $\RR\times K_\RR$, where $K_\RR$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space, say $\Sigma_\RR$.
+
+The braid group $B_4$ acts on $\Sigma_\CC$ and on $\Sigma_\RR$ by isometries and the quotient spaces $\Sigma_\CC/B_4$ and $\Sigma_\RR/B_4$ are isometric to $\mathbb{S}^5/S_4$ and $\mathbb{S}^2/S_4$, respectively;
+here the actions $S_4\acts \mathbb{S}^5$ and $S_4\acts \mathbb{S}^2$ are induced from the action of the symmetric group $S_4$ that permutes coordinates $z_1,z_2,z_3,z_4$.
+Triangulations of $\mathbb{S}^5/S_4$ and $\mathbb{S}^2/S_4$ lift to triangulations of $\Sigma_\CC$ and $\Sigma_\RR$.
+In particular, both spaces $\Sigma_\CC$ and $\Sigma_\RR$ have \emph{finitely many shapes}; that is, each space admits a triangulation with finitely many isometry classes of simplices.
+
+If $\CB^4$ is not $\CAT(0)$, then $K_\CC$ is not $\CAT(0)$.
+By \cite[11.6]{alexander-kapovitch-petrunin}, $\Sigma_\CC$ is not $\CAT(1)$.
+
+Note that $\Sigma_\CC$ is locally $\CAT(1)$.
+Since $\Sigma_\CC$ has finitely many shapes, by \cite[II.5.4(7)]{bridson-haefliger}, we have that $\Sigma_\CC$ has a \emph{geodesic circle} $\tilde\gamma$ with length less than $2\cdot\pi$; that is, $\tilde\gamma$ is globally isometric to a circle;
+in other words, one of two arcs of $\tilde\gamma$ connecting any two points on it is a minimizing geodesic.
+We can assume that $\tilde\gamma$ has minimal possible length, say $\ell$.
+
+Let $\rho_t$ be as in \ref{lem:crofton}.
+Suppose $t\approx 1$; so $\rho_t\circ \tilde\gamma\approx\tilde\gamma$.
+Since $\ell$ is minimal, we have
+\[\length(\rho_t\circ\tilde\gamma) \ge \ell;\]
+the same holds after complex rotation of $\CC^4$.
+By the Crofton-like formula, we have equality for all $t\approx 1$, but it implies the equality for all $t$.
+In particular, $\rho_t\circ\tilde\gamma$ is a geodesic circle if $t\approx 1$;
+therefore, the same holds for every $t$.
+
+Passing to the limit, we also get it for $t=0$;
+applying a rotation from $\UU(4)$ to $\tilde\gamma$ we can assume that it has no purely imaginary points;
+in this case the curve $\rho_0\circ\tilde\gamma$ is defined.
+Note that $\rho_0\circ\tilde\gamma$ lies in $\Sigma_\RR$ and its length $\ell<2\cdot\pi$.
+Hence $\Sigma_\RR$ is not $\CAT(1)$,
+$K_\RR$ is not $\CAT(0)$, and hence neither is $\RB^4$.
+\qeds
+
+Note that the above reduction actually proves that the main theorem follows from the next claim,which will be proved in the following sections.
+
+\begin{thm}{Key claim}\label{clm:sigma}
+The space $\Sigma_\RR$ does not contain a geodesic circle of length $<2\cdot\pi$.
+\end{thm}
+
+\section{Short trajectories}
+
+Recall that the quotient space $\Sigma_\RR/B_4$ is isometric to $\mathbb{S}^2/S_4$, which is the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
+The space $\Sigma_\RR$ can be obtained by gluing copies of $\triangle$, one for each element of $B_4$.
+To describe this gluing, denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
 We will keep the notation $a$, $b$ and $c$ for the standard generators of the braid group $B_4$,
 so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$ and $b\cdot c\cdot b=c\cdot b\cdot c$.
 Take a copy of $\triangle$ for each element of $B_4$ and glue two triangles along one side $a$, $b$, or $c$ if their elements differ by left multiplication by a power of $a$, $b$, or $c$, respectively.
-
-Note that $\Sigma$ has \emph{finitely many shapes}; that is, $\Sigma$ admits a triangulation with finitely many isometry classes of simplices.
-
-Now let us reduce \ref{thm:main} to the next claim, which will be proved in the following sections.
-
-A closed curve in a metric space is called \emph{geodesic circle} if it is globally isometric to a circle;
-in other words, one of two arcs connecting any two points on the curve is a minimizing geodesic.
-
-\begin{thm}{Key claim}\label{clm:sigma}
-The space $\Sigma$ does not have geodesic circle of length $<2\cdot\pi$.
-\end{thm}
-
-\parit{Reduction of \ref{thm:main} to \ref{clm:sigma}.}
-Since $\RB^4$ is isometric to a product of Euclidean cone over $\Sigma$ and $\RR$, we have that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$; see \cite[11.6]{alexander-kapovitch-petrunin}.
-Since $\Sigma$ has finitely many shapes, it remains to apply \cite[II.5.4(7)]{bridson-haefliger}.
-\qeds
-
-
-
-\section{Short trajectories}
 
 \begin{wrapfigure}{o}{36mm}
 \centering
@@ -208,19 +176,18 @@ Since $\Sigma$ has finitely many shapes, it remains to apply \cite[II.5.4(7)]{br
 \vskip-0mm
 \end{wrapfigure}
 
-Recall that $\triangle$ denotes the spherical triangle with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
 Let us denote by $A$, $B$, and $C$ the vertices of $\triangle$ with right angle at $C$,
 and let $M$ be the midpoint of the side $AB$.
 
-A closed polygonal line in $\triangle$ can be encoded by its vertices in the cyclic order; for example, $CM$ denotes the polygonal line that comes from $C$ to $M$, and comes back.
+A closed polygonal line in $\triangle$ can be encoded by its vertices in the cyclic order; for example, $CM$ denotes the polygonal line that goes from $C$ to $M$ and back.
 
-Suppose $\Sigma$ has a geodesic circle $\tilde \gamma$ of length less than $2\cdot\pi$;
+Suppose $\Sigma_\RR$ has a geodesic circle $\tilde \gamma$ of length less than $2\cdot\pi$;
 denote by $\gamma$ its projection to $\triangle$.
 Note that $\gamma$ satisfies the following properties:
 \begin{itemize}
 \item The curve $\gamma$ is a closed polygonal line of length less than $2\cdot\pi$ with all vertices on the boundary of $\triangle$.
-\item If a vertex of $\gamma$ lies in an interior of a side of $\triangle$, then $\gamma$ behaves as a billiard trajectory; that is, the angle of incidence is equal to the angle of reflection.
-\item If $\gamma$ has $C$ as a vertex, then it switches the direction at $C$ to the opposite one.
+\item If a vertex of $\gamma$ lies in the interior of a side of $\triangle$, then $\gamma$ behaves as a billiard trajectory; that is, the angle of incidence is equal to the angle of reflection.
+\item If $\gamma$ has $C$ as a vertex, then it reverses direction at $C$.
 \item If $\gamma$ has a vertex $A$ or $B$, then there is no restriction on the directions of incoming and outgoing edges.
 \item Any arc of $\gamma$ that does not pass thru $A$ or $B$ has length $<\pi$.
 \end{itemize}
@@ -237,13 +204,13 @@ Then, up to symmetry of $\triangle$ there are only the following trajectories:
 Reflecting $\triangle$ in its sides gives a tiling of $\mathbb{S}^2$.
 The images of $A$ are the vertices of a regular tetrahedron,
 the images of $B$ are the vertices of the antipodal tetrahedron,
-and the images of $C$ are the intersctions of their edges.
+and the images of $C$ are the intersections of their edges.
 
 Note that
 \[
-\cos|A-C|_{\mathbb{S}^2}=\frac1{\sqrt3},
+|A-C|_{\mathbb{S}^2}=\arccos\tfrac1{\sqrt3},
 \qquad
-\cos|A-B|_{\mathbb{S}^2}=\frac13,
+|A-B|_{\mathbb{S}^2}=\arccos\tfrac13,
 \qquad
 2\cdot|A-C|_{\mathbb{S}^2}+|A-B|_{\mathbb{S}^2}=\pi.
 \]
@@ -267,11 +234,11 @@ AB,\quad ABAB,\quad ABAC,\quad AC,\quad ACAC,\quad \text{and}\quad ACACAC.
 It remains to consider the case when $\gamma$ misses $A$ and $B$.
 Then $\length\gamma<\pi$ and $\gamma$ lifts to a closed geodesic, say $\bar \gamma$ in $\mathbb{S}^2$;
 a cyclic subgroup of the reflection group of $\triangle$ must act on $\bar\gamma$ by rotations with angle $<\pi$.
-Checking all cyclic subroups leves only one trajectory $CM$.
+Checking all cyclic subroups leaves only one trajectory $CM$.
 \qeds
 
 In section \ref{sec:encodings}, after proving a pair of lemmas about $B_4$,
-we will show that non of these trajectories lifts to a geodesic cirvle in $\Sigma$.
+we will show that none of these trajectories lifts to a geodesic circle in $\Sigma_\RR$.
 This will finish the proof.
 
 
@@ -294,7 +261,7 @@ Let us choose a complete hyperbolic metric on $\DD^2\setminus \{p_1,p_2,p_3,p_4\
 Choose an arc $w$ in $\DD^2\setminus \{p_1,p_2,p_3,p_4\}$ with endpoints on $\partial \DD^2$.
 In the isotopy class of $w$ there is a unique geodesic representative.
 Moreover the intersection number between pairs of arcs will be minimized by these representatives.
-Abusing notation, let us write $s(w)$ for the arc made geodesic after applying $s\in B_4$ to $w$.
+Abusing notation, let $s(w)$ denote the geodesic representative of the image of $w$ under $s$.
 
 \begin{figure}[ht!]
 \centering
@@ -328,7 +295,7 @@ similarly, one gets $s(y)\cap x = \emptyset$.
 \vskip-0mm
 \end{figure}
 
-Consider the subdisc $M\subset \DD^2$ that is the middle piese of $\DD^2$ after cutting along $x$ and $y$.
+Consider the subdisc $M\subset \DD^2$ that is the middle piece of $\DD^2$ after cutting along $x$ and $y$.
 Note that $M\ni p_2, p_3$, so $M\setminus \{p_2,p_3\}$ is a twice-punctured disk.
 Note that $M\setminus \{p_2,p_3\}$ may contain only one isotopy class of nonintersecting arcs with endpoints on the boundary.
 Therefore, each component of $s(x)\z\cap M$ and $s(y)\cap M$ must be isotopic to one arc.
@@ -338,11 +305,11 @@ and all components of $s(y) \cap M$ must have endpoints on $y\subset \partial M$
 
 
 We may assume that $s(x)\ne x$ and $s(y)\ne y$; in other words, there are components of $s(x)\cap M$ and $s(y) \cap M$.
-Otherwise
-\[s\in \langle b,c\rangle =\stab(x)\quad\text{and}\quad s\in \langle a,c\rangle =\stab(y),\] respectively.
+Otherwise, if $s(x)= x$ or $s(y)= y$, then
+\[s\in \langle b,c\rangle =\stab(x)\quad\text{or}\quad s\in \langle a,c\rangle =\stab(y),\] respectively.
 
 Then by composing $s$ with an element of $\langle c\rangle$, we can unwind this configuration;
-that is, replacing $s$ with $s'=c^{-i}\cdot s$ if necessary, we acheave that $s'(x)\cap z=\emptyset$ and
+that is, replacing $s$ with $s'=c^{-i}\cdot s$ if necessary, we achieve that $s'(x)\cap z=\emptyset$ and
 $s'(y)\cap z=\emptyset$.
 
 
@@ -353,10 +320,10 @@ $s'(y)\cap z=\emptyset$.
 \vskip-0mm
 \end{figure}
 
-Now let us focus on the subdiscs $L$ and $R$ in $\DD^2$ and obtained by cutting along $z$ and taking the left and right piece, respectively.
-There is only one isotopy class of arc $x$ and $s(x)$ in $L\setminus \{p_1,p_2\}$.
-Thus, replacing $s'$ with $s''=a^{-j}\cdot s'$, we acheave that $s''(x)=x$.
-Similarly, replacing $s''$ with $s'''=b^{-k}\cdot s''$, we acheave that $s'''(y)=x$.
+
+Now let us focus on the subdiscs $L$ and $R$ in $\DD^2$ obtained by cutting along $z$ and taking the left and right piece, respectively.
+Replacing $s'$ with $s''=a^{-j}\cdot s'$, we achieve that $s''(x)=x$.
+Similarly, replacing $s''$ with $s'''=b^{-k}\cdot s''$, we achieve that $s'''(y)=x$.
 
 Since $\stab(x \cup y) =\langle c\rangle$, we have
 \[s'''\in \langle c\rangle\quad\Rightarrow\quad s''\in \langle b\rangle\cdot\langle c\rangle\quad\Rightarrow\quad s'\in \langle a\rangle\cdot\langle b\rangle\cdot\langle c\rangle\quad\Rightarrow\quad s\in \langle c\rangle\cdot\langle a\rangle\cdot\langle b\rangle\cdot\langle c\rangle\]
@@ -366,7 +333,7 @@ Since $\stab(x \cup y) =\langle c\rangle$, we have
 \begin{thm}{Corollary}\label{cor:ABAB}
 Suppose $h_1\cdot k_1\cdot h_2 \cdot k_2=1$,
 where $h_i\in \langle a,c\rangle$ and $k_i\in \langle b,c\rangle$.
-Then one of the following statements hold:
+Then one of the following statements holds:
 \begin{enumerate}[(i)]
 \item $h_1,h_2\in\langle c\rangle\cdot \langle a\rangle\cdot \langle c\rangle$ and $k_1,k_2\in\langle c\rangle\cdot \langle b\rangle\cdot \langle c\rangle$,
 \item $h_1,h_2\in \langle c\rangle$, or
@@ -417,8 +384,8 @@ where $u=h_3^{-1}\cdot h_2^{-1}\cdot d\cdot h_2\cdot h_3$, $v=h_3^{-1}\cdot d\cd
 It follows that $h_1\cdot h_2\cdot h_3=1$ and $u^{n_1}\cdot v^{n_2}\cdot w^{n_3}=1$.
 Furthermore, $u$, $v$ and $w$ are primitive elements of $F_2$.
 
-We can assume that the subgroups $\langle v, w\rangle$ is not cyclic.
-Otherwise $h_3\in\langle a\rangle$, and the statent follows.
+We can assume that the subgroup $\langle v, w\rangle$ is not cyclic.
+Otherwise $h_3\in\langle a\rangle$, and the statement follows.
 
 By the Lyndon--Schützenberger theorem, we can assume that $|n_1|=1$.
 Furthermore, we can assume that $|n_1|=|n_2|=1$.
@@ -426,14 +393,14 @@ Furthermore, we can assume that $|n_1|=|n_2|=1$.
 Indeed, assume $|n_2|\ge 2$ and $|n_3|\ge 2$.
 Note that $u\in \langle v,w\rangle$.
 Since $u$ is primitive in $F_2$, by the Kurosh subgroup theorem $u$ is primitive in $\langle v,w\rangle$.
-Therefore $\ZZ_{n_2}*\ZZ_{n_2}\cong \langle v,w\rangle/\llangle v^{n_2},w^{n_3}\rrangle$ is a quotient of $\langle v,w\rangle/\llangle v^{n_2}\cdot w^{n_3}\rrangle\z\cong \langle v,w\rangle/\llangle u \rrangle\cong \ZZ$,
-which is impossible since $\ZZ_{n_2}*\ZZ_{n_2}$ is not commutative.
+Therefore $\ZZ_{n_2}*\ZZ_{n_3}\cong \langle v,w\rangle/\llangle v^{n_2},w^{n_3}\rrangle$ is a quotient of $\langle v,w\rangle/\llangle v^{n_2}\cdot w^{n_3}\rrangle\z\cong \langle v,w\rangle/\llangle u \rrangle\cong \ZZ$,
+which is impossible since $\ZZ_{n_2}*\ZZ_{n_3}$ is not commutative.
 
-To emphasise that $|n_1|=|n_2|=1$, we put $\eps_1=n_1$, $\eps_2=n_1$, and $N=n_3$;
+To emphasise that $|n_1|=|n_2|=1$, we put $\eps_1=n_1$, $\eps_2=n_2$, and $N=n_3$;
 thus the original equation can be rewritten as
 \[h_1\cdot d^{\eps_1}\cdot h_2 = d^{-N}\cdot h_3^{-1}\cdot d^{-\eps_2}.\]
 
-As in the proof of Agol's lemma, let us think that $B_4$ as a mapping class group of 4 punctured disc and consider the arcs $x, y, z$ as in the picture.
+As in the proof of Agol's lemma, let us think of $B_4$ as a mapping class group of 4 punctured disc and consider the arcs $x, y, z$ as in the picture.
 \begin{figure}[ht!]
 \centering
 \vskip-0mm
@@ -470,7 +437,7 @@ $u^{\eps_1}\cdot v^{\eps_2}\cdot d^N=1$ gives
 
 If $\eps_1=\eps_2$, then $s=0$.
 Hence $h_3\in\langle a\rangle\cdot Z(B_3)$.
-Suppose $\zeta=(a\cdot c)^3$; it generates $Z(B_3)$.
+Let $\zeta=(a\cdot c)^3$; it generates $Z(B_3)$.
 Note that $h_3=a^r\cdot\zeta^k$ and $h_1=a^q\cdot \zeta^{-k}$.
 Therefore
 \[h_2=h_1^{-1}\cdot h_3^{-1}\in\langle a\rangle,\]
@@ -501,19 +468,19 @@ Thus, $h_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and 
 
 \section{Encodings}\label{sec:encodings}
 
-Let $\tilde \gamma$ be a geodesic circle in $\Sigma$ such that $\length\gamma<2\cdot\pi$.
+Let $\tilde \gamma$ be a geodesic circle in $\Sigma_\RR$ such that $\length\tilde\gamma<2\cdot\pi$.
 Note that $\tilde \gamma$ enters and exits interior of each copy of $\triangle$ thru different sides;
 if not, we can make a shortcut along the side.
-Therefore we can approximate $\tilde \gamma$ by a curve $\tilde \gamma'$ that crossed sides of triangle at finite number of points; moreover, if two consequent points lie on one side, then these are two vertices of this side.
+Therefore we can approximate $\tilde\gamma$ by a curve $\tilde\gamma'$ that crosses the sides of the triangles at finitely many points; moreover, if two consecutive crossing points lie on one side, they are the endpoints of that side.
 
-Recall that each triangle in $\Sigma$ is labeled by an element of $B_4$.
+Recall that each triangle in $\Sigma_\RR$ is labeled by an element of $B_4$.
 Let us write a cyclic sequence of labels $b_1,\dots,b_k$ of interiors of triangles visited by $\tilde \gamma'$;
 now let us label $i$-th crossing point by $z_i=b_{i+1}\cdot b_i^{-1}$, so at the $i$-th crossing you multiply the old label by $z_i$.
 Evidently, $z_1\cdots z_k=1$.
-The cyclic sequence $(z_1,\dots,z_k)$ will be called \emph{encoding} of $\tilde\gamma$;
+The cyclic sequence $(z_1,\dots,z_k)$ will be called an \emph{encoding} of $\tilde\gamma$;
 it is defined almost uniquely: if $i$-th edge of $\tilde\gamma$ runs along a side, say $c$, then changing labels $z_{i-1}$ and $z_i$ to $c^k\cdot z_{i-1}$ and $z_i\cdot c^{-k}$ produces another set of labels --- applying these changes, one can get all possible encodings of $\tilde\gamma$.
 
-Let us list possible encodings for curves that project to a trajectories of length less than $2\cdot\pi$ in the spherical triangle $\triangle$ with an aditional constrain that the trajectory lifts to a closed geodesic.
+Let us list the possible encodings of trajectories of length less than $2\cdot\pi$, under the additional constraint that they lift to closed geodesics.
 
 \parit{$CM$.} The trajectory $CM$ can have an encoding $(z,w)$: $z$ at $C$ and $w$ at $M$, where
 \begin{itemize}
@@ -522,15 +489,15 @@ Let us list possible encodings for curves that project to a trajectories of leng
 \end{itemize}
 In other words $z=a^m\cdot b^n$ and $w=c^k$ for some $m\ne 0$, $n\ne 0$, and $k\ne 0$.
 Since $a^m\cdot b^n\cdot c^k=1$ if and only if $m=n=k=0$, we have $z\cdot w\ne 1$.
-Thus $CM$ does cannot be lifted to a geodesic circle.
+Thus $CM$ cannot be lifted to a geodesic circle.
 
 \parit{$AB$.} The trajectory $AB$ can have an encoding $(x,y)$: $x$ at $A$ and $y$ at $B$, where
 \begin{itemize}
 \item $x\in \langle b,c\rangle$, and since the lift is geodesic, $x\notin \langle c\rangle\cdot\langle b\rangle\cdot\langle c\rangle$;
 \item $y\in \langle a,c\rangle$, and since the lift is geodesic, $y\notin \langle c\rangle\cdot\langle a\rangle\cdot\langle c\rangle$.
 \end{itemize}
-To show that this does not have geodesic lifts, we need to check that $x\cdot y\ne1\in B_4$.
-If $x\cdot y=1$, then $x\cdot y\cdot x\cdot y=1$, but the latter is not possible from the case $ABAB$.
+To show that $AB$ has no geodesic lift, we need to check that $x\cdot y\ne1\in B_4$.
+If $x\cdot y=1$, then $x\cdot y\cdot x\cdot y=1$, this is ruled out by the $ABAB$ case.
 
 \parit{$ABAB$.} The trajectory $ABAB$ can have an encoding $(x_1,y_1,x_2,y_2)$: $x_1,x_2$ at $A$ and $y_1,y_2$ at $B$, where
 \begin{itemize}
@@ -549,7 +516,7 @@ $x_2\z\notin \langle c\rangle\cdot\langle b\rangle$;
 \end{itemize}
 Since $a$ and $b$ commute, we can move $b$'s from $z$ to $x_1$.
 Therefore, we can assume that $z\in \langle a\rangle\setminus\{1\}$.
-In this case the Corollary~\ref{cor:ABAB} is applicable, ant it implies $x_1\cdot y\cdot x_2\cdot z\ne 1\in B_4$.
+In this case the Corollary~\ref{cor:ABAB} applies, and it implies $x_1\cdot y\cdot x_2\cdot z\ne 1\in B_4$.
 
 \parit{Case $AC$:} we have elements
 \begin{itemize}
@@ -557,11 +524,11 @@ In this case the Corollary~\ref{cor:ABAB} is applicable, ant it implies $x_1\cdo
  \item $z\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z\notin \langle b\rangle$.
 \end{itemize}
 Since the lift is closed in the braid space, we have $x\cdot z=1\in B_4$.
-So, the problem reduces the following:
+So, the problem reduces to the following:
 \[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
 \cdot
 (\langle a,b\rangle \setminus \langle b\rangle)\not\ni 1.\]
-This case, as well as the next will follow from the next one.
+This case and the next one follow from the $ACACAC$ case.
 
 \parit{Case $ACAC$:} we have elements
 \begin{itemize}
@@ -569,7 +536,7 @@ This case, as well as the next will follow from the next one.
  \item $z_1,z_2\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2\notin \langle b\rangle$.
 \end{itemize}
 Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2 =1\in B_4$.
-So, the problem reduces the following:
+So, the problem reduces to the following:
 \[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
 \cdot
 (\langle a,b\rangle \setminus \langle b\rangle)
@@ -589,7 +556,7 @@ equivalently,
  \item $z_1,z_2,z_3\in \langle a,b\rangle=\langle a\rangle\cdot\langle b\rangle$ at $C$, but since the lift is geodesic, $z_1,z_2,z_3\notin \langle b\rangle$.
 \end{itemize}
 Since the lift is closed in the braid space, we have $x_1\cdot z_1\cdot x_2\cdot z_2\cdot x_3\cdot z_3 =1\in B_4$.
-So, the problem reduces the following:
+So, the problem reduces to the following:
 \[(\langle b,c\rangle \setminus \langle b\rangle\cdot\langle c\rangle\cdot\langle b\rangle)
 \cdot
 (\langle a,b\rangle \setminus \langle b\rangle)
