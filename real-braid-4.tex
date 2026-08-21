@@ -60,18 +60,25 @@ The case $n=2$ is easy.
 The case $n=3$ is already nontrivial;
 two proofs are given by the authors \cite{panov-petrunin};
 one of them follows from the result of Ruth Charney and Michael Davis \cite{charney-davis-93}.
-In this note we do the case $n=4$.
 
-\begin{thm}{Theorem}\label{thm:main-C}
-$\CB^4$ is $\CAT(0)$.
-\end{thm}
-
-\section{Real braid space}
+In this note we make a step toward the case $n=4$.
 
 Consider the real subspace $\RR^n\subset\CC^n$.
 Denote by $\RB^n$ the inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$;
 we will call it the \emph{real braid space} with $n$ strings.
 One may think of $\RB^n$ as the space of braid diagrams.
+
+\begin{thm}{Theorem}\label{thm:main}
+$\RB^4$ is $\CAT(0)$.
+\end{thm}
+
+Lemma \ref{lem:convex-preimage} shows that $\RB^n$ is a convex subset of $\CB^n$;
+in particular, if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$.
+Thus our theorem is a special case of the conjecture for $n=4$.
+
+\section{Real braid space}
+
+
 
 \begin{thm}{Lemma}\label{lem:convex-preimage}
 $\RB^n$ is a convex subset of $\CB^n$.
@@ -89,81 +96,45 @@ moreover if it preserves length of a curve $\tilde\sigma$ then the image of $\ti
 It follows that any geodesic in $\CB^n$ with the endpoints in $\RB^n$ must stay in $\RB^n$ --- hence the result.
 \qeds
 
-This lemma implies that if $\CB^n$ is $\CAT(0)$, then so is $\RB^n$;
-in particular, the proposition below is a special case of the main theorem.
+Since all hyperplanes $z_i=z_j$ share the diagonal line $z_1=z_2=z_3=z_4$,
+the real braid space $\RB^4$ splits as a Euclidean product space $\RR\times C^3$, where $C^3$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space $\Sigma$.
 
-\begin{thm}{Proposition}\label{thm:main}
-$\RB^4$ is $\CAT(0)$.
-\end{thm}
+\begin{wrapfigure}{o}{36mm}
+\centering
+\vskip-3mm
+\includegraphics{mppics/pic-4}
+\vskip-0mm
+\end{wrapfigure}
 
-Consider the unit sphere $\mathbb{S}^{2\cdot n-1}\subset\CC^{n}$.
-Given $t\ne 0$, consider the map $\rho_t\:\mathbb{S}^{2\cdot n-1}\selfmap$ defined by
-$\rho_t(z)=r_t(z)/|r_t(z)|$, where $r_t$ is the imaginary rescaling described above.
+The space $\Sigma$ is glued from a countable collection of copies of the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
+Let us describe the gluing.
+First denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
+We will keep the notation $a$, $b$ and $c$ for the standard generators of the braid group $B_4$,
+so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$ and $b\cdot c\cdot b=c\cdot b\cdot c$.
+Take a copy of $\triangle$ for each element of $B_4$ and glue two triangles along one side $a$, $b$, or $c$ if their elements differ by left multiplication by a power of $a$, $b$, or $c$, respectively.
 
-\begin{thm}{Crofton-like formula}\label{lem:crofton}
-Let $\gamma$ be a rectifiable curve in the unit sphere $\mathbb{S}^{2\cdot n-1}\subset\CC^{n}$, and let $t\ne 0$.
-Then $\length\gamma$ equals the average of $\length (\rho_t\circ \phi\circ \gamma)$
-for $\phi$ running in the unitary group $\UU(n)$.
-\end{thm}
+Note that $\Sigma$ has \emph{finitely many shapes}; that is, $\Sigma$ admits a triangulation with finitely many isometry classes of simplices.
 
-\parit{Proof.}
-By the standard Crofton formula, $\tfrac1\pi\cdot\length \gamma$ equals to the average value of $N_\gamma(a)$,
-where $a\in\mathbb{S}^{2\cdot n-1}$ and $N_\gamma(a)$ denotes the number of intersections of $\gamma$ with $a^\perp$ (counted with multiplicity).
-
-Observe that
-\[N_{\rho_t\circ \phi \circ \gamma}(a)=N_\gamma(\phi^*\circ r_t^*(a)/|r_t^*(a)|);\]
-moreover for fixed $a$ and $\phi$ running in $\UU(n)$, the vector
-$\phi^*\circ r_t^*(a)/|r_t^*(a)|$
-is uniformly distributed on $\mathbb{S}^{2\cdot n-1}$.
-Applying the Crofton formula to $\rho_t\circ \phi \circ \gamma$, we get the result.
-\qeds
-
-\parit{Reduction.}
-Since all hyperplanes $z_i\z=z_j$ share the diagonal complex line $z_1=z_2=z_3=z_4$,
-$\CB^4$ splits isometrically as a Euclidean product $\CC\times K_\CC$, where $K_\CC$ is a 6-dimensional cone over a 5-dimensional spherical polyhedral space, say $\Sigma_\CC$.
-
-Similarly, the space $\RB^4$ is a Euclidean product $\RR\times K_\RR$, where $K_\RR$ is a 3-dimensional cone over a 2-dimensional spherical polyhedral space, say $\Sigma_\RR$.
-
-The braid group $B_4$ acts on $\Sigma_\CC$ and on $\Sigma_\RR$ by isometries and the quotient spaces $\Sigma_\CC/B_4$ and $\Sigma_\RR/B_4$ are isometric to $\mathbb{S}^5/S_4$ and $\mathbb{S}^2/S_4$, respectively;
-here the actions $S_4\acts \mathbb{S}^5$ and $S_4\acts \mathbb{S}^2$ are induced from the action of the symmetric group $S_4$ that permutes coordinates $z_1,z_2,z_3,z_4$.
-Triangulations of $\mathbb{S}^5/S_4$ and $\mathbb{S}^2/S_4$ lift to triangulations of $\Sigma_\CC$ and $\Sigma_\RR$.
-In particular, both spaces $\Sigma_\CC$ and $\Sigma_\RR$ have \emph{finitely many shapes}; that is, each space admits a triangulation with finitely many isometry classes of simplices.
-
-If $\CB^4$ is not $\CAT(0)$, then $K_\CC$ is not $\CAT(0)$.
-By \cite[11.6]{alexander-kapovitch-petrunin}, $\Sigma_\CC$ is not $\CAT(1)$.
-
-Note that $\Sigma_\CC$ is locally $\CAT(1)$.
-Since $\Sigma_\CC$ has finitely many shapes, by \cite[II.5.4(7)]{bridson-haefliger}, we have that $\Sigma_\CC$ has a \emph{geodesic circle} $\tilde\gamma$ with length less than $2\cdot\pi$; that is, $\tilde\gamma$ is globally isometric to a circle;
-in other words, one of two arcs of $\tilde\gamma$ connecting any two points on it is a minimizing geodesic.
-We can assume that $\tilde\gamma$ has minimal possible length, say $\ell$.
-
-Let $\rho_t$ be as in \ref{lem:crofton}.
-Suppose $t\approx 1$; so $\rho_t\circ \tilde\gamma\approx\tilde\gamma$.
-Since $\ell$ is minimal, we have
-\[\length(\rho_t\circ\tilde\gamma) \ge \ell;\]
-the same holds after complex rotation of $\CC^4$.
-By the Crofton-like formula, we have equality for all $t\approx 1$, but it implies the equality for all $t$.
-In particular, $\rho_t\circ\tilde\gamma$ is a geodesic circle if $t\approx 1$;
-therefore, the same holds for every $t$.
-
-Passing to the limit, we also get it for $t=0$;
-applying a rotation from $\UU(4)$ to $\tilde\gamma$ we can assume that it has no purely imaginary points;
-in this case the curve $\rho_0\circ\tilde\gamma$ is defined.
-Note that $\rho_0\circ\tilde\gamma$ lies in $\Sigma_\RR$ and its length $\ell<2\cdot\pi$.
-Hence $\Sigma_\RR$ is not $\CAT(1)$,
-$K_\RR$ is not $\CAT(0)$, and hence neither is $\RB^4$.
-\qeds
-
-Note that the above reduction actually proves that the main theorem follows from the next claim,which will be proved in the following sections.
+Recall that a closed curve in a metric space is called \emph{geodesic circle} if it is globally isometric to a circle;
+in other words, one of two arcs connecting any two points on the curve is a minimizing geodesic.
 
 \begin{thm}{Key claim}\label{clm:sigma}
-The space $\Sigma_\RR$ does not contain a geodesic circle of length $<2\cdot\pi$.
+The space $\Sigma$ does not have geodesic circle of length $<2\cdot\pi$.
 \end{thm}
+
+\parit{Reduction of \ref{thm:main} to \ref{clm:sigma}.}
+Since $\RB^4$ is isometric to Euclidean cone over $\Sigma$, we have that $\RB^4$ is $\CAT(0)$ if and only if $\Sigma$ is $\CAT(1)$; see \cite[11.6]{alexander-kapovitch-petrunin}.
+
+The description above implies that $\Sigma$ is locally $\CAT(1)$.
+Since $\Sigma$ has finitely many shapes, it remains to apply \cite[II.5.4(7)]{bridson-haefliger}.
+\qeds
+
+It remains to prove \ref{clm:sigma}.
 
 \section{Short trajectories}
 
-Recall that the quotient space $\Sigma_\RR/B_4$ is isometric to $\mathbb{S}^2/S_4$, which is the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
-The space $\Sigma_\RR$ can be obtained by gluing copies of $\triangle$, one for each element of $B_4$.
+Recall that the quotient space $\Sigma/B_4$ is isometric to $\mathbb{S}^2/S_4$, which is the spherical triangle $\triangle$ with angles $\tfrac\pi2$, $\tfrac\pi3$, and $\tfrac\pi3$.
+The space $\Sigma$ can be obtained by gluing copies of $\triangle$, one for each element of $B_4$.
 To describe this gluing, denote the sides of $\triangle$ by $a$, $b$ and $c$, so $a$ and $b$ are adjacent to the right angle.
 We will keep the notation $a$, $b$ and $c$ for the standard generators of the braid group $B_4$,
 so $a\cdot b=b\cdot a$, $a\cdot c\cdot a=c\cdot a\cdot c$ and $b\cdot c\cdot b=c\cdot b\cdot c$.
@@ -181,7 +152,7 @@ and let $M$ be the midpoint of the side $AB$.
 
 A closed polygonal line in $\triangle$ can be encoded by its vertices in the cyclic order; for example, $CM$ denotes the polygonal line that goes from $C$ to $M$ and back.
 
-Suppose $\Sigma_\RR$ has a geodesic circle $\tilde \gamma$ of length less than $2\cdot\pi$;
+Suppose $\Sigma$ has a geodesic circle $\tilde \gamma$ of length less than $2\cdot\pi$;
 denote by $\gamma$ its projection to $\triangle$.
 Note that $\gamma$ satisfies the following properties:
 \begin{itemize}
@@ -238,7 +209,7 @@ Checking all cyclic subroups leaves only one trajectory $CM$.
 \qeds
 
 In section \ref{sec:encodings}, after proving a pair of lemmas about $B_4$,
-we will show that none of these trajectories lifts to a geodesic circle in $\Sigma_\RR$.
+we will show that none of these trajectories lifts to a geodesic circle in $\Sigma$.
 This will finish the proof.
 
 
@@ -468,12 +439,12 @@ Thus, $h_2\in\langle a\rangle\cdot \langle c\rangle\cdot \langle a\rangle$, and 
 
 \section{Encodings}\label{sec:encodings}
 
-Let $\tilde \gamma$ be a geodesic circle in $\Sigma_\RR$ such that $\length\tilde\gamma<2\cdot\pi$.
+Let $\tilde \gamma$ be a geodesic circle in $\Sigma$ such that $\length\tilde\gamma<2\cdot\pi$.
 Note that $\tilde \gamma$ enters and exits interior of each copy of $\triangle$ thru different sides;
 if not, we can make a shortcut along the side.
 Therefore we can approximate $\tilde\gamma$ by a curve $\tilde\gamma'$ that crosses the sides of the triangles at finitely many points; moreover, if two consecutive crossing points lie on one side, they are the endpoints of that side.
 
-Recall that each triangle in $\Sigma_\RR$ is labeled by an element of $B_4$.
+Recall that each triangle in $\Sigma$ is labeled by an element of $B_4$.
 Let us write a cyclic sequence of labels $b_1,\dots,b_k$ of interiors of triangles visited by $\tilde \gamma'$;
 now let us label $i$-th crossing point by $z_i=b_{i+1}\cdot b_i^{-1}$, so at the $i$-th crossing you multiply the old label by $z_i$.
 Evidently, $z_1\cdots z_k=1$.
