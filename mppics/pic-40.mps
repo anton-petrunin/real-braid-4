@@ -2,7 +2,7 @@
 %%BoundingBox: 16 -63 207 63 
 %%HiResBoundingBox: 16.75804 -62.61253 206.66705 62.61232 
 %%Creator: MetaPost 2.02
-%%CreationDate: 2026.08.21:1714
+%%CreationDate: 2026.08.21:1858
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font AJPKTK-CMMI10 DPTMTJ-CMR7 QIDZBE-CMR10 CPBTUN-CMMI7 TJAOWE-CMR5
@@ -1298,10 +1298,10 @@ newpath 17.00804 0 moveto
 266.45647 -83.14948 17.00804 -83.14948 17.00804 0 curveto closepath stroke
  0 0.3 dtransform truncate idtransform setlinewidth pop
 newpath 198.42516 56.24294 moveto
-224.90488 43.00307 255.11806 28.65633 255.11806 0 curveto
-255.11806 -20.59038 222.75256 -24.32451 198.42516 0.00255 curveto
-176.5312 21.89616 147.40189 18.5318 147.40189 0 curveto
-147.40189 -27.12457 173.38351 -43.71707 198.42516 -56.23788 curveto stroke
+222.08073 44.41515 243.77965 25.78922 243.77965 0 curveto
+243.77965 -16.47232 217.88713 -19.45943 198.42516 0.00255 curveto
+178.9638 19.4639 153.07066 16.47295 153.07066 0 curveto
+153.07066 -25.78778 174.77074 -44.41068 198.42516 -56.23788 curveto stroke
 newpath 58.1929 0 moveto
 58.1929 0.39784 58.03484 0.77934 57.75354 1.06064 curveto
 57.47224 1.34193 57.09074 1.5 56.6929 1.5 curveto
@@ -1358,17 +1358,17 @@ newpath 228.2716 0 moveto
 (z) cmmi10 9.96265 fshow
 77.24547 8.90286 moveto
 (x) cmmi10 9.96265 fshow
-157.84393 20.2875 moveto
+160.89017 18.64383 moveto
 (d) cmmi10 9.96265 fshow
-163.02933 23.90291 moveto
+166.07556 22.25923 moveto
 (") cmmi7 6.97385 fshow
-166.79333 22.9066 moveto
+169.83957 21.26292 moveto
 (1) cmr5 4.98132 fshow
-171.17973 20.2875 moveto
+174.22597 18.64383 moveto
 (\() cmr10 9.96265 fshow
-175.05414 20.2875 moveto
+178.10037 18.64383 moveto
 (y) cmmi10 9.96265 fshow
-180.29604 20.2875 moveto
+183.34227 18.64383 moveto
 (\)) cmr10 9.96265 fshow
 grestore
  0 0 0 setrgbcolor 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth

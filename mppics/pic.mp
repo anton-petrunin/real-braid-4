@@ -378,9 +378,9 @@ draw p3 penhair;
 
 
 p31= point 1 of p3{(2,-1)}
-..(2.5)[z.p2,z.p3]{(down)}
+..(2.3)[z.p2,z.p3]{(down)}
 .. point .5 of p3
-.. .6[z.p2,z.p3]{(down)}
+.. .7[z.p2,z.p3]{(down)}
 .. {(2,-1)}point 0 of p3;
 
 draw  p0;
