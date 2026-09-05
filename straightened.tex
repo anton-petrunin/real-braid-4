@@ -1,0 +1,193 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{paper-en}
+\usepackage{acts}
+\usepackage{hyperref}
+
+%\usepackage[notref,notcite,color]{showkeys}
+
+\def\thetitle{Braid spaces have no geodesic loops}
+\def\theauthors{Dmitri Panov and Anton Petrunin}
+
+\hypersetup{colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black,
+pdftitle={\thetitle},
+pdfauthor={\theauthors}
+}
+
+%\overfullrule=100mm
+
+%\makeatletter\let\orig@section\section\renewcommand{\section}[1]{\orig@section{#1.}}\usepackage{environ}\RenewEnviron{figure}[1][]{}\RenewEnviron{figure*}[1][]{}\RenewEnviron{wrapfigure}[1][]{}\pagestyle{empty}\let\ps@plain\ps@empty\makeatother\def\emph{\textit}\usepackage[none]{hyphenat}
+
+\begin{document}
+
+\title{\thetitle}
+\author{\theauthors}
+\date{}
+\maketitle
+
+\begin{abstract}
+The $n$-string braid space is defined as a universal covering of the complex $n$-space branching at the hyperplanes $z_i=z_j$.
+It is conjectured that $n$-string braid space is CAT(0) for any $n$.
+We describe a source of convex functions in the braid space and use them to prove several special cases of this conjecture.
+\end{abstract}
+
+\section{Introduction}
+
+Let $\CC^n$ be the complex space
+with coordinates $z_1,\dots,z_n$ and the standard Euclidean metric.
+Remove from $\CC^n$ the complex hyperplanes $z_i=z_j$ for all $i\ne j$;
+denote the remaining set by $W$.
+Let $\tilde W$ be the universal cover of $W$, equipped with the induced metric.
+The completion of $\tilde W$ will be called the \emph{braid space}
+with $n$ strings and denoted by $\CB^n$.
+(Note that $W$ can be interpreted as configuration space of $n$-tuples of distinct points in the plane.
+Therefore a path in $W$ describes a braid with $n$ strings, which explains our terminology.)
+
+The following conjecture is a special case of a conjecture formulated by Daniel Allcock~\cite[Conjecture 1.4]{allcock}, which is related to an earlier conjecture of Ruth Charney and Michael Davis (see \cite[Conjecture 3]{charney-davis-95}), which in turn is motivated by the $K(\pi,1)$-conjecture \cite{vanderlek,paris}.
+The authors are responsible for a more general version of Allcock's conjecture \cite[Conjecture 1.1]{panov-petrunin}, which we have been trying to prove for several years.
+
+\begin{thm}{Conjecture}\label{braid-conj}
+$\CB^n$ is $\CAT(0)$ for any integer $n\ge 1$.
+\end{thm}
+
+The case $n=2$ is easy.
+The case $n=3$ is already nontrivial;
+two proofs are given by the authors \cite{panov-petrunin};
+one of them follows from the result of Ruth Charney and Michael Davis \cite{charney-davis-93}.
+Also Ruth Charney proved a special case of the conjecture for $n=4$ \cite[Theorem~5.4]{charney2004}.
+Namely, she proved that real braid space with 4 strings is $\CAT(0)$.
+One may think of the real braid space as the space of braid diagrams.
+Formally, it is the inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$.
+This is a convex subset of $\CB^n$; so if the braid space is $\CAT(0)$, then so is the corresponding real braid space.
+
+In this note we construct a class of convex functions on the braid space, which will be called \emph{pull-tight}.
+The idea is inspired by Ian Agol's answer to our question \cite{agol}.
+
+A point in $W$ is the complex plane $\CC$ with $n$ punctures.
+Choose two ideal points in the complex plane $\CC$ and a simple curve that connects them in the punctured plane.
+Think that the curve is a thread; let us pull its ends off so it becomes tight.
+The curve becomes a polygonal line with vertices at the punctures and two infinite edges and possible self-intersections.
+It can be arbitrarily well approximated by a simple curve that does not pass thru the punctures.
+Altho the obtained curve has infinite length, one can find the excess of its length by comparing it to the two-edge curve passing thru the origin --- the construction is similar to the construction of а Busemann function.
+This excess defines a locally Lipschitz function $W\to\RR$, which can be extended to a function $\CB^n\to\RR$.
+The functions that can be obtained this way will be called \emph{pull-tight}.
+
+\begin{thm}{Pull-tight theorem}\label{thm:pull-tight}
+Every pull-tight function $\CB^n\to\RR$ is convex.
+\end{thm}
+
+The braid space $\CB^n$ has a natural structure of a polyhedral space.
+Therefore, to show that $\CB^n$ is $\mathrm{CAT}(0)$ one has to forbid geodesic digons \cite[3.4.3]{AKP-invitation}.
+The pull-tight theorem implies the following weaker statement.
+
+\begin{thm}{Theorem}\label{thm:no-loops}
+The braid space has no geodesic loops.
+\end{thm}
+
+Assuming a geodesic loop exists, we find a pull-tight function that is not constant on the loop and arrive at a contradiction.
+
+
+\section{Pull-tight functions}
+
+\parit{Proof of \ref{thm:pull-tight}.}
+Let $f\:\CB^n\to \RR$ be a pull-tight function.
+Choose a unit-speed geodesic $\gamma$ in $\CB^n$;
+we need to show that $f\circ\gamma$ is a convex real-to-real function.
+
+Each point $\gamma(t)$ defines an array of points $p_1(t),\ldots,p_m(t)\in\CC$.
+The points move with constant velocity between the collision times.
+
+Denote by $\ell(t)$ the pull-tight curve that corresponds to $f$.
+It is a polygonal line that can be encoded by a sequence of its vertices; each vertex must be one of the points $p_i(t)$;  self-intersections, repeated vertices and edges are allowed.
+
+Suppose that the vertex sequence of $\ell(t)$ does not change in some open interval $\II\subset\RR$.
+Then convexity of $f\circ\gamma|_{\II}$ follows from the convexity of the distance function between two geodesics in the plane.
+
+The vertex sequence can change in two ways:  (1) when one of the points hits or leaves $\ell(t)$ and (2) at the collision of points.
+We may assume that such events happened only finitely many times.
+If it happens at time $t_0$ then we have to check that
+\[(f\circ\gamma)^+(t_0) - (f\circ\gamma)^-(t_0)\ge 0;\leqno({*})\]
+once it is done convexity of $f\circ\gamma$ follows.
+
+In the first case there is no collision, but vertex sequence changes.
+(For example, at time $t_0$ we may add a new point $p_i(t)$ between vertices $p_j(t)$ and $p_k(t)$.)
+In a neighborhood of $t_0$ the curve is described by two vertex sequences;
+denote the corresponding functions by $f_{\textrm{before}}$ and $f_{\textrm{after}}$;
+if $t\approx t_0$, then
+\[f\circ\gamma(t)=
+\begin{cases}
+f_{\textrm{before}}\circ\gamma(t)&\text{if\ } t\le t_0,
+\\
+f_{\textrm{after}}\circ\gamma(t)&\text{if\ } t\ge t_0.
+\end{cases}
+\]
+Note that
+\[(f_{\textrm{before}}\circ\gamma)'(t_0)=(f_{\textrm{after}}\circ\gamma)'(t_0)\]
+hence $({*})$ follows.
+
+In the second case we can assume that $k$ points collide at time $t_0$.
+We can assume that $t_0=0$ and the collision point is also $0\in\CC$.
+
+Rescale a small neighborhood of the collision point and a small time interval around $0$, keeping the velocities the same.
+In the limit we get a collision of all $k$ points in $\CB^k$.
+The points come with constant velocities to $0$ and run from it with constant velocities.
+We need to check $({*})$ for the corresponding function $\tilde f\colon\CB^k\to \RR$.
+Denote by $\tilde \ell(t)$ and $\tilde \gamma$ the corresponding pull-tight curve and geodesic in $\CB^k$.
+
+Note that the shape of $\tilde \ell(t)$ does not change: for $t>0$ and $t<0$ it only rescales and at $t=0$ it approaches an angle from both sides.
+If $({*})$ does not hold then adding a constant vector to all velocities in the $k$-point array can reduce the problem to the case \[(\tilde f\circ\tilde \gamma)^-(0)>0>(\tilde f\circ\tilde \gamma)^+(0).\]
+In other words, the function $\tilde f\circ\tilde \gamma$ has a strict maximum at $0$.
+This is impossible if the ideal points of $\tilde \ell$ are opposite;
+further we assume that they are not and construct a shortcut of $\tilde \gamma$, showing that it was not geodesic.
+
+Altho $\tilde\ell(t)$ might have self-intersections,
+in the obvious generalized sense it bounds a region $D_t$, equipped with its intrinsic length metric.
+Note that $D_t$ is $\CAT(0)$.
+
+
+Choose an ideal point $\xi$ that lies midway between the ideal points of $\tilde\ell(t)$.
+Note that superlevel sets of the Busemann function $b_t\:D_t\to\RR$ are compact.
+After normalizing $b_0(0)=0$, the strict maximum above implies
+\[\max\set{b_t(x)}{x\in D_t}\le -\eps\cdot|t|\]
+for some $\eps>0$.
+
+Now apply the gradient flow of $b_t$
+(which is simply moving $x$ along the geodesic half-line from $x$ to $\xi$),
+stopping at the sublevel set $\{b_t\le-\delta\}$ for some fixed $\delta>0$.
+Since $D_t$ is $\CAT(0)$, this map is length nonincreasing.
+For sufficiently small $\delta$, this deformation is the identity at the
+ends of a small interval around $0$ and provides a shortcut, proving that $\tilde\gamma$ is not a
+geodesic --- a contradiction.
+\qeds
+
+\section{No geodesic loops}
+
+\parit{Proof of \ref{thm:no-loops}.}
+Let $\gamma\:[0,L]\to\CB^n$ be a geodesic loop;
+denote by $p_1(t),\ldots,p_n(t)\z\in\CC$ its points at the time $t$.
+
+Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
+with fixed two opposite ideal points
+such that the corresponding pull-tight curves are straight lines that cut off $1,\ldots,n-1$ points, respectively, from $p_1(0),\ldots,p_n(0)$.
+
+With natural the normalization we have
+\[f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
+for each $i$.
+Since $f_i$ are convex, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
+The latter implies that the image of $\gamma$ in $\CC$ is a line segment --- a contradiction.
+\qeds
+
+{\sloppy
+\def\emph{\textit}
+\printbibliography[heading=bibintoc]
+\fussy
+}
+
+\end{document}
+
+
