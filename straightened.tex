@@ -165,6 +165,79 @@ ends of a small interval around $0$ and provides a shortcut, proving that $\tild
 geodesic --- a contradiction.
 \qeds
 
+\section{A restricted pull-tight theorem}
+
+Here is a simplified version of previous section, but it has complete proof.
+
+We say that a pull-tight function is \emph{one-point} if its two ideal points coincide and the defining thread surrounds exactly one puncture.
+
+\begin{thm}{Restricted pull-tight theorem}
+Every one-point pull-tight function is convex.
+\end{thm}
+
+\parit{Proof.}
+Let $f$ be a one-point pull-tight function and set $h=f/2$.
+Thus the pull-tight curve is the double of a broken ray from an ideal point $\xi$ to the surrounded puncture $p$.
+
+Let $\gamma$ be a geodesic.
+As long as the vertex sequence of the pull-tight ray does not change, convexity of $h\circ\gamma$ follows from convexity of the distance function in the plane.
+Changes of the vertex sequence away from collisions do not change the derivative, exactly as in the proof of the pull-tight theorem.
+It remains to consider a collision; we can assume that it happens at $t=0$.
+
+After rescaling, all colliding points move linearly to the origin and away from it.
+Suppose that
+$$
+(h\circ\gamma)^-(0)>(h\circ\gamma)^+(0).
+$$
+
+Adding the same constant vector to all colliding velocities, we may assume that $h\circ\gamma$ has a strict maximum at $0$.
+
+Consider one side of the collision and normalize it so that
+$$
+h(t)=-|t|,\qquad -1\le t<0.
+$$
+
+Let
+$$
+c\colon[1,\infty)\to\mathbb C
+$$
+
+be the corresponding pull-tight half-ray, parametrized by arclength, with $c(1)$ equal to the velocity of $p$.
+For large $s$,
+$$
+c(s)=s\cdot \xi+z,\qquad z\perp\xi.
+$$
+
+Replace the motion $p(t)=|t|\cdot c(1)$ by $\bar p(t)=|t|\cdot c(\tfrac1{|t|})$.
+Geometrically, $p$ is slid along the pull-tight ray so that the value of $h$ stays constant.
+Moreover $\bar p(t)\to\xi$ as $t\to0$.
+
+Set $r=|t|$ and $s=1/r$.
+Since $|c'|=1$, we have
+$$
+\left|c'-\frac cs\right|^2
+=
+1-\left(\frac{|c|^2}{s}\right)'.
+$$
+Therefore,
+$$
+\int_0^1|\bar p'(r)|^2\,dr
+=
+\int_1^\infty
+\left|c'(s)-\frac{c(s)}s\right|^2\,ds=
+|c(1)|^2-1.
+$$
+The original motion of $p$ has energy $|c(1)|^2$.
+
+Applying this construction on the two sides of the collision, with the scales chosen so that the displaced copies of $p$ meet at the same point on the ray to $\xi$, gives a curve with the same endpoints and strictly smaller energy.
+This contradicts the geodesicity of $\gamma$.
+
+Hence
+$$(h\circ\gamma)^-(0)\le (h\circ\gamma)^+(0),$$
+and therefore $f$ is convex.
+\qeds
+
+
 \section{No geodesic loops}
 
 \parit{Proof of \ref{thm:no-loops}.}
