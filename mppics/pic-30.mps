@@ -2,7 +2,7 @@
 %%BoundingBox: 16 -63 149 67 
 %%HiResBoundingBox: 16.75804 -62.61253 148.90355 66.55777 
 %%Creator: MetaPost 2.02
-%%CreationDate: 2026.08.21:1858
+%%CreationDate: 2026.09.09:1617
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font KMDPAQ-CMMI10 ZYXYEB-CMR7 TOCEMT-CMSY7 QIDZBE-CMR10

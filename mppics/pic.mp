@@ -406,4 +406,43 @@ label.rt(btex $y$ etex, .5[z.p3,z.p4]+(0,-.27)*u);
 
 
 endfig;
+
+
+beginfig(50)
+save u,p,n;
+u:=1.4cm;
+n=3;
+path p[];
+
+z.a0=(0,0)*u;
+z.a1=(0,2)*u;
+
+z.c0=(2,0)*u;
+z.c1=(1.8,1.4)*u;
+
+z.v=(0,1)*u;
+z.b0=(z.a0+z.a1+z.c0+z.c1)/4-z.v/2;
+z.b1=(z.a0+z.a1+z.c0+z.c1)/4+z.v/2;
+
+draw z.a0--z.a1 dashed evenly scaled .5 withcolor .5;
+draw z.b0--z.b1 dashed evenly scaled .5 withcolor .5;
+draw z.c0--z.c1 dashed evenly scaled .5 withcolor .5;
+
+for i=0  upto n:
+draw (i/(2*n))[z.a0,z.a1]--(i/(2*n))[z.c0,z.c1] pensemibold;
+endfor
+
+for i=1  upto n:
+draw ((n+i)/(2*n))[z.a0,z.a1]--((n+i)/(2*n))[z.b0,z.b1]--((n+i)/(2*n))[z.c0,z.c1] pensemibold;
+endfor
+
+for i=0  upto 2*n:
+dOt (i/(2*n))[z.a0,z.a1],(i/(2*n))[z.b0,z.b1],(i/(2*n))[z.c0,z.c1];
+endfor
+
+label.lft(btex $p_2$ etex, .5[z.a0,z.a1]);
+whitelabel.rt(btex $p_5$ etex, .5[z.b0,z.b1]);
+label.rt(btex $p_7$ etex, .5[z.c0,z.c1]);
+
+endfig;
 end
