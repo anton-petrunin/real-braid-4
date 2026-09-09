@@ -73,7 +73,7 @@ Choose two ideal points in the complex plane $\CC$ and a simple curve $\lambda$ 
 Think of the curve as a thread; let us pull its ends off so it becomes tight.
 The curve becomes a polygonal line with vertices at the punctures and two infinite edges; self-intersections are possible, but it can be arbitrarily well approximated by a simple curve isotopic to $\lambda$.
 Altho the obtained curve has infinite length, one can find the excess of its length by comparing it to the two-edge curve passing thru the origin --- the construction is similar to the construction of a Busemann function.
-This excess defines a function $\tilde W\to\RR$ and on $\CB^n$,
+This excess defines a function on $\tilde W$ and $\CB^n$,
 The functions that can be obtained this way will be called \emph{pull-tight}.
 
 \begin{thm}{Pull-tight theorem}\label{thm:pull-tight}
@@ -95,7 +95,7 @@ Assuming a geodesic loop exists, we find a pull-tight function that is not const
 \section{Pull-tight functions}
 
 \parit{Proof of \ref{thm:pull-tight}.}
-Let $f\:\CB^n\to \RR$ be a pull-tight function and $\lambda$ is its defining curve.
+Let $f\:\CB^n\to \RR$ be a pull-tight function, and let $\lambda$ be its defining curve.
 Given a unit-speed geodesic $\gamma$ in $\CB^n$,
 we need to show that $f\circ\gamma$ is a convex real-to-real function.
 
@@ -167,12 +167,12 @@ We can assume that $L_t$ approaches the convex angle as $t\to0$.%
 \footnote{If $\tilde\ell(t)$ is simple, then it bounds $L_t$ and $R_t$, and in a generalized sense this is true in general.}
 
 Choose an ideal point $\xi$ that lies midway between the ideal points of $\tilde\ell(t)$.
-Consider the Busemann function $b_t\:L_t\to\RR$ for $\xi$; assume they are normalized so that $b_0(0)=0$.
+Consider the Busemann function $b_t\:L_t\to\RR$ for $\xi$; assume they are normalized so that $b_t(\tilde p(t))=t\cdot b_1(\tilde p(1))$ for any $t\ge 0$.
 Note that superlevel sets of $b_t$ are compact.
 The strict maximum above implies $b_t(x)\le -\eps\cdot|t|$ for any $x\in L_t$ and some fixed $\eps>0$.
 
 Suppose $\tilde p_i$ lies on left side of $\tilde \lambda$.
-Let $\delta_i=-b_t\circ \tilde p_i(1)$;
+Let $\delta_i=-b_1\circ \tilde p_i(1)$;
 note that $\tilde p_i(t)=t\cdot \tilde p_i(1)$ and $b_t\circ \tilde p_i(t)=-t\cdot \delta_i$ for any $t\ge 0$.
 Let us connect $\tilde p_i(1)$ to $\xi$ by a unit-speed geodesic half-line $c_i\:[\delta_i,\infty)\to L_1$; so $b_1\circ c_i(s)+s=0$ for any $s\ge \delta_i$.
 Note that
@@ -194,31 +194,31 @@ we move $\tilde p_i(1)$ along $c_i$ to the $(-\delta/t)$-level and then scale it
 
 Note that $|\tilde p_i'(t)|^2=|\tilde p_i(1)|^2$ for any $t>0$.
 Therefore
-\[\int\limits_{0}^{\delta/\delta_i}|\tilde p_i'(t)|^2=(\delta/\delta_i)\cdot|\tilde p_i(1)|^2\]
-If $0<t<\delta_i/\delta$, then $\hat p_i(t)=t\cdot c_i(\delta/t)$.
+\[\int\limits_{0}^{\delta/\delta_i}|\tilde p_i'(t)|^2\cdot dt
+=
+(\delta/\delta_i)\cdot|\tilde p_i(1)|^2\]
+If $0<t<\delta/\delta_i$, then $\hat p_i(t)=t\cdot c_i(\delta/t)$.
 Since $|c'_i|=1$, we have
-\[|\hat p_i'(t)|^2=\left(\frac{|\hat p_i(t)|^2-\delta_i^2}{t}\right)'.\]
+\[|\hat p_i'(t)|^2=\left(\frac{|\hat p_i(t)|^2-\delta^2}{t}\right)'.\]
 By $({*}{*}{*})$, we have $|\hat p_i(t)|^2-\delta^2=o(t)$ whence
-\[\int\limits_0^{\delta/\delta_i}|\hat p_i'(t)|^2
+\[\int\limits_0^{\delta/\delta_i}|\hat p_i'(t)|^2\cdot dt
 =
 (\delta/\delta_i)\cdot(|\tilde p_i(1)|^2-\delta_i^2)
 <
-\int\limits_0^{\delta/\delta_i}|\tilde p_i'(t)|^2.\]
+\int\limits_0^{\delta/\delta_i}|\tilde p_i'(t)|^2\cdot dt.\]
 
-
-
-Observe that all points $\hat p_i(0)$ coincide; more precisely if $\tilde p_i$ and $\tilde p_j$ lie on the left side from $\lambda$, then $\hat p_i(0)=\hat p_j(0)$.
+Observe that all points $\hat p_i(0)$ coincide; more precisely if $\tilde p_i$ and $\tilde p_j$ lie on the left side of $\lambda$, then $\hat p_i(0)=\hat p_j(0)$.
 Therefore, repeating the same construction for $t\le 0$ produces a curve $t\mapsto \hat p_i(t)$ defined on the whole $\RR$.
 
 Further, define $\hat p_i(t)=\tilde p_i(t)$ if $\tilde p_i$ lies on the right side.
-Thus we obtain new a curve $t\mapsto \hat p_i(t)$ for each $i$; they define a new curve $\hat\gamma$ in $\CB^k$ that coincides with $\tilde \gamma$ away from some time interval $[-R,R]$.
+Thus we obtain a new curve $t\mapsto \hat p_i(t)$ for each $i$; they define a new curve $\hat\gamma$ in $\CB^k$ that coincides with $\tilde \gamma$ away from some time interval $[-R,R]$.
 The above inequality implies that
 \[\int\limits_{-R}^{R}|\tilde p'_i(t)|^2\cdot dt\ge \int\limits_{-R}^{R}|\hat p'_i(t)|^2\cdot dt\]
 for each $i$; moreover, if $p_i$ is on the left side then the inequality is strict.
 It follows that $\hat \gamma|_{[-R,R]}$ is shorter than $\tilde \gamma|_{[-R,R]}$ --- a contradiction.
 
 We might have several components of $\ell(t)$ in the limit; each of them is described by a curve isotopy class of simple curve with ideal endpoints.
-In this case, the same construction can be applied to the innermost piece that cut by these curves from the plane.
+In this case, the same construction can be applied to the innermost piece that is cut by these curves from the plane.
 Finally, combining the above calculations, one can prove $({*})$ in the case when several events (collisions and hitting/leaving) happen simultaneously.
 \qeds
 
@@ -232,10 +232,10 @@ Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
 with fixed two opposite ideal points
 such that the corresponding pull-tight curves are straight lines that cut off $1,\ldots,n-1$ points, respectively, from $p_1(0),\ldots,p_n(0)$.
 
-With the natural the normalization we have
+With the natural normalization we have
 \[f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
 for each $i$.
-Since $f_i$ are convex ans nonnegative, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
+Since $f_i$ are convex and nonnegative, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
 The latter implies that the image of $\gamma$ in $\CC^n$ is a line segment --- a contradiction.
 \qeds
 
