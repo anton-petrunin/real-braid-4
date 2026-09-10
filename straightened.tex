@@ -242,7 +242,7 @@ The latter implies that the image of $\gamma$ in $\CC^n$ is a line segment --- a
 \section{Comments}
 
 In the definitions of $\CB^n$ one can lift an arbitrary diagonal metric on $\CC^n$.
-In other words, we prescribe nonnegative masses $\mu_1,\dots,\mu_n$ to the punctures $p_1(t),\dots, p_n(t)$ that move in $\CC$ and measure the speed of the corresponding path in $\CB^n$ as
+In other words, we prescribe masses $\mu_1,\dots,\mu_n$ to the punctures $p_1(t),\dots, p_n(t)$ that move in $\CC$ and measure the speed of the corresponding path in $\CB^n$ as
 \[\sqrt{\mu_1\cdot|p_1'(t)|^2+\dots+ \mu_n\cdot|p_n'(t)|^2}.\]
 Let us denote the obtained space by $\CB^n(\bm{\mu})$, where $\bm{\mu}=(\mu_1,\dots,\mu_n)$.
 
@@ -253,23 +253,22 @@ If the conjecture holds true, then $\CB^n(\bm{\mu})$ is $\CAT(0)$ for any array 
 \parit{Proof.}
 If the masses $\mu_i$ are integers, then instead of the $i$-th string of the braid one could consider $\mu_i$ identical copies of this string.
 Thus if $M=\mu_1+\dots+\mu_n$, then the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$.
-Passing to the limit we get the case of weighted braid space with arbitrary  positive masses.
+Passing to the limit we get the case of arbitrary positive masses.
 \qeds
 
-The pull-tight theorem admits a straightforward generalization to this weighted braid space.
+The pull-tight theorem admits a straightforward generalization to $\CB^n(\bm{\mu})$.
 
 \parit{Approach to the conjecture.}
 Let us try to prove \ref{cor:masses} by induction on $n$.
 The case $n=3$ already follows from \cite{charney-davis-93}; the first new case $n=4$ might go as follows.
-Assuming the contrary, we have a weighted braid space $\CB^4(\bm{\mu})$ with a geodesic bigon.
+Assuming the contrary, we have a braid space $\CB^4(\bm{\mu})$ with a geodesic bigon.
 
 We can split off $\CC$ from $\CB^4(\bm{\mu})$, so that the center of mass of the punctures is at $0$.
 Denote by $\Sigma^4(\bm{\mu})$ the unit sphere in the constructed space.
 We need to show that it is $\CAT(1)$.
 
-By the induction hypothesis $\Sigma^4(\bm{\mu})$ is locally $\CAT(1)$.
-(In fact our theorem implies that every $\tfrac\pi2$-ball in $\Sigma^4(\bm{\mu})$ equipped with the induced length metric is $\CAT(1)$.)
-
+By the induction hypothesis $\Sigma^4(\bm{\mu})$ is locally $\CAT(1)$.%
+\footnote{In fact our theorem implies that every $\tfrac\pi2$-ball in $\Sigma^4(\bm{\mu})$ equipped with the induced length metric is $\CAT(1)$; in particular, any $\tfrac\pi2$-ball in $\Sigma^4(\bm{\mu})$ is $\CAT(1)$.}
 Assume $\Sigma^4(\bm{\mu})$ is not $\CAT(1)$.
 By \cite[II.5.4(7)]{bridson-haefliger}, it contains a shortest geodesic circle of length $L(\bm{\mu})<2\cdot\pi$; a \emph{geodesic circle} is a distance-preserving embedding of a circle with length metric.
 If one of the masses approaches zero, then $L(\bm{\mu})\z\to2\cdot \pi$; at least this is expected from the induction hypothesis.
@@ -283,9 +282,8 @@ This construction identifies spaces $\Sigma^4(\bm{\mu})$ for different masses; s
 
 Since the rescaling of masses does not change the isometry type of $\Sigma^4(\bm{\mu})$, we get
 \[\mu_1\cdot \frac{\partial L}{\partial \mu_1}+\dots+\mu_4\cdot \frac{\partial L}{\partial \mu_4}=0.\]
-Suppose $L(\bm{\mu})$ attains its minimum at an interior point.
-In this case we have $\frac{\partial L}{\partial \mu_i}=0$ for every $i$.
 
+At a minimum point of $L$, we have $\frac{\partial L}{\partial \mu_i}=0$ for every $i$.
 Assume that a unit-speed parametrization of the geodesic circle is given by punctures $p_1(t),\dots,p_4(t)$; so
 \[\mu_1\cdot|p_1(t)|^2+\dots+ \mu_4\cdot|p_4(t)|^2=1\quad\text{and}\quad\mu_1\cdot|p_1'(t)|^2+\dots+ \mu_4\cdot|p_4'(t)|^2=1.\]
 Then the condition $\frac{\partial L}{\partial \mu_i}=0$ can be written as
@@ -295,6 +293,8 @@ where the sum is taken at the collision times $t$.
 There is still hope that the above estimate on $L$ implies that the Hessian  of $L$ is nonpositive in some direction, which would (almost) prove the conjecture.
 AI suggests to look at the Laplacian with respect to the Fisher metric on the mass simplex:
 \[g(h,h)=\sum\frac{h_i^2}{\mu_i},\quad\sum h_i=0.\]
+Note however that for an equator the Hessian and Laplacian vanish.
+Therefore, if it goes thru, then this part has to use that $L<2\cdot\pi$ and geometry of the geodesic circle.
 \qeds
 
 
