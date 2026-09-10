@@ -241,17 +241,38 @@ The latter implies that the image of $\gamma$ in $\CC^n$ is a line segment --- a
 
 \section{Comments}
 
-If the conjecture holds true then it can be strengthened as follows.
+If the conjecture holds true, then it can be strengthened as follows.
 In the definitions of $\CB^n$ one can lift arbitrary diagonal metric on $\CC^n$;
-in other words, let $p_1(t),\dots p_n(t)$ be moving points in $\CC$ and let $\gamma$ be the corresponding curve in $\CC^n$;
-fix positive weights $a_1,\dots, a_n$ and define
-\[|\gamma'(t)|^2=a_1\cdot|p_1'(t)|^2+\dots+ a_n\cdot|p_n'(t)|^2.\]
+in other words, let $p_1(t),\dots p_n(t)$ be punctures moving in $\CC$ and let $\gamma$ be the corresponding curve in $\CB^n$;
+fix positive weights $a_1,\dots, a_n$ and define the speed of $\gamma$ at time $t$ as
+\[\sqrt{a_1\cdot|p_1'(t)|^2+\dots+ a_n\cdot|p_n'(t)|^2}.\]
 
 Indeed, if $a_i$ are integers, then instead of $i$-th string of the braid one could consider $a_i$ identical copies of this string.
 Thus if $N=a_1+\dots+a_n$, then knowing that the conjecture holds for $\CB^N$ implies the conjecture for the weighted braid space.
 Passing to the limit we get the case of weighted braid space with arbitrary positive weights.
 
 The pull-tight theorem admits a straightforward generalization to this weighted braid space.
+
+The most promising approach to the conjecture is proving this generalized form of conjecture via induction on $n$.
+The case $n=3$ already follows from \cite{charney-davis-93}; the first step $n=4$ might go as follows.
+Assume contrary, then the weighted braid space $\CB^4$ has a geodesic bigon for some weights.
+We can split off $\CC$ making the center of mass of the punctures to be at $0$.
+If one of the weights vanishes, then the space become isometric to a weighted $\CB^3$ which is impossible by the induction hypothesis.
+
+Changing weights one can hope to reduce the central angle of the bigon.
+If this is not possible, then we have plenty of equations of the geodesics in the bigon, plus the Hessian of the angle must be positive.
+I did not see such examples, and hope they do not exist.
+
+
+\parbf{Lasso functions.}
+Choose one puncture $p_i$, called the \emph{caught puncture}.
+Pass to the covering of $\CC$ infinitely branching at all punctures except $p_i$, and consider the Busemann function from the chosen ideal point to a lift of $p_i$.
+It seems that convexity of this function can be proved the same way,
+and this function is smaller than halft of the corresponding pull-tight function --- the one with identical ideal endpoints and $\lambda$ surrounding just $p_i$.
+By that reason this variation might be helpful.
+
+
+
 
 {\sloppy
 \def\emph{\textit}
