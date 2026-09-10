@@ -241,35 +241,69 @@ The latter implies that the image of $\gamma$ in $\CC^n$ is a line segment --- a
 
 \section{Comments}
 
-If the conjecture holds true, then it can be strengthened as follows.
-In the definitions of $\CB^n$ one can lift arbitrary diagonal metric on $\CC^n$;
-in other words, let $p_1(t),\dots p_n(t)$ be punctures moving in $\CC$ and let $\gamma$ be the corresponding curve in $\CB^n$;
-fix positive weights $a_1,\dots, a_n$ and define the speed of $\gamma$ at time $t$ as
-\[\sqrt{a_1\cdot|p_1'(t)|^2+\dots+ a_n\cdot|p_n'(t)|^2}.\]
+In the definitions of $\CB^n$ one can lift an arbitrary diagonal metric on $\CC^n$.
+In other words, we prescribe nonnegative masses $\mu_1,\dots,\mu_n$ to the punctures $p_1(t),\dots, p_n(t)$ that move in $\CC$ and measure the speed of the corresponding path in $\CB^n$ as
+\[\sqrt{\mu_1\cdot|p_1'(t)|^2+\dots+ \mu_n\cdot|p_n'(t)|^2}.\]
+Let us denote the obtained space by $\CB^n(\bm{\mu})$, where $\bm{\mu}=(\mu_1,\dots,\mu_n)$.
 
-Indeed, if $a_i$ are integers, then instead of $i$-th string of the braid one could consider $a_i$ identical copies of this string.
-Thus if $N=a_1+\dots+a_n$, then knowing that the conjecture holds for $\CB^N$ implies the conjecture for the weighted braid space.
-Passing to the limit we get the case of weighted braid space with arbitrary positive weights.
+\begin{thm}{Corollary from the conjecture}\label{cor:masses}
+If the conjecture holds true, then $\CB^n(\bm{\mu})$ is $\CAT(0)$ for any array of positive masses $\bm{\mu}=(\mu_1,\dots,\mu_n)$.
+\end{thm}
+
+\parit{Proof.}
+If the masses $\mu_i$ are integers, then instead of the $i$-th string of the braid one could consider $\mu_i$ identical copies of this string.
+Thus if $M=\mu_1+\dots+\mu_n$, then the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$.
+Passing to the limit we get the case of weighted braid space with arbitrary  positive masses.
+\qeds
 
 The pull-tight theorem admits a straightforward generalization to this weighted braid space.
 
-The most promising approach to the conjecture is proving this generalized form of conjecture via induction on $n$.
-The case $n=3$ already follows from \cite{charney-davis-93}; the first step $n=4$ might go as follows.
-Assume contrary, then the weighted braid space $\CB^4$ has a geodesic bigon for some weights.
-We can split off $\CC$ making the center of mass of the punctures to be at $0$.
-If one of the weights vanishes, then the space become isometric to a weighted $\CB^3$ which is impossible by the induction hypothesis.
+\parit{Approach to the conjecture.}
+Let us try to prove \ref{cor:masses} by induction on $n$.
+The case $n=3$ already follows from \cite{charney-davis-93}; the first new case $n=4$ might go as follows.
+Assuming the contrary, we have a weighted braid space $\CB^4(\bm{\mu})$ with a geodesic bigon.
 
-Changing weights one can hope to reduce the central angle of the bigon.
-If this is not possible, then we have plenty of equations of the geodesics in the bigon, plus the Hessian of the angle must be positive.
-I did not see such examples, and hope they do not exist.
+We can split off $\CC$ from $\CB^4(\bm{\mu})$, so that the center of mass of the punctures is at $0$.
+Denote by $\Sigma^4(\bm{\mu})$ the unit sphere in the constructed space.
+We need to show that it is $\CAT(1)$.
+
+By the induction hypothesis $\Sigma^4(\bm{\mu})$ is locally $\CAT(1)$.
+(In fact our theorem implies that every $\tfrac\pi2$-ball in $\Sigma^4(\bm{\mu})$ equipped with the induced length metric is $\CAT(1)$.)
+
+Assume $\Sigma^4(\bm{\mu})$ is not $\CAT(1)$.
+By \cite[II.5.4(7)]{bridson-haefliger}, it contains a shortest geodesic circle of length $L(\bm{\mu})<2\cdot\pi$; a \emph{geodesic circle} is a distance-preserving embedding of a circle with length metric.
+If one of the masses approaches zero, then $L(\bm{\mu})\z\to2\cdot \pi$; at least this is expected from the induction hypothesis.
+
+The length $L(\bm{\mu})$ can be realized by a closed geodesic.
+Note that this geodesic is not null-homotopic in the class of curves of length $<2\cdot\pi$.
+After perturbing the metric, this condition remains true; the new curve might fail to be a geodesic, but its length gives an upper bound on $L(\bm{\mu})$ after small perturbation of masses.
+
+Given an array of punctures $p_1,\dots, p_4$, we have to move it to make its center of mass zero, then normalize so that $\mu_1\cdot|p_1(t)|^2+\dots+ \mu_4\cdot|p_4(t)|^2=1$; it produce a point in $\Sigma^4(\bm{\mu})$
+This construction identifies spaces $\Sigma^4(\bm{\mu})$ for different masses; so we may think of $\Sigma^4(\bm{\mu})$ as the same set equipped with different metrics.
+
+Since the rescaling of masses does not change the isometry type of $\Sigma^4(\bm{\mu})$, we get
+\[\mu_1\cdot \frac{\partial L}{\partial \mu_1}+\dots+\mu_4\cdot \frac{\partial L}{\partial \mu_4}=0.\]
+Suppose $L(\bm{\mu})$ attains its minimum at an interior point.
+In this case we have $\frac{\partial L}{\partial \mu_i}=0$ for every $i$.
+
+Assume that a unit-speed parametrization of the geodesic circle is given by punctures $p_1(t),\dots,p_4(t)$; so
+\[\mu_1\cdot|p_1(t)|^2+\dots+ \mu_4\cdot|p_4(t)|^2=1\quad\text{and}\quad\mu_1\cdot|p_1'(t)|^2+\dots+ \mu_4\cdot|p_4'(t)|^2=1.\]
+Then the condition $\frac{\partial L}{\partial \mu_i}=0$ can be written as
+\[\sum \langle p_i(t),p_i'(t+)-p_i'(t-)\rangle =0\]
+where the sum is taken at the collision times $t$.
+
+There is still hope that the above estimate on $L$ implies that the Hessian  of $L$ is nonpositive in some direction, which would (almost) prove the conjecture.
+AI suggests to look at the Laplacian with respect to the Fisher metric on the mass simplex:
+\[g(h,h)=\sum\frac{h_i^2}{\mu_i},\quad\sum h_i=0.\]
+\qeds
 
 
 \parbf{Lasso functions.}
 Choose one puncture $p_i$, called the \emph{caught puncture}.
 Pass to the covering of $\CC$ infinitely branching at all punctures except $p_i$, and consider the Busemann function from the chosen ideal point to a lift of $p_i$.
 It seems that convexity of this function can be proved the same way,
-and this function is smaller than halft of the corresponding pull-tight function --- the one with identical ideal endpoints and $\lambda$ surrounding just $p_i$.
-By that reason this variation might be helpful.
+and this function is smaller than half of the corresponding pull-tight function --- the one with identical ideal endpoints and $\lambda$ surrounding just $p_i$.
+For that reason this variation might be helpful.
 
 
 
