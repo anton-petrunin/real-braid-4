@@ -408,14 +408,233 @@ label.rt(btex $y$ etex, .5[z.p3,z.p4]+(0,-.27)*u);
 endfig;
 
 
+
+
+
+vardef crossprod(expr u,v) =
+  xpart u * ypart v - ypart u * xpart v
+enddef;
+
+
+% Counterclockwise circular arc from A to B around C.
+vardef ccwarc(expr C,r,A,B) =
+  save aa,bb,now,nxt,h,S,E,uS,uE,q;
+  numeric aa,bb,now,nxt,h;
+  pair S,E,uS,uE;
+  path q;
+
+  aa := angle(A-C);
+  bb := angle(B-C);
+
+  if aa < 0: aa := aa+360; fi;
+  if bb < 0: bb := bb+360; fi;
+  if bb < aa: bb := bb+360; fi;
+
+  now := aa;
+  S := A;
+  q := S;
+
+  forever:
+    if bb-now > 90:
+      nxt := now+90;
+    else:
+      nxt := bb;
+    fi;
+
+    if nxt = bb:
+      E := B;
+    else:
+      E := C+r*dir(nxt);
+    fi;
+
+    h := (4r/3)*sind((nxt-now)/4)/cosd((nxt-now)/4);
+
+    uS := unitvector(S-C);
+    uE := unitvector(E-C);
+
+    q := q
+      ..controls (S+h*(uS rotated 90))
+             and (E-h*(uE rotated 90))
+      ..E;
+
+    exitif nxt = bb;
+
+    now := nxt;
+    S := E;
+  endfor;
+
+  q
+enddef;
+
+
+vardef circlearc(expr C,r,A,B,s) =
+  if s > 0:
+    ccwarc(C,r,A,B)
+  else:
+    reverse ccwarc(C,r,B,A)
+  fi
+enddef;
+
+
+% Optional controls.
+numeric turn[];
+numeric circleline_vertex_radius[];
+
+% Default radius.
+numeric circleline_radius;
+circleline_radius := 5;
+
+
+% P[0],...,P[n] are the original vertices.
+% P[1],...,P[n-1] are replaced by circles.
+vardef makecircleline(suffix P)(expr n,r) =
+  save c,rr,tin,tout,D,U,T,d,delta,q,k,x,a,b;
+  numeric c[],rr[],d,delta,x,a,b;
+  pair tin[],tout[],D,U,T;
+  path q;
+
+
+  % Choose the radius at every intermediate vertex.
+  for k=1 upto n-1:
+    if known circleline_vertex_radius[k]:
+      rr[k] := circleline_vertex_radius[k];
+    else:
+      rr[k] := r;
+    fi;
+  endfor;
+
+
+  % Decide which way to turn around each circle.
+  for k=1 upto n-1:
+
+    if known turn[k]:
+
+      if turn[k] >= 0:
+        c[k] := 1;
+      else:
+        c[k] := -1;
+      fi;
+
+    else:
+
+      x := crossprod(
+             unitvector(P[k]-P[k-1]),
+             unitvector(P[k+1]-P[k])
+           );
+
+      if x > 0:
+        c[k] := 1;
+      elseif x < 0:
+        c[k] := -1;
+      else:
+        c[k] := 1;
+      fi;
+
+    fi;
+
+  endfor;
+
+
+  % Tangent from P[0] to the first circle.
+  D := P[1]-P[0];
+  d := abs D;
+  U := D/d;
+
+  a := rr[1]/d;
+  b := sqrt(1-a*a);
+
+  T := b*U-c[1]*a*(U rotated 90);
+
+  tin[1] :=
+    P[1]-c[1]*rr[1]*(T rotated 90);
+
+
+  % Common tangents between consecutive circles.
+  for k=1 upto n-2:
+
+    D := P[k+1]-P[k];
+    d := abs D;
+    U := D/d;
+
+    delta := c[k]*rr[k] - c[k+1]*rr[k+1];
+
+    a := delta/d;
+    b := sqrt(1-a*a);
+
+    T := b*U+a*(U rotated 90);
+
+    tout[k] :=
+      P[k]-c[k]*rr[k]*(T rotated 90);
+
+    tin[k+1] :=
+      P[k+1]-c[k+1]*rr[k+1]*(T rotated 90);
+
+  endfor;
+
+
+  % Tangent from the last circle to P[n].
+  D := P[n]-P[n-1];
+  d := abs D;
+  U := D/d;
+
+  a := rr[n-1]/d;
+  b := sqrt(1-a*a);
+
+  T := b*U+c[n-1]*a*(U rotated 90);
+
+  tout[n-1] :=
+    P[n-1]-c[n-1]*rr[n-1]*(T rotated 90);
+
+
+  % Assemble the path.
+  q := P[0]--tin[1];
+
+  for k=1 upto n-1:
+
+    q := q &
+      circlearc(P[k],rr[k],tin[k],tout[k],c[k]);
+
+    if k < n-1:
+      q := q & (tout[k]--tin[k+1]);
+    fi;
+
+  endfor;
+
+  q := q & (tout[n-1]--P[n]);
+
+  q
+enddef;
+
+
+% Allows:
+%   circleline(z.a,z.b,z.c,...,z.m)
+vardef circleline(text pts) =
+  save Q,n,zz;
+  pair Q[],zz;
+  numeric n;
+
+  n := 0;
+
+  for zz = pts:
+    Q[n] := zz;
+    n := n+1;
+  endfor;
+
+  makecircleline(Q,n-1,circleline_radius)
+enddef;
+
+
 beginfig(50)
 save u,p,n;
 u:=1.4cm;
 n=3;
 path p[];
 
+z.ll=(-10,-1)*u;
+z.rr=(10,-2)*u;
+
 z.a0=(0,0)*u;
-z.a1=(0,2)*u;
+z.a1=(0,2.4)*u;
 
 z.c0=(2,0)*u;
 z.c1=(1.8,1.4)*u;
@@ -428,21 +647,92 @@ draw z.a0--z.a1 dashed evenly scaled .5 withcolor .5;
 draw z.b0--z.b1 dashed evenly scaled .5 withcolor .5;
 draw z.c0--z.c1 dashed evenly scaled .5 withcolor .5;
 
-for i=0  upto n:
-draw (i/(2*n))[z.a0,z.a1]--(i/(2*n))[z.c0,z.c1] pensemibold;
+circleline_radius := 1.4;
+
+for i=0  upto 2:
+draw circleline(z.ll,(i/(2*3))[z.a0,z.a1],(i/(2*3))[z.c0,z.c1],z.rr) cutbefore ((-.5,-5)*u--(-.5,5)*u) cutafter ((2.5,-5)*u--(2.5,5)*u) pensemibold;
 endfor
 
-for i=1  upto n:
-draw ((n+i)/(2*n))[z.a0,z.a1]--((n+i)/(2*n))[z.b0,z.b1]--((n+i)/(2*n))[z.c0,z.c1] pensemibold;
+for i=0  upto 3:
+draw circleline(z.ll,((3+i)/(2*3))[z.a0,z.a1],((3+i)/(2*3))[z.b0,z.b1],((3+i)/(2*3))[z.c0,z.c1],z.rr) cutbefore ((-.5,-5)*u--(-.5,5)*u) cutafter ((2.5,-5)*u--(2.5,5)*u) pensemibold;
 endfor
 
 for i=0  upto 2*n:
 dOt (i/(2*n))[z.a0,z.a1],(i/(2*n))[z.b0,z.b1],(i/(2*n))[z.c0,z.c1];
 endfor
 
-label.lft(btex $p_2$ etex, .5[z.a0,z.a1]);
-whitelabel.rt(btex $p_5$ etex, .5[z.b0,z.b1]);
-label.rt(btex $p_7$ etex, .5[z.c0,z.c1]);
+label.top(btex $p_2$ etex, 1[z.a0,z.a1]);
+label.top(btex $p_5$ etex, 1[z.b0,z.b1]+(3,0));
+label.top(btex $p_7$ etex, 1[z.c0,z.c1]);
 
 endfig;
+
+
+beginfig(60);
+save u,p;
+u := 1.1cm;
+path p[];
+
+z.l0 = (0,0)*u;
+z.l1 = (1,3)*u;
+z.l2 = (.2,4)*u;
+z.l3 = (2,4.4)*u;
+z.l4 = (2.8,1.4)*u;
+z.l5 = z.l4+whatever*(z.l1-z.l0) xscaled -1=(whatever,0);
+
+
+circleline_radius := 1.4;
+p1=circleline(z.l0,z.l1,z.l2,z.l3,z.l4,z.l5);
+circleline_radius := 2.8;
+p2=circleline(z.l2,z.l1,(x.l1+2.8,-.4*u));
+p3=z.l3--(x.l3,-.3*u);
+
+hatchoptions(withcolor .5);
+hatchfill p1--point length p1 of p1..point length p3 of p3..point length p2 of p2..point 0 of p1--cycle  withcolor (60, 2mm, -.5bp);
+draw p1 pensemibold;
+draw p2;
+draw p3;
+
+dOt z.l1,z.l2,z.l3,z.l4;
+
+label.lft(btex $p_2(1)$ etex, z.l1+(0,-1));
+label.top(btex $p_5(1)$ etex, z.l2+(-6,0));
+label.top(btex $p_7(1)$ etex, z.l3);
+label.rt(btex $p_6(1)$ etex, z.l4+(0,2));
+label.rt(btex $\tilde\ell(1)$ etex, .5[z.l3,z.l4]);
+whitelabel.top(btex $L_1$ etex, .8[z.l0,z.l5]);
+whitelabel.lft(btex $\sigma_5$ etex, (x.l1+2.8,1*u));
+whitelabel.lft(btex $\sigma_7$ etex, (x.l3,1*u));
+
+
+endfig;
+
+
+beginfig(70);
+save u,p;
+u := 1cm;
+path p[];
+
+
+z.l1 = (-1.4,1)*u;
+z.l2 = (0,1.8)*u;
+z.l3 = (1.1,1.5)*u;
+z.l4 = (1,.-.1)*u;
+z.l5 = (-1,0)*u;
+z.l0=.5[z.l1,z.l5]+unitvector(z.l1-z.l5) zscaled (0,2);
+
+circleline_radius := 1.4;
+circleline_vertex_radius[2] := 2.6;
+
+p1= circleline(z.l0,z.l1,z.l2,z.l3,z.l4,z.l2,z.l5,z.l0);
+
+draw p1 pensemibold;
+
+dOt z.l1,z.l2,z.l3,z.l4,z.l5;
+
+label.rt(btex $\ell$ etex, point 8.5 of p1);
+
+endfig;
+
+
 end
