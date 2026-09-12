@@ -714,9 +714,9 @@ u := 1cm;
 path p[];
 
 
-z.l1 = (-1.4,1)*u;
+z.l1 = (-2,1)*u;
 z.l2 = (0,1.8)*u;
-z.l3 = (1.1,1.5)*u;
+z.l3 = (1.6,1.7)*u;
 z.l4 = (1,.-.1)*u;
 z.l5 = (-1,0)*u;
 z.l0=.5[z.l1,z.l5]+unitvector(z.l1-z.l5) zscaled (0,2);
@@ -730,7 +730,14 @@ draw p1 pensemibold;
 
 dOt z.l1,z.l2,z.l3,z.l4,z.l5;
 
-label.rt(btex $\ell$ etex, point 8.5 of p1);
+label.rt(btex $\ell$ etex, .5[z.l4,z.l3]);
+
+label.rt(btex $p_2$ etex, z.l1+(0,-2));
+label.bot(btex $p_1$ etex, z.l2+(1,-5));
+label.llft(btex $p_4$ etex, z.l3+(1,0));
+label.top(btex $p_3$ etex, z.l4+(0,6));
+label.top(btex $p_5$ etex, z.l5+(0,2));
+
 
 endfig;
 
