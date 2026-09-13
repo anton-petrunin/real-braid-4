@@ -2,7 +2,7 @@
 %%BoundingBox: -11 -13 113 151 
 %%HiResBoundingBox: -10.8698 -12.72232 112.51956 150.16014 
 %%Creator: MetaPost 2.02
-%%CreationDate: 2026.09.11:2336
+%%CreationDate: 2026.09.13:1639
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font GDYDUA-CMMI10 ZCQHKB-CMR7 OPQWOX-CMR10
@@ -1028,24 +1028,32 @@ newpath 88.55766 43.6536 moveto
 87.6392 42.4036 87.95712 42.53531 88.19153 42.76973 curveto
 88.42595 43.00414 88.55766 43.32205 88.55766 43.6536 curveto closepath fill
  0 0 0 setrgbcolor
+6.81517 90.05316 moveto
+(~) cmr10 9.96265 fshow
 5.96938 90.05316 moveto
 (p) cmmi10 9.96265 fshow
 10.98187 88.55876 moveto
 (2) cmr7 6.97385 fshow
 15.45117 90.05316 moveto
 (\(1\)) cmr10 9.96265 fshow
+-10.024 130.21582 moveto
+(~) cmr10 9.96265 fshow
 -10.8698 130.21582 moveto
 (p) cmmi10 9.96265 fshow
 -5.8573 128.72142 moveto
 (5) cmr7 6.97385 fshow
 -1.388 130.21582 moveto
 (\(1\)) cmr10 9.96265 fshow
+52.10239 142.68814 moveto
+(~) cmr10 9.96265 fshow
 51.25659 142.68814 moveto
 (p) cmmi10 9.96265 fshow
 56.26909 141.19374 moveto
 (7) cmr7 6.97385 fshow
 60.73839 142.68814 moveto
 (\(1\)) cmr10 9.96265 fshow
+91.15346 43.16295 moveto
+(~) cmr10 9.96265 fshow
 90.30766 43.16295 moveto
 (p) cmmi10 9.96265 fshow
 95.32016 41.66855 moveto

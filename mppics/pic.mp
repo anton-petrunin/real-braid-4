@@ -695,10 +695,10 @@ draw p3;
 
 dOt z.l1,z.l2,z.l3,z.l4;
 
-label.lft(btex $p_2(1)$ etex, z.l1+(0,-1));
-label.top(btex $p_5(1)$ etex, z.l2+(-6,0));
-label.top(btex $p_7(1)$ etex, z.l3);
-label.rt(btex $p_6(1)$ etex, z.l4+(0,2));
+label.lft(btex $\tilde p_2(1)$ etex, z.l1+(0,-1));
+label.top(btex $\tilde p_5(1)$ etex, z.l2+(-6,0));
+label.top(btex $\tilde p_7(1)$ etex, z.l3);
+label.rt(btex $\tilde p_6(1)$ etex, z.l4+(0,2));
 label.rt(btex $\tilde\ell(1)$ etex, .5[z.l3,z.l4]);
 whitelabel.top(btex $L_1$ etex, .8[z.l0,z.l5]);
 whitelabel.lft(btex $\sigma_5$ etex, (x.l1+2.8,1*u));
