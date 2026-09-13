@@ -137,13 +137,6 @@ A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures 
 Choose a simple curve $\lambda$ in the punctured plane.
 The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points.
 
-\begin{wrapfigure}{o}{40mm}
-\centering
-\vskip-2mm
-\includegraphics{mppics/pic-70}
-\vskip-0mm
-\end{wrapfigure}
-
 Think of the curve as a thread and make it tight.
 The curve becomes a polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
 If $\lambda$ is open, then $\ell$ has two infinite edges.
@@ -151,13 +144,24 @@ The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve
 
 If $\lambda$ is closed, then $f(\bm{p})$ is defined as the length of $\ell$.
 
-If $\lambda$ is open, then $\ell$ has infinite length.
-In this case, $f(\bm{p})$ is defined as the excess of its length compared to the two-edge curve passing thru the origin.
+
+\begin{wrapfigure}{o}{40mm}
+\centering
+\vskip-6mm
+\includegraphics{mppics/pic-70}
+\vskip-0mm
+\end{wrapfigure}
+
+If $\lambda$ is open, then $\ell$ might not exist;
+it happens if all punctures lie on one side of $\lambda$ and the location of the ideal points makes possible to shrink the thread indefinitely.
+In this case, let $f(\bm{p})\equiv -\infty$.
+Otherwise $f(\bm{p})$ is defined as the excess of its length compared to the two-edge curve passing thru the origin.
 More formally, suppose that $\alpha$ and $\omega$ are the ideal points at the beginning and the end,
 and $p_{i_1},\dots,p_{i_k}$ is the sequence of vertices of $\ell$.
 Then
 \[f(\bm{p})=b_\alpha(p_{i_1})+|p_{i_1}-p_{i_2}|+\ldots+|p_{i_{k-1}}-p_{i_k}|+b_\omega(p_{i_k}),\]
 where $b_\xi$ denotes the Busemann function with ideal point $\xi$ normalized so that $b_\xi(0)=0$.
+
 
 In both cases we have defined a function on $\tilde \WW^n$.
 Note that it is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
@@ -291,7 +295,8 @@ Therefore, repeating the same construction for $t\le 0$ produces a curve $t\maps
 
 Further, define $\hat p_i(t)=\tilde p_i(t)$ if $\tilde p_i$ lies on the right side.
 Thus we obtain a new curve $t\mapsto \hat p_i(t)$ for each $i$.
-Observe that these curves correspond to a new curve $\hat\gamma$ in $\CB^k$ that coincides with $\tilde \gamma$ away from some time interval $[-R,R]$; here we use that $\hat p_i(0)=\hat p_j(0)$ if $\tilde p_i$ and $\tilde p_j$ lie on the left side of $\tilde\lambda$.
+Observe that these curves correspond to a new curve $\hat\gamma$ in $\CB^k$ that coincides with $\tilde \gamma$ away from some time interval $[-R,R]$;
+here we use that $\hat p_i(0)=\hat p_j(0)$ if $\tilde p_i$ and $\tilde p_j$ lie on the left side of $\tilde\lambda$.
 The above inequality implies that
 \[\int\limits_{-R}^{R}|\tilde p'_i(t)|^2\cdot dt
 \ge
@@ -348,7 +353,9 @@ If the conjecture holds, then $\CB^n(\bm{\mu})$ is $\CAT(0)$ for any array of po
 
 \parit{Proof.}
 If the masses $\mu_i$ are integers, then instead of the $i$-th string of the braid one can consider $\mu_i$ identical copies of this string.
-Thus if $M=\mu_1+\dots+\mu_n$, then the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$.
+Thus if $M=\mu_1+\dots+\mu_n$, then the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$;
+indeed, $\CB^n(\bm{\mu})$ is isometric to a convex subset of $\CB^M$.
+
 By rescaling, rational approximation, and passing to the limit we get the case of arbitrary positive masses.
 \qeds
 
