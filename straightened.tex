@@ -39,7 +39,7 @@ We describe a source of convex functions in the braid space and use them to prov
 We assume that the reader is friends with $\CAT(0)$ spaces.
 
 Let $\CC^n$ be the complex space
-with coordinates $z_1,\dots,z_n$ and the standard Euclidean metric.
+with coordinates $z_1,\ldots,z_n$ and the standard Euclidean metric.
 Remove from $\CC^n$ the complex hyperplanes $z_i=z_j$ for all $i\ne j$;
 denote the remaining set by $\WW^n$.
 Let $\tilde \WW^n$ be the universal cover of $\WW^n$, equipped with the induced metric.
@@ -95,8 +95,9 @@ In the proof we assume that a geodesic loop exists, and construct a pull-tight f
 
 Consider a geodesic $\gamma$ in $\CB^n$.
 A point $\gamma(t)$ defines an array of punctures $p_1(t),\z\ldots,p_n(t)\in\CC$.
-We say that $\gamma$ has a \emph{collision} at time $t$ if at this time the velocities of some $p_i$ change;
+We say that $\gamma$ does not have a  \emph{collision} at time $t$ if at this time the velocities of some $p_i$ are constant in a neighborhood of $t$,
 so the punctures move with constant velocity between the collision times.
+A priory collision times form a closed set.
 
 \begin{thm}{Lemma}\label{lem:BFK}
 There is a universal bound $N=N(n)$ on the number of collisions of geodesics in $\CB^n$.
@@ -123,7 +124,7 @@ Any line segment in this angle corresponds to another geodesic in $\CB^n$;
 a collision happens when geodesic crosses certain half-lines from the vertex of the angle.
 This observation reduces the question to finding universal bound for the number of collisions of geodesic $\gamma$ that has length at most $\eps$ and such that $\bar\gamma$ lies at the distance at least $1$ from the diagonal line.
 
-If a point in $\CB^n$ has $k$ distinct punctures, then it admits a neighborhood of that is isometric to an open set in the product $\CB^{i_1}\times\dots\times\CB^{i_k}$; here $i_1+\z\ldots+i_k=n$.
+If a point in $\CB^n$ has $k$ distinct punctures, then it admits a neighborhood of that is isometric to an open set in the product $\CB^{i_1}\times\ldots\times\CB^{i_k}$; here $i_1+\z\ldots+i_k=n$.
 (In particular, if all punctures are distinct, then the point has a flat neighborhood.)
 Therefore, if $\eps>0$ is small, then there is a universal bound on number of collisions for all geodesics $\gamma$ described above, and this implies the lemma.
 \qeds
@@ -133,7 +134,7 @@ Therefore, if $\eps>0$ is small, then there is a universal bound on number of co
 A \emph{pull-tight} function is a function $f\colon\CB^n\to\RR$ that can be obtained via the following procedure.
 We first define it on the universal covering $\tilde\WW^n$ of the space $\WW^n$ and then extend to $\CB^n$.
 
-A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\dots,p_n)$ of the complex plane $\CC$.
+A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
 Choose a simple curve $\lambda$ in the punctured plane.
 The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points.
 
@@ -157,7 +158,7 @@ it happens if all punctures lie on one side of $\lambda$ and the location of the
 In this case, let $f(\bm{p})\equiv -\infty$.
 Otherwise $f(\bm{p})$ is defined as the excess of its length compared to the two-edge curve passing thru the origin.
 More formally, suppose that $\alpha$ and $\omega$ are the ideal points at the beginning and the end,
-and $p_{i_1},\dots,p_{i_k}$ is the sequence of vertices of $\ell$.
+and $p_{i_1},\ldots,p_{i_k}$ is the sequence of vertices of $\ell$.
 Then
 \[f(\bm{p})=b_\alpha(p_{i_1})+|p_{i_1}-p_{i_2}|+\ldots+|p_{i_{k-1}}-p_{i_k}|+b_\omega(p_{i_k}),\]
 where $b_\xi$ denotes the Busemann function with ideal point $\xi$ normalized so that $b_\xi(0)=0$.
@@ -185,7 +186,7 @@ Then convexity of $f\circ\gamma|_{\II}$ follows from the convexity of the distan
 The vertex sequence can change in two ways:
 (1) when a puncture hits or leaves $\ell(t)$
 and (2) at a collision.
-Such events happen at finitely many times, say $t_1,\dots,t_m$.
+Such events happen at finitely many times, say $t_1,\ldots,t_m$.
 Indeed, by \ref{lem:BFK}, we have only finitely many collisions,
 and between the collision times hitting/leaving events are described by isolated zeros of algebraic equations.
 
@@ -224,7 +225,7 @@ We can assume that $t_i=0$ and the collision point is also $0\in\CC$.
 Rescale a neighborhood of the collision point and a time interval around the collision time, keeping the velocities the same.
 In the limit we get a collision of all $k$ punctures in $\CB^k$.
 The punctures come with constant velocities to $0$ and run from it with constant velocities.
-Denote by $\tilde \ell(t)$, $\tilde \gamma$, and $\tilde p_1,\dots,\tilde p_k$
+Denote by $\tilde \ell(t)$, $\tilde \gamma$, and $\tilde p_1,\ldots,\tilde p_k$
 the limits of the pull-tight curve, the geodesic in $\CB^k$, and the corresponding punctures.
 Suppose that $\tilde \ell(t)$ is still defined by the isotopy class of a simple curve $\tilde\lambda$ in the $k$-punctured plane.
 Let us check $({*})$ for the corresponding pull-tight function $\tilde f\colon\CB^k\to \RR$.
@@ -334,10 +335,10 @@ The following observations might save time to someone interested in the conjectu
 Consider this part as a letter (while writing it we had in mind Ruth Charney and Michael Davis).
 
 In the definition of $\CB^n$ one can lift an arbitrary diagonal metric on $\CC^n$.
-In other words, we prescribe positive masses $\mu_1,\dots,\mu_n$ to the punctures $p_1(t),\dots, p_n(t)$ that move in $\CC$ and define the speed of the corresponding path in $\CB^n$ as
+In other words, we prescribe positive masses $\mu_1,\ldots,\mu_n$ to the punctures $p_1(t),\ldots, p_n(t)$ that move in $\CC$ and define the speed of the corresponding path in $\CB^n$ as
 \[\sqrt{\mu_1\cdot|p_1'(t)|^2+\ldots+ \mu_n\cdot|p_n'(t)|^2}.\]
-Let us denote the obtained space by $\CB^n(\bm{\mu})$, where $\bm{\mu}=(\mu_1,\dots,\mu_n)$.%
-\footnote{Equivalently, we can apply a diagonal matrix with $\sqrt{\mu_1},\dots,\sqrt{\mu_n}$ on the diagonal to the complex hyperplane arrangement $z_i=z_j$ (so the new complex arrangement is defined by $\frac{z_i}{\sqrt{\mu_i}}=\frac{z_j}{\sqrt{\mu_j}}$).
+Let us denote the obtained space by $\CB^n(\bm{\mu})$, where $\bm{\mu}=(\mu_1,\ldots,\mu_n)$.%
+\footnote{Equivalently, we can apply a diagonal matrix with $\sqrt{\mu_1},\ldots,\sqrt{\mu_n}$ on the diagonal to the complex hyperplane arrangement $z_i=z_j$ (so the new complex arrangement is defined by $\frac{z_i}{\sqrt{\mu_i}}=\frac{z_j}{\sqrt{\mu_j}}$).
 Then $\CB^n(\bm{\mu})$ is isometric to the universal cover of $\CC^n$ (with the standard metric) infinitely branching along the new hyperplane arrangement.}
 
 The definition of a pull-tight function extends to $\CB^n(\bm{\mu})$.
@@ -348,12 +349,12 @@ Every pull-tight function $\CB^n(\bm{\mu})\to\RR$ is lower semicontinuous and co
 \end{thm}
 
 \begin{thm}{Corollary from the conjecture}\label{cor:masses}
-If the conjecture holds, then $\CB^n(\bm{\mu})$ is $\CAT(0)$ for any array of positive masses $\bm{\mu}=(\mu_1,\dots,\mu_n)$.
+If the conjecture holds, then $\CB^n(\bm{\mu})$ is $\CAT(0)$ for any array of positive masses $\bm{\mu}=(\mu_1,\ldots,\mu_n)$.
 \end{thm}
 
 \parit{Proof.}
 If the masses $\mu_i$ are integers, then instead of the $i$-th string of the braid one can consider $\mu_i$ identical copies of this string.
-Thus if $M=\mu_1+\dots+\mu_n$, then the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$;
+Thus if $M=\mu_1+\ldots+\mu_n$, then the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$;
 indeed, $\CB^n(\bm{\mu})$ is isometric to a convex subset of $\CB^M$.
 
 By rescaling, rational approximation, and passing to the limit we get the case of arbitrary positive masses.
@@ -379,18 +380,18 @@ Choose a geodesic circle of length $L(\bm{\mu})$ in $\Sigma^4(\bm{\mu})$.
 Note that this geodesic is not null-homotopic in the class of curves of length $<2\cdot\pi$.
 After perturbing the metric, this condition remains true; the new curve might fail to be a geodesic, but its length gives an upper bound on $L(\bm{\mu})$ after small perturbation of masses.
 
-Given an array of punctures $p_1,\dots, p_4$, we have to move it making to make its center of mass zero, then normalize so that $\mu_1\cdot|p_1|^2+\dots+ \mu_4\cdot|p_4|^2=1$; it produces a point in $\Sigma^4(\bm{\mu})$.
+Given an array of punctures $p_1,\ldots, p_4$, we have to move it making to make its center of mass zero, then normalize so that $\mu_1\cdot|p_1|^2+\ldots+ \mu_4\cdot|p_4|^2=1$; it produces a point in $\Sigma^4(\bm{\mu})$.
 This construction identifies the underlying sets of $\Sigma^4(\bm{\mu})$ for different masses; so we may think of $\Sigma^4(\bm{\mu})$ as the same set equipped with different metrics.
 
 Since the rescaling of masses does not change the isometry type of $\Sigma^4(\bm{\mu})$, we get
-\[\mu_1\cdot \frac{\partial L}{\partial \mu_1}+\dots+\mu_4\cdot \frac{\partial L}{\partial \mu_4}=0.\]
+\[\mu_1\cdot \frac{\partial L}{\partial \mu_1}+\ldots+\mu_4\cdot \frac{\partial L}{\partial \mu_4}=0.\]
 
 At a minimum point of $L$ (by the induction hypothesis we can assume that it is in the interior), we have $\frac{\partial L}{\partial \mu_i}=0$ for every $i$.
-Assume that a unit-speed parametrization of the geodesic circle is given by punctures $p_1(t),\dots,p_4(t)$; so
+Assume that a unit-speed parametrization of the geodesic circle is given by punctures $p_1(t),\ldots,p_4(t)$; so
 \begin{align*}
-\mu_1\cdot p_1(t)+&\dots+ \mu_4\cdot p_4(t)=0,
-\\ \mu_1\cdot|p_1(t)|^2+&\dots+ \mu_4\cdot|p_4(t)|^2=1,
-\\ \mu_1\cdot|p_1'(t)|^2+&\dots+ \mu_4\cdot|p_4'(t)|^2=1.
+\mu_1\cdot p_1(t)+&\ldots+ \mu_4\cdot p_4(t)=0,
+\\ \mu_1\cdot|p_1(t)|^2+&\ldots+ \mu_4\cdot|p_4(t)|^2=1,
+\\ \mu_1\cdot|p_1'(t)|^2+&\ldots+ \mu_4\cdot|p_4'(t)|^2=1.
 \end{align*}
 Moreover, $p_i''(t)+p_i(t)=0$ if $p_i$ does not collide at time $t$.
 The condition $\frac{\partial L}{\partial \mu_i}=0$ can be written as
