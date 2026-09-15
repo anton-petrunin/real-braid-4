@@ -62,16 +62,16 @@ two proofs are given by the authors \cite{panov-petrunin};
 one of them follows from the result of Ruth Charney and Michael Davis \cite{charney-davis-93}.
 Ruth Charney also proved a special case of the conjecture for $n=4$ \cite[Theorem~5.4]{charney2004}.
 Namely, she proved that the real braid space with 4 strings is $\CAT(0)$.
-One may think of the real braid space as the space of braid diagrams.
-Formally, it is the inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$.
+%One may think of the real braid space as the space of braid diagrams.
+One can visualize the points of the real braid space braid diagrams. Formally, this space is the inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$.
 This is a convex subset of $\CB^n$; so if the braid space is $\CAT(0)$, then so is the corresponding real braid space.
 
 In this note we construct a class of convex functions on the braid space, which will be called \emph{pull-tight}.
 The idea of this construction is inspired by Ian Agol's answer to our question \cite{agol}.
 
 Let us describe pull-tight functions informally; an actual definition is given in Section~\ref{sec:pull-tight}.
-Recall that $\WW^n$ is a configuration space of punctures in the plane.
-Choose an isotopy class of a simple closed curve in the punctured plane and define a function $\tilde \WW^n\to\RR$ that returns the greatest lower bound of lengths of curves in this class;
+Recall that $\WW^n$ is a configuration space of punctures in the plane. Choose a point in $\WW^n$ and an isotopy class of a simple closed curve in the corresponding punctured plane.  Extend this class by continuity to an isotopy class of a simple closed curve in the punctured plane for all points of $\tilde \WW^n$.  
+Define next a function $\tilde \WW^n\to\RR$ that returns the greatest lower bound of lengths of curves in this class;
 this function extends naturally to $\CB^n$.
 There is also a variant of this function for simple open curves that connect two fixed ideal points.
 
@@ -96,11 +96,10 @@ In the proof we assume that a geodesic loop exists, and construct a pull-tight f
 Consider a geodesic $\gamma$ in $\CB^n$.
 A point $\gamma(t)$ defines an array of punctures $p_1(t),\z\ldots,p_n(t)\in\CC$.
 We say that $\gamma$ does not have a  \emph{collision} at time $t$ if at this time the velocities of some $p_i$ are constant in a neighborhood of $t$,
-so the punctures move with constant velocity between the collision times.
-A priory collision times form a closed set.
+so the punctures move with constant velocity between the collision times. One can show that the collision times form a discreet subset of times $t$. Indeed,  the projection of $\gamma$ to $\CC^n$ is a broken geodesic, and the points were it brakes are discreet in $t$.
 
 \begin{thm}{Lemma}\label{lem:BFK}
-There is a universal bound $N=N(n)$ on the number of collisions of geodesics in $\CB^n$.
+There is a universal upper bound $N=N(n)$ on the number of collisions for all geodesics in $\CB^n$.
 \end{thm}
 
 This lemma can be considered as a limiting case of the result of Dmitri Burago, Serge Ferleger and Alexey Kononenko on the number of collisions in semi-dispersing billiards \cite{burago-ferleger-kononenko-1997,AKP-invitation};
@@ -112,9 +111,9 @@ Suppose that the statement holds for braid space with at most $n-1$ strings.
 
 Choose a unit-speed geodesic $t\mapsto\gamma(t)$ in $\CB^n$;
 suppose it defines punctures $p_1(t),\z\ldots,p_n(t)\in\CC$.
-If $p_1(t_0)=\cdots=p_n(t_0)$, then each puncture moves with constant velocity on either side of $t_0$; the only possible change of velocity occurs at $t_0$.
-If $p_1(t)=\ldots=p_n(t)$ for some $t$, then $\gamma$ can have a collision only at time $t$.
-Indeed, before and after $t$ the geodesic goes runs in a radial direction of a cone structure of $\CB^n$.
+%If $p_1(t_0)=\cdots=p_n(t_0)$, then each puncture moves with constant velocity on either side of $t_0$; the only possible change of velocity occurs at $t_0$.
+If $p_1(t_0)=\ldots=p_n(t_0)$ for some $t_0$, then $\gamma$ can have a collision only at time $t_0$.
+Indeed, before and after $t_0$ the geodesic goes runs in a radial direction of the cone structure of $\CB^n$ with respect to $\gamma(t_0)$ and so can not branch off the radial direction.
 
 It remains to consider geodesics that have a pair of distinct punctures at any time.
 In other words, if we denote by $\bar\gamma$ the projection in $\CC^n$ of a geodesic $\gamma$ in $\CB^n$,
