@@ -113,7 +113,7 @@ Choose a unit-speed geodesic $t\mapsto\gamma(t)$ in $\CB^n$;
 suppose it defines punctures $p_1(t),\z\ldots,p_n(t)\in\CC$.
 %If $p_1(t_0)=\cdots=p_n(t_0)$, then each puncture moves with constant velocity on either side of $t_0$; the only possible change of velocity occurs at $t_0$.
 If $p_1(t_0)=\ldots=p_n(t_0)$ for some $t_0$, then $\gamma$ can have a collision only at time $t_0$.
-Indeed, before and after $t_0$ the geodesic goes runs in a radial direction of the cone structure of $\CB^n$ with respect to $\gamma(t_0)$ and so can not branch off the radial direction.
+Indeed, before and after $t_0$ the geodesic runs in a radial direction of the cone structure of $\CB^n$ with respect to $\gamma(t_0)$, and so can not leave the direction for $t\ne t_0$.
 
 It remains to consider geodesics that have a pair of distinct punctures at any time.
 In other words, if we denote by $\bar\gamma$ the projection in $\CC^n$ of a geodesic $\gamma$ in $\CB^n$,
@@ -122,11 +122,13 @@ then we can assume that $\bar\gamma$ avoids the diagonal line $z_1=\ldots=z_n$.
 The space $\CB^n$ has a cone structure;
 the cone over a geodesic in $\CB^n$ missing the diagonal is a planar angle that is isometrically embedded into $\CB^n$.
 Any line segment in this angle corresponds to another geodesic in $\CB^n$;
-a collision happens when geodesic crosses certain half-lines from the vertex of the angle.
-This observation reduces the question to finding a universal bound for the number of collisions of geodesic $\gamma$ that has length at most $\eps$ and such that $\bar\gamma$ lies at the distance at least $1$ from the diagonal line. Indeed, we can choose finitely many such segments, with their number bounded in terms of $varepsilon$ alone, so that the cones over them cover the whole cone over $\gamma$.
-If a point in $\CB^n$ has $k$ distinct punctures, then it admits a neighborhood that is isometric to an open set in the product $\CB^{i_1}\times\dots\times\CB^{i_k}$; here $i_1+\z\ldots+i_k=n$.
-(In particular, if all punctures are distinct, then the point has a flat neighborhood.)
-By the induction hypothesis, if $\eps>0$ is small, then there is a universal bound on number of collisions for all geodesics $\gamma$ described above, and this implies the lemma.
+a collision happens when geodesic crosses certain half-lines from the vertex of the planar angle.
+This observation reduces the question to finding a universal bound for the number of collisions of geodesic $\bar\gamma$ that has length at most $\eps$ and such that $\bar\gamma$ lies at the distance at least $1$ from the diagonal line. Indeed, we can choose finitely many such segments, with their number bounded in terms of $\varepsilon$ alone, so that the cones over them cover the whole cone over $\gamma$.
+
+For a point $z\in \CB^n$ lying at distance at least $1$ from the diagonal, there is a proper non-empty subset $I\subset\{1,\ldots,n\}$ such that $|z_i-z_j|>\varepsilon(n)$ for any $i\in I, j\in \overline I$. Hence the $\varepsilon(n)$-neighborhood of $z$ in $\CB^n$ embeds isometrically into $\CB^{|I|}\times\CB^{n-|I|}$. This implies by induction on $n$ that  for $\varepsilon>0$ small enough, a geodesic $\bar \gamma$ of length $\varepsilon$ at distance more than $1$ from the diagonal has a bounded number of collisions.
+%If a point in $\CB^n$ has $k$ distinct punctures, then it admits a neighborhood that is isometric to an open set in the product $\CB^{i_1}\times\dots\times\CB^{i_k}$; here $i_1+\z\ldots+i_k=n$.
+%(In particular, if all punctures are distinct, then the point has a flat neighborhood.) Note that for points in $\CB^n$ that lie at distance at least $1$ from the diagonal  a neighborhood of 
+%By the induction hypothesis, if $\eps>0$ is small, then there is a universal bound on number of collisions for all geodesics $\gamma$ described above, and this implies the lemma.
 \qeds
 
 \section{Pull-tight functions}\label{sec:pull-tight}
