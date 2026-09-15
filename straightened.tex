@@ -191,14 +191,14 @@ The vertex sequence can change in two ways:
 (1) when a puncture hits or leaves $\ell(t)$
 and (2) at a collision.
 Such events happen at finitely many times, say $t_1,\ldots,t_m$.
-Indeed, by \ref{lem:BFK}, we have only finitely many collisions,
+Indeed, by Lemma \ref{lem:BFK}, we have only finitely many collisions,
 and between the collision times hitting/leaving events are described by isolated zeros of algebraic equations.
 
 For each $t_i$ then we have to check that
 \[(f\circ\gamma)'(t_i+) - (f\circ\gamma)'(t_i-)\ge 0;
 \leqno({*})\]
 here $(f\circ\gamma)'(t\pm)$ denote one-sided derivatives.
-Once it is done convexity of $f\circ\gamma$ follows.
+Once it is done, convexity of $f\circ\gamma$ follows.
 
 \begin{wrapfigure}{o}{46mm}
 \centering
@@ -207,7 +207,7 @@ Once it is done convexity of $f\circ\gamma$ follows.
 \vskip-0mm
 \end{wrapfigure}
 
-Consider the first case: no collision, but the vertex sequence changes at time $t_i$ .
+(1) Consider the first case: no collision, but the vertex sequence changes at time $t_i$ .
 For example, a new vertex $p_5(t)$ appears between vertices $p_2(t)$ and $p_7(t)$ as in the picture.
 In a neighborhood of $t_i$ the curve is described by two vertex sequences;
 denote the corresponding functions by $f_{\textrm{before}}$ and $f_{\textrm{after}}$;
@@ -223,7 +223,7 @@ Note that
 \[(f_{\textrm{before}}\circ\gamma)'(t_i)=(f_{\textrm{after}}\circ\gamma)'(t_i);\]
 hence $({*})$ follows.
 
-Now suppose that $k$ punctures collide at time $t_i$.
+(2) Now suppose that $k$ punctures collide at time $t_i$.
 We can assume that $t_i=0$ and the collision point is also $0\in\CC$.
 
 Rescale a neighborhood of the collision point and a time interval around the collision time, keeping the velocities the same.
@@ -239,9 +239,9 @@ for $t>0$ and $t<0$ it only rescales and at $t=0$ it approaches the same plane a
 If $({*})$ does not hold then adding a constant vector to all velocities in the $k$-puncture array can reduce the problem to the case \[(\tilde f\circ\tilde \gamma)'(0-)>0>(\tilde f\circ\tilde \gamma)'(0+).\]
 In particular, the function $\tilde f\circ\tilde \gamma$ has a strict maximum at $0$.
 Note that this is impossible if the ideal points of $\tilde \ell$ are opposite or if $\tilde \ell$ collapses to one point at the collision.
-Hence we assume that neither case occurs and construct a shortcut of $\tilde \gamma$, showing that it is not geodesic.
+Hence we assume that neither case occurs and construct a shortcut $\hat \gamma$ of $\tilde \gamma$, showing that $\tilde \gamma$ is not geodesic.
 
-The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides. %Чуть выше мы уже сказали, что у неё только одна компонента.
+{\bf Construction of the shortcut $\hat \gamma$.} The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides. %Чуть выше мы уже сказали, что у неё только одна компонента.
 Let us equip these regions with the induced length metric;
 they are $\CAT(0)$ \cite[7.12]{AKP-invitation}.
 Pass to their limits as the curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$; they are $\CAT(0)$ as limits of $\CAT(0)$ spaces.
