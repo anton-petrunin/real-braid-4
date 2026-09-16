@@ -251,19 +251,24 @@ We can assume without loss of generality that $L_t$ approaches the convex angle 
 \footnote{If $\tilde\ell(t)$ is simple, then it bounds $L_t$ and $R_t$; the same always holds in an certain generalized sense.}
 
 {\bf Busemann function $b_t$ on $L_t$.} Choose an ideal point $\xi$ of $L_t$ that lies midway between the ideal points of $\tilde\ell(t)$.
-Consider the Busemann function $b_t\:L_t\to\RR$ for $\xi$ and normalize them so that $b_t(t\cdot x)=t\cdot b_1(x)$ for any $t\ge 0$ and $x\in L_1$.
-Note that superlevel sets of $b_t$ are compact.
-Further, $b_t(x)\le -\eps\cdot|t|$ for any $x\in L_t$ and some fixed $\eps>0$; otherwise we do not have a strict maximum at zero.
-(The maximum of $b_t(x)$ for $x\in L_t$ gives a lower bound for $\tilde f\circ\tilde \gamma(t)$.)
+Consider the Busemann functionы $b_t\:L_t\to\RR$ for $\xi$ and normalize them so that $b_t(t\cdot x)=t\cdot b_1(x)$ for any $t\ge 0$ and $x\in L_1$.
+Note that superlevel sets of $b_t$ are compact. Note also that the maximum of $b_t(x)$ for $x\in L_t$ gives a lower bound for $\tilde f\circ\tilde \gamma(t)$ (SHOULD BE EXPLAINED - I DON'T YET UNDERSTAND). For this reason $b_t(x)\le -\eps\cdot|t|$ for any $x\in L_t$ and some fixed $\eps>0$, since  otherwise $\tilde f\circ\tilde \gamma(t)$ doesn't have a strict maximum at zero.
 
-\begin{wrapfigure}{o}{56mm}
-\centering
-\vskip-6mm
-\includegraphics{mppics/pic-60}
-\vskip-0mm
-\end{wrapfigure}
 
-Suppose $\tilde p_i$ lies on the left side of~$\tilde \lambda$.
+%\begin{wrapfigure}{o}{56mm}
+%\centering
+%\vskip-6mm
+%\includegraphics{mppics/pic-60}
+%\vskip-0mm
+%\end{wrapfigure}
+
+\begin{center}
+\includegraphics[width=42mm]{mppics/pic-60}
+\end{center}
+
+
+{\bf Sliding $\tilde p_i$'s that lie to the left of $\tilde \lambda$.}
+Suppose $\tilde p_i$ lies on the left side of the defining simple curve $\tilde \lambda$.
 Let $\delta_i=-b_1\circ \tilde p_i(1)$;
 note that $\tilde p_i(t)\z=t\cdot \tilde p_i(1)$ and $b_t\circ \tilde p_i(t)=-t\cdot \delta_i$ for any $t\ge 0$.
 Let us connect $\tilde p_i(1)$ to $\xi$ by a unit-speed geodesic half-line $\sigma_i\:[\delta_i,\infty)\z\to L_1$; so $b_1\circ \sigma_i(s)+s\equiv0$.
