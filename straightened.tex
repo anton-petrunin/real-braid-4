@@ -241,15 +241,17 @@ In particular, the function $\tilde f\circ\tilde \gamma$ has a strict maximum at
 Note that this is impossible if the ideal points of $\tilde \ell$ are opposite or if $\tilde \ell$ collapses to one point at the collision.
 Hence we assume that neither case occurs and construct a shortcut $\hat \gamma$ of $\tilde \gamma$, showing that $\tilde \gamma$ is not geodesic.
 
-{\bf Construction of the shortcut $\hat \gamma$.} The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides. %Чуть выше мы уже сказали, что у неё только одна компонента.
+{\bf Construction of the shortcut $\hat \gamma$ of $\tilde \gamma$}. The shortcut $\hat \gamma$ will be a union of two curves $\hat \gamma_+$ and $\hat \gamma_+$  constructed in an identical fashion. The first one replaces $\tilde \gamma$ for $t\ge 0$ and the second $\tilde \gamma$ for $t\le 0$. We start with $\hat \gamma_+$. 
+
+{\bf Definition of $L_t$.} Assume $t\ge 0$. The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides. %Чуть выше мы уже сказали, что у неё только одна компонента.
 Let us equip these regions with the induced length metric;
 they are $\CAT(0)$ \cite[7.12]{AKP-invitation}.
-Pass to their limits as the curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$; they are $\CAT(0)$ as limits of $\CAT(0)$ spaces.
-We can assume that $L_t$ approaches the convex angle as $t\to0$.%
+Pass to their limits as the curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$. Both $L_t$ and $R_t$ are $\CAT(0)$ as limits of $\CAT(0)$ spaces.
+We can assume without loss of generality that $L_t$ approaches the convex angle as $t\to0$.%
 \footnote{If $\tilde\ell(t)$ is simple, then it bounds $L_t$ and $R_t$; the same always holds in an certain generalized sense.}
 
-Choose an ideal point $\xi$ that lies midway between the ideal points of $\tilde\ell(t)$.
-Consider the Busemann function $b_t\:L_t\to\RR$ for $\xi$; assume they are normalized so that $b_t(t\cdot x)=t\cdot b_1(x)$ for any $t\ge 0$ and $x\in L_1$.
+{\bf Busemann function $b_t$ on $L_t$.} Choose an ideal point $\xi$ of $L_t$ that lies midway between the ideal points of $\tilde\ell(t)$.
+Consider the Busemann function $b_t\:L_t\to\RR$ for $\xi$ and normalize them so that $b_t(t\cdot x)=t\cdot b_1(x)$ for any $t\ge 0$ and $x\in L_1$.
 Note that superlevel sets of $b_t$ are compact.
 Further, $b_t(x)\le -\eps\cdot|t|$ for any $x\in L_t$ and some fixed $\eps>0$; otherwise we do not have a strict maximum at zero.
 (The maximum of $b_t(x)$ for $x\in L_t$ gives a lower bound for $\tilde f\circ\tilde \gamma(t)$.)
