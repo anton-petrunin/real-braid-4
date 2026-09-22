@@ -669,9 +669,10 @@ endfig;
 
 
 beginfig(60);
-save u,p;
-u := 1.1cm;
+save u,p,h;
+u := 1cm;
 path p[];
+picture h[];
 
 z.l0 = (0,0)*u;
 z.l1 = (1,3)*u;
@@ -679,33 +680,92 @@ z.l2 = (.2,4)*u;
 z.l3 = (2,4.4)*u;
 z.l4 = (2.8,1.4)*u;
 z.l5 = z.l4+whatever*(z.l1-z.l0) xscaled -1=(whatever,0);
+
 z.l6 =(3,3.8)*u;
+
+z.r10=(-5,7)*u;
+z.r9=z.r10+whatever*(z.l1-z.l0)=(whatever,0);
+z.r11=z.r10+whatever*(z.l1-z.l0) xscaled -1=(whatever,0);
+z.r100=z.r10+(0,-1)*u;
 
 
 circleline_radius := 1.4;
 p1=circleline(z.l0,z.l1,z.l2,z.l3,z.l4,z.l5);
+p0=z.r9--z.r10--z.r11;
 circleline_radius := 2.8;
-p2=circleline(z.l2,z.l1,(x.l1+2.8,-.4*u));
-p3=z.l3--(x.l3,-.3*u);
+p2=circleline(z.l2,z.l1,(x.l1,0));
+p3=z.l3--(x.l3,0);
 
-hatchoptions(withcolor .5);
-hatchfill p1--point length p1 of p1..point length p3 of p3..point length p2 of p2..point 0 of p1--cycle  withcolor (60, 2mm, -.5bp);
+p100=z.l1--(z.l1+ (0,5)*u);
+
+h[0] := nullpicture;
+for i = 0 step y.r10/50 until y.r10:
+  addto h[0] doublepath
+    ((x.r9,i)--(x.l5,i)) penhair withcolor .5;
+endfor;
+clip h[0] to p0--cycle;
+addto currentpicture also h[0];
+
+save t,s;
+numeric t[],s;
+
+(t1,whatever) = p1 intersectiontimes p100;
+(s,whatever)  = reverse p1 intersectiontimes p100;
+p11=subpath (0,t1) of p1 -- subpath (length p1 - s,length p1) of p1;
+
+h[1] := nullpicture;
+for i = 0 step y.r10/50 until y.r10:
+ if i < y.l1:
+  addto h[1] doublepath
+    ((x.r9,i)--(x.l5,i)) penhair withcolor .5;
+ fi;
+ if i > y.l1:
+ addto h[1] doublepath
+    ((x.l1+y.l1-i,y.l1){(0,1)}..{(1,0)}(x.l1,i)--(x.l5,i)) penhair withcolor .5;
+ fi;
+endfor;
+clip h[1] to p1--cycle;
+addto currentpicture also h[1];
+
 draw p1 pensemibold;
 draw p2;
 draw p3;
+draw p0 pensemibold;
+draw z.r10--(x.r10,0);
 
-dOt z.l1,z.l2,z.l3,z.l4,z.l6;
+drawarrow .01[z.r10,z.l1]--.6[z.r10,z.l1] dashed evenly;
+drawarrow .01[z.r10,z.l2]--.6[z.r10,z.l2] dashed evenly;
+drawarrow .01[z.r10,z.l3]--.6[z.r10,z.l3] dashed evenly;
+drawarrow .01[z.r10,z.l4]--.6[z.r10,z.l4] dashed evenly;
+drawarrow .01[z.r10,z.l6]--.6[z.r10,z.l6] dashed evenly;
+
+dOt z.l1,z.l2,z.l3,z.l4,z.l6,z.r10,z.r100;
+
+z.ll=.5[z.l3,z.l4];
+z.rr=z.ll+whatever*(1,0)=whatever[z.r10,z.r11];
+
 
 label.lft(btex $\tilde p_2(1)$ etex, z.l1+(0,-1));
 label.top(btex $\tilde p_5(1)$ etex, z.l2+(-6,0));
 label.top(btex $\tilde p_7(1)$ etex, z.l3);
 label.rt(btex $\tilde p_6(1)$ etex, z.l4+(0,2));
 label.rt(btex $\tilde p_4(1)$ etex, z.l6);
-label.rt(btex $\tilde\ell(1)$ etex, .5[z.l3,z.l4]);
+label.bot(btex $\alpha$ etex, z.l0);
+label.bot(btex $\omega$ etex, z.l5);
+label.bot(btex $\xi$ etex, (x.l1+2.8,0));
+label.bot(btex $\xi$ etex, (x.l3,0));
+label.bot(btex $\alpha$ etex, z.r9);
+label.bot(btex $\omega$ etex, z.r11);
+label.bot(btex $\xi$ etex, (x.r10,0));
+
+label.rt(btex $\tilde\ell(1)$ etex, z.ll);
+label.rt(btex $\tilde\ell(0)$ etex, z.rr);
+whitelabel.top(btex $L_0$ etex, .75[z.r9,z.r11]);
 whitelabel.top(btex $L_1$ etex, .8[z.l0,z.l5]);
 whitelabel.lft(btex $\sigma_5$ etex, (x.l1+2.8,1*u));
 whitelabel.lft(btex $\sigma_7$ etex, (x.l3,1*u));
-
+label.urt(btex $0=$ all $\tilde p_i(0)$ and the rest of $\hat p_i(0)$ etex, z.r10+(-5,1));
+whitelabel.lft(btex $\hat p_5(0)=\hat p_7(0)=\delta\cdot u_\xi$ etex, z.r100);
 
 endfig;
 
@@ -722,6 +782,7 @@ z.l3 = (1.6,1.7)*u;
 z.l4 = (1,.-.1)*u;
 z.l5 = (-1,0)*u;
 z.l0=.5[z.l1,z.l5]+unitvector(z.l1-z.l5) zscaled (0,2);
+z.l6 = (0.1,.2)*u;
 
 circleline_radius := 1.4;
 circleline_vertex_radius[2] := 2.6;
@@ -730,7 +791,7 @@ p1= circleline(z.l0,z.l1,z.l2,z.l3,z.l4,z.l2,z.l5,z.l0);
 
 draw p1 pensemibold;
 
-dOt z.l1,z.l2,z.l3,z.l4,z.l5;
+dOt z.l1,z.l2,z.l3,z.l4,z.l5,z.l6;
 
 label.rt(btex $\ell$ etex, .5[z.l4,z.l3]);
 
@@ -739,6 +800,7 @@ label.bot(btex $p_1$ etex, z.l2+(1,-5));
 label.llft(btex $p_4$ etex, z.l3+(1,0));
 label.top(btex $p_3$ etex, z.l4+(0,6));
 label.top(btex $p_5$ etex, z.l5+(0,2));
+label.bot(btex $p_6$ etex, z.l6);
 
 
 endfig;
