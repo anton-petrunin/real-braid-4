@@ -1,8 +1,8 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: -234 -12 111 212 
-%%HiResBoundingBox: -233.85585 -11.8557 110.25125 211.48785 
+%%BoundingBox: -234 -12 105 212 
+%%HiResBoundingBox: -233.85585 -11.8557 104.58205 211.48785 
 %%Creator: MetaPost 2.02
-%%CreationDate: 2026.09.22:1625
+%%CreationDate: 2026.09.24:1323
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font GDYDUA-CMMI10 ZCQHKB-CMR7 OPQWOX-CMR10 CPBTUN-CMMI7 MWQQPS-SFRM1000
@@ -2278,13 +2278,13 @@ newpath -140.48225 170.0787 moveto
 (6) cmr7 6.97385 fshow
 91.85194 39.19421 moveto
 (\(1\)) cmr10 9.96265 fshow
-88.88515 105.22595 moveto
+74.77919 113.20732 moveto
 (~) cmr10 9.96265 fshow
-88.03935 105.22595 moveto
+73.9334 113.20732 moveto
 (p) cmmi10 9.96265 fshow
-93.05185 103.73155 moveto
+78.94589 111.71292 moveto
 (4) cmr7 6.97385 fshow
-97.52115 105.22595 moveto
+83.41519 113.20732 moveto
 (\(1\)) cmr10 9.96265 fshow
 -3.205 -7.2895 moveto
 (\013) cmmi10 9.96265 fshow

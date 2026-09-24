@@ -749,7 +749,7 @@ label.lft(btex $\tilde p_2(1)$ etex, z.l1+(0,-1));
 label.top(btex $\tilde p_5(1)$ etex, z.l2+(-6,0));
 label.top(btex $\tilde p_7(1)$ etex, z.l3);
 label.rt(btex $\tilde p_6(1)$ etex, z.l4+(0,2));
-label.rt(btex $\tilde p_4(1)$ etex, z.l6);
+label.top(btex $\tilde p_4(1)$ etex, z.l6);
 label.bot(btex $\alpha$ etex, z.l0);
 label.bot(btex $\omega$ etex, z.l5);
 label.bot(btex $\xi$ etex, (x.l1+2.8,0));

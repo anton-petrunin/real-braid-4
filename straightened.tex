@@ -100,12 +100,14 @@ so the punctures move with constant velocity between the collision times.
 (A priori, the set of collision times is merely closed.)
 
 Since $\CB^n$ is a polyhedral space with finitely many shapes, the following lemma follows from the theorem of Martin R. Bridson and André Haefliger \cite[I.7.28]{bridson-haefliger}.
-This lemma is also a limiting case of the result of Dmitri Burago, Serge Ferleger and Alexey Kononenko on the number of collisions in semi-dispersing billiards \cite{burago-ferleger-kononenko-1997,AKP-invitation};
-the proof adapts and gets simpler, but the lemma is not a direct corollary.
 
 \begin{thm}{Lemma}\label{lem:BFK}
 There is a universal bound $N=N(n)$ on the number of collisions of geodesics in $\CB^n$.
 \end{thm}
+
+
+Let us mention that this lemma is also a limiting case of the result of Dmitri Burago, Serge Ferleger and Alexey Kononenko on the number of collisions in semi-dispersing billiards \cite{burago-ferleger-kononenko-1997,AKP-invitation};
+their proof adapts to our situation and gets simpler.
 
 
 \section{Pull-tight functions}\label{sec:pull-tight}
@@ -113,16 +115,16 @@ There is a universal bound $N=N(n)$ on the number of collisions of geodesics in 
 A \emph{pull-tight} function is a function $f\colon\CB^n\to\RR$ that can be obtained via the following procedure.
 We first define it on the universal covering $\tilde\WW^n$ of the space $\WW^n$ and then extend it to $\CB^n$.
 
-A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
-Choose a simple oriented curve $\lambda$ in the punctured plane.
-The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points.
-
 \begin{wrapfigure}{o}{40mm}
 \centering
-\vskip-6mm
+\vskip-0mm
 \includegraphics{mppics/pic-70}
 \vskip-0mm
 \end{wrapfigure}
+
+A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
+Choose a simple oriented curve $\lambda$ in the punctured plane.
+The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points.
 
 Think of the curve as a thread and make it tight.
 The curve becomes a polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
@@ -130,7 +132,6 @@ If $\lambda$ is open, then $\ell$ has two infinite edges.
 The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$.
 
 If $\lambda$ is closed, then $f(\bm{p})$ is defined as the length of $\ell$.
-
 
 If $\lambda$ is open, then $\ell$ might not exist.
 It happens if $\lambda$ can be pushed into a strictly convex set containing no punctures, so it is possible to shrink the thread indefinitely.
@@ -171,8 +172,11 @@ Note that if two points move with constant velocities in the plane, then the dis
 It follows that $f\circ\gamma|_{\II}$ is convex.
 
 The vertex sequence can change in two ways:
-(1) when a puncture hits or leaves $\ell(t)$
-and (2) at a collision.
+\begin{enumerate}[(i)]
+ \item when a puncture hits or leaves $\ell(t)$
+and
+ \item at a collision.
+\end{enumerate}
 Such events happen at finitely many times, say $t_1,\ldots,t_m$.
 Indeed, by \ref{lem:BFK}, we have only finitely many collisions,
 and between the collision times hitting/leaving events are described by isolated zeros of algebraic equations.
@@ -183,8 +187,10 @@ For each $t_i$, we have to check that
 here $(f\circ\gamma)'(t\pm)$ denote one-sided derivatives.
 Once this is done, convexity of $f\circ\gamma$ follows.
 
-Consider the first case: no collision, but the vertex sequence changes at time $t_i$ .
-For example, a new vertex $p_5(t)$ appears between vertices $p_2(t)$ and $p_7(t)$ as in the picture.
+
+\parit{Case (i).}
+Suppose that the vertex sequence changes at time $t_i$ without a collision.
+For example, $\ell(t)$ catches up with the point $p_5(t)$, so $p_5(t)$ enters the vertex sequence between vertices $p_2(t)$ and $p_7(t)$, as in the picture.
 
 \begin{wrapfigure}{o}{46mm}
 \centering
@@ -207,42 +213,51 @@ Note that
 \[(f_{\textrm{before}}\circ\gamma)'(t_i)=(f_{\textrm{after}}\circ\gamma)'(t_i);\]
 hence \ref{1star} follows.
 
-Now suppose that $k$ punctures collide at time $t_i$.
+\parit{Case (ii).} Suppose that $k$ punctures collide at time $t_i$.
 We can assume that $t_i=0$ and the collision point is also $0\in\CC$.
+
+\begin{figure}[b!]
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-60}
+\vskip-0mm
+\end{figure}
 
 Rescale a neighborhood of the collision point and a time interval around the collision time, keeping the velocities the same.
 In the limit we get a collision of all $k$ punctures in $\CB^k$.
 The punctures come with constant velocities to $0$ and run from it with constant velocities.
 Denote by $\tilde \ell(t)$, $\tilde \gamma$, and $\tilde p_1,\ldots,\tilde p_k$
 the limits of the pull-tight curve, the geodesic in $\CB^k$, and the corresponding punctures.
-Suppose that $\tilde \ell(t)$ is still defined by the isotopy class of a simple curve $\tilde\lambda$ in the $k$-punctured plane.
+Suppose that $\tilde \ell(t)$ is still defined by the isotopy class of one simple curve $\tilde\lambda$ in the $k$-punctured plane with fixed ideal endpoints.
 Let us check \ref{1star} for the corresponding pull-tight function $\tilde f\colon\CB^k\to \RR$.
 
 Note that the shape of $\tilde \ell(t)$ changes only at $t=0$:
-for $t>0$ and $t<0$ it only rescales and at $t=0$ it approaches a plane angle from both sides; let $\theta$ be its angle measure.
-If \ref{1star} does not hold then adding a constant vector to all velocities in the $k$-puncture array can reduce the problem to the case \[(\tilde f\circ\tilde \gamma)'(0-)>0>(\tilde f\circ\tilde \gamma)'(0+).\]
+for $t>0$ and $t<0$ it only rescales.
+At $t=0$ these shapes approach a plane angle from both sides;
+let $\theta$ be its angle measure.
+If \ref{1star} does not hold, then $\theta<\pi$; in other words, the ideal points of $\tilde \ell$ cannot be opposite.
+In this case, adding a constant vector to all velocities in the $k$-puncture array can reduce the problem to the case
+\[(\tilde f\circ\tilde \gamma)'(0-)>0>(\tilde f\circ\tilde \gamma)'(0+).\]
 We may still assume that the collision happens at zero at time zero;
-so, $\tilde f\circ\tilde \gamma(0)=0$ and from above
+so, $\tilde f\circ\tilde \gamma(0)\z=0$ and from above
 \[\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|\eqlbl{sharp-max}\]
 for some $\eps>0$.
-Note that this is impossible if $\theta=\pi$ (in other words, if the ideal points of $\tilde \ell$ are opposite) or if $\tilde \ell$ collapses to one point at the collision.
-Assuming that neither case occurs, we will construct a shortcut of $\tilde \gamma$, showing that it is not geodesic.
+Now we are going to construct a shortcut of $\tilde \gamma$, showing that it is not geodesic.
 
 The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides. %Чуть выше мы уже сказали, что у неё только одна компонента.
 Let us equip these regions with the induced length metric;
 they are $\CAT(0)$ \cite[7.12]{AKP-invitation}.
 Pass to their limits as the curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$; they are $\CAT(0)$ as limits of $\CAT(0)$ spaces.%
-\footnote{If $\tilde\ell(t)$ is simple, then it bounds $L_t$ and $R_t$; the same always holds in a certain generalized sense.}
+\footnote{If $\tilde\ell(t)$ is simple, then it bounds $L_t$ and $R_t$; our construction generalizes this picture.}
 One of the angles $L_0$ or $R_0$ is a convex angle of measure $\theta$;
-let us assume that this is~$L_0$.%
-
+let us assume that this is~$L_0$.
 
 Choose an ideal point $\xi$ that lies midway between the ideal points, say $\alpha$ and $\omega$, of $\tilde\ell(t)$.
 Let us denote by $|x-\xi|^\flat_t$ its Busemann function $L_t\to\RR$.
 These functions are defined in the length metric of $L_t$.
 Formally speaking, $\xi$ corresponds to an ideal point in each space $L_t$,
 but far from $0$, the half-lines in $L_t$ in the direction of $\xi$ become parallel.
-Thus the Busemann functions $x\mapsto |x-\xi|^\flat_t$ can be normalized uniformly.
+Thus the Busemann functions $x\z\mapsto |x-\xi|^\flat_t$ can be normalized uniformly.
 (Far away from $0$, they all agree with the Busemann function for $\xi$ with respect to the Euclidean metric: $x\mapsto-\langle x,u_\xi\rangle$.)
 In particular we have $|t\cdot x-\xi|^\flat_t=t\cdot |x-\xi|^\flat_1$ for any $t\ge 0$ and $x\in L_1$.
 The superlevel sets of this Busemann function are compact sets in $L_t$.
@@ -257,13 +272,6 @@ the first inequality is $\CAT(0)$ comparison and the second is the triangle ineq
 Since $\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|$, we get
 \[|x-\xi|^\flat_t\le -\eps'\cdot|t|\]
 for any $x\in L_t$ and some fixed $\eps'>0$.
-
-\begin{figure}[t!]
-\centering
-\vskip-0mm
-\includegraphics{mppics/pic-60}
-\vskip-0mm
-\end{figure}
 
 Suppose $\tilde p_i$ lies on the left side of~$\tilde \lambda$.
 Let $\delta_i=-|\tilde p_i(1)-\xi|^\flat_1$;
@@ -304,7 +312,7 @@ By \ref{3star}, we have $|\hat p_i(t)|^2-\delta^2=o(t)$, whence
 <
 \int\limits_0^{\delta/\delta_i}|\tilde p_i'(t)|^2\cdot dt.\]
 
-Observe that all modified punctures coincide at $0$; more precisely, if $\tilde p_i$ lies on the left side of $\tilde\lambda$, then $\hat p_i(0)=\delta\cdot u_\xi$.
+Observe that all modified punctures coincide at time $0$: if $\tilde p_i$ lies on the left side of $\tilde\lambda$, then $\hat p_i(0)=\delta\cdot u_\xi$.
 Therefore, repeating the same construction for $t\le 0$ produces a curve $t\mapsto \hat p_i(t)$ defined on the whole $\RR$.
 
 Each puncture $\tilde p_i$ on the right side will not be modified;
@@ -321,21 +329,23 @@ The above inequality implies that
 \ge
 \int\limits_{-R}^{R}|\hat p'_i(t)|^2\cdot dt\]
 for each $i$; moreover, if $\tilde p_i$ is on the left side then the inequality is strict.
-By Cauchy--Bunyakovsky, $\hat \gamma|_{[-R,R]}$ is shorter than $\tilde \gamma|_{[-R,R]}$ --- a contradiction.
+Since $\tilde\gamma$ has constant speed,
+summing over $i$ and applying Cauchy--Bunyakovsky, we obtain
+\[\length \tilde\gamma|_{[-R,R]}>\length\hat\gamma|_{[-R,R]},\]
+which gives the required contradiction.
 
-
-
-
-We might have several components of $\tilde\ell(t)$ in the limit.
-They must be described by isotopy classes of nonintersecting simple curves with fixed ideal endpoints $\tilde\lambda_1,\ldots,\tilde\lambda_m$;
-denote by $\tilde f_1,\dots,\tilde f_m$ the corresponding pull-tight functions.
+The limit curve $\tilde\ell(t)$ might be empty, but then the collision makes no contribution to the derivative jump of $f\circ\gamma$.
+Further, $\tilde\ell(t)$ might be closed, but then $\tilde f\circ \tilde\gamma$ cannot satisfy \ref{sharp-max}.
+Furthermore, $\tilde\ell(t)$ might have several components;
+they have to be described by isotopy classes of nonintersecting simple curves $\tilde\lambda_1,\ldots,\tilde\lambda_m$ with fixed ideal endpoints.
+Denote by $\tilde f_1,\dots,\tilde f_m$ the corresponding pull-tight functions.
 One of the functions $\tilde f_i\circ\tilde\gamma$ must have a negative derivative jump at $0$ (the original derivative jump is the sum of the component jumps).
 Applying the common-velocity adjustment, we can assume that $\tilde f_i\circ\tilde\gamma$
-has  a sharp maximum at zero; in other words, $\tilde f_i$ meets \ref{sharp-max}.
+has  a sharp maximum at zero; in other words, $\tilde f_i\circ\tilde\gamma$ satisfies \ref{sharp-max}.
 Then we can repeat the argument for $\tilde\lambda_i$.
 As before, we get a shortcut $\hat\gamma$ for $\tilde \gamma$ and arrive at a contradiction.
 
-Finally, note that calculations are local: combining them, one can prove \ref{1star} in the case when several events (collisions and hitting/leaving) happen simultaneously.
+\parit{Mixed case.} Our calculations are local: combining them, one can prove \ref{1star} in the case when several events (collisions and hitting/leaving) happen simultaneously.
 \qeds
 
 \section{No geodesic loops}
@@ -351,13 +361,14 @@ With the natural normalization we have
 \[f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
 for each $i$.
 Since $f_i$ are convex and nonnegative, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
-It follows that pull-tight lines form moving vertical barriers between the punctures giving them no chance to interact.
-In particular, the image of $\gamma$ in $\CC^n$ is a line segment --- a contradiction.
+It follows that pull-tight lines form moving vertical barriers between the punctures giving them no chance to interact;
+in particular, each puncture moves with constant velocity,
+and the image of $\gamma$ in $\CC^n$ is a line segment --- a contradiction.
 \qeds
 
 \section{To whom it may concern}
 
-The following observations might save time for someone interested in the conjecture.
+The following observations might save time for someone interested in the conjecture; this section explains where we hit the wall.
 Consider this part as a letter (while writing it we had in mind Ruth Charney and Michael Davis).
 
 In the definition of $\CB^n$ one can lift an arbitrary diagonal metric on $\CC^n$.
@@ -380,8 +391,8 @@ If the conjecture holds, then $\CB^n(\bm{\mu})$ is $\CAT(0)$ for any array of po
 
 \parit{Proof.}
 If the masses $\mu_i$ are integers, then instead of the $i$-th string of the braid one can consider $\mu_i$ identical copies of this string.
-Thus if $M=\mu_1+\ldots+\mu_n$, then the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$;
-indeed, $\CB^n(\bm{\mu})$ is isometric to a convex subset of $\CB^M$.
+If $M=\mu_1+\ldots+\mu_n$, then $\CB^n(\bm{\mu})$ is isometric to a convex subset of $\CB^M$.
+In particular, the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$.
 
 By rescaling, rational approximation, and passing to the limit we get the case of arbitrary positive masses.
 \qeds
@@ -403,16 +414,19 @@ By \cite[II.5.4(7)]{bridson-haefliger}, it contains a shortest geodesic circle o
 If one of the masses approaches zero, we expect to have $L(\bm{\mu})\z\to2\cdot \pi$ by the induction hypothesis.
 
 Choose a geodesic circle of length $L(\bm{\mu})$ in $\Sigma^4(\bm{\mu})$.
-Note that this geodesic is not null-homotopic in the class of curves of length $<2\cdot\pi$.
-After perturbing the metric, this condition remains true; the new curve might fail to be a geodesic, but its length gives an upper bound on $L(\bm{\mu})$ after small perturbation of masses.
+This geodesic is not null-homotopic in the class of curves of length $<2\cdot\pi$.
+This property survives after perturbing the metric.
+The new curve might fail to be a geodesic, but its length gives an upper bound on $L(\bm{\mu})$ after small perturbation of masses.
 
-Given an array of punctures $p_1,\ldots, p_4$, we translate it to make its center of mass zero, then normalize it so that $\mu_1\cdot|p_1|^2+\ldots+ \mu_4\cdot|p_4|^2=1$; it produces a point in $\Sigma^4(\bm{\mu})$.
+Given an array of punctures $p_1,\ldots, p_4$, we translate it to make its center of mass zero, then normalize it so that $\mu_1\cdot|p_1|^2+\ldots+ \mu_4\cdot|p_4|^2=1$; it corresponds to a point in $\Sigma^4(\bm{\mu})$.
 This construction identifies the underlying sets of $\Sigma^4(\bm{\mu})$ for different masses; so we may think of $\Sigma^4(\bm{\mu})$ as the same set equipped with different metrics.
 
 Since the rescaling of masses does not change the isometry type of $\Sigma^4(\bm{\mu})$, we get
 \[\mu_1\cdot \frac{\partial L}{\partial \mu_1}+\ldots+\mu_4\cdot \frac{\partial L}{\partial \mu_4}=0.\]
 
-At a minimum point of $L$ (by the induction hypothesis we can assume that it is in the interior), we have $\frac{\partial L}{\partial \mu_i}=0$ for every $i$.
+The function $\bm{\mu}\mapsto L(\bm{\mu})$ does not have to be smooth,
+but it is semiconcave.
+At a minimum point of $L$ (the induction hypothesis should imply that it is in the interior), we have $\frac{\partial L}{\partial \mu_i}=0$ for every $i$.
 Assume that a unit-speed parametrization of the geodesic circle is given by punctures $p_1(t),\ldots,p_4(t)$; so
 \begin{align*}
 \mu_1\cdot p_1(t)+&\ldots+ \mu_4\cdot p_4(t)=0,
@@ -420,12 +434,10 @@ Assume that a unit-speed parametrization of the geodesic circle is given by punc
 \\ \mu_1\cdot|p_1'(t)|^2+&\ldots+ \mu_4\cdot|p_4'(t)|^2=1.
 \end{align*}
 Moreover, $p_i''(t)+p_i(t)=0$ if $p_i$ does not collide at time $t$.
-The condition $\frac{\partial L}{\partial \mu_i}=0$ can be written as
-\[\sum \langle p_i(t),p_i'(t+)-p_i'(t-)\rangle =0\]
-where the sum is taken at the collision times $t$.
+The condition $\frac{\partial L}{\partial \mu_i}=0$ means that we have a zero sum of $\langle\, p_i(t_j),p_i'(t_j+)-p_i'(t_j-)\, \rangle$ at the collision times~$t_j$.
 
 The last identity might contradict $L<2\cdot\pi$.
-Also, the estimate on $L$, which is described above, might imply that (in the barrier sense) the Hessian of $L$ is nonpositive in some direction, which should prove the conjecture.
+Also, the estimate on $L$, which is described above, might imply that (in the barrier sense) the Hessian of $L$ is negative in some direction, which should prove the conjecture.
 AI suggests looking at the Laplacian with respect to the Fisher metric on the mass simplex: $g(h,h)=\tfrac{h_1^2}{\mu_1}+\ldots+\tfrac{h_4^2}{\mu_4}$ where $h_1+\ldots+h_4=0$, which makes it closely related to the description of $\CB^4(\bm{\mu})$ in the footnote.
 
 Note however that for an equator the Hessian and Laplacian vanish.
@@ -438,14 +450,14 @@ here is one example.
 
 Choose one puncture $p_i$, called the \emph{caught puncture}.
 Pass to the covering of $\CC$ infinitely branching at all punctures except $p_i$, and lift $p_i$ to this covering.
-Consider the Busemann function from the chosen ideal point to the lift.
+Consider the Busemann function from the chosen ideal point $\xi$ to the lift.
 Our proof of convexity works for this function as well.
 The obtained function $s$ (let's call it a \emph{lasso function})
-has a closely related pull-tight function $f$ --- the one with identical ideal endpoints and $\lambda$ surrounding just $p_i$.
+has a closely related pull-tight function $f$ --- the one with both ideal endpoints at $\xi$ and $\lambda$ surrounding just $p_i$.
 
 Note that $2\cdot s\le f$; in particular, the subzero set of $s$ contains that of $f$.
 So, in a sense $s$ looks more like a Busemann function on $\CB^n$.
-If Busemann functions could be approximated by convex functions, then the conjecture would follow.
+(If Busemann functions could be approximated by convex functions, then the conjecture would follow, but one may need much less.)
 
 {\sloppy
 \def\emph{\textit}
