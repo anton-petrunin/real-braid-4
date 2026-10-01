@@ -31,12 +31,14 @@ pdfauthor={\theauthors}
 \begin{abstract}
 The $n$-string braid space is defined as a universal covering of the complex $n$-space branching at the hyperplanes $z_i=z_j$.
 It is conjectured that the $n$-string braid space is $\CAT(0)$ for any $n$.
-We describe a source of convex functions in the braid space and use them to prove that braid spaces have no geodesic loops.
+We describe a source of convex functions in the braid space and use them to prove a consequence of the conjecture: braid spaces have no geodesic loops.
 \end{abstract}
 
-\section{Introduction}
+\section{Opening}
 
-We assume that the reader is friends with $\CAT(0)$ spaces.
+This note is meant to be read as a letter.
+We wrote it with Daniel Allcock, Ruth Charney, and Michael Davis in mind,
+but it is addressed to any friend of CAT(0) spaces.
 
 Let $\CC^n$ be the complex space
 with coordinates $z_1,\ldots,z_n$ and the standard Euclidean metric.
@@ -75,8 +77,6 @@ Choose an isotopy class of a simple closed curve in the punctured plane and defi
 this function extends naturally to $\CB^n$.
 There is also a variant of this function for simple open curves that connect two fixed ideal points.
 
-Here is the main result of our note.
-
 \begin{thm}{Pull-tight theorem}\label{thm:pull-tight}
 Every pull-tight function $\CB^n\to\RR$ is lower semicontinuous and convex.
 \end{thm}
@@ -86,7 +86,7 @@ If $\CB^n$ is $\CAT(0)$, then it has no geodesic digons.
 The pull-tight theorem implies the following weaker statement.
 
 \begin{thm}{Theorem}\label{thm:no-loops}
-The braid space has no geodesic loops\footnote{A geodesic loop is a nonconstant curve $\gamma:[0,L]\to\mathbb B^n$ with $\gamma(0)=\gamma(L)$ that is locally geodesic on $(0,L)$. No geodesic condition is imposed at the common endpoint.}.
+The braid space has no geodesic loops\footnote{A geodesic loop is a nonconstant curve $\gamma:[0,L]\to\CB^n$ with $\gamma(0)=\gamma(L)$ that is locally geodesic on $(0,L)$. No geodesic condition is imposed at the common endpoint.}.
 \end{thm}
 
 In the proof we assume that a geodesic loop exists, and construct a pull-tight function that is nonnegative, not constant on the loop, and vanishes at the base point; this contradicts the pull-tight theorem.
@@ -95,7 +95,7 @@ In the proof we assume that a geodesic loop exists, and construct a pull-tight f
 
 Consider a geodesic $\gamma$ in $\CB^n$.
 A point $\gamma(t)$ defines an array of punctures $p_1(t),\z\ldots,p_n(t)\in\CC$.
-We say that $\gamma$ does not have a  \emph{collision} at time $t$ if the velocities of all $p_i$ are constant in a neighborhood of $t$,
+We say that $\gamma$ does not have a \emph{collision} at time $t$ if the velocities of all $p_i$ are constant in a neighborhood of $t$,
 so the punctures move with constant velocity between the collision times.
 (A priori, the set of collision times is merely closed.)
 
@@ -105,15 +105,20 @@ Since $\CB^n$ is a polyhedral space with finitely many shapes, the following lem
 There is a universal bound $N=N(n)$ on the number of collisions of geodesics in $\CB^n$.
 \end{thm}
 
-
 Let us mention that this lemma is also a limiting case of the result of Dmitri Burago, Serge Ferleger and Alexey Kononenko on the number of collisions in semi-dispersing billiards \cite{burago-ferleger-kononenko-1997,AKP-invitation};
 their proof adapts to our situation and gets simpler.
-
 
 \section{Pull-tight functions}\label{sec:pull-tight}
 
 A \emph{pull-tight} function is a function $f\colon\CB^n\to\RR$ that can be obtained via the following procedure.
 We first define it on the universal covering $\tilde\WW^n$ of the space $\WW^n$ and then extend it to $\CB^n$.
+
+A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
+Choose a simple oriented curve $\lambda$ in the punctured plane.
+The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points.
+A point of $\tilde\WW^n$ remembers a path of configurations, and hence transports the isotopy class of $\lambda$ from a fixed reference configuration.
+
+{
 
 \begin{wrapfigure}{o}{40mm}
 \centering
@@ -122,19 +127,18 @@ We first define it on the universal covering $\tilde\WW^n$ of the space $\WW^n$ 
 \vskip-0mm
 \end{wrapfigure}
 
-A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
-Choose a simple oriented curve $\lambda$ in the punctured plane.
-The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points.
-
 Think of the curve as a thread and make it tight.
-The curve becomes a polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
+Equivalently, we take the infimum of lengths in the transported isotopy class.
+The limiting curve is the polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
 If $\lambda$ is open, then $\ell$ has two infinite edges.
 The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$.
+
+}
 
 If $\lambda$ is closed, then $f(\bm{p})$ is defined as the length of $\ell$.
 
 If $\lambda$ is open, then $\ell$ might not exist.
-It happens if $\lambda$ can be pushed into a strictly convex set containing no punctures, so it is possible to shrink the thread indefinitely.
+This happens if $\lambda$ can be pushed into a strictly convex set containing no punctures, so it is possible to shrink the thread indefinitely.
 In this case, we assume that the pull-tight function is undefined (one could also define it as $f(\bm{p})\equiv -\infty$).
 Otherwise $f(\bm{p})$ is defined as the excess of its length compared to the two-edge curve passing thru the origin.
 More formally, suppose that $\alpha$ and $\omega$ are the ideal points at the beginning and the end,
@@ -144,7 +148,7 @@ Then
 =
 |\alpha-p_{i_1}|^\flat+|p_{i_1}-p_{i_2}|+\ldots+|p_{i_{k-1}}-p_{i_k}|+|p_{i_k}-\omega|^\flat,\]
 where $|\xi-x|^\flat$
-denotes the Busemann function at $x$ with ideal point $\xi$ normalized so that $|\xi-0|^\flat=0$; so,
+denotes the Busemann function at $x$ with ideal point $\xi$ normalized so that $|\xi-0|^\flat=0$; thus,
 \[|\xi-x|^\flat=-\langle u_\xi,x\rangle,\]
 where $u_\xi$ denotes the unit vector in the direction of $\xi$.
 Note that $|\xi-x|^\flat$ might take negative values.
@@ -153,10 +157,10 @@ In both cases we have defined a function on $\tilde \WW^n$.
 Note that it is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
 Along a geodesic this extension is continuous: at a collision the edges inside the colliding clusters shrink to zero, while all remaining terms have their usual limits.
 
-\parit{Proof of \ref{thm:pull-tight}.}
+\parbf{Proof of \ref{thm:pull-tight}.}
 Let $f\:\CB^n\to \RR$ be a pull-tight function, and let $\lambda$ be its defining curve.
 Given a unit-speed geodesic $\gamma$ in $\CB^n$,
-we need to show that $f\circ\gamma$ is a convex real-to-real function.
+we need to show that $f\circ\gamma$ is convex.
 
 Each point $\gamma(t)$ defines an array of punctures $p_1(t),\ldots,p_n(t)\in\CC$.
 The curve $\lambda$ divides the punctures into two sets that lie on its left and right sides.
@@ -166,20 +170,18 @@ It is a polygonal line that can be encoded by a sequence of its vertices; each v
 self-intersections, repeated vertices and edges are allowed.
 By construction, there is a continuous one-parameter family of arbitrarily small perturbations of $\ell(t)$ and $p_i(t)$ to simple curves isotopic to $\lambda$ in the punctured plane with $n$ distinct punctures.
 
-
+\parit{Vertex sequence.}
 Suppose that the vertex sequence of $\ell(t)$ does not change in some open time interval $\II$ and no collision occurs in $\II$.
 Note that if two points move with constant velocities in the plane, then the distance between them is a convex function of time.
 It follows that $f\circ\gamma|_{\II}$ is convex.
 
-The vertex sequence can change in two ways:
-\begin{enumerate}[(i)]
- \item when a puncture hits or leaves $\ell(t)$
-and
- \item at a collision.
-\end{enumerate}
+The vertex sequence can change in three ways:
+(1) when a puncture hits or leaves $\ell(t)$,
+(2) at a collision,
+and (3) in the mixed case, when such events happen simultaneously.
 Such events happen at finitely many times, say $t_1,\ldots,t_m$.
 Indeed, by \ref{lem:BFK}, we have only finitely many collisions,
-and between the collision times hitting/leaving events are described by isolated zeros of algebraic equations.
+and between the collision times, hitting/leaving events are described by isolated zeros of algebraic equations.
 
 For each $t_i$, we have to check that
 \[(f\circ\gamma)'(t_i+) - (f\circ\gamma)'(t_i-)\ge 0;
@@ -188,7 +190,7 @@ here $(f\circ\gamma)'(t\pm)$ denote one-sided derivatives.
 Once this is done, convexity of $f\circ\gamma$ follows.
 
 
-\parit{Case (i).}
+\parit{Hits and leaves.}
 Suppose that the vertex sequence changes at time $t_i$ without a collision.
 For example, $\ell(t)$ catches up with the point $p_5(t)$, so $p_5(t)$ enters the vertex sequence between vertices $p_2(t)$ and $p_7(t)$, as in the picture.
 
@@ -213,8 +215,33 @@ Note that
 \[(f_{\textrm{before}}\circ\gamma)'(t_i)=(f_{\textrm{after}}\circ\gamma)'(t_i);\]
 hence \ref{1star} follows.
 
-\parit{Case (ii).} Suppose that $k$ punctures collide at time $t_i$.
+\parit{Rescaling at a collision.}
+Suppose that $k$ punctures collide at time $t_i$.
 We can assume that $t_i=0$ and the collision point is also $0\in\CC$.
+
+Rescale a neighborhood of the collision point and a time interval around the collision time, keeping the velocities the same.
+In the limit we get a collision of all $k$ punctures in $\CB^k$.
+The punctures come with constant velocities to $0$ and run from it with constant velocities.
+Denote by $\tilde \ell(t)$, $\tilde \gamma$, and $\tilde p_1,\ldots,\tilde p_k$
+the limits of the pull-tight curve, the geodesic in $\CB^k$, and the corresponding punctures.
+
+Suppose that $\tilde \ell(t)$ is still defined by the isotopy class of one simple curve $\tilde\lambda$ in the $k$-punctured plane with fixed ideal endpoints.
+Let us check \ref{1star} for the corresponding pull-tight function $\tilde f\colon\CB^k\to \RR$.
+
+Note that the shape of $\tilde \ell(t)$ changes only at $t=0$:
+for $t>0$ and $t<0$ it only rescales.
+At $t=0$ these shapes approach a plane angle from both sides;
+let $\theta$ be its angle measure.
+If \ref{1star} does not hold, then $\theta<\pi$.
+In other words, the ideal points of $\tilde \ell$ cannot be opposite; if they are, then $(\tilde f\circ\tilde \gamma)(t)\ge 0$ for any $t$ and $(\tilde f\circ\tilde \gamma)(0)= 0$, and thus \ref{1star} holds for $\tilde f\circ\tilde \gamma$.
+
+Since $\theta<\pi$, we can add a constant vector to all velocities in the $k$-puncture array and reduce the problem to the case
+\[(\tilde f\circ\tilde \gamma)'(0-)>0>(\tilde f\circ\tilde \gamma)'(0+).\]
+We may still assume that the collision occurs at the origin at time zero;
+so, $\tilde f\circ\tilde \gamma(0)\z=0$ and from above
+\[\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|\eqlbl{sharp-max}\]
+for some $\eps>0$.
+We are going to construct a shortcut of $\tilde \gamma$, showing that it is not geodesic.
 
 \begin{figure}[b!]
 \centering
@@ -223,35 +250,15 @@ We can assume that $t_i=0$ and the collision point is also $0\in\CC$.
 \vskip-0mm
 \end{figure}
 
-Rescale a neighborhood of the collision point and a time interval around the collision time, keeping the velocities the same.
-In the limit we get a collision of all $k$ punctures in $\CB^k$.
-The punctures come with constant velocities to $0$ and run from it with constant velocities.
-Denote by $\tilde \ell(t)$, $\tilde \gamma$, and $\tilde p_1,\ldots,\tilde p_k$
-the limits of the pull-tight curve, the geodesic in $\CB^k$, and the corresponding punctures.
-Suppose that $\tilde \ell(t)$ is still defined by the isotopy class of one simple curve $\tilde\lambda$ in the $k$-punctured plane with fixed ideal endpoints.
-Let us check \ref{1star} for the corresponding pull-tight function $\tilde f\colon\CB^k\to \RR$.
-
-Note that the shape of $\tilde \ell(t)$ changes only at $t=0$:
-for $t>0$ and $t<0$ it only rescales.
-At $t=0$ these shapes approach a plane angle from both sides;
-let $\theta$ be its angle measure.
-If \ref{1star} does not hold, then $\theta<\pi$; in other words, the ideal points of $\tilde \ell$ cannot be opposite.
-In this case, adding a constant vector to all velocities in the $k$-puncture array can reduce the problem to the case
-\[(\tilde f\circ\tilde \gamma)'(0-)>0>(\tilde f\circ\tilde \gamma)'(0+).\]
-We may still assume that the collision happens at zero at time zero;
-so, $\tilde f\circ\tilde \gamma(0)\z=0$ and from above
-\[\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|\eqlbl{sharp-max}\]
-for some $\eps>0$.
-Now we are going to construct a shortcut of $\tilde \gamma$, showing that it is not geodesic.
-
-The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides. %Чуть выше мы уже сказали, что у неё только одна компонента.
+\parit{$\CAT(0)$ sides.}
+The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides.
 Let us equip these regions with the induced length metric;
 they are $\CAT(0)$ \cite[7.12]{AKP-invitation}.
-Pass to their limits as the curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$; they are $\CAT(0)$ as limits of $\CAT(0)$ spaces.%
-\footnote{If $\tilde\ell(t)$ is simple, then it bounds $L_t$ and $R_t$; our construction generalizes this picture.}
+Pass to their pointed limits as the curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$; they are $\CAT(0)$ as limits of $\CAT(0)$ spaces.
+(If $\tilde\ell(t)$ is simple, then $L_t$ and $R_t$ are the regions on the left and right sides of $\tilde\ell(t)$; the described construction generalizes this picture.)
+
 One of the angles $L_0$ or $R_0$ is a convex angle of measure $\theta$;
 let us assume that this is~$L_0$.
-
 Choose an ideal point $\xi$ that lies midway between the ideal points, say $\alpha$ and $\omega$, of $\tilde\ell(t)$.
 Let us denote by $|x-\xi|^\flat_t$ its Busemann function $L_t\to\RR$.
 These functions are defined in the length metric of $L_t$.
@@ -266,8 +273,10 @@ Moreover,
 \le
 |\alpha-x|^\flat_t+|x-\omega|^\flat_t
 \le \tilde f\circ \tilde\gamma(t)\]
-for any $x\in L_t$;
-the first inequality is $\CAT(0)$ comparison and the second is the triangle inequality, both applied to far points in directions of $\xi$, $\alpha$, and $\omega$.
+for any $x\in L_t$.
+The first inequality follows from $\CAT(0)$ comparison and the second is the triangle inequality, both applied to far points in directions of $\xi$, $\alpha$, and $\omega$.
+(In~the ambient Euclidean plane, the first inequality is an equality, and the $\CAT(0)$ comparison might only make it better.)
+
 
 Since $\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|$, we get
 \[|x-\xi|^\flat_t\le -\eps'\cdot|t|\]
@@ -285,6 +294,9 @@ defines the unit-speed geodesic half-line in $L_t$ from $\tilde p_i(t)$ to $\xi$
 Further, if $s$ is large, then
 \[\sigma_i(s)=s\cdot u_\xi+ z_i,\eqlbl{3star}\]
 for a complex constant $z_i$ such that $z_i\perp u_\xi$.
+
+\parit{Pushing the punctures.}
+We now push the punctures on the left toward the bisector direction $\xi$, stopping them at a fixed Busemann level, and show that the resulting path has the same endpoints but smaller energy and therefore length.
 
 Choose $\delta>0$ such that $\delta<\delta_i$ for any $\tilde p_i$ on the left side of $\tilde \lambda$.
 Let $\hat p_i(t)$ be $\tilde p_i(t)$ moved toward $\xi$ along the half-line defined by \ref{2star}:
@@ -319,7 +331,7 @@ Each puncture $\tilde p_i$ on the right side will not be modified;
 that is, we let $\hat p_i(t)=\tilde p_i(t)$.
 Thus we obtain a new curve $t\mapsto \hat p_i(t)$ for each $i$.
 These curves correspond to a new curve $\hat\gamma$ in $\CB^k$ that coincides with $\tilde \gamma$ away from some time interval $[-R,R]$.
-Indeed, punctures cannot cross $\tilde\ell(t)$; so the punctures on its different  sides do not interact.
+Indeed, punctures cannot cross $\tilde\ell(t)$; so the punctures on its different sides do not interact.
 On the right side the punctures move as before,
 and all modified punctures approach $\delta\cdot u_\xi$ at time $0$,
 so we are free to jump to any branch at this moment.
@@ -335,41 +347,45 @@ summing over $i$ and applying Cauchy--Bunyakovsky, we obtain
 which gives the required contradiction.
 
 The limit curve $\tilde\ell(t)$ might be empty, but then the collision makes no contribution to the derivative jump of $f\circ\gamma$.
-Further, $\tilde\ell(t)$ might be closed, but then $\tilde f\circ \tilde\gamma$ cannot satisfy \ref{sharp-max}.
+Further, $\tilde\ell(t)$ might be closed, but then $\tilde f\circ \tilde\gamma$ cannot satisfy \ref{sharp-max} (in this case $\tilde f\circ \tilde\gamma(t)\ge0$ and $\tilde f\circ \tilde\gamma(0)=0$).
 Furthermore, $\tilde\ell(t)$ might have several components;
 they have to be described by isotopy classes of nonintersecting simple curves $\tilde\lambda_1,\ldots,\tilde\lambda_m$ with fixed ideal endpoints.
 Denote by $\tilde f_1,\dots,\tilde f_m$ the corresponding pull-tight functions.
 One of the functions $\tilde f_i\circ\tilde\gamma$ must have a negative derivative jump at $0$ (the original derivative jump is the sum of the component jumps).
 Applying the common-velocity adjustment, we can assume that $\tilde f_i\circ\tilde\gamma$
-has  a sharp maximum at zero; in other words, $\tilde f_i\circ\tilde\gamma$ satisfies \ref{sharp-max}.
+has a sharp maximum at zero; in other words, $\tilde f_i\circ\tilde\gamma$ satisfies \ref{sharp-max}.
 Then we can repeat the argument for $\tilde\lambda_i$.
 As before, we get a shortcut $\hat\gamma$ for $\tilde \gamma$ and arrive at a contradiction.
 
-\parit{Mixed case.} Our calculations are local: combining them, one can prove \ref{1star} in the case when several events (collisions and hitting/leaving) happen simultaneously.
+\parit{Mixed case.} Note that our calculations are local: combining them, one can prove \ref{1star} in the case when several events (collisions and hitting/leaving) happen simultaneously.
 \qeds
 
 \section{No geodesic loops}
 
-\parit{Proof of \ref{thm:no-loops}.}
+\parbf{Proof of \ref{thm:no-loops}.}
 Assume $\gamma\:[0,L]\to\CB^n$ is a geodesic loop;
-denote by $p_1(t),\z\ldots,p_n(t)\in\CC$ its punctures at the time $t$.
+denote by $p_1(t),\z\ldots,p_n(t)\in\CC$ its punctures at time $t$.
 
 Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
 such that the corresponding pull-tight curves are vertical straight lines that separate the punctures at time~$0$.
+(They might touch the punctures, while remembering on which side they pass.)
 
-With the natural normalization we have
-\[f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
+Note that
+\[f_i\ge 0
+\quad\text{and}\quad
+f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
 for each $i$.
-Since $f_i$ are convex and nonnegative, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
-It follows that pull-tight lines form moving vertical barriers between the punctures giving them no chance to interact;
+Since $f_i$ are convex, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
+It follows that pull-tight lines form moving vertical barriers between the punctures, giving them no chance to interact;
 in particular, each puncture moves with constant velocity,
 and the image of $\gamma$ in $\CC^n$ is a line segment --- a contradiction.
 \qeds
 
-\section{To whom it may concern}
+\section{Postscript}
 
-The following observations might save time for someone interested in the conjecture; this section explains where we hit the wall.
-Consider this part as a letter (while writing it we had in mind Ruth Charney and Michael Davis).
+The following observations might save time for someone interested in the conjecture;
+this section explains where we hit the wall.
+We still have a feeling that a single geometric idea can finish the story.
 
 In the definition of $\CB^n$ one can lift an arbitrary diagonal metric on $\CC^n$.
 In other words, we prescribe positive masses $\mu_1,\z\ldots,\mu_n$ to the punctures $p_1(t),\z\ldots, p_n(t)$ that move in $\CC$ and define the speed of the corresponding path in $\CB^n$ as
@@ -389,7 +405,7 @@ Every pull-tight function $\CB^n(\bm{\mu})\to\RR$ is lower semicontinuous and co
 If the conjecture holds, then $\CB^n(\bm{\mu})$ is $\CAT(0)$ for any array of positive masses $\bm{\mu}=(\mu_1,\ldots,\mu_n)$.
 \end{thm}
 
-\parit{Proof.}
+\parbf{Proof.}
 If the masses $\mu_i$ are integers, then instead of the $i$-th string of the braid one can consider $\mu_i$ identical copies of this string.
 If $M=\mu_1+\ldots+\mu_n$, then $\CB^n(\bm{\mu})$ is isometric to a convex subset of $\CB^M$.
 In particular, the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$.
@@ -397,41 +413,43 @@ In particular, the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\
 By rescaling, rational approximation, and passing to the limit we get the case of arbitrary positive masses.
 \qeds
 
-\parit{Approach to the conjecture.} Let us try to prove \ref{cor:masses} by induction on $n$.
+\parbf{Approach to the conjecture.} Let us try to prove \ref{cor:masses} by induction on $n$.
 The case $n=3$ already follows from \cite{charney-davis-93} (checking the angle condition is straightforward).
 The first new case $n=4$ might go as follows.
-Assuming the contrary, we have a braid space $\CB^4(\bm{\mu})$ with a geodesic bigon.
 
-We can split off $\CC$ from $\CB^4(\bm{\mu})$, so that the center of mass of the punctures is at $0$.
-Denote by $\Sigma^4(\bm{\mu})$ the unit sphere in the remaining factor.
+Let us split off the diagonal translation factor $\CC$; in other words, we assume that the center of mass of the punctures is at $0$.
+The remaining factor is a metric cone; denote its unit link by $\Sigma^4(\bm{\mu})$.
 We need to show that it is $\CAT(1)$.
 
 By the induction hypothesis $\Sigma^4(\bm{\mu})$ is locally $\CAT(1)$.%
 \footnote{In fact our theorem implies that every $\tfrac\pi2$-ball in $\Sigma^4(\bm{\mu})$ equipped with the induced length metric is $\CAT(1)$;
 in particular, $\Sigma^4(\bm{\mu})$ is $\CAT(4)$ and any $\tfrac\pi4$-ball in $\Sigma^4(\bm{\mu})$ is $\CAT(1)$.}
 Assume $\Sigma^4(\bm{\mu})$ is not $\CAT(1)$.
-By \cite[II.5.4(7)]{bridson-haefliger}, it contains a shortest geodesic circle of length $L(\bm{\mu})<2\cdot\pi$ (a \emph{geodesic circle} is a distance-preserving embedding of a circle with length metric).
+By \cite[II.5.4(7)]{bridson-haefliger}, it contains a shortest geodesic circle, say $\zeta$, of length $L(\bm{\mu})<2\cdot\pi$ (a \emph{geodesic circle} is a distance-preserving embedding of a circle with its length metric).
 If one of the masses approaches zero, we expect to have $L(\bm{\mu})\z\to2\cdot \pi$ by the induction hypothesis.
 
-Choose a geodesic circle, say $\zeta$, of length $L(\bm{\mu})$ in $\Sigma^4(\bm{\mu})$.
-Any pull-tight function is spherically convex on $\zeta$.
-Thus if we can find a pull-tight function $f$ (or a lasso functio, see below) that is nonpositive on two opposite points of $\zeta$, then the problem will be solved.
-This apprach might work in principle, but it requres that geometric infromation on $\zeta$;
-it is not hard to produce a closed curve in the $\Sigma^4(\bm{\mu})$ of length $<2\cdot \pi$ that does not meet this requrement for any choice of $f$.
+Any pull-tight function $f$ is spherically convex on $\zeta$;
+that is $(f\circ \zeta)''+f\circ \zeta\ge 0$ in the barrier sense.
+Thus if we can find a pull-tight function $f$ (or a lasso function, see below) that is nonpositive on two opposite points of $\zeta$, then the problem will be solved.
+This approach might work in principle, but it requires geometric information on $\zeta$:
+it is not hard to produce a closed curve in $\Sigma^4(\bm{\mu})$ of length $<2\cdot \pi$ that does not meet this requirement for any choice of $f$.
 
-This geodesic $\zeta$ is not null-homotopic in the class of curves of length $<2\cdot\pi$.
-This property survives after perturbing the metric.
+Given an array of punctures $p_1,\ldots, p_4$, we translate it to make its center of mass zero, then normalize it so that $\mu_1\cdot|p_1|^2+\ldots+ \mu_4\cdot|p_4|^2=1$;
+the resulting configuration corresponds to a point in $\Sigma^4(\bm{\mu})$.
+This construction identifies the underlying sets of $\Sigma^4(\bm{\mu})$ for different masses; so we may think of $\Sigma^4(\bm{\mu})$ as the same set equipped with different metrics.
+
+The geodesic circle $\zeta$ is not null-homotopic in the class of curves of length $<2\cdot\pi$;
+that is, it cannot be contracted thru curves all of length $<2\cdot\pi$.
+This property survives after a small perturbation of the masses.
 The new curve might fail to be a geodesic, but its length gives an upper bound on $L(\bm{\mu})$ after small perturbation of masses.
 
-Given an array of punctures $p_1,\ldots, p_4$, we translate it to make its center of mass zero, then normalize it so that $\mu_1\cdot|p_1|^2+\ldots+ \mu_4\cdot|p_4|^2=1$; it corresponds to a point in $\Sigma^4(\bm{\mu})$.
-This construction identifies the underlying sets of $\Sigma^4(\bm{\mu})$ for different masses; so we may think of $\Sigma^4(\bm{\mu})$ as the same set equipped with different metrics.
 
 Since the rescaling of masses does not change the isometry type of $\Sigma^4(\bm{\mu})$, we get
 \[\mu_1\cdot \frac{\partial L}{\partial \mu_1}+\ldots+\mu_4\cdot \frac{\partial L}{\partial \mu_4}=0.\]
 
-The function $\bm{\mu}\mapsto L(\bm{\mu})$ does not have to be smooth,
+The function $\bm{\mu}\mapsto L(\bm{\mu})$ need not be smooth,
 but it is semiconcave.
-At a minimum point of $L$ (the induction hypothesis should imply that it is in the interior), we have $\frac{\partial L}{\partial \mu_i}=0$ for every $i$.
+At a minimum point of $L$ it must be differentiable (the induction hypothesis should imply that the minimum is attained in the interior), and we have $\frac{\partial L}{\partial \mu_i}=0$ for every $i$.
 Assume that a unit-speed parametrization of the geodesic circle is given by punctures $p_1(t),\ldots,p_4(t)$; so
 \begin{align*}
 \mu_1\cdot p_1(t)+&\ldots+ \mu_4\cdot p_4(t)=0,
@@ -439,23 +457,24 @@ Assume that a unit-speed parametrization of the geodesic circle is given by punc
 \\ \mu_1\cdot|p_1'(t)|^2+&\ldots+ \mu_4\cdot|p_4'(t)|^2=1.
 \end{align*}
 Moreover, $p_i''(t)+p_i(t)=0$ if $p_i$ does not collide at time $t$.
-The condition $\frac{\partial L}{\partial \mu_i}=0$ means that we have a zero sum of $\langle\, p_i(t_j),p_i'(t_j+)-p_i'(t_j-)\, \rangle$ at the collision times~$t_j$.
+The condition $\frac{\partial L}{\partial \mu_i}=0$ means that
+\[\sum_{t_j}\langle\, p_i(t_j),p_i'(t_j+)-p_i'(t_j-)\, \rangle=0,\]
+where the sum is taken at the collision times~$t_j$.
 
 The last identity might contradict $L<2\cdot\pi$.
-Also, the estimate on $L$, which is described above, might imply that (in the barrier sense) the Hessian of $L$ is negative in some direction, which should prove the conjecture.
-AI suggests looking at the Laplacian with respect to the Fisher metric on the mass simplex: $g(h,h)=\tfrac{h_1^2}{\mu_1}+\ldots+\tfrac{h_4^2}{\mu_4}$ where $h_1+\ldots+h_4=0$, which makes it closely related to the description of $\CB^4(\bm{\mu})$ in the footnote.
+Also, the estimate on $L$, which is described above, might imply that the Hessian of $L$ is negative (in the barrier sense) in some direction, which should prove the conjecture.
 
-Note however that for an equator the Hessian and Laplacian vanish.
+Note, however, that for an equator the Hessian and Laplacian vanish.
 Therefore, one has to use that $L<2\cdot\pi$ and the geometry of the geodesic circle.
 The following observation might help: since $L<2\cdot\pi$, the image of the geodesic circle in $\mathbb{S}^5\subset \CC^3$ lies in a hemisphere.
 
 \parbf{Lasso functions.}
-The proof of convexity of pull-tight functions does not use much and has variations;
+The proof of convexity of pull-tight functions uses very little and admits variations;
 here is one example.
 
 Choose one puncture $p_i$, called the \emph{caught puncture}.
 Pass to the covering of $\CC$ infinitely branching at all punctures except $p_i$, and lift $p_i$ to this covering.
-Consider the Busemann function from the chosen ideal point $\xi$ to the lift.
+Consider the Busemann function associated with the chosen ideal point $\xi$, evaluated at this lift.
 Our proof of convexity works for this function as well.
 The obtained function $s$ (let's call it a \emph{lasso function})
 has a closely related pull-tight function $f$ --- the one with both ideal endpoints at $\xi$ and $\lambda$ surrounding just $p_i$.
