@@ -114,9 +114,9 @@ A \emph{pull-tight} function is a function $f\colon\CB^n\to\RR$ that can be obta
 We first define it on the universal covering $\tilde\WW^n$ of the space $\WW^n$ and then extend it to $\CB^n$.
 
 A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
-Choose a simple oriented curve $\lambda$ in the punctured plane.
-The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points.
-A point of $\tilde\WW^n$ remembers a path of configurations, and hence transports the isotopy class of $\lambda$ from a fixed reference configuration.
+Choose a simple oriented curve $\lambda$ in the punctured plane, say $\CC\setminus p$.
+The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points of $\CC$.
+A point of $\tilde\WW^n$ remembers a path of configurations, and hence transports the isotopy class of $\lambda$ from the fixed reference configuration $p$.
 
 {
 
@@ -138,9 +138,9 @@ The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve
 If $\lambda$ is closed, then $f(\bm{p})$ is defined as the length of $\ell$.
 
 If $\lambda$ is open, then $\ell$ might not exist.
-This happens if $\lambda$ can be pushed into a strictly convex set containing no punctures, so it is possible to shrink the thread indefinitely.
+This happens if $\lambda$ can be pushed into a strictly convex subset of $\CC$ containing no punctures, so it is possible to shrink the thread indefinitely.
 In this case, we assume that the pull-tight function is undefined (one could also define it as $f(\bm{p})\equiv -\infty$).
-Otherwise $f(\bm{p})$ is defined as the excess of its length compared to the two-edge curve passing thru the origin.
+Otherwise $f(\bm{p})$ is defined as the excess of its length compared to the curve composed of two rays emanating from the origin.
 More formally, suppose that $\alpha$ and $\omega$ are the ideal points at the beginning and the end,
 and $p_{i_1},\ldots,p_{i_k}$ is the sequence of vertices of $\ell$.
 Then
@@ -254,8 +254,8 @@ We are going to construct a shortcut of $\tilde \gamma$, showing that it is not 
 The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides.
 Let us equip these regions with the induced length metric;
 they are $\CAT(0)$ \cite[7.12]{AKP-invitation}.
-Pass to their pointed limits as the curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$; they are $\CAT(0)$ as limits of $\CAT(0)$ spaces.
-(If $\tilde\ell(t)$ is simple, then $L_t$ and $R_t$ are the regions on the left and right sides of $\tilde\ell(t)$; the described construction generalizes this picture.)
+Pass to their pointed limits as the approximating simple curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$; they are $\CAT(0)$ as limits of $\CAT(0)$ spaces.
+(If $\tilde\ell(t)$ is simple, then $L_t$ and $R_t$ are just the regions on the left and right sides of $\tilde\ell(t)$; the described construction generalizes this picture.)
 
 One of the angles $L_0$ or $R_0$ is a convex angle of measure $\theta$;
 let us assume that this is~$L_0$.
@@ -274,7 +274,7 @@ Moreover,
 |\alpha-x|^\flat_t+|x-\omega|^\flat_t
 \le \tilde f\circ \tilde\gamma(t)\]
 for any $x\in L_t$.
-The first inequality follows from $\CAT(0)$ comparison and the second is the triangle inequality, both applied to far points in directions of $\xi$, $\alpha$, and $\omega$.
+The first inequality follows from $\CAT(0)$ comparison and the second is the triangle inequality, both applied to $x$ and far points in directions of $\xi$, $\alpha$, and $\omega$.
 (In~the ambient Euclidean plane, the first inequality is an equality, and the $\CAT(0)$ comparison might only make it better.)
 
 
