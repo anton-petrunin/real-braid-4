@@ -238,7 +238,8 @@ In other words, the ideal points of $\tilde \ell$ cannot be opposite; if they ar
 Since $\theta<\pi$, we can add a constant vector to all velocities in the $k$-puncture array and reduce the problem to the case
 \[(\tilde f\circ\tilde \gamma)'(0-)>0>(\tilde f\circ\tilde \gamma)'(0+).\]
 We may still assume that the collision occurs at the origin at time zero;
-so, $\tilde f\circ\tilde \gamma(0)\z=0$ and from above
+so, $\tilde f\circ\tilde \gamma$ is a piecewise linear function, with exactly one kink at the time zero,
+$\tilde f\circ\tilde \gamma(0)\z=0$, and from above
 \[\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|\eqlbl{sharp-max}\]
 for some $\eps>0$.
 We are going to construct a shortcut of $\tilde \gamma$, showing that it is not geodesic.
@@ -274,9 +275,10 @@ Moreover,
 |\alpha-x|^\flat_t+|x-\omega|^\flat_t
 \le \tilde f\circ \tilde\gamma(t)\]
 for any $x\in L_t$.
-The first inequality follows from $\CAT(0)$ comparison and the second is the triangle inequality, both applied to $x$ and far points in directions of $\xi$, $\alpha$, and $\omega$.
-(In~the ambient Euclidean plane, the first inequality is an equality, and the $\CAT(0)$ comparison might only make it better.)
-
+The first inequality follows from $\CAT(0)$ comparison and the second from the triangle inequality, both applied to $x$ and faraway points in the directions of $\xi$, $\alpha$, and $\omega$.
+More precisely, the first inequality is the inequality between the median and a leg of a huge isosceles triangle, which becomes an equality in the Euclidean plane.
+To prove the second inequality, note that $|\alpha-x|^\flat_t+|x-\omega|^\flat_t$ can be interpreted as the right-hand side after we replace all punctures on the left of the curve by one puncture at $x$.
+This changes the isotopy class of admissible curves, but since the old minimizer remains admissible, this can only reduce the minimal length.
 
 Since $\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|$, we get
 \[|x-\xi|^\flat_t\le -\eps'\cdot|t|\]
