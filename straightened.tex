@@ -29,16 +29,15 @@ pdfauthor={\theauthors}
 \maketitle
 
 \begin{abstract}
-The $n$-string braid space is defined as a universal covering of the complex $n$-space branching at the hyperplanes $z_i=z_j$.
-It is conjectured that the $n$-string braid space is $\CAT(0)$ for any $n$.
-We describe a source of convex functions in the braid space and use them to prove a consequence of the conjecture: braid spaces have no geodesic loops.
+The braid spaces are defined as universal metric coverings of the standard complex spaces, branched over certain hyperplane arrangements.
+We describe a natural family of convex functions on braid spaces and use them to prove that braid spaces contain no geodesic loops.
+This statement is a consequence of the well-known conjecture that every braid space is CAT(0).
 \end{abstract}
 
-\section{Opening}
 
 This note expands the comments on the second problem in \cite{petrunin2026}.
 It is meant to be read as a letter; we wrote it with Daniel Allcock, Ruth Charney, and Michael Davis in mind,
-but it is addressed to any friend of CAT(0) spaces.
+but it is addressed to any friend of $\CAT(0)$ spaces.
 
 Let $\CC^n$ be the complex space
 with coordinates $z_1,\ldots,z_n$ and the standard Euclidean metric.
@@ -83,10 +82,12 @@ Every pull-tight function $\CB^n\to\RR$ is lower semicontinuous and convex.
 
 If $\CB^n$ is $\CAT(0)$, then it has no geodesic digons.
 (Since $\CB^n$ is a polyhedral space and it has finitely many shapes, the converse holds as well; see \cite[II.5.4]{bridson-haefliger} and also compare with \cite[3.4.3]{AKP-invitation}.)
-The pull-tight theorem implies the following weaker statement.
+
+Recall that a \emph{geodesic loop} is a nonconstant closed curve that is locally geodesic away from its base point.
+The pull-tight theorem implies the following statement, which is weaker than no geodesic digons property.
 
 \begin{thm}{Theorem}\label{thm:no-loops}
-The braid space has no geodesic loops\footnote{A geodesic loop is a nonconstant curve $\gamma:[0,L]\to\CB^n$ with $\gamma(0)=\gamma(L)$ that is locally geodesic on $(0,L)$. No geodesic condition is imposed at the common endpoint.}.
+The braid space has no geodesic loops.
 \end{thm}
 
 In the proof we assume that a geodesic loop exists, and construct a pull-tight function that is nonnegative, not constant on the loop, and vanishes at the base point; this contradicts the pull-tight theorem.
