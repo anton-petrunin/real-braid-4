@@ -412,7 +412,7 @@ If the conjecture holds, then $\CB^n(\bm{\mu})$ is $\CAT(0)$ for any array of po
 If the masses $\mu_i$ are integers, then instead of the $i$-th string of the braid one can consider $\mu_i$ identical copies of this string.
 If $M=\mu_1+\ldots+\mu_n$, then $\CB^n(\bm{\mu})$ is isometric to a weakly convex subset of $\CB^M$.
 Indeed, forgetting all but one copy of each string recovers the original endpoints in the weighted braid space, regardless of which copies are retained.
-Retaining in each group a copy of least energy and then duplicating the retained strings therefore preserves the endpoints in the larger braid space and does not increase the energy and hence the length (assuming the original path is parametrized at constant speed).
+Retaining in each group a copy of least energy and then duplicating the retained strings therefore preserves the endpoints in the larger braid space and does not increase the energy and hence the length (we assume that the original path is parametrized at constant speed).
 
 In particular, the conjecture for $\CB^M$ implies the corollary for $\CB^n(\bm{\mu})$.
 By rescaling, rational approximation, and passing to the limit we get the case of arbitrary positive masses.
@@ -437,7 +437,7 @@ Any pull-tight function $f$ is spherically convex on $\zeta$;
 that is $(f\circ \zeta)''+f\circ \zeta\ge 0$ in the barrier sense.
 Thus if we can find a pull-tight function $f$ (or a lasso function, see below) that is nonpositive on two opposite points of $\zeta$, then the problem will be solved.
 This approach might work in principle, but it requires geometric information on $\zeta$:
-it is not hard to produce a closed curve in $\Sigma^4(\bm{\mu})$ of length $<2\cdot \pi$ that does not meet this requirement for any choice of $f$.
+\textsc{there are a closed curves in $\Sigma^4(\bm{\mu})$ of length $<2\cdot \pi$ that do not meet this requirement for any choice of pull-tight function}.
 
 Given an array of punctures $p_1,\ldots, p_4$, we translate it to make its center of mass zero, then normalize it so that $\mu_1\cdot|p_1|^2+\ldots+ \mu_4\cdot|p_4|^2=1$;
 the resulting configuration corresponds to a point in $\Sigma^4(\bm{\mu})$.
@@ -447,7 +447,6 @@ The geodesic circle $\zeta$ is not null-homotopic in the class of curves of leng
 that is, it cannot be contracted thru curves all of length $<2\cdot\pi$.
 This property survives after a small perturbation of the masses.
 The new curve might fail to be a geodesic, but its length gives an upper bound on $L(\bm{\mu})$ after small perturbation of masses.
-
 
 Since the rescaling of masses does not change the isometry type of $\Sigma^4(\bm{\mu})$, we get
 \[\mu_1\cdot \frac{\partial L}{\partial \mu_1}+\ldots+\mu_4\cdot \frac{\partial L}{\partial \mu_4}=0.\]
@@ -468,6 +467,7 @@ where the sum is taken at the collision times~$t_j$.
 
 The last identity might contradict $L<2\cdot\pi$.
 Also, the estimate on $L$, which is described above, might imply that the Hessian of $L$ is negative (in the barrier sense) in some direction, which should prove the conjecture.
+\textsc{The calculations seem to be simpler for Fisher metric on the mass simplex:} $g(h,h)=\tfrac{h_1^2}{\mu_1}+\ldots+\tfrac{h_4^2}{\mu_4}$, where $h_1+\ldots+h_4=0$, which makes it closely related to the description of $\CB^4(\bm{\mu})$ in the footnote.
 
 Note, however, that for an equator the Hessian and Laplacian vanish.
 Therefore, one has to use that $L<2\cdot\pi$ and the geometry of the geodesic circle.
@@ -487,6 +487,9 @@ has a closely related pull-tight function $f$ --- the one with both ideal endpoi
 Note that $2\cdot s\le f$; in particular, the subzero set of $s$ contains that of $f$.
 So, in a sense $s$ looks more like a Busemann function on $\CB^n$.
 (If Busemann functions could be approximated by convex functions, then the conjecture would follow, but one may need much less.)
+
+\parbf{Acknowledgements.}
+The postscript contians two suggestions of AI (GPT-6 Astra); both market in \textsc{small caps}.
 
 {\sloppy
 \def\emph{\textit}
