@@ -112,13 +112,11 @@ their proof adapts to our situation and gets simpler.
 
 \section{Pull-tight functions}\label{sec:pull-tight}
 
-A \emph{pull-tight} function is a function $f\colon\CB^n\to\RR$ that can be obtained via the following procedure.
-We first define it on the universal covering $\tilde\WW^n$ of the space $\WW^n$ and then extend it to $\CB^n$.
+We will define \emph{pull-tight} function $f\colon\CB^n\to\RR$ in two steps. First, for a simple curve $\lambda$ in a punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$ we define its \emph{pull-tight length}. Then, using isotopies of $\lambda$ we get the pull-tight function  on the whole space $\tilde \WW^n$ and extend it by continuity to  $\CB^n$.
 
-A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
-Choose a simple oriented curve $\lambda$ in the punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$.
+\parit{Pull-tight length.}
+Choose a simple oriented curve $\lambda$ in the punctured plane $\CC\setminus \{p_1,\ldots,p_n\}=\CC\setminus \bm{p}$.
 The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points of $\CC$.
-A point of $\tilde\WW^n$ remembers a path of configurations, and hence transports the isotopy class of $\lambda$ from the fixed reference configuration $p$.
 
 {
 
@@ -129,17 +127,18 @@ A point of $\tilde\WW^n$ remembers a path of configurations, and hence transport
 \vskip-0mm
 \end{wrapfigure}
 
-Think of the curve as a thread and make it tight.
-Equivalently, we take the infimum of lengths in the transported isotopy class.
-The limiting curve is the polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
+Think of $\lambda$ as a thread and make it tight in $\CC\setminus \bm{p}$.
+The tightened curve is a polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
 If $\lambda$ is open, then $\ell$ has two infinite edges.
 The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$.
 
 }
+\vspace{1mm}
 
-If $\lambda$ is closed, then $f(\bm{p})$ is defined as the length of $\ell$.
+If $\lambda$ is closed, define the \emph{pull-tight length} $f(\bm{p})$ as the length of $\ell$.
+\vspace{0.5 mm}
 
-If $\lambda$ is open, then $\ell$ might not exist.
+If $\lambda$ is open,  $\ell$ might not exist.
 This happens if $\lambda$ can be pushed into a strictly convex subset of $\CC$ containing no punctures, so it is possible to shrink the thread indefinitely.
 In this case, we assume that the pull-tight function is undefined (one could also define it as $f(\bm{p})\equiv -\infty$).
 Otherwise $f(\bm{p})$ is defined as the excess of its length compared to the curve composed of two rays emanating from the origin.
@@ -155,9 +154,57 @@ denotes the Busemann function at $x$ with ideal point $\xi$ normalized so that $
 where $u_\xi$ denotes the unit vector in the direction of $\xi$.
 Note that $|\xi-x|^\flat$ might take negative values.
 
-In both cases we have defined a function on $\tilde \WW^n$.
-Note that it is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
+\parit{Pull-tight function on $\tilde \WW^n$ and $\CB^n$.} Let again $\bm p$ be a configuration of distinct points in $\CC$ and $\lambda$ an oriented simple curve in $\CC \setminus \bm p$. A point $\bm{\tilde q}$ of $\tilde \WW$ corresponds to a path in $\WW$ connecting $\bm p$ and $\bm q$, and so we can isotope $\lambda$ to a simple curve $\lambda(\bm{\tilde q})$ lying in $\CC\setminus \bm{q}$. Set $f(\bm{\tilde q})$ as the pull-tight length of $\lambda (\bm {\tilde q})$. Thus  we get a function $f$ on $\tilde \WW^n$.
+Note that $f$ is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
 Along a geodesic this extension is continuous: at a collision the edges inside the colliding clusters shrink to zero, while all remaining terms have their usual limits.
+
+
+% A \emph{pull-tight} function is a function $f\colon\CB^n\to\RR$ that can be obtained via the following procedure.
+% We first define it on the universal covering $\tilde\WW^n$ of the space $\WW^n$ and then extend it to $\CB^n$.
+
+% A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
+% Choose a simple oriented curve $\lambda$ in the punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$.
+% The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points of $\CC$.
+% A point of $\tilde\WW^n$ remembers a path of configurations, and hence transports the isotopy class of $\lambda$ from the fixed reference configuration $p$.
+
+% {
+
+% \begin{wrapfigure}{o}{40mm}
+% \centering
+% \vskip2mm
+% \includegraphics{mppics/pic-70}
+% \vskip-0mm
+% \end{wrapfigure}
+
+% Think of the curve as a thread and make it tight.
+% Equivalently, we take the infimum of lengths in the transported isotopy class.
+% The limiting curve is the polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
+% If $\lambda$ is open, then $\ell$ has two infinite edges.
+% The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$.
+
+% }
+
+% If $\lambda$ is closed, then $f(\bm{p})$ is defined as the length of $\ell$.
+
+% If $\lambda$ is open, then $\ell$ might not exist.
+% This happens if $\lambda$ can be pushed into a strictly convex subset of $\CC$ containing no punctures, so it is possible to shrink the thread indefinitely.
+% In this case, we assume that the pull-tight function is undefined (one could also define it as $f(\bm{p})\equiv -\infty$).
+% Otherwise $f(\bm{p})$ is defined as the excess of its length compared to the curve composed of two rays emanating from the origin.
+% More formally, suppose that $\alpha$ and $\omega$ are the ideal points at the beginning and the end,
+% and $p_{i_1},\ldots,p_{i_k}$ is the sequence of vertices of $\ell$.
+% Then
+% \[f(\bm{p})
+% =
+% |\alpha-p_{i_1}|^\flat+|p_{i_1}-p_{i_2}|+\ldots+|p_{i_{k-1}}-p_{i_k}|+|p_{i_k}-\omega|^\flat,\]
+% where $|\xi-x|^\flat$
+% denotes the Busemann function at $x$ with ideal point $\xi$ normalized so that $|\xi-0|^\flat=0$; thus,
+% \[|\xi-x|^\flat=-\langle u_\xi,x\rangle,\]
+% where $u_\xi$ denotes the unit vector in the direction of $\xi$.
+% Note that $|\xi-x|^\flat$ might take negative values.
+
+% In both cases we have defined a function on $\tilde \WW^n$.
+% Note that it is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
+% Along a geodesic this extension is continuous: at a collision the edges inside the colliding clusters shrink to zero, while all remaining terms have their usual limits.
 
 \parbf{Proof of \ref{thm:pull-tight}.}
 Let $f\:\CB^n\to \RR$ be a pull-tight function, and let $\lambda$ be its defining curve.
@@ -381,11 +428,10 @@ Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
 such that the corresponding pull-tight curves are vertical straight lines that separate the punctures at time~$0$.
 (They may touch the punctures, but their decorations specify on which side they pass.)
 
-Note that
+Since a deformed vertical line has non-negative pull-tight length and $\gamma$ is a contractible loop ($\CB^n$ is contractible), for each $i$ we have 
 \[f_i\ge 0
 \quad\text{and}\quad
-f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
-for each $i$.
+f_i\circ\gamma(0)=f_i\circ\gamma(L)=0.\]
 Since $f_i$ are convex, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
 It follows that pull-tight lines form moving vertical barriers between the punctures, giving them no chance to interact; even if punctures meet or touch the barriers, they cannot go around each other.
 In particular, each puncture moves with constant velocity,
