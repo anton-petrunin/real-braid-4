@@ -112,31 +112,34 @@ their proof adapts to our situation and gets simpler.
 
 \section{Pull-tight functions}\label{sec:pull-tight}
 
-We will define \emph{pull-tight} function $f\colon\CB^n\to\RR$ in two steps. First, for a simple curve $\lambda$ in a punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$ we define its \emph{pull-tight length}. Then, using isotopies of $\lambda$ we get the pull-tight function  on the whole space $\tilde \WW^n$ and extend it by continuity to  $\CB^n$.
+We will define a \emph{pull-tight} function $f\colon\CB^n\to\RR$ in two steps.
+First, for a simple curve $\lambda$ in a punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$ we define its \emph{pull-tight length}.
+Then, using isotopies of $\lambda$ we get the pull-tight function on the whole space $\tilde \WW^n$ and extend it to $\CB^n$.
 
 \parit{Pull-tight length.}
-Choose a simple oriented curve $\lambda$ in the punctured plane $\CC\setminus \{p_1,\ldots,p_n\}=\CC\setminus \bm{p}$.
-The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points of $\CC$.
+Choose an array of distinct punctures $\bm{p}=(p_1,\ldots,p_n)$ in $\CC$ and a simple oriented curve $\lambda$ in the punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$.
+The curve can be closed or open;
+in the latter case, we assume that $\lambda$ connects two fixed ideal points of $\CC$.
 
 {
 
 \begin{wrapfigure}{o}{40mm}
 \centering
-\vskip2mm
+\vskip0mm
 \includegraphics{mppics/pic-70}
 \vskip-0mm
 \end{wrapfigure}
 
-Think of $\lambda$ as a thread and make it tight in $\CC\setminus \bm{p}$.
-The tightened curve is a polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
+Think of $\lambda$ as a thread and make it tight in the punctured plane.
+The tightened curve is a polygonal line, say $\ell$, with vertices at the punctures;
+self-intersections are possible.
 If $\lambda$ is open, then $\ell$ has two infinite edges.
 The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$.
 
 }
-\vspace{1mm}
 
-If $\lambda$ is closed, define the \emph{pull-tight length} $f(\bm{p})$ as the length of $\ell$.
-\vspace{0.5 mm}
+If $\lambda$ is closed, define the \emph{pull-tight length} $f(\bm{p})$ as the length of $\ell$; this is the infimum length over the isotopy class of $\lambda$.
+
 
 If $\lambda$ is open,  $\ell$ might not exist.
 This happens if $\lambda$ can be pushed into a strictly convex subset of $\CC$ containing no punctures, so it is possible to shrink the thread indefinitely.
@@ -154,7 +157,13 @@ denotes the Busemann function at $x$ with ideal point $\xi$ normalized so that $
 where $u_\xi$ denotes the unit vector in the direction of $\xi$.
 Note that $|\xi-x|^\flat$ might take negative values.
 
-\parit{Pull-tight function on $\tilde \WW^n$ and $\CB^n$.} Let again $\bm p$ be a configuration of distinct points in $\CC$ and $\lambda$ an oriented simple curve in $\CC \setminus \bm p$. A point $\bm{\tilde q}$ of $\tilde \WW$ corresponds to a path in $\WW$ connecting $\bm p$ and $\bm q$, and so we can isotope $\lambda$ to a simple curve $\lambda(\bm{\tilde q})$ lying in $\CC\setminus \bm{q}$. Set $f(\bm{\tilde q})$ as the pull-tight length of $\lambda (\bm {\tilde q})$. Thus  we get a function $f$ on $\tilde \WW^n$.
+\parit{Pull-tight function on $\tilde \WW^n$ and $\CB^n$.}
+Let again $\bm p=(p_1,\ldots,p_n)$ be a fixed array of distinct punctures in $\CC$ and $\lambda$ an oriented simple curve in $\CC \setminus \{p_1,\ldots,p_n\}$.
+A point $\bm{\tilde q}$ of $\tilde \WW^n$ corresponds to another array of punctures $\bm q=(q_1,\ldots,q_n)\in \WW^n$ and a path in $\WW^n$ connecting $\bm p$ and $\bm q$.
+Thus we can isotope $\lambda$ to a simple curve $\lambda'$ lying in the punctured plane $\CC\setminus \{q_1,\ldots,q_n\}$.
+Define $f(\bm{\tilde q})$ as the pull-tight length of $\lambda'$.
+Thus we get a function $f$ on $\tilde \WW^n$.
+
 Note that $f$ is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
 Along a geodesic this extension is continuous: at a collision the edges inside the colliding clusters shrink to zero, while all remaining terms have their usual limits.
 
@@ -247,7 +256,7 @@ First note that reordering redundant collinear vertices changes only the encodin
 Thus \ref{1star} holds at such events.
 
 \parit{Hits and leaves.}
-Suppose that the vertex sequence changes at time $t_i$ without a collision.
+Suppose that the vertex sequence changes at time $t_i$ without a collision or reordering redundant vertices.
 For example, $\ell(t)$ catches up with the point $p_5(t)$, so $p_5(t)$ enters the vertex sequence between vertices $p_2(t)$ and $p_7(t)$, as in the picture.
 
 \begin{wrapfigure}{o}{46mm}
@@ -426,12 +435,13 @@ denote by $p_1(t),\z\ldots,p_n(t)\in\CC$ its punctures at time $t$.
 
 Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
 such that the corresponding pull-tight curves are vertical straight lines that separate the punctures at time~$0$.
-(They may touch the punctures, but their decorations specify on which side they pass.)
+They may touch the punctures, but their decorations specify on which side they pass.
 
-Since a deformed vertical line has non-negative pull-tight length and $\gamma$ is a contractible loop ($\CB^n$ is contractible), for each $i$ we have 
+Since a deformed vertical line has non-negative pull-tight length and $\gamma(0)=\gamma(L)$,
 \[f_i\ge 0
 \quad\text{and}\quad
-f_i\circ\gamma(0)=f_i\circ\gamma(L)=0.\]
+f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
+for each $i$.
 Since $f_i$ are convex, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
 It follows that pull-tight lines form moving vertical barriers between the punctures, giving them no chance to interact; even if punctures meet or touch the barriers, they cannot go around each other.
 In particular, each puncture moves with constant velocity,
