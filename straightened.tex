@@ -134,7 +134,7 @@ Think of $\lambda$ as a thread and make it tight in the punctured plane.
 The tightened curve is a polygonal line, say $\ell$, with vertices at the punctures;
 self-intersections are possible.
 If $\lambda$ is open, then $\ell$ has two infinite edges.
-The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$. We will refer to $\ell$ as the \emph{pull-tight curve}.
+The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$.
 
 }
 
@@ -215,40 +215,36 @@ Along a geodesic this extension is continuous: at a collision the edges inside t
 % Note that it is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
 % Along a geodesic this extension is continuous: at a collision the edges inside the colliding clusters shrink to zero, while all remaining terms have their usual limits.
 
-\section{The proof of pull-tight theorem}
-
-Let $f\:\CB^n\to \RR$ be a pull-tight function associated to a simple curve $\lambda$.
-Given a unit-speed geodesic $\gamma(t)$ in $\CB^n$,
-we need to show that $f\circ\gamma$ is convex. By Lemma \ref{lem:BFK}, there are only finitely many collision times; between them, all punctures move with constant velocities. We first prove convexity on these intervals, and then verify the required derivative inequality at collisions.
-
-
-\subsection{Between collisions}
-
+\parbf{Proof of \ref{thm:pull-tight}.}
+Let $f\:\CB^n\to \RR$ be a pull-tight function, and let $\lambda$ be its defining curve.
+Given a unit-speed geodesic $\gamma$ in $\CB^n$,
+we need to show that $f\circ\gamma$ is convex.
 
 Each point $\gamma(t)$ defines an array of punctures $p_1(t),\ldots,p_n(t)\in\CC$.
-The curve $\lambda$ transported by the isotopy divides all punctures into two sets that lie on its left and right sides (we assume that $\lambda$ is oriented). Let now $\ell(t)$ be the pull-tight curve at time $t$.
+The curve $\lambda$ divides the punctures into two sets that lie on its left and right sides.
 
-
-\parit{Encoding $\ell(t)$.} By construction, $\ell(t)$ is a polygonal line, where each segment connects points $p_i(t)$ (or ideal points). This polygonal line can have self-intersections, repeated vertices, and repeated edges. At the same time $\ell(t)$ can be encoded by its vertex sequence --- the ordered list of its vertex labels, with repetitions allowed. If the curve passes through a puncture without turning, we do not record that occurrence as a vertex.
-
-\parit{Decorations.} By construction, there is a continuous one-parameter family of arbitrarily small perturbations of $\ell(t)$ and $p_i(t)$ to simple curves isotopic to $\lambda$ in the punctured plane with $n$ distinct punctures.
+Denote by $\ell(t)$ the pull-tight curve at time $t$.
+It is a polygonal line that can be encoded by a sequence of its vertices; each vertex must be one of $p_i(t)$;
+self-intersections, repeated vertices and edges are allowed.
+By construction, there is a continuous one-parameter family of arbitrarily small perturbations of $\ell(t)$ and $p_i(t)$ to simple curves isotopic to $\lambda$ in the punctured plane with $n$ distinct punctures.
 We call the isotopy information carried by these perturbations the
 \emph{decoration} of the braid and the pull-tight curve.
 
-
-Suppose that the vertex sequence of $\ell(t)$ does not change in some open time interval $\II$ and no collision occurs in $\II$. We claim then that $f\circ\gamma|_{\II}$ is convex.
-Indeed, if two points move with constant velocities in the plane,  the distance between them is a convex function of time.
-
+\parit{Vertex sequence.}
+Suppose that the vertex sequence of $\ell(t)$ does not change in some open time interval $\II$ and no collision occurs in $\II$.
+Note that if two points move with constant velocities in the plane, then the distance between them is a convex function of time.
+It follows that $f\circ\gamma|_{\II}$ is convex.
 
 The vertex sequence can change in several ways:
 (1) when a puncture hits or leaves $\ell(t)$,
-%(2) when redundant collinear vertices of $\ell(t)$ are reordered,
-(2) at a collision,
-and (3) in the mixed case, when such events happen simultaneously.
+(2) when redundant collinear vertices of $\ell(t)$ are reordered,
+(3) at a collision,
+and (4) in the mixed case, when such events happen simultaneously.
 Such events happen at finitely many times, say $t_1,\ldots,t_m$.
 Indeed, by \ref{lem:BFK}, we have only finitely many collisions.
 Between the collision times the velocities of punctures are constant, and hitting/leaving events are described by isolated zeros of algebraic equations.
-%Between these events, the vertex sequence might change only by reordering redundant collinear vertices; since the velocities are constant, we have only a finite number of such events.
+Between these events, the vertex sequence might change only by reordering redundant collinear vertices;
+since the velocities are constant, we have only a finite number of such events.
 
 For each $t_i$, we have to check that
 \[(f\circ\gamma)'(t_i+) - (f\circ\gamma)'(t_i-)\ge 0;
@@ -256,10 +252,11 @@ For each $t_i$, we have to check that
 here $(f\circ\gamma)'(t\pm)$ denote one-sided derivatives.
 Once this is done, convexity of $f\circ\gamma$ follows.
 
-%First note that reordering redundant collinear vertices changes only the encoding, not the curve or its length. Thus \ref{1star} holds at such events.
+First note that reordering redundant collinear vertices changes only the encoding, not the curve or its length.
+Thus \ref{1star} holds at such events.
 
 \parit{Hits and leaves.}
-Suppose that the vertex sequence changes at time $t_i$ without a collision.
+Suppose that the vertex sequence changes at time $t_i$ without a collision or reordering redundant vertices.
 For example, $\ell(t)$ catches up with the point $p_5(t)$, so $p_5(t)$ enters the vertex sequence between vertices $p_2(t)$ and $p_7(t)$, as in the picture.
 
 \begin{wrapfigure}{o}{46mm}
@@ -282,8 +279,6 @@ f_{\textrm{after}}\circ\gamma(t)&\text{if\ } t\ge t_i.
 Note that
 \[(f_{\textrm{before}}\circ\gamma)'(t_i)=(f_{\textrm{after}}\circ\gamma)'(t_i);\]
 hence \ref{1star} follows.
-
-\subsection{At collisions}
 
 \parit{Rescaling at a collision.}
 Suppose that $k$ punctures collide at time $t_i$.
