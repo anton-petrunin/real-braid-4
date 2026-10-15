@@ -80,19 +80,46 @@ There is also a variant of this function for simple open curves that connect two
 Every pull-tight function $\CB^n\to\RR$ is lower semicontinuous and convex.
 \end{thm}
 
+Given a pull-tight function $f$ and a geodesic $\gamma$ in $\CB^n$,
+we have to show that $f\circ\gamma$ is convex.
+This can be easily done away from collisions of punctures along $\gamma$.
+Assuming that convexity fails at a collision, we replace a segment of $\gamma$ near the collision by a shorter path with the same endpoints, and thus arrive at a contradiction.
+
 If $\CB^n$ is $\CAT(0)$, then it has no geodesic digons.
 (Since $\CB^n$ is a polyhedral space and it has finitely many shapes, the converse holds as well; see \cite[II.5.4]{bridson-haefliger} and also compare with \cite[3.4.3]{AKP-invitation}.)
 
 Recall that a \emph{geodesic loop} is a nonconstant closed curve that is locally geodesic away from its base point.
 The pull-tight theorem implies the following statement, which is weaker than the absence of geodesic digons.
 
-\begin{thm}{Theorem}\label{thm:no-loops}
+\begin{thm}{No-loops theorem}\label{thm:no-loops}
 The braid space has no geodesic loops.
 \end{thm}
 
 In the proof we assume that a geodesic loop exists, and construct a pull-tight function that is nonnegative, not constant on the loop, and vanishes at the base point; this contradicts the pull-tight theorem.
 
-\section{Number of collisions}
+
+\section{No-loops theorem}
+
+\parbf{Proof of \ref{thm:no-loops} modulo \ref{thm:pull-tight}.}
+Assume $\gamma\:[0,L]\to\CB^n$ is a geodesic loop;
+denote by $p_1(t),\z\ldots,p_n(t)\in\CC$ its punctures at time $t$.
+
+Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
+such that the corresponding pull-tight curves are vertical straight lines that separate the punctures at time~$0$.
+They may touch the punctures, but their decorations specify on which side they pass; that is, we remember on which side of each puncture the pull-tight curve passes.
+
+Since a deformed vertical line has non-negative pull-tight length and $\gamma(0)=\gamma(L)$,
+\[f_i\ge 0
+\quad\text{and}\quad
+f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
+for each $i$.
+Since $f_i$ are convex, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
+It follows that pull-tight lines form moving vertical barriers between the punctures, giving them no chance to interact; even if punctures meet or touch the barriers, they cannot go around each other.
+In particular, each puncture moves with constant velocity,
+and the image of $\gamma$ in $\CC^n$ is a line segment --- a contradiction.
+\qeds
+
+\section{Pull-tight theorem}\label{sec:pull-tight}
 
 Consider a geodesic $\gamma$ in $\CB^n$.
 A point $\gamma(t)$ defines an array of punctures $p_1(t),\z\ldots,p_n(t)\in\CC$.
@@ -109,8 +136,6 @@ There is a universal bound $N=N(n)$ on the number of collisions of geodesics in 
 
 Let us mention that this lemma is also a limiting case of the result of Dmitri Burago, Serge Ferleger and Alexey Kononenko on the number of collisions in semi-dispersing billiards \cite{burago-ferleger-kononenko-1997,AKP-invitation};
 their proof adapts to our situation and gets simpler.
-
-\section{Pull-tight functions}\label{sec:pull-tight}
 
 We will define a \emph{pull-tight} function $f\colon\CB^n\to\RR$ in two steps.
 First, for a simple curve $\lambda$ in a punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$ we define its \emph{pull-tight length}.
@@ -135,6 +160,7 @@ The tightened curve is a polygonal line, say $\ell$, with vertices at the punctu
 self-intersections are possible.
 If $\lambda$ is open, then $\ell$ has two infinite edges.
 The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$.
+We will refer to $\ell$ as the \emph{pull-tight curve}.
 
 }
 
@@ -167,54 +193,6 @@ Thus we get a function $f$ on $\tilde \WW^n$.
 Note that $f$ is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
 Along a geodesic this extension is continuous: at a collision the edges inside the colliding clusters shrink to zero, while all remaining terms have their usual limits.
 
-
-% A \emph{pull-tight} function is a function $f\colon\CB^n\to\RR$ that can be obtained via the following procedure.
-% We first define it on the universal covering $\tilde\WW^n$ of the space $\WW^n$ and then extend it to $\CB^n$.
-
-% A point $\bm{p}\in\WW^n$ will be regarded as an array of $n$ distinct punctures $(p_1,\ldots,p_n)$ of the complex plane $\CC$.
-% Choose a simple oriented curve $\lambda$ in the punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$.
-% The curve can be closed or open; in the latter case, we assume that $\lambda$ connects two fixed ideal points of $\CC$.
-% A point of $\tilde\WW^n$ remembers a path of configurations, and hence transports the isotopy class of $\lambda$ from the fixed reference configuration $p$.
-
-% {
-
-% \begin{wrapfigure}{o}{40mm}
-% \centering
-% \vskip2mm
-% \includegraphics{mppics/pic-70}
-% \vskip-0mm
-% \end{wrapfigure}
-
-% Think of the curve as a thread and make it tight.
-% Equivalently, we take the infimum of lengths in the transported isotopy class.
-% The limiting curve is the polygonal line, say $\ell$, with vertices at the punctures; self-intersections are possible.
-% If $\lambda$ is open, then $\ell$ has two infinite edges.
-% The polygonal line $\ell$ can be arbitrarily well approximated by a simple curve isotopic to~$\lambda$.
-
-% }
-
-% If $\lambda$ is closed, then $f(\bm{p})$ is defined as the length of $\ell$.
-
-% If $\lambda$ is open, then $\ell$ might not exist.
-% This happens if $\lambda$ can be pushed into a strictly convex subset of $\CC$ containing no punctures, so it is possible to shrink the thread indefinitely.
-% In this case, we assume that the pull-tight function is undefined (one could also define it as $f(\bm{p})\equiv -\infty$).
-% Otherwise $f(\bm{p})$ is defined as the excess of its length compared to the curve composed of two rays emanating from the origin.
-% More formally, suppose that $\alpha$ and $\omega$ are the ideal points at the beginning and the end,
-% and $p_{i_1},\ldots,p_{i_k}$ is the sequence of vertices of $\ell$.
-% Then
-% \[f(\bm{p})
-% =
-% |\alpha-p_{i_1}|^\flat+|p_{i_1}-p_{i_2}|+\ldots+|p_{i_{k-1}}-p_{i_k}|+|p_{i_k}-\omega|^\flat,\]
-% where $|\xi-x|^\flat$
-% denotes the Busemann function at $x$ with ideal point $\xi$ normalized so that $|\xi-0|^\flat=0$; thus,
-% \[|\xi-x|^\flat=-\langle u_\xi,x\rangle,\]
-% where $u_\xi$ denotes the unit vector in the direction of $\xi$.
-% Note that $|\xi-x|^\flat$ might take negative values.
-
-% In both cases we have defined a function on $\tilde \WW^n$.
-% Note that it is locally Lipschitz, and it naturally extends to a lower semicontinuous function on $\CB^n$.
-% Along a geodesic this extension is continuous: at a collision the edges inside the colliding clusters shrink to zero, while all remaining terms have their usual limits.
-
 \parbf{Proof of \ref{thm:pull-tight}.}
 Let $f\:\CB^n\to \RR$ be a pull-tight function, and let $\lambda$ be its defining curve.
 Given a unit-speed geodesic $\gamma$ in $\CB^n$,
@@ -223,28 +201,29 @@ we need to show that $f\circ\gamma$ is convex.
 Each point $\gamma(t)$ defines an array of punctures $p_1(t),\ldots,p_n(t)\in\CC$.
 The curve $\lambda$ divides the punctures into two sets that lie on its left and right sides.
 
-Denote by $\ell(t)$ the pull-tight curve at time $t$.
-It is a polygonal line that can be encoded by a sequence of its vertices; each vertex must be one of $p_i(t)$;
-self-intersections, repeated vertices and edges are allowed.
+\parit{Encoding.} Denote by $\ell(t)$ the pull-tight curve at time $t$.
+By construction, $\ell(t)$ is a polygonal line with vertices only at $p_i(t)$,
+and $\ell(t)$ can be encoded by its vertex sequence --- the ordered list of its vertex labels, with repetitions allowed.
+If the curve passes a puncture without turning, we do not record that occurrence as a vertex.
+
+\parit{Decoration.}
 By construction, there is a continuous one-parameter family of arbitrarily small perturbations of $\ell(t)$ and $p_i(t)$ to simple curves isotopic to $\lambda$ in the punctured plane with $n$ distinct punctures.
 We call the isotopy information carried by these perturbations the
 \emph{decoration} of the braid and the pull-tight curve.
 
-\parit{Vertex sequence.}
+\parit{Changing encoding.}
 Suppose that the vertex sequence of $\ell(t)$ does not change in some open time interval $\II$ and no collision occurs in $\II$.
 Note that if two points move with constant velocities in the plane, then the distance between them is a convex function of time.
 It follows that $f\circ\gamma|_{\II}$ is convex.
 
 The vertex sequence can change in several ways:
 (1) when a puncture hits or leaves $\ell(t)$,
-(2) when redundant collinear vertices of $\ell(t)$ are reordered,
-(3) at a collision,
-and (4) in the mixed case, when such events happen simultaneously.
+(2)  at a collision or an isolated coincidence of punctures,
+and (3) in the mixed case, when such events happen simultaneously.
 Such events happen at finitely many times, say $t_1,\ldots,t_m$.
 Indeed, by \ref{lem:BFK}, we have only finitely many collisions.
-Between the collision times the velocities of punctures are constant, and hitting/leaving events are described by isolated zeros of algebraic equations.
-Between these events, the vertex sequence might change only by reordering redundant collinear vertices;
-since the velocities are constant, we have only a finite number of such events.
+Between the collision times the velocities of punctures are constant;
+any two punctures either meet at most once or coincide thruout the interval, and hitting/leaving events are described by isolated zeros of algebraic equations.
 
 For each $t_i$, we have to check that
 \[(f\circ\gamma)'(t_i+) - (f\circ\gamma)'(t_i-)\ge 0;
@@ -252,11 +231,8 @@ For each $t_i$, we have to check that
 here $(f\circ\gamma)'(t\pm)$ denote one-sided derivatives.
 Once this is done, convexity of $f\circ\gamma$ follows.
 
-First note that reordering redundant collinear vertices changes only the encoding, not the curve or its length.
-Thus \ref{1star} holds at such events.
-
 \parit{Hits and leaves.}
-Suppose that the vertex sequence changes at time $t_i$ without a collision or reordering redundant vertices.
+Suppose that the vertex sequence changes at time $t_i$  without a collision or an isolated coincidence of punctures.
 For example, $\ell(t)$ catches up with the point $p_5(t)$, so $p_5(t)$ enters the vertex sequence between vertices $p_2(t)$ and $p_7(t)$, as in the picture.
 
 \begin{wrapfigure}{o}{46mm}
@@ -280,9 +256,9 @@ Note that
 \[(f_{\textrm{before}}\circ\gamma)'(t_i)=(f_{\textrm{after}}\circ\gamma)'(t_i);\]
 hence \ref{1star} follows.
 
-\parit{Rescaling at a collision.}
-Suppose that $k$ punctures collide at time $t_i$.
-We can assume that $t_i=0$ and the collision point is also $0\in\CC$.
+\parit{Rescaling.}
+Suppose that $k$ punctures coincide at time $t_i$; let us keep calling it a \emph{collision}.
+We can assume that $t_i=0$ and the point is also $0\in\CC$.
 
 Rescale a neighborhood of the collision point and a time interval around the collision time, keeping the velocities the same.
 In the limit we get a collision of all $k$ punctures in $\CB^k$.
@@ -424,30 +400,8 @@ has a sharp maximum at zero; in other words, $\tilde f_i\circ\tilde\gamma$ satis
 Then we can repeat the argument for $\tilde\lambda_i$.
 As before, we get a shortcut $\hat\gamma$ for $\tilde \gamma$ and arrive at a contradiction.
 
-\parit{Mixed case.} Note that our calculations are local: combining them, one can prove \ref{1star} in the case when several events (collisions and hitting/leaving) happen simultaneously.
+\parit{Mixed case.} Note that our calculations are local: combining them, one can prove \ref{1star} in the case when several events (collisions, isolated coincidences, and hitting/leaving) happen simultaneously.
 \qeds
-
-\section{No geodesic loops}
-
-\parbf{Proof of \ref{thm:no-loops}.}
-Assume $\gamma\:[0,L]\to\CB^n$ is a geodesic loop;
-denote by $p_1(t),\z\ldots,p_n(t)\in\CC$ its punctures at time $t$.
-
-Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
-such that the corresponding pull-tight curves are vertical straight lines that separate the punctures at time~$0$.
-They may touch the punctures, but their decorations specify on which side they pass.
-
-Since a deformed vertical line has non-negative pull-tight length and $\gamma(0)=\gamma(L)$,
-\[f_i\ge 0
-\quad\text{and}\quad
-f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
-for each $i$.
-Since $f_i$ are convex, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
-It follows that pull-tight lines form moving vertical barriers between the punctures, giving them no chance to interact; even if punctures meet or touch the barriers, they cannot go around each other.
-In particular, each puncture moves with constant velocity,
-and the image of $\gamma$ in $\CC^n$ is a line segment --- a contradiction.
-\qeds
-
 
 \section{Postscript}
 
