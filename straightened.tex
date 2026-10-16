@@ -35,8 +35,7 @@ This statement is a consequence of the well-known conjecture that every braid sp
 \end{abstract}
 
 
-This note expands the comments on the second problem in \cite{petrunin2026}.
-It is meant to be read as a letter (complete with a postscript); we wrote it with Daniel Allcock, Ruth Charney, and Michael Davis in mind,
+This note expands on the comments accompanying Problem 2 in \cite{petrunin2026}. It is meant to be read as a letter (complete with a postscript); we wrote it with Daniel Allcock, Ruth Charney, and Michael Davis in mind,
 but it is addressed to any friend of $\CAT(0)$ spaces.
 
 Let $\CC^n$ be the complex space
@@ -65,16 +64,17 @@ Ruth Charney also proved a special case of the conjecture for $n=4$ \cite[Theore
 Namely, she proved that the real braid space with 4 strings is $\CAT(0)$.
 One may think of the real braid space as the space of braid diagrams.
 Formally, it is the inverse image of $\RR^n$ under the natural projection $\CB^n\to \CC^n$.
-This is a convex subset of $\CB^n$; so if the braid space is $\CAT(0)$, then so is the corresponding real braid space.
+The real braid space is a convex subset of $\CB^n$. Hence it is $\CAT(0)$ if $\CB^n$ is $\CAT(0)$.
+%This is a convex subset of $\CB^n$; so if the braid space is $\CAT(0)$, then so is the corresponding real braid space.
 
 In this note we construct a class of convex functions on the braid space, which will be called \emph{pull-tight}.
 The idea of this construction is inspired by Ian Agol's answer to our question \cite{agol}.
 
 Let us describe pull-tight functions informally; an actual definition is given in Section~\ref{sec:pull-tight}.
 Recall that $\WW^n$ is a configuration space of punctures in the plane.
-Choose an isotopy class of a simple closed curve in the punctured plane and define a function $\tilde \WW^n\to\RR$ that returns the greatest lower bound of lengths of curves in this class;
+Choose an isotopy class of a simple closed curve in the punctured plane and define a function $\tilde \WW^n\to\RR$ that returns the infimum of the lengths of curves in this class;
 this function extends naturally to $\CB^n$.
-There is also a variant of this function for simple open curves that connect two fixed ideal points.
+There is also a variant of this function for simple open curves that connect two fixed ideal points of $\CC$.
 
 \begin{thm}{Pull-tight theorem}\label{thm:pull-tight}
 Every pull-tight function $\CB^n\to\RR$ is lower semicontinuous and convex.
@@ -82,7 +82,7 @@ Every pull-tight function $\CB^n\to\RR$ is lower semicontinuous and convex.
 
 Given a pull-tight function $f$ and a geodesic $\gamma$ in $\CB^n$,
 we have to show that $f\circ\gamma$ is convex.
-This can be easily done away from collisions of punctures along $\gamma$.
+This can be easily done away from \emph{collisions} of punctures along $\gamma$.
 Assuming that convexity fails at a collision, we replace a segment of $\gamma$ near the collision by a shorter path with the same endpoints, and thus arrive at a contradiction.
 
 If $\CB^n$ is $\CAT(0)$, then it has no geodesic digons.
@@ -100,21 +100,22 @@ In the proof we assume that a geodesic loop exists, and construct a pull-tight f
 
 \section{No-loops theorem}
 
+
 \parbf{Proof of \ref{thm:no-loops} modulo \ref{thm:pull-tight}.}
 Assume $\gamma\:[0,L]\to\CB^n$ is a geodesic loop;
-denote by $p_1(t),\z\ldots,p_n(t)\in\CC$ its punctures at time $t$.
+denote by $p_1(t),\z\ldots,p_n(t)\in\CC$ its punctures at time $t$. Rotate the plane slightly so that points $p_i(0)$ have different real parts. 
 
 Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
-such that the corresponding pull-tight curves are vertical straight lines that separate the punctures at time~$0$.
-They may touch the punctures, but their decorations specify on which side they pass; that is, we remember on which side of each puncture the pull-tight curve passes.
+such that the corresponding pull-tight curves are vertical straight lines that separate the punctures at time~$0$. 
+%They may touch the punctures, but their decorations specify on which side they pass; that is, we remember on which side of each puncture the pull-tight curve passes.
 
-Since a deformed vertical line has non-negative pull-tight length and $\gamma(0)=\gamma(L)$,
+Since a deformed vertical line has non-negative pull-tight length\footnote{Indeed, by definition given in Section \ref{sec:pull-tight}, in this case the pull-tight length is the inifmum excess length in the class of vertical line, comparing to the vertical line itself.} and $\gamma(0)=\gamma(L)$,
 \[f_i\ge 0
 \quad\text{and}\quad
 f_i\circ\gamma(0)=f_i\circ\gamma(L)=0\]
 for each $i$.
-Since $f_i$ are convex, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
-It follows that pull-tight lines form moving vertical barriers between the punctures, giving them no chance to interact; even if punctures meet or touch the barriers, they cannot go around each other.
+Since each $f_i$ is convex, $f_i\circ\gamma(t)\equiv 0$ for all $i$.
+It follows that the pull-tight lines form moving vertical barriers between the punctures, giving them no chance to interact; even if punctures meet or touch the barriers, they cannot go around each other.
 In particular, each puncture moves with constant velocity,
 and the image of $\gamma$ in $\CC^n$ is a line segment --- a contradiction.
 \qeds
@@ -206,8 +207,8 @@ By construction, $\ell(t)$ is a polygonal line with vertices only at $p_i(t)$,
 and $\ell(t)$ can be encoded by its vertex sequence --- the ordered list of its vertex labels, with repetitions allowed.
 If the curve passes a puncture without turning, we do not record that occurrence as a vertex.
 
-\parit{Decoration.}
-By construction, there is a continuous one-parameter family of arbitrarily small perturbations of $\ell(t)$ and $p_i(t)$ to simple curves isotopic to $\lambda$ in the punctured plane with $n$ distinct punctures.
+\parit{Decoration.} By construction, we can perturb the punctures $p_i(t)$ arbitrarily slightly to make them distinct, and approximate $(\ell(t)$ by a simple curve isotopic to $\lambda$ in the resulting punctured plane. These choices can be made continuously in $t$.
+%By construction, there is a continuous one-parameter family of arbitrarily small perturbations of $\ell(t)$ and $p_i(t)$ to simple curves isotopic to $\lambda$ in the punctured plane with $n$ distinct punctures.
 We call the isotopy information carried by these perturbations the
 \emph{decoration} of the braid and the pull-tight curve.
 
