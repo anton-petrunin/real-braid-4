@@ -35,7 +35,7 @@ This statement is a consequence of the well-known conjecture that every braid sp
 \end{abstract}
 
 This note expands the comments on the second problem in \cite{petrunin2026}.
-It is meant to be read as a letter (complete with a postscript); we wrote it with Daniel Allcock, Ruth Charney, and Michael Davis in mind, but it is addressed to any friend of $\CAT(0)$ spaces.
+It is meant to be read as a letter (it has a postscript); we wrote it with Daniel Allcock, Ruth Charney, and Michael Davis in mind, but it is addressed to any friend of $\CAT(0)$ spaces.
 
 Let $\CC^n$ be the complex space
 with coordinates $z_1,\ldots,z_n$ and the standard Euclidean metric.
@@ -82,8 +82,10 @@ In the proof we need to show that $f\circ\gamma$ is convex for a pull-tight func
 This can be easily done away from collisions of punctures along $\gamma$.
 Assuming that convexity fails at a collision, we replace a segment of $\gamma$ near the collision by a shorter path with the same endpoints, and thus arrive at a contradiction.
 
+\medskip
+
 If $\CB^n$ is $\CAT(0)$, then it has no geodesic digons.
-(Since $\CB^n$ is a polyhedral space and it has finitely many shapes, the converse holds as well; see \cite[II.5.4]{bridson-haefliger} and also compare with \cite[3.4.3]{AKP-invitation}.)
+(Since $\CB^n$ is a polyhedral space and it has finitely many shapes, the converse holds as well; see \cite[II.5.4]{bridson-haefliger} and also compare with \cite[6.6]{AKP-invitation}.)
 
 Recall that a \emph{geodesic loop} is a nonconstant closed curve that is locally geodesic away from its base point.
 The pull-tight theorem implies the following statement, which is weaker than the absence of geodesic digons.
@@ -107,10 +109,10 @@ We may assume that
 
 Choose $n-1$ pull-tight functions $f_1,\ldots,f_{n-1}$
 such that the corresponding pull-tight curves are vertical straight lines that separate the punctures at time~$0$.
-They may touch the punctures, but we remember on which side of each puncture the pull-tight curve passes (here we are using decorations defined in the next section, indeed some  points $p_i$ can coincide).
-Note that $f_i\ge0$ for each $i$.
-%A deformed vertical line has non-negative pull-tight length\footnote{Indeed, by definition given in Section \ref{sec:pull-tight}, in this case the pull-tight length is the infimum excess length in the class of vertical line, comparing to the vertical line itself.}
+They may touch the punctures, but we remember on which side of each puncture the pull-tight curve passes;
+the punctures can coincide and to make all this precise we have to use decorations defined in the next section.
 
+Note that $f_i\ge0$ for each $i$.
 Further, $f_i\circ\gamma(0)=f_i\circ\gamma(L)=0$;
 since each $f_i$ is convex, $f_i\circ\gamma(t)\equiv 0$ for all~$i$.
 It follows that the pull-tight lines form moving vertical barriers between the punctures, giving them no chance to interact; even if punctures meet or touch the barriers, they cannot go around each other.
@@ -145,7 +147,7 @@ First, for a simple curve $\lambda$ in a punctured plane $\CC\setminus \{p_1,\ld
 Then, using isotopies of $\lambda$ we get the pull-tight function on the whole space $\tilde \WW^n$ and extend it to $\CB^n$.
 
 \parit{Pull-tight length.}
-Choose an array of distinct punctures $\bm{p}=(p_1,\ldots,p_n)$ in $\CC$ and a simple oriented curve $\lambda$ in the punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$.
+Choose an array of distinct punctures $\bm{p}=(p_1,\ldots,p_n)$ in $\CC$ and a simple oriented curve $\lambda$ in the punctured plane $\CC\setminus \{p_1,\ldots,p_n\}$. We call $\lambda$ the \emph{defining curve}.
 The curve can be closed or open;
 in the latter case, we assume that $\lambda$ connects two fixed ideal points of $\CC$.
 
@@ -153,7 +155,7 @@ in the latter case, we assume that $\lambda$ connects two fixed ideal points of 
 
 \begin{wrapfigure}{o}{40mm}
 \centering
-\vskip0mm
+\vskip-2mm
 \includegraphics{mppics/pic-70}
 \vskip-0mm
 \end{wrapfigure}
@@ -171,7 +173,7 @@ If $\lambda$ is closed, define the \emph{pull-tight length} as the length of $\e
 
 If $\lambda$ is open,  $\ell$ might not exist.
 This happens if $\lambda$ can be pushed into a strictly convex subset of $\CC$ containing no punctures, so it is possible to shrink the thread indefinitely.
-In this case, we assume that the pull-tight length is undefined (one could also define it as $-\infty$).
+In this case, we say that $\lambda$ is an \emph{escaping} curve and assume that the pull-tight length is undefined (one could also define it as $-\infty$).
 Otherwise the pull-tight length is defined as the excess of its length compared to the curve composed of two rays emanating from the origin.
 More formally, suppose that $\alpha$ and $\omega$ are the ideal points at the beginning and the end,
 and $p_{i_1},\ldots,p_{i_k}$ is the sequence of vertices of $\ell$.
@@ -181,11 +183,11 @@ where $|\xi-x|^\flat$
 denotes the Busemann function at $x$ with ideal point $\xi$ normalized so that $|\xi-0|^\flat=0$; thus,
 \[|\xi-x|^\flat=-\langle u_\xi,x\rangle,\]
 where $u_\xi$ denotes the unit vector in the direction of $\xi$.
-Note that $|\xi-x|^\flat$ might take negative values.
+Note that $|\xi-x|^\flat$ might take negative values. If $\ell$ has no vertices, then it is a straight line and the pull-tight length is defined to be zero.
 
 \parit{Pull-tight function on $\tilde \WW^n$ and $\CB^n$.}
-Let again $\bm p=(p_1,\ldots,p_n)$ be a fixed array of distinct punctures in $\CC$ and $\lambda$ an oriented simple curve in $\CC \setminus \{p_1,\ldots,p_n\}$. We call $\lambda$ the \emph{defining curve}.
-A point $\bm{\tilde q}$ of $\tilde \WW^n$ corresponds to another array of punctures $\bm q=(q_1,\ldots,q_n)\in \WW^n$ and a path in $\WW^n$ connecting $\bm p$ and $\bm q$.
+Let again $\bm p=(p_1,\ldots,p_n)$ be a fixed array of distinct punctures in $\CC$ and $\lambda$ an oriented simple nonescaping curve in the punctured plane $\CC \setminus \{p_1,\ldots,p_n\}$.
+A point $\bm{\tilde q}$ of $\tilde \WW^n$ corresponds to another array of punctures $\bm q=(q_1,\ldots,q_n)\in \WW^n$ and a homotopy class of paths in $\WW^n$ connecting $\bm p$ and $\bm q$.
 Thus we can isotope $\lambda$ to a simple curve $\lambda'$ lying in the punctured plane $\CC\setminus \{q_1,\ldots,q_n\}$.
 Define $f(\bm{\tilde q})$ as the pull-tight length of $\lambda'$.
 Thus we get a function $f$ on $\tilde \WW^n$.
@@ -194,7 +196,7 @@ Note that $f$ is locally Lipschitz, and it naturally extends to a lower semicont
 Along a geodesic this extension is continuous: at a collision the edges inside the colliding clusters shrink to zero, while all remaining terms have their usual limits.
 
 \parbf{Proof of \ref{thm:pull-tight}.}
-Let $f\:\CB^n\to \RR$ be a pull-tight function, and let $\lambda$ be its defining curve.
+Let $f\:\CB^n\to \RR$ be a pull-tight function with defining curve $\lambda$.
 Given a unit-speed geodesic $\gamma$ in $\CB^n$,
 we need to show that $f\circ\gamma$ is convex.
 
@@ -260,7 +262,7 @@ hence \ref{1star} follows.
 
 \parit{Rescaling.}
 Suppose that $k$ punctures coincide at time $t_i$; let us keep calling it a \emph{collision}.
-We can assume that $t_i=0$ and the collision point is also $0\in\CC$.
+We can assume that $t_i=0$ and the collision (or coincidence) point is also $0\in\CC$.
 
 Rescale a neighborhood of the collision point and a time interval around the collision time, keeping the velocities the same.
 In the limit we get a collision of all $k$ punctures in $\CB^k$.
@@ -282,9 +284,9 @@ Since $\theta<\pi$, we can add a constant vector to all velocities in the $k$-pu
 \[(\tilde f\circ\tilde \gamma)'(0-)>0>(\tilde f\circ\tilde \gamma)'(0+).\]
 We may still assume that the collision occurs at the origin at time zero;
 so, $\tilde f\circ\tilde \gamma$ is a piecewise linear function, with exactly one kink at time zero,
-$\tilde f\circ\tilde \gamma(0)\z=0$, and from above
-\[\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|\eqlbl{sharp-max}\]
-for some $\eps>0$.
+$\tilde f\circ\tilde \gamma(0)\z=0$, and, for some $\eps>0$,
+\[\tilde f\circ\tilde \gamma(t)\le -\eps\cdot |t|.
+\eqlbl{sharp-max}\]
 We are going to construct a shortcut of $\tilde \gamma$, showing that it is not geodesic.
 
 \begin{figure}[b!]
@@ -296,15 +298,15 @@ We are going to construct a shortcut of $\tilde \gamma$, showing that it is not 
 
 \parit{$\CAT(0)$ sides.}
 The curve $\tilde\ell(t)$ might have self-intersections, but it admits an approximation by a simple curve, which divides the plane into two regions on its left and right sides.
-Let us equip these regions with the induced length metric;
-they are $\CAT(0)$ \cite[7.12]{AKP-invitation}.
+Let us equip these regions with the induced length metric and pass to their completions;
+we get $\CAT(0)$ spaces \cite[7.12]{AKP-invitation}.
 Pass to their pointed limits as the approximating simple curve approaches $\tilde\ell(t)$; denote the limit spaces by $L_t$ and $R_t$; they are $\CAT(0)$ as limits of $\CAT(0)$ spaces and $\tilde\ell(t)$ runs in their metric boundaries.
-(If $\tilde\ell(t)$ is simple, then $L_t$ and $R_t$ are just the regions on the left and right sides of $\tilde\ell(t)$; the described construction generalizes this picture.)
+(If $\tilde\ell(t)$ is simple, then $L_t$ and $R_t$ are just the closed regions on the left and right sides of $\tilde\ell(t)$; the described construction generalizes this picture.)
 
 One of $L_0$ and $R_0$ is a convex infinite sector of angle $\theta$;
 let us assume that this is~$L_0$.
 Choose an ideal point $\xi$ that lies midway between the ideal points, say $\alpha$ and $\omega$, of $\tilde\ell(t)$.
-Let us denote by $|x-\xi|^\flat_t$ its Busemann function $L_t\to\RR$.
+Let us denote by $x\mapsto|x-\xi|^\flat_t$ its Busemann function $L_t\to\RR$.
 These functions are defined in the length metric of $L_t$.
 Formally speaking, $\xi$ corresponds to an ideal point in each space $L_t$,
 but far from $0$, the half-lines in $L_t$ in the direction of $\xi$ become parallel.
@@ -319,7 +321,7 @@ Moreover,
 \le \tilde f\circ \tilde\gamma(t)\]
 for any $x\in L_t$.
 The first inequality follows from $\CAT(0)$ comparison and the second from the triangle inequality, both applied to $x$ and faraway points in the directions of $\xi$, $\alpha$, and $\omega$.
-More precisely, the first inequality is the inequality between the median and an equal side of a huge isosceles triangle, which becomes an equality in the Euclidean plane.
+More precisely, the first inequality is the inequality between the median and an equal side of a huge isosceles triangle (in the Euclidean plane, it becomes an identity).
 To prove the second inequality, note that $|\alpha-x|^\flat_t+|x-\omega|^\flat_t$ can be interpreted as the right-hand side after we replace all punctures on the left of the curve by one puncture at $x$.
 This changes the isotopy class of admissible curves, but since the old minimizer remains admissible, this can only reduce the minimal length.
 
@@ -332,7 +334,7 @@ Let $\delta_i=-|\tilde p_i(1)-\xi|^\flat_1$;
 note that $\tilde p_i(t)\z=t\cdot \tilde p_i(1)$ and $|\tilde p_i(t)-\xi|^\flat_t=-t\cdot \delta_i$ for any $t\ge 0$.
 Let us connect $\tilde p_i(1)$ to $\xi$ by a unit-speed geodesic half-line $\sigma_i\:[\delta_i,\infty)\z\to L_1$;
 so $|\sigma_i(s)-\xi|^\flat_1+s\equiv0$.
-Note that
+For any $t>0$,
 \[s\mapsto t\cdot \sigma_i(s/t)
 \eqlbl{2star}\]
 defines the unit-speed geodesic half-line in $L_t$ from $\tilde p_i(t)$ to $\xi$.
@@ -456,10 +458,10 @@ The remaining factor is a metric cone; denote its unit link by $\Sigma^4(\bm{\mu
 We need to show that it is $\CAT(1)$.
 
 By the induction hypothesis $\Sigma^4(\bm{\mu})$ is locally $\CAT(1)$.%
-\footnote{In fact our theorem implies that every $\tfrac\pi2$-ball in $\Sigma^4(\bm{\mu})$ equipped with the induced length metric is $\CAT(1)$;
+\footnote{\label{foot:diagonal} In fact our theorem implies that every $\tfrac\pi2$-ball in $\Sigma^4(\bm{\mu})$ equipped with the induced length metric is $\CAT(1)$;
 in particular, $\Sigma^4(\bm{\mu})$ is $\CAT(4)$ and any $\tfrac\pi4$-ball in $\Sigma^4(\bm{\mu})$ is $\CAT(1)$.}
 Assume $\Sigma^4(\bm{\mu})$ is not $\CAT(1)$.
-By \cite[II.5.4(7)]{bridson-haefliger}, it contains a shortest geodesic circle, say $\zeta$, of length $L(\bm{\mu})<2\cdot\pi$ (a \emph{geodesic circle} is a distance-preserving embedding of a circle with its length metric).
+By \cite[II.4.17]{bridson-haefliger}, it contains a shortest geodesic circle, say $\zeta$, of length $L(\bm{\mu})<2\cdot\pi$ (a \emph{geodesic circle} is a distance-preserving embedding of a circle with its length metric).
 If one of the masses approaches zero, we expect to have $L(\bm{\mu})\z\to2\cdot \pi$ by the induction hypothesis.
 
 Any pull-tight function $f$ is spherically convex on $\zeta$;
@@ -497,7 +499,7 @@ where the sum is taken at the collision times~$t_j$.
 
 The last identity might contradict $L<2\cdot\pi$.
 Also, the estimate on $L$, which is described above, might imply that the Hessian of $L$ is negative (in the barrier sense) in some direction, which should prove the conjecture.
-\textsc{The calculations seem to be simpler for the Fisher metric on the mass simplex:} $g(h,h)=\tfrac{h_1^2}{\mu_1}+\ldots+\tfrac{h_4^2}{\mu_4}$, where $h_1+\ldots+h_4=0$; compare to the description of $\CB^4(\bm{\mu})$ in the footnote.
+\textsc{The calculations seem to be simpler for the Fisher metric on the mass simplex:} $g(h,h)=\tfrac{h_1^2}{\mu_1}+\ldots+\tfrac{h_4^2}{\mu_4}$, where $h_1+\ldots+h_4=0$; compare to the description of $\CB^4(\bm{\mu})$ in the footnote \ref{foot:diagonal}.
 
 Note, however, that for an equator the Hessian and Laplacian vanish.
 Therefore, one has to use that $L<2\cdot\pi$ and the geometry of the geodesic circle.
@@ -509,10 +511,10 @@ here is one example.
 
 Choose one puncture $p_i$, called the \emph{caught puncture}.
 Pass to the covering of $\CC$ infinitely branching at all punctures except $p_i$, and lift $p_i$ to this covering.
-Consider the Busemann function associated with the chosen ideal point $\xi$, evaluated at this lift.
+Consider the Busemann function associated with the chosen ideal point $\tilde \xi$ of the covering, evaluated at this lift.
 Our proof of convexity works for this function as well.
 The obtained function $s$ (let's call it a \emph{lasso function})
-has a closely related pull-tight function $f$ --- the one with both ideal endpoints at $\xi$ and $\lambda$ surrounding just $p_i$.
+has a closely related pull-tight function $f$ --- the one with both ideal endpoints at the projection $\xi$ of $\tilde \xi$ and $\lambda$ surrounding just $p_i$.
 
 For the compatible normalizations we have $2\cdot s\le f$; in particular, the subzero set of $s$ contains that of $f$.
 So, in a sense $s$ looks more like a Busemann function on $\CB^n$.
@@ -528,5 +530,3 @@ The postscript contains two essential suggestions from AI (GPT-6 Astra); both ar
 }
 
 \end{document}
-
-Mathematics Research Reports???
